@@ -1,23 +1,8 @@
 import Link from "next/link";
-import { search, loadUniverse } from "@/src/lib/search.js";
+import { search } from "@/src/lib/search.js";
+import { universeStats } from "@/src/lib/stats.js";
 import { rateCompany } from "@/src/lib/rating/index.js";
 import { CompanyBlock, Disclaimer } from "./components";
-
-function universeStats() {
-  const u = loadUniverse();
-  const states = Object.values(u.onchain);
-
-  const delegated = states.filter((s) => s.permanentDelegate).length;
-  const traps = states.filter((s) => s.multiplierTrap).length;
-  const delegates = new Set(
-    states.map((s) => s.permanentDelegate).filter((d): d is string => Boolean(d)),
-  );
-  const biggest = [...delegates]
-    .map((d) => states.filter((s) => s.permanentDelegate === d).length)
-    .sort((a, b) => b - a)[0];
-
-  return { tokens: u.tokens.length, delegated, traps, biggest: biggest ?? 0 };
-}
 
 export default async function Home({
   searchParams,
@@ -73,20 +58,30 @@ export default async function Home({
         <>
           <div className="stats">
             <div className="stat">
-              <div className="stat-n">{stats.tokens.toLocaleString()}</div>
-              <div className="stat-l">tokenized equities indexed</div>
+              <div className="stat-n">{stats.largestDelegateReach.toLocaleString()}</div>
+              <div className="stat-l">
+                tokenized equities one key can seize from any wallet
+              </div>
             </div>
             <div className="stat">
-              <div className="stat-n">{stats.biggest.toLocaleString()}</div>
-              <div className="stat-l">controlled by a single seizure key</div>
+              <div className="stat-n">
+                {stats.probed ? `${stats.probed - stats.routable}` : "—"}
+              </div>
+              <div className="stat-l">
+                of {stats.probed.toLocaleString()} have no market at all
+              </div>
             </div>
             <div className="stat">
-              <div className="stat-n">{stats.delegated.toLocaleString()}</div>
-              <div className="stat-l">where an authority can take your tokens</div>
+              <div className="stat-n">{stats.multiplierTraps.toLocaleString()}</div>
+              <div className="stat-l">
+                show the wrong balance in apps that read the multiplier naively
+              </div>
             </div>
             <div className="stat">
-              <div className="stat-n">{stats.traps.toLocaleString()}</div>
-              <div className="stat-l">that display the wrong balance to naive apps</div>
+              <div className="stat-n">
+                {stats.worstTrapPct !== null ? `${stats.worstTrapPct.toFixed(0)}%` : "—"}
+              </div>
+              <div className="stat-l">of the real balance, in the worst case</div>
             </div>
           </div>
           <Disclaimer />

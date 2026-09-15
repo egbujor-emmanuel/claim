@@ -16,7 +16,8 @@
     "depth": "tsx src/scripts/depthscan.ts",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "stats": "tsx src/scripts/stats.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

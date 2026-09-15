@@ -48,7 +48,9 @@ Measured across **869 tokenized equities** on 14–15 September 2026.
 
 **335 tokens display the wrong balance to naive apps.** They carry a scheduled scaled-UI multiplier that has already taken effect, so software reading the `multiplier` field instead of computing the effective value is wrong. NFLXx and PPLTx by **−90%**, PALLx and SPACEX by **−80%**, CRWDx **−75%**, APHx **−50%**. A wallet reading Netflix naively shows you a tenth of your position.
 
-**Almost none of them can be sold.** Of 700 mints probed against Jupiter, **5 had a route**. The rest have no liquidity pool in existence — confirmed independently against DexScreener, which returns no pairs for them.
+**Almost none of them can be sold.** All 869 were probed against Jupiter. **51 have a route. 818 have none** — no liquidity pool in existence, confirmed independently against DexScreener, which returns no pairs for them.
+
+**And a route is not an exit.** Full quote ladders were measured for all 51 routable mints. **Eleven can absorb a $10,000 sale inside 5% slippage.** Eleven, out of 869. Even SPCXx — SpaceX, one of the most liquid names on the chain — costs **46%** to exit $1M.
 
 **Counterfeits are live.** Searching Jupiter for `QQQon` returns nine mints, eight of which are not Ondo's and all of which call themselves "Invesco QQQ (Ondo Tokenized)". One impersonating NVIDIA is a pump.fun mint with a fixed billion supply and no extensions at all.
 
