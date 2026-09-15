@@ -29,7 +29,37 @@ export interface AuthenticityResult {
   redFlags: string[];
 }
 
-/** Vanity suffixes and prefixes issuers use to mark their canonical mints. */
+/**
+ * On-chain mint authorities that identify an issuer.
+ *
+ * This is the strongest available test: an address either was minted by the
+ * issuer's authority or it was not. Nothing is inferred from the address shape.
+ * Each was confirmed by reading every known mint for that issuer and observing
+ * a single shared authority.
+ */
+export const ISSUER_MINT_AUTHORITIES: Record<string, string> = {
+  ondo: "9foMHsSDq7nMg4WPusSz9eY7tyxyukqborA8GyU5cUxD",
+  backed: "7pt9tkctJPK7PPNQJ77GKg8ZffSF6QxoMiCFYHxrtaCj",
+  prestocks: "WV9PJN7XTmTLVwbutCLFxp8TyePee6Xq5mRq6Fti5Wc",
+};
+
+/**
+ * Permanent delegates that identify an issuer.
+ *
+ * Backpack Securities gives every token its own mint authority -- 1,138 distinct
+ * keys across 1,138 tokens, which is unusually good isolation -- so the mint
+ * authority cannot identify them. Their shared permanent delegate can. Different
+ * issuers, different fingerprints; both are read from chain.
+ */
+export const ISSUER_PERMANENT_DELEGATES: Record<string, string> = {
+  backpack: "2cVYpagTt7ZGc3mmTXBa7fAznUtx5DUu6aCq8uVDaf4a",
+  backed: "5aMNNLQJwAEeoemTEMkv5NVjqKwvvefRYCQ5Z67HFvEq",
+};
+
+/**
+ * Vanity markers, used only as a weaker secondary signal for issuers where we
+ * have not established a single mint authority.
+ */
 export const ISSUER_MINT_MARKERS: Record<string, { prefix?: string; suffix?: string }> = {
   backed: { prefix: "Xs" },
   prestocks: { prefix: "Pre" },
@@ -77,9 +107,34 @@ export function checkAuthenticity(
     redFlags.push(`mint address ends in "${launchpad}", the marker of a launchpad token`);
   }
 
-  // Does the mint carry the claimed issuer's vanity marker?
-  let markerMatches = false;
+  // Strongest test first: does the mint carry the issuer's on-chain fingerprint?
+  let authorityVerified = false;
+  let hasFingerprint = false;
   if (claimedIssuerId) {
+    const expectedMint = ISSUER_MINT_AUTHORITIES[claimedIssuerId];
+    const expectedDelegate = ISSUER_PERMANENT_DELEGATES[claimedIssuerId];
+    hasFingerprint = Boolean(expectedMint || expectedDelegate);
+
+    if (expectedMint && state.mintAuthority === expectedMint) {
+      authorityVerified = true;
+      reasons.push(
+        `minted by the issuer's own authority (${expectedMint}), verified on chain rather than inferred`,
+      );
+    } else if (expectedDelegate && state.permanentDelegate === expectedDelegate) {
+      authorityVerified = true;
+      reasons.push(
+        `carries the issuer's permanent delegate (${expectedDelegate}), verified on chain rather than inferred`,
+      );
+    } else if (hasFingerprint) {
+      redFlags.push(
+        `does not carry this issuer's on-chain fingerprint; expected mint authority ${expectedMint ?? "n/a"} or delegate ${expectedDelegate ?? "n/a"}`,
+      );
+    }
+  }
+
+  // Weaker secondary signal, only where no on-chain fingerprint is established.
+  let markerMatches = false;
+  if (claimedIssuerId && !hasFingerprint) {
     const marker = ISSUER_MINT_MARKERS[claimedIssuerId];
     if (marker) {
       const prefixOk = marker.prefix ? state.mint.startsWith(marker.prefix) : true;
@@ -99,9 +154,10 @@ export function checkAuthenticity(
   }
 
   let verdict: Verdict;
-  if (redFlags.length > 0 && !machinery.ok) verdict = "structurally_impossible";
+  if (!machinery.ok) verdict = "structurally_impossible";
+  else if (authorityVerified) verdict = "canonical";
   else if (redFlags.length > 0) verdict = "plausible";
-  else if (markerMatches && machinery.ok) verdict = "canonical";
+  else if (markerMatches) verdict = "canonical";
   else verdict = "plausible";
 
   return { verdict, reasons, redFlags };
@@ -110,7 +166,7 @@ export function checkAuthenticity(
 export function verdictLabel(v: Verdict): string {
   switch (v) {
     case "canonical":
-      return "Canonical — matches the issuer's own mint pattern and carries the right machinery";
+      return "Canonical — minted by the issuer's own authority and carrying the right machinery";
     case "plausible":
       return "Unverified — structurally capable, but not confirmed against the issuer";
     case "structurally_impossible":

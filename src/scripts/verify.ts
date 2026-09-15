@@ -12,7 +12,12 @@ import { loadUniverse, search, byMint, contested, multiToken } from "../lib/sear
 import { ISSUERS, issuerForMint } from "../data/issuers.js";
 import { fetchMint, effectiveMultiplier, hasMultiplierTrap } from "../lib/onchain/mint.js";
 import { daysUntilExpiry, EXPIRY } from "../lib/ingest/manual.js";
-import { checkAuthenticity } from "../lib/authenticity.js";
+import {
+  checkAuthenticity,
+  ISSUER_MINT_AUTHORITIES,
+  ISSUER_PERMANENT_DELEGATES,
+} from "../lib/authenticity.js";
+import { cusipToIsin } from "../lib/ingest/backpack.js";
 import { rateCompany } from "../lib/rating/index.js";
 import { UNIVERSE_PATH } from "../lib/paths.js";
 
@@ -157,6 +162,42 @@ if (live) {
   check("live multiplier trap still present", hasMultiplierTrap(live),
     `effective ${effectiveMultiplier(live)}`);
 }
+
+// --------------------------------------------------- issuer identity on chain
+section("PHASE 1: issuer identity is verified, not inferred");
+
+const ondoMints = u.tokens.filter((t) => t.issuerId === "ondo");
+check("Ondo mints ingested", ondoMints.length > 0, `${ondoMints.length}`);
+check("every Ondo mint carries Ondo's mint authority",
+  ondoMints.every((t) => u.onchain[t.mint]?.mintAuthority === ISSUER_MINT_AUTHORITIES.ondo),
+  ISSUER_MINT_AUTHORITIES.ondo);
+check("no Ondo mint has a permanent delegate (they cannot seize)",
+  ondoMints.every((t) => !u.onchain[t.mint]?.permanentDelegate));
+
+const backedMints = u.tokens.filter((t) => t.issuerId === "backed");
+check("every xStocks mint carries Backed's mint authority",
+  backedMints.every((t) => u.onchain[t.mint]?.mintAuthority === ISSUER_MINT_AUTHORITIES.backed),
+  `${backedMints.length} mints`);
+
+const backpackMints = u.tokens.filter((t) => t.issuerId === "backpack");
+check("Backpack ingested at scale", backpackMints.length > 100, `${backpackMints.length} mints`);
+check("every Backpack mint carries Backpack's permanent delegate",
+  backpackMints.every(
+    (t) => u.onchain[t.mint]?.permanentDelegate === ISSUER_PERMANENT_DELEGATES.backpack,
+  ));
+check("Backpack isolates mint authority per token",
+  new Set(backpackMints.map((t) => u.onchain[t.mint]?.mintAuthority)).size === backpackMints.length,
+  "one authority per mint");
+
+check("CUSIP to ISIN is correct",
+  cusipToIsin("037833100") === "US0378331005" &&
+  cusipToIsin("88160R101") === "US88160R1014");
+
+check("all four issuers represented",
+  new Set(u.tokens.map((t) => t.issuerId)).size === 4,
+  [...new Set(u.tokens.map((t) => t.issuerId))].join(", "));
+check("hundreds of companies carry competing claims", contested().length >= 100,
+  `${contested().length} contested`);
 
 // ---------------------------------------------------------------- phase 2
 section("PHASE 2: rating engine");

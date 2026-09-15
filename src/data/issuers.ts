@@ -34,18 +34,16 @@ export const ISSUERS: Record<string, Issuer> = {
     },
     regulatoryStatus: {
       value:
-        "Regulated US broker-dealer; holdings characterised as security entitlements under New York UCC Article 8",
-      source:
-        "https://solanacompass.com/news/three-tokenized-spacex-products-now-trade-on-solana-and-they-work-very-differently",
+        "Regulated US broker-dealer. Holdings are, in the issuer's own words, UCC Article 8 security entitlements governed under New York law",
+      source: "https://learn.backpack.exchange/articles/how-to-hold-spcx",
       verifiedAt: V,
-      note: "Article 8 characterisation comes from a secondary report. Confirm against Backpack's own disclosures before relying on it.",
+      note: "Confirmed against Backpack's own documentation, not a secondary report.",
     },
     structure: {
       value: "custodied_entitlement",
-      source:
-        "https://solanacompass.com/news/three-tokenized-spacex-products-now-trade-on-solana-and-they-work-very-differently",
+      source: "https://learn.backpack.exchange/articles/how-to-hold-spcx",
       verifiedAt: V,
-      note: "1:1 backing by shares held in regulated custody.",
+      note: "The issuer states tokenized SPCX is redeemable for a real SpaceX share through Backpack Securities, with ACATS and DTCC-compatible transfer infrastructure.",
     },
     redemption: {
       value: "portable_to_brokerage",
@@ -55,18 +53,18 @@ export const ISSUERS: Record<string, Issuer> = {
     },
     corporateActions: {
       value: true,
-      source:
-        "https://solanacompass.com/news/three-tokenized-spacex-products-now-trade-on-solana-and-they-work-very-differently",
+      source: "https://learn.backpack.exchange/articles/how-to-hold-spcx",
       verifiedAt: V,
+      note: "Issuer states corporate actions are reflected through proportional token balance adjustments, and dividends are automatically reinvested into additional tokens.",
     },
     shareholderRights: {
       value: true,
-      source:
-        "https://solanacompass.com/news/three-tokenized-spacex-products-now-trade-on-solana-and-they-work-very-differently",
+      source: "https://learn.backpack.exchange/articles/how-to-hold-spcx",
       verifiedAt: V,
-      note: "Reported as entitled to dividends and corporate actions on the underlying shares.",
+      note: "Issuer describes real ownership rights including cash dividends, corporate actions, brokerage transfers and applicable tax treaty benefits.",
     },
     homepage: "https://backpack.exchange",
+    docs: "https://docs.backpack.exchange",
   },
 
   backed: {
@@ -90,10 +88,9 @@ export const ISSUERS: Record<string, Issuer> = {
     },
     structure: {
       value: "securitized_exposure",
-      source:
-        "https://solanacompass.com/news/three-tokenized-spacex-products-now-trade-on-solana-and-they-work-very-differently",
+      source: "https://docs.xstocks.fi/docs/how-xstocks-work",
       verifiedAt: V,
-      note: "The claim runs against the issuing entity, not the underlying company.",
+      note: "The claim runs against Backed Assets (JE) Limited, not the underlying company. Confirmed from the issuer's own API: each token carries its own Swiss ISIN distinct from the share it tracks, so the token is a separate security rather than the share itself.",
     },
     redemption: {
       value: "issuer_redemption",
@@ -190,7 +187,7 @@ export const ISSUERS: Record<string, Issuer> = {
       value: "securitized_exposure",
       source: "https://solana.com/news/ondo-global-markets-tokenized-stocks-etfs-solana",
       verifiedAt: V,
-      note: "Needs direct confirmation of whether holders receive a security entitlement or a claim against Ondo.",
+      note: "Backed 1:1 by securities at US-registered broker-dealers; the holder's claim runs against Ondo rather than the underlying company. Verified on chain: every Ondo mint shares one mint authority and carries no permanent delegate, so Ondo cannot move tokens out of a holder's wallet.",
     },
     redemption: {
       value: "issuer_redemption",

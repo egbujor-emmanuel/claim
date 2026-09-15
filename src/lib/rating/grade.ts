@@ -156,6 +156,14 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         evidence: `permanentDelegate = ${onchain.permanentDelegate}`,
       });
       penalty += 1;
+    } else {
+      // Worth saying out loud. Most tokenized equities on Solana retain this
+      // power; an issuer that gives it up deserves the credit.
+      findings.push({
+        severity: "good",
+        message: "No permanent delegate. The issuer cannot take these tokens out of your wallet.",
+        evidence: "no permanentDelegate extension on the mint",
+      });
     }
     if (onchain.pausable?.paused) {
       penalty += 6;

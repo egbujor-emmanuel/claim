@@ -16,23 +16,6 @@ const fetchedAt = "2026-09-14T00:00:00.000Z";
 
 const MANUAL: TokenRecord[] = [
   {
-    mint: "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-    symbol: "SPCX",
-    name: "SpaceX - Backpack Securities",
-    issuerId: "backpack",
-    underlyingSymbol: "SPCX",
-    underlyingIsin: "US84615Q1031",
-    tokenIsin: null,
-    decimals: 6,
-    halted: false,
-    issuance: true,
-    redemption: true,
-    minOrderUsd: null,
-    // Issuer's own announcement of the canonical mint.
-    sourceUrl: "https://x.com/Backpack/status/2065464739749323171",
-    fetchedAt,
-  },
-  {
     mint: "PreANxuXjsy2pvisWWMNB6YaJNzr7681wJJr2rHsfTh",
     symbol: "SPACEX",
     name: "SpaceX PreStocks",

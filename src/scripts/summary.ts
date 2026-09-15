@@ -1,0 +1,11 @@
+import { loadUniverse, contested, multiToken } from "../lib/search.js";
+const u = loadUniverse();
+const by: Record<string, number> = {};
+u.tokens.forEach((t) => (by[t.issuerId] = (by[t.issuerId] ?? 0) + 1));
+console.log("tokens:", u.tokens.length);
+console.log("by issuer:", JSON.stringify(by));
+console.log("companies:", u.companies.length);
+console.log("multi-token companies:", multiToken().length);
+console.log("structurally contested:", contested().length);
+const three = multiToken().filter((c) => c.tokens.length >= 3).length;
+console.log("companies with 3+ tokens:", three);
