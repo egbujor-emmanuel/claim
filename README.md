@@ -80,7 +80,7 @@ GET /api/claim/{mint}
 
 Free, unauthenticated, CORS-open. Returns claim structure, issuer powers, exit reality, competing tokens for the same security, and the grade with all its findings.
 
-Any protocol accepting tokenized equities as collateral needs to know whether the issuer can freeze the position mid-liquidation, whether a permanent delegate can seize it, whether it can actually be liquidated at size, and whether the multiplier will silently shift its value. Nothing published that before.
+Any protocol accepting tokenized equities as collateral needs to know whether the issuer can freeze the position mid-liquidation, whether a permanent delegate can seize it, whether it can actually be liquidated at size, and whether the multiplier will silently shift its value. Those facts exist on chain and in issuer documentation, but no single call returned them together before this one.
 
 An unknown mint returns `404` with an explicit statement that absence is **not** a safety verdict.
 
