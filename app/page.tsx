@@ -98,7 +98,7 @@ export default async function Home({
       <footer>
         Built for the Solana Foundation Stocklana hackathon. Read-only: Claim never asks for a
         signature and never moves anything. Data from issuer APIs, public Solana RPC and
-        Jupiter quotes.
+        Jupiter quotes. <Link href="/api-docs">Public API</Link>.
       </footer>
     </main>
   );

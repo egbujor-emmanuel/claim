@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T13:33:03.788Z",
+ "generatedAt": "2026-09-15T13:49:00.621Z",
  "tradable": {
   "XsensupeZBdHxZtdnLptf1UfWpVyancWcit7qWFYZrJ": {
    "tradable": false,
@@ -2800,7 +2800,1636 @@
   "XsAk6BoV4kBXUM6WXodKyM21CN92G9jArwAzFvbh3LX": {
    "tradable": false,
    "reason": "NO_ROUTES_FOUND"
+  },
+  "XsosCAu1L8Ebpr4SdBDV1EboYDRTWCH8j79UnHYzvbN": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsXoAR52Q2NYFkYiNqhCq4FauvyA1tdRsrmEYNf9fuh": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsLT5v4DAd1kwViPQh3SZiT5kzJfNLxzJxJN1dySZTe": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsYD72ntjj7ZwoFDZCDmN2gamTcLpnywqvG7PQN5vCN": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsNVBwVGqtDqmA2Waoiux5mfykH8nepLK74z3ZoQWK2": {
+   "tradable": true,
+   "reason": null
+  },
+  "XstuBvLo7soZzj3beCCPonHpR3eUfPNSeQzw35Swons": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xsq9sEQjYiUTSZ55RrbHAzVfz8HotwFGrqgxkgiv4LB": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xs54CrhmpVp6uxZXwgSTegrRH2kShh88XFPzgf4BExu": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xs7UsqobM3EJgMeHwdAbmDBCZH1G5WTCjatpeYcCr8x": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xswbpc8UqU6e1j9QZEWCjBMjyvz4twqD7PCy6j2e7jj": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsexQ9qqNbDkLE6XwCN9ceVhLo8Lxc7UheVR6eBkKyo": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsrwdnwLHjVnyy7fgE2Pdwjp3czEm73jPjkSC5xzUBw": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xs2ZEuDVSQkNnXHqfqEYKVShLHpecyKfdfpEYwiHtQE": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "XsLR2VCGNzYVLfJGEwwNZsRYDZBGyBnoQH5rPGvwodA": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xsbe4fwmjVQEWEPkzfyxqNdPUUK7X9dKfTJrZdDbNgx": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xs8S5L4HkJpeBWF1J4oyUX6rVwGHmG7GZ7PiChPt7nY": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "Xsw2uU1i8tHjbgstUbtt3m6kg7BS7AgG5aj8z7ddmmN": {
+   "tradable": true,
+   "reason": null
+  },
+  "XswXzAsMV9kebQjCVtr1btvrQgQ7C4C9kKgH4QYAVzw": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "Xssu2cDLdZXZYrq17frTVrb3meumRCAzEf7pXyxoWVN": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsMxAoJP47FQGLsVUvSS2QfBaHdNsd7DRU6nWRL8RSa": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xsu7Tc5J2fVUE4H5vYAiSr34cvLJeCsYPMjAYnayQn6": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "XsLUiVEwYeoneKpgR1C2Q4DBUZhX4xDktSCfQqq8zmn": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsQZdaWUAGC4R3fgD2N1fupKvJfJq6YM51ccnsLUWFA": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsSN912SN4Whn2xn59vWZHt1uLbw9WnoNGp5MigmHFf": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsrsM2RgtYxXqxmy4iWgxQJUkkHG1U5wzi74sVNUW8m": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsJJneENiaBPqqcdK1gMsfwi9cbw111azigzRYHoctX": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsYHvpLWfTfqdLkPbCc4eUT21eH521BRTXBypgzpEDH": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xst6eFD4YT6sz9RLMysN9SyvaZWtraSdVJQGu5ZkAme": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "XsTTtPA5V19YwHKDv4xeVXNM6kdsQNJvg3MyWkRUckt": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "XsybfiKkD4UmjkAGT2uR8X2sq9AWFtvGJM2KTffoALZ": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "XsPHkGBbztHCCe1RMhiAs7CxVqoghmyd6zDUfrbfVWG": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "XsAiRejKuvLAdq9KtedrMSrabz7SWdzKoVK6Qgac1Ki": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsvHMmbDcd14DHHW16PkxPGW7ks77ehxUv1E9Zmxgj4": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsxAd6okt8y1RRK6gNg7iJaqiWNiq5Md5EDf3ZrF2dm": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "XsaQGz41BEQkS9xAB44uvUtuXcdLJAXEU1dogEzWMZ8": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "Xs78JED6PFZxWc2wCEPspZW9kL3Se5J7L5TChKgsidH": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsEdDDTcVGJU6nvdRdVnj53eKTrsCkvtrVfXGmUK68V": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsWAnFM77x6YvpdaZoos79R12o4Yj4r7EVkaTWddzhU": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsFnZawJdLdXfBSEt5Vw29K5vdBiHotdPLjUPafpfHs": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsyZcb97BzETAqi9BoP2C9D196MiMNBisGMVNje2Thz": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsbELVbLGBkn7xfMfyYuUipKGt1iRUc2B7pYRvFTFu3": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "XswCi2U1G6Ppbw1QhG45yKb8UKuR1FKLJrquv2FZSD4": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsPLBFy59Q3hY59KLAJur8QyvziMF4xUxGTxXqXE7cT": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsG5QyZTQnVSpsXRpD92K5ZGoxXjsmfTyx7fW7r18DV": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsBGEXxbBcuu8Nrokj14G8v4ezT3JYWWLneTzXK8t6Z": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsKSh3QDynp6oms9yHjZXbZo3pKzUBoqUFKPHS2g9Bh": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsMJtFbb8BwzQtck3oRXyAfs7SAPRuTXnSEDNd7BAVz": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsgrm4D6VBTfDx5bs7GNdjtmWDgZ8V79r3YpsYwf5py": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsZUSqxAXKJkEimvD4CoVvEb4WUC92TFgj5zRtBxFeL": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsQLZycSZ7QnBBdBXQaTbQdiUcbRqjNJgyBGAMzhHav": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xss5RAku5EH6UViFdvW7ss9xQjwQLsrs2opPMhb3k43": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsQ6NfzzLH8nspjrB9X8R2K64Zz7Tnxqu12juDiMPMW": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XshuHQ6o6SVpUNawvnnTMxsZ4tacZsNgVCLorv7TkFq": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsXcJ6GZ9kVnjqGsjBnktRcuwMBmvKWh8S93RefZ1rF": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsafvsGtzFqqHgTnA3aPC83EAMkacU5mcGtcSayhpVV": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs4uNhvBDAcp2mz3g9XR5q3vzLgmF1ANWxJgWk2d5u3": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsR4LAtaBgTKTRUhiijY1ba13nx4bepeEcag2Pr4dZ1": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XshWQWYVp5ff8CrAEsGmLVKD47nBWi3Ygn5v8wXK27G": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsn3H7ACEpSF2ULxeiD6kW4jRZXpurh8ZPttyfoS56W": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsEoih2x6nZuUjFwzGoba6MFmtzCkzW2c4YAm6baQbq": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsAsZLF4MmsvS1sDxRMrUz7REjHfwbC9UAMXSRBqgEB": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsDZMGEU8zadWFCkTtPBoPWYcUX3JHVmghnwf2Mve2q": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsuwUbQSzCJN2wZabD1Gxf1MER2Ypa7hMzVMYB2WawJ": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs31mE5EiqjSHEaiX9QDKCN6NvSGCqpJ6f1FNq2wri5": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsguBZPkM9BDmxspmWe29EmrYZBv21ENcC27Pqh7grB": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsJb1p4Ks6VFggq68JyMz7S3kdRfkqh4wA6EMyxi4DD": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs3c2aZenyRQwXjki5MDxJEJ2km27ef2rWQMFWx7QKJ": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XscE4GUcsYhcyZu5ATiGUMmhxYa1D5fwbpJw4K6K4dp": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsrBCwaH8c46xiqXBChzobgufRKxQxAWUWbndgBNzFn": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsqBC5tcVQLYt8wqGCHRnAUUecbRYXoJCReD6w7QEKp": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsGtpmjhmC8kyjVSWL4VicGu36ceq9u55PTgF8bhGv6": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs2yquAgsHByNzx68WJC55WHjHBvG9JsMB7CWjTLyPy": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsaQTCgebC2KPbf27KUhdv5JFvHhQ4GDAPURwrEhAzb": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsjQP3iMAaQ3kQScQKthQpx9ALRbjKAjQtHg6TFomoc": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsssYEQjzxBCFgvYFFNuhJFBeHNdLWYeUSP8F45cDr9": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsgaUyp4jd1fNBCxgtTKkW64xnnhQcvgaxzsbAq5ZD1": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs7xXqkcK7K8urEqGg52SECi79dRp2cEKKuYjUePYDw": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsuxRGDzbLjnJ72v74b7p9VY6N66uYgTCyfwwRjVCJA": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsPdAVBi8Zc1xvv53k4JcMrQaEDTgkGqKYeh7AYgPHV": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs5UJzmCRQ8DWZjskExdSQDnbE6iLkRu2jjrRAB1JSU": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XshPgPdXFRWB8tP1j82rebb2Q9rPgGX37RuqzohmArM": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsba6tUnSjDae2VcopDB6FGGDaxRrewFCDa5hKn5vT3": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsRbLZthfABAPAfumWNEJhPyiKDW6TvDVeAeW7oKqA2": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsDgw22qRLTv5Uwuzn6T63cW69exG41T6gwQhEK22u2": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsvKCaNsxg2GN8jjUmq71qukMJr7Q1c5R2Mk9P8kcS8": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XspwhyYPdWVM8XBHZnpS9hgyag9MKjLRyE3tVfmCbSr": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xseo8tgCZfkHxWS9xbFYeKFyMSbWEvZGFV1Gh53GtCV": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsEH7wWfJJu2ZT3UCFeVfALnVA6CP5ur7Ee11KmzVpL": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsHtf5RpxsQ7jeJ9ivNewouZKJHbPxhPoEy6yYvULr7": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XswsQk4duEQmCbGzfqUUWYmi7pV7xpJ9eEmLHXCaEQP": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs8drBWy3Sd5QY3aifG9kt9KFs2K3PGZmx7jWrsrk57": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs3ZFkPYT2BN7qBMqf1j1bfTeTm1rFzEFSsQ1z3wAKU": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsczbcQ3zfcgAEt9qHQES8pxKAVG5rujPSHQEXi4kaN": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsSr8anD1hkvNMu8XQiVcmiaTP7XGvYu7Q58LdmtE8Z": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsjFwUPiLofddX5cWFHW35GCbXcSu1BCUGfxoQAQjeL": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsfAzPzYrYjd4Dpa9BU3cusBsvWfVB9gBcyGC87S57n": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsr3pdLQyXvDJBFgpR5nexCEZwXvigb8wbPYp4YoNFf": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs151QeqTCiuKtinzfRATnUESM2xTU6V9Wy8Vy538ci": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsv99frTRUeornyvCfvhnDesQDWuvns1M852Pez91vF": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XswbinNKyPmzTa5CskMbCPvMW6G5CMnZXZEeQSSQoie": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsnQnU7AdbRZYe2akqqpibDdXjkieGFfSkbkjX1Sd1X": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsAtbqkAP1HJxy7hFDeq7ok6yM43DQ9mQ1Rh861X8rw": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsNNMt7WTNA2sV3jrb1NNfNgapxRF5i4i6GcnTRRHts": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XszjVtyhowGjSC5odCqBpW1CtXXwXjYokymrk7fGKD3": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsYdjDjNUygZ7yGKfQaB6TxLh2gC6RRjzLtLAGJrhzV": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsApJFV9MAktqnAc6jqzsHVujxkGm9xcSUffaBoYLKC": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xsnuv4omNoHozR6EEW5mXkw8Nrny5rB3jVfLqi6gKMH": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsqgsbXwWogGJsNcVZ3TyVouy2MbTkfCFhCGGGcQZ2p": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsMAqkcKsUewDrzVkait4e5u4y8REgtyS7jWgCpLV2C": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsGVi5eo1Dh2zUpic4qACcjuWGjNv8GCt3dm5XcX6Dn": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsaHND8sHyfMfsWPj6kSdd5VwvCayZvjYgKmmcNL5qh": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XszvaiXGPwvk2nwb3o9C1CX4K6zH8sez11E6uyup6fe": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB": {
+   "tradable": false,
+   "reason": "fetch failed"
+  },
+  "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xsa62P5mvPszXL1krVUnU5ar38bBSVcWAB6fmPCo5Zu": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xs3eBt7uRfJX8QUs4suhyU8p2M6DoUDrJyWBa8LLZsg": {
+   "tradable": true,
+   "reason": null
+  },
+  "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX": {
+   "tradable": true,
+   "reason": null
+  },
+  "Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh": {
+   "tradable": true,
+   "reason": null
+  },
+  "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp": {
+   "tradable": true,
+   "reason": null
+  },
+  "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb": {
+   "tradable": true,
+   "reason": null
+  },
+  "PreANxuXjsy2pvisWWMNB6YaJNzr7681wJJr2rHsfTh": {
+   "tradable": true,
+   "reason": null
+  },
+  "123mYEnRLM2LLYsJW3K6oyYh8uP1fngj732iG638ondo": {
+   "tradable": true,
+   "reason": null
+  },
+  "gEGtLTPNQ7jcg25zTetkbmF7teoDLcrfTnQfmn2ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "KeGv7bsfR4MheC1CkmnAVceoApjrkvBhHYjWb67ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "FRmH6iRkMr33DLG6zVLR7EM4LojBFAuq6NtFzG6ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "bbahNA5vT9WJeYft8tALrH1LXWffjwqVoUbqYa1ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "14Tqdo8V1FhzKsE3W2pFsZCzYPQxxupXRcqw9jv6ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "fDxs5y12E7x7jBwCKBXGqt71uJmCWsAQ3Srkte6ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "g4KnPrxPLeeKkwvDmZFMtYQPM64eHeShbD55vK6ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "14diAn5z8kjrKwSC8WLqvBqqe5YmihJhjxRxd8Z6ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "cJpUMp5R7rZ6fGeLHbHhrRuJzK9mkyKDjZqNpT3ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "5u6KDiNJXxX4rGMfYT4BApZQC5CuDNrG6MHkwp1ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "FSz4ouiqXpHuGPcpacZfTzbMjScoj5FfzHkiyu2ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "BVdXGvmgi6A9oAiwWvBvP76fyTqcCNRJMM7zMN6ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "HfsnTS5qtdStwec9DfBrunRqnAMYMMz1kjv9Hu9ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "cdKfoNjbXgnSuxvoajhtH3uixfZhq1YXhQsS1Rwondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "1FWZtdWN7y38BSXGzbs8D6Shk88oL9atDNgbVz9ondo": {
+   "tradable": true,
+   "reason": null
+  },
+  "GmDADFpfwjfzZq9MfCafMDTS69MgVjtzD7Fd9a4ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "7D7ukbcnUNYt7Et5vtsDZhAy28MKu9pkHka1Hp9ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "12Rh6JhfW4X5fKP16bbUdb4pcVCKDHFB48x8GG33ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "KJNeFW3kk3ycPjXpC6cbuyckjeYHacc2ekhtAi5ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "mJf1xT3suXtkXBCfZcE9oUUuyxkvSgqYBWiX7v1ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "1YVZ4LGpq8CAhpdpm3mgy7GgPb83gJczCpxLUQ3ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "E5Gczsavxcomqf6Cw1sGCKLabL1xYD2FzKxVoB4ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "kxEW4oJL75K37VeXaZF1ynbHQATQwhECQKN1374ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "EsVHcyRxXFJCLMiuYLWhoDygrNe1BJGpYeZ17X7ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "LZddqAqKqJW9oMZSjTxCUmbmzBRQtv9gMkD9hZ3ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "e6G4pfFcrdKxJuZ4YXixRFfMbpMvgXG2Mjcus71ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "gud6b3fYekjhMG5F818BALwbg2vt4JKoow59Md9ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "g646pcdG2Rt5DH9WZzL7VVnVDWCCMTTrnktwE74ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "EUbJjmDt8JA222M91bVLZs211siZ2jzbFArH9N3ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "k18WJUULWheRkSpSquYGdNNmtuE2Vbw1hpuUi92ondo": {
+   "tradable": true,
+   "reason": null
+  },
+  "HrYNm6jTQ71LoFphjVKBTdAE4uja7WsmLG8VxB8ondo": {
+   "tradable": false,
+   "reason": "NO_ROUTES_FOUND"
+  },
+  "dvj2kKFSyjpnyYSYppgFdAEVfgjMEoQGi9VaV23ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "hWfiw4mcxT8rnNFkk6fsCQSxoxgZ9yVhB6tyeVcondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "KaSLSWByKy6b9FrCYXPEJoHmLpuFZtTCJk1F1Z9ondo": {
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE"
   }
  },
- "ladders": {}
+ "ladders": {
+  "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8": {
+   "mint": "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 146.68477734717646,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 999.374,
+     "lossPct": 0.06259999999999764,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9993.308024,
+     "lossPct": 0.06691976000000067,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 99647.97124,
+     "lossPct": 0.35202876000000105,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 540029.42486,
+     "lossPct": 45.997057514,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 100000,
+   "checkedAt": "2026-09-15T13:45:25.751Z"
+  },
+  "XsAxB3xLnt7xto5ChiSbVNHBoXcXzKuzS7FieiNYwtY": {
+   "mint": "XsAxB3xLnt7xto5ChiSbVNHBoXcXzKuzS7FieiNYwtY",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 103.78837964543814,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.100676,
+     "lossPct": 99.9899324,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 1.00676,
+     "lossPct": 99.9899324,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 10.067601,
+     "lossPct": 99.989932399,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 20,
+     "lossPct": 99.998,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:45:36.566Z"
+  },
+  "XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu": {
+   "mint": "XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 5733.287467033597,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.28855,
+     "lossPct": 99.971145,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.288886,
+     "lossPct": 99.99711114,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.28892,
+     "lossPct": 99.99971108,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:45:44.223Z"
+  },
+  "XsfCC9VL4DamVGNgdJpfLXB3sBVa158Gbx8sh7NzmTk": {
+   "mint": "XsfCC9VL4DamVGNgdJpfLXB3sBVa158Gbx8sh7NzmTk",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 1.8831473191797237,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 988.321404,
+     "lossPct": 1.167859599999997,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9719.423931,
+     "lossPct": 2.8057606900000063,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 11597.01522,
+     "lossPct": 88.40298478,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 615.192675,
+     "lossPct": 99.9384807325,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 10000,
+   "checkedAt": "2026-09-15T13:45:51.742Z"
+  },
+  "Xs72K1Ta1D5ccNy3RzSyQWGgZywWvphX78pL8WBk1Bo": {
+   "mint": "Xs72K1Ta1D5ccNy3RzSyQWGgZywWvphX78pL8WBk1Bo",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 375.4091960236658,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.291465,
+     "lossPct": 99.9708535,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.291805,
+     "lossPct": 99.99708195,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.291839,
+     "lossPct": 99.999708161,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:45:59.832Z"
+  },
+  "XsosCAu1L8Ebpr4SdBDV1EboYDRTWCH8j79UnHYzvbN": {
+   "mint": "XsosCAu1L8Ebpr4SdBDV1EboYDRTWCH8j79UnHYzvbN",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 5843.510781277391,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.087801,
+     "lossPct": 99.99912199,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:07.407Z"
+  },
+  "XsXoAR52Q2NYFkYiNqhCq4FauvyA1tdRsrmEYNf9fuh": {
+   "mint": "XsXoAR52Q2NYFkYiNqhCq4FauvyA1tdRsrmEYNf9fuh",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 32.914608,
+     "lossPct": 96.7085392,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 329.146086,
+     "lossPct": 96.70853914,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 584.706318,
+     "lossPct": 99.41529368200001,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 741.352031,
+     "lossPct": 99.9258647969,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:15.111Z"
+  },
+  "XsLT5v4DAd1kwViPQh3SZiT5kzJfNLxzJxJN1dySZTe": {
+   "mint": "XsLT5v4DAd1kwViPQh3SZiT5kzJfNLxzJxJN1dySZTe",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 715.0978611422973,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.156551,
+     "lossPct": 99.9843449,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.156714,
+     "lossPct": 99.99843286,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.156731,
+     "lossPct": 99.999843269,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:22.742Z"
+  },
+  "XsYD72ntjj7ZwoFDZCDmN2gamTcLpnywqvG7PQN5vCN": {
+   "mint": "XsYD72ntjj7ZwoFDZCDmN2gamTcLpnywqvG7PQN5vCN",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 4537.822752643282,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 6.730405,
+     "lossPct": 99.3269595,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 67.304053,
+     "lossPct": 99.32695946999999,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 500.566634,
+     "lossPct": 99.499433366,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 520.401918,
+     "lossPct": 99.94795980820001,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:30.129Z"
+  },
+  "XsNVBwVGqtDqmA2Waoiux5mfykH8nepLK74z3ZoQWK2": {
+   "mint": "XsNVBwVGqtDqmA2Waoiux5mfykH8nepLK74z3ZoQWK2",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2834.1457884593583,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 1.253336,
+     "lossPct": 99.8746664,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 1.25589,
+     "lossPct": 99.9874411,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 1.256172,
+     "lossPct": 99.9998743828,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:38.105Z"
+  },
+  "XstuBvLo7soZzj3beCCPonHpR3eUfPNSeQzw35Swons": {
+   "mint": "XstuBvLo7soZzj3beCCPonHpR3eUfPNSeQzw35Swons",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 3689.492325855962,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.196498,
+     "lossPct": 99.9803502,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.19671,
+     "lossPct": 99.9980329,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.196731,
+     "lossPct": 99.999803269,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:45.864Z"
+  },
+  "Xsq9sEQjYiUTSZ55RrbHAzVfz8HotwFGrqgxkgiv4LB": {
+   "mint": "Xsq9sEQjYiUTSZ55RrbHAzVfz8HotwFGrqgxkgiv4LB",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 168.97714753056798,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 219.839796,
+     "lossPct": 78.0160204,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 787.728202,
+     "lossPct": 92.12271798,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 833.715912,
+     "lossPct": 99.9166284088,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:46:53.213Z"
+  },
+  "Xs54CrhmpVp6uxZXwgSTegrRH2kShh88XFPzgf4BExu": {
+   "mint": "Xs54CrhmpVp6uxZXwgSTegrRH2kShh88XFPzgf4BExu",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 108.98909346141731,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 503.471327,
+     "lossPct": 49.652867300000004,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 790.599751,
+     "lossPct": 92.09400249000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 796.0903,
+     "lossPct": 99.2039097,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 850.109091,
+     "lossPct": 99.9149890909,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:00.549Z"
+  },
+  "Xs7UsqobM3EJgMeHwdAbmDBCZH1G5WTCjatpeYcCr8x": {
+   "mint": "Xs7UsqobM3EJgMeHwdAbmDBCZH1G5WTCjatpeYcCr8x",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 280.0006720016128,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 91.491378,
+     "lossPct": 90.85086220000001,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 646.281944,
+     "lossPct": 93.53718056,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 811.602116,
+     "lossPct": 99.188397884,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 1065.380037,
+     "lossPct": 99.89346199629999,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:08.600Z"
+  },
+  "Xswbpc8UqU6e1j9QZEWCjBMjyvz4twqD7PCy6j2e7jj": {
+   "mint": "Xswbpc8UqU6e1j9QZEWCjBMjyvz4twqD7PCy6j2e7jj",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 1550.0031000062,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 912.092648,
+     "lossPct": 8.790735199999995,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 5192.726723,
+     "lossPct": 48.07273277,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 6181.401478,
+     "lossPct": 93.818598522,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 6943.214025,
+     "lossPct": 99.3056785975,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:16.032Z"
+  },
+  "XsexQ9qqNbDkLE6XwCN9ceVhLo8Lxc7UheVR6eBkKyo": {
+   "mint": "XsexQ9qqNbDkLE6XwCN9ceVhLo8Lxc7UheVR6eBkKyo",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 1653.411815280832,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 154.114962,
+     "lossPct": 84.5885038,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 602.151402,
+     "lossPct": 93.97848598,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 649.351091,
+     "lossPct": 99.350648909,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 660.237671,
+     "lossPct": 99.93397623290001,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:23.987Z"
+  },
+  "XsrwdnwLHjVnyy7fgE2Pdwjp3czEm73jPjkSC5xzUBw": {
+   "mint": "XsrwdnwLHjVnyy7fgE2Pdwjp3czEm73jPjkSC5xzUBw",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.997996,
+     "lossPct": 99.9002004,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.999799,
+     "lossPct": 99.99000201000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.999979,
+     "lossPct": 99.999000021,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 0.999997,
+     "lossPct": 99.9999000003,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:32.159Z"
+  },
+  "XsLR2VCGNzYVLfJGEwwNZsRYDZBGyBnoQH5rPGvwodA": {
+   "mint": "XsLR2VCGNzYVLfJGEwwNZsRYDZBGyBnoQH5rPGvwodA",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.997996,
+     "lossPct": 99.9002004,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.999799,
+     "lossPct": 99.99000201000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.999979,
+     "lossPct": 99.999000021,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 0.999997,
+     "lossPct": 99.9999000003,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:40.764Z"
+  },
+  "Xsbe4fwmjVQEWEPkzfyxqNdPUUK7X9dKfTJrZdDbNgx": {
+   "mint": "Xsbe4fwmjVQEWEPkzfyxqNdPUUK7X9dKfTJrZdDbNgx",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 49.659443,
+     "lossPct": 95.0340557,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 496.594432,
+     "lossPct": 95.03405568,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 691.940433,
+     "lossPct": 99.308059567,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 696.434763,
+     "lossPct": 99.9303565237,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:48.885Z"
+  },
+  "Xsw2uU1i8tHjbgstUbtt3m6kg7BS7AgG5aj8z7ddmmN": {
+   "mint": "Xsw2uU1i8tHjbgstUbtt3m6kg7BS7AgG5aj8z7ddmmN",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 18018.018018018018,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 3.756756,
+     "lossPct": 99.62432439999999,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 3.772965,
+     "lossPct": 99.96227035000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 3.774593,
+     "lossPct": 99.99622540700001,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 3.774756,
+     "lossPct": 99.9996225244,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:47:56.802Z"
+  },
+  "Xssu2cDLdZXZYrq17frTVrb3meumRCAzEf7pXyxoWVN": {
+   "mint": "Xssu2cDLdZXZYrq17frTVrb3meumRCAzEf7pXyxoWVN",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 270.5495944461579,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 959.836094,
+     "lossPct": 4.0163906,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 7843.149632,
+     "lossPct": 21.568503680000003,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": 1000,
+   "checkedAt": "2026-09-15T13:48:04.479Z"
+  },
+  "XsMxAoJP47FQGLsVUvSS2QfBaHdNsd7DRU6nWRL8RSa": {
+   "mint": "XsMxAoJP47FQGLsVUvSS2QfBaHdNsd7DRU6nWRL8RSa",
+   "tradable": false,
+   "reason": "TOKEN_NOT_TRADABLE",
+   "priceUsd": null,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:12.387Z"
+  },
+  "XsLUiVEwYeoneKpgR1C2Q4DBUZhX4xDktSCfQqq8zmn": {
+   "mint": "XsLUiVEwYeoneKpgR1C2Q4DBUZhX4xDktSCfQqq8zmn",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.997996,
+     "lossPct": 99.9002004,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.999799,
+     "lossPct": 99.99000201000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.999979,
+     "lossPct": 99.999000021,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 0.999997,
+     "lossPct": 99.9999000003,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:13.805Z"
+  },
+  "XsQZdaWUAGC4R3fgD2N1fupKvJfJq6YM51ccnsLUWFA": {
+   "mint": "XsQZdaWUAGC4R3fgD2N1fupKvJfJq6YM51ccnsLUWFA",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2028.7679292365747,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 1.009942,
+     "lossPct": 99.8990058,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 1.011777,
+     "lossPct": 99.98988223,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 1.011961,
+     "lossPct": 99.998988039,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 1.011979,
+     "lossPct": 99.9998988021,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:21.708Z"
+  },
+  "XsSN912SN4Whn2xn59vWZHt1uLbw9WnoNGp5MigmHFf": {
+   "mint": "XsSN912SN4Whn2xn59vWZHt1uLbw9WnoNGp5MigmHFf",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2002.5231792057994,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.997996,
+     "lossPct": 99.9002004,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.999799,
+     "lossPct": 99.99000201000001,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.999979,
+     "lossPct": 99.999000021,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 0.999997,
+     "lossPct": 99.9999000003,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:30.624Z"
+  },
+  "XsrsM2RgtYxXqxmy4iWgxQJUkkHG1U5wzi74sVNUW8m": {
+   "mint": "XsrsM2RgtYxXqxmy4iWgxQJUkkHG1U5wzi74sVNUW8m",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 2668.8729349595665,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 1.205709,
+     "lossPct": 99.87942910000001,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 1.208115,
+     "lossPct": 99.98791885,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 1.208356,
+     "lossPct": 99.998791644,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 1.20838,
+     "lossPct": 99.999879162,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:38.429Z"
+  },
+  "XsJJneENiaBPqqcdK1gMsfwi9cbw111azigzRYHoctX": {
+   "mint": "XsJJneENiaBPqqcdK1gMsfwi9cbw111azigzRYHoctX",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 13292.569453675396,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.185256,
+     "lossPct": 99.9814744,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 0.185454,
+     "lossPct": 99.99814546,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.185474,
+     "lossPct": 99.999814526,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:46.307Z"
+  },
+  "XsYHvpLWfTfqdLkPbCc4eUT21eH521BRTXBypgzpEDH": {
+   "mint": "XsYHvpLWfTfqdLkPbCc4eUT21eH521BRTXBypgzpEDH",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 1224.0051897820047,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 0.714372,
+     "lossPct": 99.9285628,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 0.715589,
+     "lossPct": 99.999284411,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 0.7156,
+     "lossPct": 99.99992843999999,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": null,
+   "checkedAt": "2026-09-15T13:48:53.968Z"
+  }
+ }
 }
