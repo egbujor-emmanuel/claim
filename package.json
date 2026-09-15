@@ -7,7 +7,12 @@
   "scripts": {
     "scan": "tsx src/scripts/scan.ts",
     "probe": "tsx src/scripts/probe.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "find": "tsx src/scripts/find.ts",
+    "analyze": "tsx src/scripts/analyze.ts",
+    "reserves": "tsx src/scripts/reserves.ts",
+    "verify": "tsx src/scripts/verify.ts",
+    "impostors": "tsx src/scripts/impostors.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

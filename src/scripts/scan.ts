@@ -9,6 +9,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { xstocksAdapter } from "../lib/ingest/xstocks.js";
 import { manualAdapter } from "../lib/ingest/manual.js";
+import { ondoAdapter } from "../lib/ingest/ondo.js";
 import { groupByCompany, contestedCompanies, hasMixedIssuers } from "../lib/ingest/companies.js";
 import { fetchMints, effectiveMultiplier, hasMultiplierTrap } from "../lib/onchain/mint.js";
 import type { TokenRecord } from "../lib/ingest/types.js";
@@ -22,7 +23,11 @@ function log(msg: string) {
 const started = Date.now();
 
 log("fetching issuer registries...");
-const batches = await Promise.all([xstocksAdapter.fetchTokens(), manualAdapter.fetchTokens()]);
+const batches = await Promise.all([
+  xstocksAdapter.fetchTokens(),
+  manualAdapter.fetchTokens(),
+  ondoAdapter.fetchTokens(),
+]);
 
 const tokens: TokenRecord[] = [];
 const seen = new Set<string>();

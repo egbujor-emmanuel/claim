@@ -11,9 +11,30 @@ import type { Company, TokenRecord } from "./types.js";
  * the fallback.
  */
 
-function keyFor(token: TokenRecord): string | null {
-  if (token.underlyingIsin) return `isin:${token.underlyingIsin}`;
-  if (token.underlyingSymbol) return `sym:${token.underlyingSymbol.toUpperCase()}`;
+/**
+ * Build a ticker -> ISIN map from whichever issuers publish ISINs.
+ *
+ * Without this, grouping silently fails exactly where it matters most. xStocks
+ * publishes an ISIN for AAPLx, Ondo publishes none for AAPLon, so keying on
+ * "isin:US0378331005" and "sym:AAPL" puts the same company in two buckets and
+ * the tool reports zero competing claims for Apple. Backfilling first is what
+ * makes cross-issuer comparison work at all.
+ */
+function buildIsinIndex(tokens: TokenRecord[]): Map<string, string> {
+  const index = new Map<string, string>();
+  for (const token of tokens) {
+    if (token.underlyingSymbol && token.underlyingIsin) {
+      index.set(token.underlyingSymbol.toUpperCase(), token.underlyingIsin);
+    }
+  }
+  return index;
+}
+
+function keyFor(token: TokenRecord, isinIndex: Map<string, string>): string | null {
+  const symbol = token.underlyingSymbol?.toUpperCase();
+  const isin = token.underlyingIsin ?? (symbol ? isinIndex.get(symbol) : undefined);
+  if (isin) return `isin:${isin}`;
+  if (symbol) return `sym:${symbol}`;
   return null;
 }
 
@@ -27,10 +48,11 @@ function displayName(token: TokenRecord): string {
 }
 
 export function groupByCompany(tokens: TokenRecord[]): Company[] {
+  const isinIndex = buildIsinIndex(tokens);
   const buckets = new Map<string, TokenRecord[]>();
 
   for (const token of tokens) {
-    const key = keyFor(token);
+    const key = keyFor(token, isinIndex);
     if (!key) continue;
     const bucket = buckets.get(key);
     if (bucket) bucket.push(token);
@@ -41,11 +63,13 @@ export function groupByCompany(tokens: TokenRecord[]): Company[] {
   for (const [id, group] of buckets) {
     const first = group[0];
     if (!first) continue;
+    // Prefer a name and ISIN from a token that actually carries them.
+    const named = group.find((t) => t.underlyingIsin) ?? first;
     companies.push({
       id,
-      name: displayName(first),
-      underlyingSymbol: first.underlyingSymbol,
-      underlyingIsin: first.underlyingIsin,
+      name: displayName(named),
+      underlyingSymbol: named.underlyingSymbol ?? first.underlyingSymbol,
+      underlyingIsin: named.underlyingIsin ?? null,
       // Most representations first: those are the interesting rows.
       tokens: [...group].sort((a, b) => a.symbol.localeCompare(b.symbol)),
     });
