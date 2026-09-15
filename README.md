@@ -2,6 +2,8 @@
 
 **Not everything called a tokenized stock is a stock.**
 
+**Live: https://claim-puce-kappa.vercel.app** · [Public API](https://claim-puce-kappa.vercel.app/api-docs) · read-only, no wallet, nothing to sign.
+
 Three SpaceX tokens trade on Solana right now. They look interchangeable in a wallet. They are not.
 
 | | SPCX | SPCXx | SPACEX |
@@ -75,14 +77,14 @@ Four places where the obvious reading would have been wrong, and Claim does not 
 ## Public API
 
 ```
-GET /api/claim/{mint}
+GET https://claim-puce-kappa.vercel.app/api/claim/{mint}
 ```
 
 Free, unauthenticated, CORS-open. Returns claim structure, issuer powers, exit reality, competing tokens for the same security, and the grade with all its findings.
 
 Any protocol accepting tokenized equities as collateral needs to know whether the issuer can freeze the position mid-liquidation, whether a permanent delegate can seize it, whether it can actually be liquidated at size, and whether the multiplier will silently shift its value. Those facts exist on chain and in issuer documentation, but no single call returned them together before this one.
 
-An unknown mint returns `404` with an explicit statement that absence is **not** a safety verdict.
+Any mint works, indexed or not. A mint outside the indexed universe is read live from chain and identified by its on-chain fingerprint, because an unknown address is exactly when someone most needs an answer. A token that is not a tokenized equity at all — a stablecoin, a memecoin — comes back explicitly out of scope with no grade, rather than being failed on a scale it never belonged to. An address with no mint returns `404`, and malformed input `400`, both stating plainly that this is a failure to answer rather than a verdict.
 
 ## Running it
 

@@ -32,7 +32,7 @@ export const ONDO_GM_MINT_AUTHORITY = "9foMHsSDq7nMg4WPusSz9eY7tyxyukqborA8GyU5c
 /** Cheap pre-filter for search candidates. Inclusion is decided on chain. */
 const VANITY_SUFFIX = "ondo";
 
-const UNDERLYINGS = [
+const FALLBACK_UNDERLYINGS = [
   "AAPL", "NVDA", "TSLA", "MSFT", "GOOGL", "AMZN", "META", "NFLX", "AMD", "INTC",
   "COIN", "MSTR", "HOOD", "PLTR", "CRWD", "AVGO", "ORCL", "CRM", "ADBE", "UBER",
   "DIS", "BA", "JPM", "V", "MA", "WMT", "KO", "PEP", "NKE", "MCD",
@@ -93,15 +93,39 @@ export async function verifyOndoMints(mints: string[]): Promise<Set<string>> {
   return verified;
 }
 
+/**
+ * Tickers worth probing for an Ondo equivalent.
+ *
+ * Derived from the underlyings other issuers have already tokenised rather than
+ * hand-maintained. Ondo publishes no catalogue, so the honest approach is to
+ * ask about every equity we know exists and let the chain decide which answers
+ * are really theirs.
+ */
+export function candidateUnderlyings(known: string[]): string[] {
+  const set = new Set<string>();
+  for (const ticker of [...known, ...FALLBACK_UNDERLYINGS]) {
+    const clean = ticker.trim().toUpperCase();
+    // Ondo tickers are the underlying plus "on"; skip anything that cannot be one.
+    if (/^[A-Z.]{1,8}$/.test(clean)) set.add(clean);
+  }
+  return [...set].sort();
+}
+
 export const ondoAdapter: Adapter = {
   issuerId: "ondo",
 
   async fetchTokens(): Promise<TokenRecord[]> {
+    return fetchOndoTokens(FALLBACK_UNDERLYINGS);
+  },
+};
+
+export async function fetchOndoTokens(underlyings: string[]): Promise<TokenRecord[]> {
+  {
     const fetchedAt = new Date().toISOString();
     const candidates: Candidate[] = [];
     const seen = new Set<string>();
 
-    for (const underlying of UNDERLYINGS) {
+    for (const underlying of underlyings) {
       const ticker = `${underlying}on`;
       let results: JupToken[] = [];
       try {
@@ -144,8 +168,8 @@ export const ondoAdapter: Adapter = {
         sourceUrl: `on-chain mint authority ${ONDO_GM_MINT_AUTHORITY}`,
         fetchedAt,
       }));
-  },
-};
+  }
+}
 
 export interface ImpostorReport {
   ticker: string;
@@ -176,7 +200,7 @@ function classify(name: string, ticker: string, issuerName = "ondo"): ImpostorKi
 }
 
 /** Mints claiming an Ondo ticker that fail on-chain verification. */
-export async function findImpostors(underlyings = UNDERLYINGS.slice(0, 38)): Promise<ImpostorReport[]> {
+export async function findImpostors(underlyings = FALLBACK_UNDERLYINGS.slice(0, 38)): Promise<ImpostorReport[]> {
   const reports: ImpostorReport[] = [];
 
   for (const underlying of underlyings) {
