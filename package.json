@@ -12,7 +12,8 @@
     "analyze": "tsx src/scripts/analyze.ts",
     "reserves": "tsx src/scripts/reserves.ts",
     "verify": "tsx src/scripts/verify.ts",
-    "impostors": "tsx src/scripts/impostors.ts"
+    "impostors": "tsx src/scripts/impostors.ts",
+    "depth": "tsx src/scripts/depthscan.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

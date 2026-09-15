@@ -13,6 +13,7 @@ import { ISSUERS, issuerForMint } from "../data/issuers.js";
 import { fetchMint, effectiveMultiplier, hasMultiplierTrap } from "../lib/onchain/mint.js";
 import { daysUntilExpiry, EXPIRY } from "../lib/ingest/manual.js";
 import { checkAuthenticity } from "../lib/authenticity.js";
+import { rateCompany } from "../lib/rating/index.js";
 
 const SPCX = "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb";
 const SPCXX = "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8";
@@ -155,6 +156,44 @@ if (live) {
   check("live multiplier trap still present", hasMultiplierTrap(live),
     `effective ${effectiveMultiplier(live)}`);
 }
+
+// ---------------------------------------------------------------- phase 2
+section("PHASE 2: rating engine");
+
+const rated = rateCompany(sx!);
+const bySym = (s: string) => rated.ratings[
+  rated.tokens.find((t) => t.token.symbol === s)?.token.mint ?? ""
+];
+
+const spacexRating = bySym("SPACEX");
+const spcxRating = bySym("SPCX");
+const spcxxRating = bySym("SPCXx");
+
+check("every token in a company gets a rating",
+  Object.keys(rated.ratings).length === rated.tokens.length);
+check("SPACEX grades worse than SPCX",
+  (spacexRating?.grade ?? "A") > (spcxRating?.grade ?? "F"),
+  `SPACEX=${spacexRating?.grade} SPCX=${spcxRating?.grade} SPCXx=${spcxxRating?.grade}`);
+check("SPACEX is graded F", spacexRating?.grade === "F");
+check("every finding carries evidence",
+  Object.values(rated.ratings).every((r) => r.findings.every((f) => f.evidence.length > 0)));
+check("structure findings carry a source URL",
+  Object.values(rated.ratings).every((r) =>
+    r.findings.filter((f) => f.source).every((f) => f.source!.startsWith("http"))));
+check("SPACEX rating names the expiry",
+  spacexRating?.findings.some((f) => /expires in/i.test(f.message)) === true);
+check("SPACEX rating names the transfer fee",
+  spacexRating?.findings.some((f) => /taxed/i.test(f.message)) === true);
+check("SPACEX rating names single-key control",
+  spacexRating?.findings.some((f) => /one key controls/i.test(f.message)) === true);
+check("SPCX rating recognises portability",
+  spcxRating?.findings.some((f) => /brokerage/i.test(f.message)) === true);
+check("findings are ordered worst-first",
+  Object.values(rated.ratings).every((r) => {
+    const rank = { critical: 0, warning: 1, note: 2, good: 3 } as const;
+    return r.findings.every((f, i) =>
+      i === 0 || rank[r.findings[i - 1]!.severity] <= rank[f.severity]);
+  }));
 
 // ---------------------------------------------------------------- summary
 const bar = "=".repeat(56);

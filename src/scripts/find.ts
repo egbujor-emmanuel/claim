@@ -1,100 +1,74 @@
 /**
- * CLI: resolve a company to every claim on it.
+ * CLI: resolve a company to every claim on it, graded.
  *
  *   npm run find -- spacex
  *   npm run find -- apple
  */
-import { search, type ResolvedCompany } from "../lib/search.js";
-import { daysUntilExpiry, EXPIRY } from "../lib/ingest/manual.js";
+import { search } from "../lib/search.js";
+import { rateCompany, type RatedCompany } from "../lib/rating/index.js";
+import type { Finding, Severity } from "../lib/rating/grade.js";
 
-const STRUCTURE_LABEL: Record<string, string> = {
-  direct_entitlement: "Direct entitlement",
-  custodied_entitlement: "Custodied entitlement",
-  securitized_exposure: "Securitized exposure",
-  spv_interest: "SPV interest",
-  synthetic: "Synthetic",
-  unbacked: "Unbacked",
+const MARK: Record<Severity, string> = {
+  critical: "!!",
+  warning: " !",
+  note: "  ",
+  good: " +",
 };
 
-const REDEMPTION_LABEL: Record<string, string> = {
-  portable_to_brokerage: "Portable to a brokerage",
-  issuer_redemption: "Redeem with the issuer",
-  mandatory_conversion: "Must convert before a deadline",
-  secondary_only: "Secondary market only",
-};
+function renderFinding(f: Finding) {
+  console.log(`      ${MARK[f.severity]} ${f.message}`);
+  console.log(`         evidence: ${f.evidence}`);
+  if (f.source) console.log(`         source:   ${f.source}`);
+}
 
-function render(company: ResolvedCompany) {
-  const bar = "-".repeat(72);
+function render(company: RatedCompany) {
+  const bar = "=".repeat(76);
   console.log(`\n${bar}`);
-  console.log(`${company.name}${company.underlyingSymbol ? `  (${company.underlyingSymbol})` : ""}`);
-  if (company.underlyingIsin) console.log(`underlying ISIN: ${company.underlyingIsin}`);
+  console.log(`${company.name}${company.underlyingSymbol ? `   (${company.underlyingSymbol})` : ""}`);
+  if (company.underlyingIsin) console.log(`underlying security: ${company.underlyingIsin}`);
+
+  const n = company.tokens.length;
   console.log(
-    `${company.tokens.length} token${company.tokens.length === 1 ? "" : "s"} on Solana` +
-      (company.contested ? "  --  COMPETING CLAIM STRUCTURES" : ""),
+    `${n} token${n === 1 ? "" : "s"} on Solana` +
+      (company.contested ? "   --  THESE CONFER DIFFERENT LEGAL CLAIMS" : ""),
   );
   console.log(bar);
 
-  for (const { token, issuer, onchain } of company.tokens) {
-    console.log(`\n  ${token.symbol}   ${token.name}`);
-    console.log(`    mint           ${token.mint}`);
-    console.log(`    issuer         ${issuer?.name ?? "unknown"}`);
-    console.log(
-      `    structure      ${issuer ? (STRUCTURE_LABEL[issuer.structure.value] ?? issuer.structure.value) : "-"}`,
-    );
-    console.log(
-      `    exit           ${issuer ? (REDEMPTION_LABEL[issuer.redemption.value] ?? issuer.redemption.value) : "-"}`,
-    );
-    console.log(
-      `    holder rights  ${issuer ? (issuer.shareholderRights.value ? "yes" : "no") : "-"}`,
-    );
+  // Worst grade first: the thing a holder most needs to see.
+  const ordered = [...company.tokens].sort((a, b) => {
+    const ga = company.ratings[a.token.mint]?.grade ?? "F";
+    const gb = company.ratings[b.token.mint]?.grade ?? "F";
+    return gb.localeCompare(ga);
+  });
 
-    if (token.tokenIsin && token.tokenIsin !== token.underlyingIsin) {
-      console.log(`    token ISIN     ${token.tokenIsin}  (a different security from the share)`);
-    }
+  for (const resolved of ordered) {
+    const rating = company.ratings[resolved.token.mint];
+    if (!rating) continue;
+    const { token, issuer } = resolved;
 
-    const expiry = EXPIRY[token.mint];
-    if (expiry) {
-      const days = daysUntilExpiry(token.mint);
-      console.log(`    !! EXPIRES     ${expiry.deadline}  (${days} days)`);
-      console.log(`       ${expiry.action}`);
-    }
-
-    if (onchain) {
-      const powers: string[] = [];
-      if (onchain.permanentDelegate) powers.push("permanent delegate");
-      if (onchain.pausable) powers.push(onchain.pausable.paused ? "PAUSED NOW" : "pausable");
-      if ((onchain.transferFee?.basisPoints ?? 0) > 0) {
-        powers.push(`${onchain.transferFee!.basisPoints / 100}% transfer fee`);
-      }
-      if (onchain.transferHook?.programId) powers.push("transfer hook");
-      console.log(`    issuer powers  ${powers.length ? powers.join(", ") : "none"}`);
-      console.log(
-        `    control keys   ${onchain.distinctAuthorities.length}` +
-          (onchain.distinctAuthorities.length === 1 ? "  (single point of control)" : ""),
-      );
-      if (onchain.multiplierTrap) {
-        const naive = Number(onchain.scaledUiAmount?.multiplier ?? 1);
-        const real = Number(onchain.effectiveMultiplier);
-        console.log(
-          `    !! BALANCE     naive readers show ${((naive / real - 1) * 100).toFixed(1)}% vs reality`,
-        );
-      }
-    } else {
-      console.log(`    issuer powers  (no on-chain data)`);
-    }
+    console.log(`\n  [${rating.grade}]  ${token.symbol}   ${token.name}`);
+    console.log(`       ${rating.headline}`);
+    console.log(`       mint   ${token.mint}`);
+    console.log(`       issuer ${issuer?.name ?? "unknown"}`);
+    console.log();
+    rating.findings.forEach(renderFinding);
   }
-  console.log();
+
+  console.log(
+    `\n  Structure descriptions are sourced, not legal advice. Every on-chain\n` +
+      `  field above is readable from any public Solana RPC.\n`,
+  );
 }
 
 const query = process.argv.slice(2).join(" ");
 if (!query) {
   console.error("usage: npm run find -- <company or ticker>");
-  process.exit(1);
+  process.exitCode = 1;
+} else {
+  const results = search(query, 3);
+  if (results.length === 0) {
+    console.log(`\nNo tokenized equity found for "${query}".\n`);
+  } else {
+    results.map(rateCompany).forEach(render);
+  }
 }
-
-const results = search(query);
-if (results.length === 0) {
-  console.log(`\nNo tokenized equity found for "${query}".\n`);
-  process.exit(0);
-}
-results.forEach(render);
