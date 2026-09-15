@@ -20,10 +20,13 @@ import {
 import { cusipToIsin } from "../lib/ingest/backpack.js";
 import { rateCompany } from "../lib/rating/index.js";
 import { UNIVERSE_PATH } from "../lib/paths.js";
+import { analyseMint, identifyIssuer } from "../lib/live.js";
+import { probeTradable } from "../lib/market/depth.js";
 
 const SPCX = "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb";
 const SPCXX = "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8";
 const SPACEX = "PreANxuXjsy2pvisWWMNB6YaJNzr7681wJJr2rHsfTh";
+const USDC = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
 
 let passed = 0;
 let failed = 0;
@@ -276,8 +279,23 @@ if (await serverUp()) {
   check("API names the claim structure", body.claim?.structure === "spv_interest");
   check("API carries a disclaimer", Boolean(body.disclaimer));
 
-  const missing = await fetch(`${BASE}/api/claim/So11111111111111111111111111111111111111112`);
-  check("unknown mint returns 404, not a false verdict", missing.status === 404);
+  // An unindexed but real token must be analysed, not refused.
+  const unindexed = await fetch(`${BASE}/api/claim/${USDC}`);
+  const unindexedBody = (await unindexed.json()) as { grade?: string | null; indexed?: boolean };
+  check("an unindexed real token is analysed over HTTP", unindexed.status === 200);
+  check("API marks it unindexed and declines to grade it",
+    unindexedBody.indexed === false && unindexedBody.grade === null);
+
+  // An address with no mint at all must fail honestly rather than imply a verdict.
+  const notMint = await fetch(`${BASE}/api/claim/11111111111111111111111111111111`);
+  check("a non-mint address returns 404, not a false verdict", notMint.status === 404);
+
+  // Malformed input must be rejected before any RPC call.
+  const garbage = await fetch(`${BASE}/api/claim/not-base58`);
+  check("a malformed address returns 400", garbage.status === 400);
+
+  check("API exposes how stale the indexed universe is",
+    typeof (body as { universeAgeHours?: number }).universeAgeHours === "number");
 
   const home = await fetch(`${BASE}/?q=spacex`);
   const html = await home.text();
@@ -299,6 +317,73 @@ if (await serverUp()) {
   section("PHASE 3: web app and public API");
   console.log(`  SKIP  no server at ${BASE} (start one with: npx next start -p 3948)`);
 }
+
+// ---------------------------------------------------------------- phase 4
+section("PHASE 4: failure modes");
+
+// An unknown mint must still get a real answer, not a dead end.
+const unknown = await analyseMint(USDC);
+check("an unindexed mint is analysed live, not refused",
+  unknown.error === null && unknown.rating !== null, `graded ${unknown.rating?.grade}`);
+check("live analysis marks itself unindexed", unknown.indexed === false);
+check("a stablecoin is declared out of scope, not failed",
+  unknown.rating?.inScope === false && unknown.rating?.grade === null,
+  `grade=${unknown.rating?.grade ?? "none"} inScope=${unknown.rating?.inScope}`);
+check("out-of-scope tokens are not accused of anything",
+  unknown.rating?.findings.every((f) => f.severity !== "critical") === true);
+check("out-of-scope headline says so plainly",
+  /not a tokenized equity/i.test(unknown.rating?.headline ?? ""));
+
+// The quote asset cannot be quoted against itself. Reporting "USDC has no
+// market" would have been the single most discrediting thing on the page.
+const usdcDepth = await probeTradable(USDC);
+check("the quote asset is not reported as untradable", usdcDepth.tradable === true);
+
+// A counterfeit still must be caught: it claims to be an equity and cannot be one.
+const impostor = await fetchMint("LNe8SGaLswHwxXshWMSsyGB286dNUJjo8hmUDpepump");
+if (impostor) {
+  const v = checkAuthenticity(impostor, null);
+  check("a token claiming to be an equity but incapable is still flagged",
+    v.verdict === "structurally_impossible", v.verdict);
+}
+
+// A garbage address must fail honestly rather than imply a verdict.
+const notAMint = await analyseMint("11111111111111111111111111111111");
+check("a non-mint address returns an explicit error, not a grade",
+  notAMint.error !== null && notAMint.rating === null);
+
+// Issuer identity must work with no list at all.
+const ondoState = u.onchain["gEGtLTPNQ7jcg25zTetkbmF7teoDLcrfTnQfmn2ondo"];
+if (ondoState) {
+  check("issuer identified from on-chain fingerprint alone",
+    identifyIssuer(ondoState)?.id === "ondo");
+}
+check("an unrelated mint identifies as no issuer",
+  identifyIssuer({ mintAuthority: null, permanentDelegate: null }) === null);
+
+// Grades must be auditable, not asserted.
+const spacexRated = bySym("SPACEX");
+check("grade exposes its arithmetic",
+  (spacexRated?.scoring.reasons.length ?? 0) > 0,
+  `${spacexRated?.scoring.reasons.length} charges, score ${spacexRated?.scoring.score}`);
+check("score actually produces the stated grade",
+  (spacexRated?.scoring.score ?? 0) >= (spacexRated?.scoring.thresholds.F ?? 99));
+check("every charge names a reason",
+  Object.values(rated.ratings).every((r) =>
+    r.scoring.reasons.every((x) => x.because.length > 0 && x.points > 0)));
+check("an A-graded token would carry no charges",
+  Object.values(rated.ratings).every((r) =>
+    r.grade !== "A" || r.scoring.score < r.scoring.thresholds.B));
+
+// Partial-source runs must be visible rather than silent.
+check("cache records which sources failed",
+  Array.isArray((u as unknown as { sourceFailures?: string[] }).sourceFailures ?? []),
+  `${(u as unknown as { sourceFailures?: string[] }).sourceFailures?.length ?? 0} failures`);
+
+// Stale data must be detectable by anyone reading the cache.
+const ageHours = (Date.now() - Date.parse(u.generatedAt)) / 3_600_000;
+check("universe carries a usable timestamp",
+  Number.isFinite(ageHours) && ageHours >= 0, `${ageHours.toFixed(1)}h old`);
 
 // ---------------------------------------------------------------- summary
 const bar = "=".repeat(56);

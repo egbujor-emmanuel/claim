@@ -22,14 +22,33 @@ function log(msg: string) {
 }
 
 const started = Date.now();
+const failures: string[] = [];
 
 log("fetching issuer registries...");
-const batches = await Promise.all([
-  xstocksAdapter.fetchTokens(),
-  manualAdapter.fetchTokens(),
-  ondoAdapter.fetchTokens(),
-  backpackAdapter.fetchTokens(),
-]);
+
+// One issuer's API being down must not destroy the whole universe. Partial data
+// with a loud warning beats a cache that silently fails to rebuild, and beats
+// overwriting good data with nothing.
+const adapters = [
+  ["xStocks", xstocksAdapter],
+  ["PreStocks", manualAdapter],
+  ["Ondo", ondoAdapter],
+  ["Backpack", backpackAdapter],
+] as const;
+
+const batches = await Promise.all(
+  adapters.map(async ([name, adapter]) => {
+    try {
+      const result = await adapter.fetchTokens();
+      log(`  ${name}: ${result.length} tokens`);
+      return result;
+    } catch (e) {
+      failures.push(`${name}: ${e instanceof Error ? e.message : String(e)}`);
+      log(`  ${name}: FAILED (${e instanceof Error ? e.message : e})`);
+      return [] as TokenRecord[];
+    }
+  }),
+);
 
 const tokens: TokenRecord[] = [];
 const seen = new Set<string>();
@@ -40,6 +59,13 @@ for (const batch of batches) {
       tokens.push(t);
     }
   }
+}
+
+// Refuse to overwrite a good cache with a broken one.
+if (tokens.length === 0) {
+  console.error("[scan] every issuer source failed; leaving the existing cache untouched.");
+  process.exitCode = 1;
+  throw new Error("no tokens fetched");
 }
 log(`${tokens.length} tokens across ${new Set(tokens.map((t) => t.issuerId)).size} issuers`);
 
@@ -70,6 +96,8 @@ const haltedByIssuer = tokens.filter((t) => t.halted);
 mkdirSync(CACHE_DIR, { recursive: true });
 const payload = {
   generatedAt: new Date().toISOString(),
+  /** Sources that failed this run. Empty means the universe is complete. */
+  sourceFailures: failures,
   counts: {
     tokens: tokens.length,
     companies: companies.length,

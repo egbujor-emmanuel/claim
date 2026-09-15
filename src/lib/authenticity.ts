@@ -19,7 +19,19 @@ import type { OnChainState } from "./types.js";
  * This is evidence a user can check themselves, not a reputation score.
  */
 
-export type Verdict = "canonical" | "plausible" | "structurally_impossible";
+export type Verdict =
+  | "canonical"
+  | "plausible"
+  | "structurally_impossible"
+  /**
+   * Not a tokenized equity at all, and never claimed to be one.
+   *
+   * USDC is not a counterfeit Apple share; it is a stablecoin. Grading it on an
+   * equity scale and calling it "not the asset it appears to be" would be both
+   * false and the fastest way to lose a reader's trust. Out of scope is an
+   * honest answer.
+   */
+  | "not_an_equity";
 
 export interface AuthenticityResult {
   verdict: Verdict;
@@ -65,6 +77,18 @@ export const ISSUER_MINT_MARKERS: Record<string, { prefix?: string; suffix?: str
   prestocks: { prefix: "Pre" },
   ondo: { suffix: "ondo" },
 };
+
+/** Language a token uses when it presents itself as a tokenized equity. */
+const EQUITY_CLAIM_WORDS = [
+  "tokenized", "tokenised", "xstock", "stock", "equity", "share",
+  "securities", "pre-ipo", "preipo",
+];
+
+function presentsAsEquity(state: OnChainState, claimedIssuerId: string | null): boolean {
+  if (claimedIssuerId) return true;
+  const text = `${state.name ?? ""} ${state.symbol ?? ""}`.toLowerCase();
+  return EQUITY_CLAIM_WORDS.some((w) => text.includes(w));
+}
 
 /** Known launchpad suffixes. Not proof of fraud, but a tokenized equity is never one. */
 const LAUNCHPAD_SUFFIXES = ["pump", "bonk", "moon"];
@@ -153,8 +177,13 @@ export function checkAuthenticity(
     }
   }
 
+  const claimsToBeEquity = presentsAsEquity(state, claimedIssuerId);
+
   let verdict: Verdict;
-  if (!machinery.ok) verdict = "structurally_impossible";
+  // Missing machinery only makes something a counterfeit if it claimed to be an
+  // equity in the first place. Otherwise it is simply a different kind of token.
+  if (!machinery.ok && !claimsToBeEquity) verdict = "not_an_equity";
+  else if (!machinery.ok) verdict = "structurally_impossible";
   else if (authorityVerified) verdict = "canonical";
   else if (redFlags.length > 0) verdict = "plausible";
   else if (markerMatches) verdict = "canonical";
@@ -170,6 +199,8 @@ export function verdictLabel(v: Verdict): string {
     case "plausible":
       return "Unverified — structurally capable, but not confirmed against the issuer";
     case "structurally_impossible":
-      return "Not what it claims — this mint cannot function as a tokenized equity";
+      return "Not what it claims — this mint presents itself as a tokenized equity but cannot function as one";
+    case "not_an_equity":
+      return "Not a tokenized equity — a real token, but outside what Claim assesses";
   }
 }

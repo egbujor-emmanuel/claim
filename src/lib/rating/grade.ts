@@ -30,11 +30,33 @@ export type Grade = "A" | "B" | "C" | "D" | "F";
 export interface ClaimRating {
   mint: string;
   symbol: string;
-  grade: Grade;
+  /**
+   * null when the token is not a tokenized equity at all.
+   *
+   * Refusing to grade is the honest outcome for a stablecoin or a memecoin.
+   * Awarding it an F would imply Claim assessed an equity claim and found it
+   * wanting, which is not what happened.
+   */
+  grade: Grade | null;
+  /** False when the token is outside what Claim assesses. */
+  inScope: boolean;
   /** The single sentence that belongs on a card. */
   headline: string;
   findings: Finding[];
   authenticity: AuthenticityResult;
+  /**
+   * How the grade was reached.
+   *
+   * A letter grade with no visible arithmetic is just an opinion with a
+   * typeface. This exposes the score and the thresholds so anyone can check the
+   * grade follows from the findings, and disagree with a specific weight rather
+   * than the whole verdict.
+   */
+  scoring: {
+    score: number;
+    thresholds: { F: number; D: number; C: number; B: number };
+    reasons: { points: number; because: string }[];
+  };
 }
 
 const STRUCTURE_SCORE: Record<string, number> = {
@@ -72,13 +94,44 @@ export interface RatingInput {
   depth?: DepthResult | null;
 }
 
+/** Grade boundaries, stated once so they can be quoted and argued with. */
+export const THRESHOLDS = { F: 10, D: 7, C: 4, B: 2 } as const;
+
 export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): ClaimRating {
   const findings: Finding[] = [];
+  const reasons: { points: number; because: string }[] = [];
   let penalty = 0;
+
+  const charge = (points: number, because: string) => {
+    penalty += points;
+    reasons.push({ points, because });
+  };
 
   const authenticity = onchain
     ? checkAuthenticity(onchain, issuer?.id ?? null)
     : { verdict: "plausible" as const, reasons: [], redFlags: ["no on-chain data"] };
+
+  // ---- out of scope: a real token, just not a tokenized equity
+  if (authenticity.verdict === "not_an_equity") {
+    return {
+      mint: token.mint,
+      symbol: token.symbol,
+      grade: null,
+      inScope: false,
+      headline:
+        "This is a real token, but it is not a tokenized equity, so Claim has nothing to assess.",
+      findings: [
+        {
+          severity: "note",
+          message:
+            "Claim only rates tokens that represent a claim on a company's shares. This one does not present itself as one.",
+          evidence: authenticity.redFlags.join("; ") || "no equity machinery, no equity claim",
+        },
+      ],
+      authenticity,
+      scoring: { score: 0, thresholds: THRESHOLDS, reasons: [] },
+    };
+  }
 
   // ---- authenticity first: if it is not the real token, nothing else matters
   if (authenticity.verdict === "structurally_impossible") {
@@ -88,7 +141,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         "This mint cannot function as a tokenized equity. It is not the asset it appears to be.",
       evidence: authenticity.redFlags.join("; "),
     });
-    penalty += 10;
+    charge(10, "the mint cannot function as a tokenized equity");
   } else if (authenticity.verdict === "canonical") {
     findings.push({
       severity: "good",
@@ -100,7 +153,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
   // ---- legal structure
   if (issuer) {
     const structure = issuer.structure.value;
-    penalty += STRUCTURE_SCORE[structure] ?? 3;
+    charge(STRUCTURE_SCORE[structure] ?? 3, `claim structure: ${structure}`);
     findings.push({
       severity: structure === "spv_interest" || structure === "unbacked" ? "critical"
         : structure === "securitized_exposure" ? "warning" : "good",
@@ -126,7 +179,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
       });
     }
   } else {
-    penalty += 5;
+    charge(5, "no identified issuer");
     findings.push({
       severity: "critical",
       message: "No identified issuer. Nobody has been shown to owe the holder anything.",
@@ -138,7 +191,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
   const expiry = EXPIRY[token.mint];
   if (expiry) {
     const days = daysUntilExpiry(token.mint);
-    penalty += 4;
+    charge(4, "a deadline destroys the token if missed");
     findings.push({
       severity: "critical",
       message: `Expires in ${days} days. ${expiry.action}`,
@@ -155,7 +208,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         message: "A permanent delegate can move or burn these tokens from any wallet, including yours.",
         evidence: `permanentDelegate = ${onchain.permanentDelegate}`,
       });
-      penalty += 1;
+      charge(1, "an authority can seize from any wallet");
     } else {
       // Worth saying out loud. Most tokenized equities on Solana retain this
       // power; an issuer that gives it up deserves the credit.
@@ -166,7 +219,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
       });
     }
     if (onchain.pausable?.paused) {
-      penalty += 6;
+      charge(6, "transfers are paused right now");
       findings.push({
         severity: "critical",
         message: "Transfers are paused right now. You cannot move this token.",
@@ -175,7 +228,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
     }
     const fee = onchain.transferFee?.basisPoints ?? 0;
     if (fee > 0) {
-      penalty += 2;
+      charge(2, "every transfer is taxed");
       const uncapped = Number(onchain.transferFee?.maximumFee ?? 0) >= 1.8e19;
       findings.push({
         severity: "warning",
@@ -184,7 +237,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
       });
     }
     if (onchain.distinctAuthorities.length === 1) {
-      penalty += 3;
+      charge(3, "one key controls every power over the mint");
       findings.push({
         severity: "critical",
         message:
@@ -193,7 +246,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
       });
     }
     if (onchain.transferHook?.programId) {
-      penalty += 1;
+      charge(1, "a transfer hook can block transfers");
       findings.push({
         severity: "note",
         message: "A transfer hook program runs on every transfer and can block it.",
@@ -222,7 +275,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         source: issuer?.redemption.source,
       });
     } else if (!depth.tradable) {
-      penalty += 5;
+      charge(5, "no market and no open redemption");
       findings.push({
         severity: "critical",
         message:
@@ -230,7 +283,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         evidence: `Jupiter: ${depth.reason ?? "no route"}`,
       });
     } else if (depth.maxExitUsd === null) {
-      penalty += 4;
+      charge(4, "under $1,000 can be sold within 5%");
       findings.push({
         severity: "critical",
         message: "Less than $1,000 can be sold without losing more than 5%.",
@@ -245,7 +298,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
         }`,
         evidence: `live Jupiter quotes at ${depth.checkedAt}`,
       });
-      if (depth.maxExitUsd < 10_000) penalty += 2;
+      if (depth.maxExitUsd < 10_000) charge(2, "thin exit depth below $10,000");
     }
   }
 
@@ -267,15 +320,21 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
   }
 
   const grade: Grade =
-    penalty >= 10 ? "F" : penalty >= 7 ? "D" : penalty >= 4 ? "C" : penalty >= 2 ? "B" : "A";
+    penalty >= THRESHOLDS.F ? "F"
+    : penalty >= THRESHOLDS.D ? "D"
+    : penalty >= THRESHOLDS.C ? "C"
+    : penalty >= THRESHOLDS.B ? "B"
+    : "A";
 
   return {
     mint: token.mint,
     symbol: token.symbol,
     grade,
+    inScope: true,
     headline: headlineFor(grade, findings),
     findings: findings.sort((a, b) => order(a.severity) - order(b.severity)),
     authenticity,
+    scoring: { score: penalty, thresholds: THRESHOLDS, reasons },
   };
 }
 

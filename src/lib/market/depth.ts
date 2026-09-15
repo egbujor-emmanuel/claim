@@ -67,6 +67,20 @@ async function quote(inputMint: string, outputMint: string, amount: string): Pro
  */
 export async function measureDepth(mint: string, decimals: number): Promise<DepthResult> {
   const checkedAt = new Date().toISOString();
+
+  // Quoting an asset against itself always fails. Saying "USDC has no market"
+  // because we asked Jupiter to swap USDC for USDC would be absurd.
+  if (mint === USDC) {
+    return {
+      mint,
+      tradable: true,
+      reason: null,
+      priceUsd: 1,
+      rungs: LADDER_USD.map((usd) => ({ usd, receivedUsd: usd, lossPct: 0, routed: true })),
+      maxExitUsd: LADDER_USD[LADDER_USD.length - 1] ?? null,
+      checkedAt,
+    };
+  }
   const empty: DepthResult = {
     mint,
     tradable: false,
@@ -109,6 +123,10 @@ export async function measureDepth(mint: string, decimals: number): Promise<Dept
 
 /** Cheap tradability probe: one call, no ladder. Used for universe-wide sweeps. */
 export async function probeTradable(mint: string): Promise<{ tradable: boolean; reason: string | null }> {
+  // The quote asset is trivially tradable; asking Jupiter to swap it for itself
+  // would report the opposite.
+  if (mint === USDC) return { tradable: true, reason: null };
+
   const probe = await quote(USDC, mint, "1000000");
   if (probe.outAmount && Number(probe.outAmount) > 0) return { tradable: true, reason: null };
   return { tradable: false, reason: probe.errorCode ?? probe.error ?? "no route" };

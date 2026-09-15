@@ -1,6 +1,7 @@
 import type { ClaimRating, Finding } from "@/src/lib/rating/grade.js";
 import type { RatedCompany } from "@/src/lib/rating/index.js";
 import type { ResolvedToken } from "@/src/lib/search.js";
+import { Scoring } from "./live";
 
 function isUrl(s: string) {
   return s.startsWith("http://") || s.startsWith("https://");
@@ -36,8 +37,11 @@ export function TokenCard({
   return (
     <article className="card">
       <div className="card-top">
-        <div className={`grade grade-${rating.grade}`} aria-label={`Grade ${rating.grade}`}>
-          {rating.grade}
+        <div
+          className={`grade grade-${rating.grade ?? "NA"}`}
+          aria-label={rating.grade ? `Grade ${rating.grade}` : "Not assessed"}
+        >
+          {rating.grade ?? "–"}
         </div>
         <div className="card-id">
           <div className="sym">{token.symbol}</div>
@@ -56,6 +60,8 @@ export function TokenCard({
           <FindingRow key={i} f={f} />
         ))}
       </ul>
+
+      <Scoring rating={rating} />
     </article>
   );
 }

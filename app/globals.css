@@ -333,3 +333,86 @@ footer {
   font-size: 12.5px;
   color: var(--faint);
 }
+
+/* ---------- grade derivation ---------- */
+.scoring {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.scoring summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+  user-select: none;
+}
+.scoring summary:hover {
+  color: var(--text);
+}
+.score-table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  font-size: 13px;
+  width: 100%;
+}
+.score-table td {
+  padding: 4px 0;
+  vertical-align: top;
+  color: var(--muted);
+}
+.score-pts {
+  font-family: var(--mono);
+  width: 3.2em;
+  color: var(--text);
+}
+.score-total td {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- data freshness ---------- */
+.freshness {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--faint);
+}
+.freshness.stale {
+  color: var(--warning);
+}
+
+/* ---------- narrow screens ---------- */
+@media (max-width: 560px) {
+  .wrap {
+    padding-block: 28px 56px;
+  }
+  .search {
+    flex-direction: column;
+  }
+  .search button {
+    width: 100%;
+  }
+  .card-top {
+    gap: 12px;
+  }
+  .grade {
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+  .examples a {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .score-table {
+    font-size: 12px;
+  }
+}
+
+/* Not assessed: a real token, outside what Claim rates. */
+.grade-NA {
+  background: var(--bg);
+  color: var(--faint);
+  border: 1px dashed var(--border);
+}

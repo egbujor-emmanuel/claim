@@ -46,7 +46,25 @@ interface AccountValue {
 export function parseMint(mint: string, value: AccountValue | null): OnChainState | null {
   if (!value) return null;
 
+  // An account exists at plenty of addresses that are not token mints: wallets,
+  // programs, PDAs. For those the RPC returns `data` as a [base64, encoding]
+  // tuple rather than a parsed object, so reaching for .parsed.info throws.
+  // Treat anything we cannot parse as "not a mint" instead of crashing.
+  const data = value.data as unknown;
+  if (
+    typeof data !== "object" ||
+    data === null ||
+    Array.isArray(data) ||
+    !("parsed" in data) ||
+    typeof (data as { parsed?: unknown }).parsed !== "object" ||
+    (data as { parsed?: { info?: unknown } }).parsed?.info === undefined
+  ) {
+    return null;
+  }
+
   const info = value.data.parsed.info;
+  // A token account is also "parsed" but is not a mint. Mints have decimals.
+  if (typeof info.decimals !== "number") return null;
   const extensions = (info.extensions as ParsedExtension[] | undefined) ?? [];
 
   const permanent = ext(extensions, "permanentDelegate");

@@ -1,8 +1,13 @@
 import Link from "next/link";
-import { search } from "@/src/lib/search.js";
+import { search, loadUniverse } from "@/src/lib/search.js";
 import { universeStats } from "@/src/lib/stats.js";
 import { rateCompany } from "@/src/lib/rating/index.js";
+import { analyseMint } from "@/src/lib/live.js";
 import { CompanyBlock, Disclaimer } from "./components";
+import { LiveCard, Freshness } from "./live";
+
+/** Base58, the length a Solana address can be. */
+const MINT_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 
 export default async function Home({
   searchParams,
@@ -11,9 +16,17 @@ export default async function Home({
 }) {
   // Next 15 passes searchParams as a promise.
   const query = (await searchParams).q?.trim() ?? "";
-  const results = query ? search(query, 3).map(rateCompany) : [];
-  const spacex = query ? [] : search("spacex", 1).map(rateCompany);
+  const universe = loadUniverse();
   const stats = universeStats();
+
+  // A raw address is looked up live rather than searched as text. Someone
+  // pasting a mint wants to know what it is, and the answer must not depend on
+  // whether we happened to index it.
+  const isAddress = MINT_PATTERN.test(query);
+  const live = isAddress ? await analyseMint(query) : null;
+
+  const results = query && !isAddress ? search(query, 3).map(rateCompany) : [];
+  const featured = query ? [] : search("spacex", 1).map(rateCompany);
 
   return (
     <main className="wrap">
@@ -32,63 +45,79 @@ export default async function Home({
             type="search"
             name="q"
             defaultValue={query}
-            placeholder="Search a company — SpaceX, Apple, Nvidia"
-            aria-label="Search a company"
+            placeholder="Search a company, or paste any mint address"
+            aria-label="Search a company or paste a mint address"
           />
           <button type="submit">Check</button>
         </form>
         <div className="examples">
-          Try{" "}
-          <Link href="/?q=spacex">SpaceX</Link>
+          Try <Link href="/?q=spacex">SpaceX</Link>
           <Link href="/?q=apple">Apple</Link>
           <Link href="/?q=nvidia">Nvidia</Link>
           <Link href="/?q=netflix">Netflix</Link>
         </div>
       </header>
 
-      {query && results.length === 0 ? (
-        <p className="muted">No tokenized equity found for “{query}”.</p>
+      {/* An address we could not read at all. Say so; do not imply a verdict. */}
+      {live?.error ? (
+        <div className="note-box">
+          <strong>{live.error}</strong>
+          <br />
+          Claim could not find a token mint at <code className="mono">{query}</code>. That is a
+          failure to answer, not a judgement about anything.
+        </div>
       ) : null}
 
-      {(query ? results : spacex).map((c) => (
+      {/* Indexed mint: show the company and every competing claim on it. */}
+      {live?.indexed && live.company ? (
+        <CompanyBlock company={rateCompany(live.company)} />
+      ) : null}
+
+      {/* Unindexed mint: read live, graded on what the chain says. */}
+      {live && !live.indexed && live.rating ? (
+        <LiveCard mint={query} rating={live.rating} />
+      ) : null}
+
+      {query && !isAddress && results.length === 0 ? (
+        <p className="muted">
+          No tokenized equity found for “{query}”. Try a company name, a ticker, or paste a
+          mint address.
+        </p>
+      ) : null}
+
+      {(query ? results : featured).map((c) => (
         <CompanyBlock key={c.id} company={c} />
       ))}
 
       {!query ? (
-        <>
-          <div className="stats">
-            <div className="stat">
-              <div className="stat-n">{stats.largestDelegateReach.toLocaleString()}</div>
-              <div className="stat-l">
-                tokenized equities one key can seize from any wallet
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-n">
-                {stats.probed ? `${stats.probed - stats.routable}` : "—"}
-              </div>
-              <div className="stat-l">
-                of {stats.probed.toLocaleString()} have no market at all
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-n">{stats.multiplierTraps.toLocaleString()}</div>
-              <div className="stat-l">
-                show the wrong balance in apps that read the multiplier naively
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-n">
-                {stats.worstTrapPct !== null ? `${stats.worstTrapPct.toFixed(0)}%` : "—"}
-              </div>
-              <div className="stat-l">of the real balance, in the worst case</div>
+        <div className="stats">
+          <div className="stat">
+            <div className="stat-n">{stats.largestDelegateReach.toLocaleString()}</div>
+            <div className="stat-l">tokenized equities one key can seize from any wallet</div>
+          </div>
+          <div className="stat">
+            <div className="stat-n">{(stats.probed - stats.routable).toLocaleString()}</div>
+            <div className="stat-l">
+              of {stats.probed.toLocaleString()} have no market at all
             </div>
           </div>
-          <Disclaimer />
-        </>
-      ) : (
-        <Disclaimer />
-      )}
+          <div className="stat">
+            <div className="stat-n">{stats.multiplierTraps.toLocaleString()}</div>
+            <div className="stat-l">
+              show the wrong balance in apps that read the multiplier naively
+            </div>
+          </div>
+          <div className="stat">
+            <div className="stat-n">
+              {stats.worstTrapPct !== null ? `${stats.worstTrapPct.toFixed(0)}%` : "—"}
+            </div>
+            <div className="stat-l">of the real balance, in the worst case</div>
+          </div>
+        </div>
+      ) : null}
+
+      <Disclaimer />
+      <Freshness generatedAt={universe.generatedAt} />
 
       <footer>
         Built for the Solana Foundation Stocklana hackathon. Read-only: Claim never asks for a
