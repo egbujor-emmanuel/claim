@@ -13,11 +13,21 @@
     "reserves": "tsx src/scripts/reserves.ts",
     "verify": "tsx src/scripts/verify.ts",
     "impostors": "tsx src/scripts/impostors.ts",
-    "depth": "tsx src/scripts/depthscan.ts"
+    "depth": "tsx src/scripts/depthscan.ts",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "tsx": "^4.20.0",
     "typescript": "^5.7.0"
+  },
+  "dependencies": {
+    "next": "^15.5.25",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   }
 }

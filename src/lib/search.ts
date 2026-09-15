@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import type { Company, TokenRecord } from "./ingest/types.js";
 import type { OnChainState } from "./types.js";
 import { ISSUERS } from "../data/issuers.js";
+import { UNIVERSE_PATH } from "./paths.js";
 import type { Issuer, ClaimStructure } from "./types.js";
 
 /**
@@ -61,8 +62,7 @@ let cached: Universe | null = null;
 
 export function loadUniverse(path?: string): Universe {
   if (cached && !path) return cached;
-  const url = path ?? new URL("../../data/cache/universe.json", import.meta.url);
-  const parsed = JSON.parse(readFileSync(url, "utf8")) as Universe;
+  const parsed = JSON.parse(readFileSync(path ?? UNIVERSE_PATH, "utf8")) as Universe;
   if (!path) cached = parsed;
   return parsed;
 }

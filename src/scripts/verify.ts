@@ -14,6 +14,7 @@ import { fetchMint, effectiveMultiplier, hasMultiplierTrap } from "../lib/onchai
 import { daysUntilExpiry, EXPIRY } from "../lib/ingest/manual.js";
 import { checkAuthenticity } from "../lib/authenticity.js";
 import { rateCompany } from "../lib/rating/index.js";
+import { UNIVERSE_PATH } from "../lib/paths.js";
 
 const SPCX = "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb";
 const SPCXX = "Xs3oZwbHvqis4NYcf4YKWmEia2eC84wSiVrcYcTqpH8";
@@ -41,7 +42,7 @@ function section(title: string) {
 // ---------------------------------------------------------------- phase 1
 section("PHASE 1: registry, ingest, on-chain reader");
 
-check("universe cache exists", existsSync(new URL("../../data/cache/universe.json", import.meta.url)));
+check("universe cache exists", existsSync(UNIVERSE_PATH));
 
 const u = loadUniverse();
 check("cache has tokens", u.tokens.length > 0, `${u.tokens.length}`);
@@ -194,6 +195,61 @@ check("findings are ordered worst-first",
     return r.findings.every((f, i) =>
       i === 0 || rank[r.findings[i - 1]!.severity] <= rank[f.severity]);
   }));
+
+// ---------------------------------------------------------------- phase 3
+// HTTP checks run only when a server is already listening, so `npm run verify`
+// still works standalone. Start one with: npx next start -p 3948
+const BASE = process.env.CLAIM_BASE_URL ?? "http://127.0.0.1:3948";
+
+async function serverUp(): Promise<boolean> {
+  try {
+    const res = await fetch(`${BASE}/`, { signal: AbortSignal.timeout(3000) });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+if (await serverUp()) {
+  section("PHASE 3: web app and public API");
+
+  const api = await fetch(`${BASE}/api/claim/${SPACEX}`);
+  check("GET /api/claim/{mint} returns 200", api.status === 200);
+  check("API sets CORS header", api.headers.get("access-control-allow-origin") === "*");
+  check("API sets a cache header", Boolean(api.headers.get("cache-control")));
+
+  const body = (await api.json()) as {
+    grade?: string;
+    findings?: unknown[];
+    company?: { contested?: boolean; alternatives?: unknown[] };
+    onchain?: { transferFeeBasisPoints?: number; multiplierTrap?: boolean };
+    claim?: { structure?: string };
+    disclaimer?: string;
+  };
+  check("API grades SPACEX F", body.grade === "F");
+  check("API returns findings", (body.findings?.length ?? 0) > 0, `${body.findings?.length}`);
+  check("API lists competing tokens", (body.company?.alternatives?.length ?? 0) === 2);
+  check("API marks SpaceX contested", body.company?.contested === true);
+  check("API exposes the transfer fee", body.onchain?.transferFeeBasisPoints === 50);
+  check("API exposes the multiplier trap", body.onchain?.multiplierTrap === true);
+  check("API names the claim structure", body.claim?.structure === "spv_interest");
+  check("API carries a disclaimer", Boolean(body.disclaimer));
+
+  const missing = await fetch(`${BASE}/api/claim/So11111111111111111111111111111111111111112`);
+  check("unknown mint returns 404, not a false verdict", missing.status === 404);
+
+  const home = await fetch(`${BASE}/?q=spacex`);
+  const html = await home.text();
+  check("page renders", home.status === 200);
+  check("page shows three graded tokens",
+    (html.match(/class="grade grade-/g) ?? []).length === 3);
+  check("page shows the contested banner", /different legal claims/i.test(html));
+  check("page renders findings with evidence", (html.match(/f-evidence/g) ?? []).length > 5);
+  check("page carries the not-advice disclaimer", /not legal or investment advice/i.test(html));
+} else {
+  section("PHASE 3: web app and public API");
+  console.log(`  SKIP  no server at ${BASE} (start one with: npx next start -p 3948)`);
+}
 
 // ---------------------------------------------------------------- summary
 const bar = "=".repeat(56);

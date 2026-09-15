@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from "node:fs";
 import type { DepthResult } from "../market/depth.js";
 import type { ResolvedCompany, ResolvedToken } from "../search.js";
 import { gradeClaim, type ClaimRating } from "./grade.js";
+import { DEPTH_PATH } from "../paths.js";
 
 export * from "./grade.js";
 
@@ -14,9 +15,8 @@ let depthCache: DepthCache | null = null;
 
 function loadDepth(): DepthCache {
   if (depthCache) return depthCache;
-  const url = new URL("../../../data/cache/depth.json", import.meta.url);
-  depthCache = existsSync(url)
-    ? (JSON.parse(readFileSync(url, "utf8")) as DepthCache)
+  depthCache = existsSync(DEPTH_PATH)
+    ? (JSON.parse(readFileSync(DEPTH_PATH, "utf8")) as DepthCache)
     : { tradable: {}, ladders: {} };
   return depthCache;
 }

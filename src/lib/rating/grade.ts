@@ -195,12 +195,30 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
   }
 
   // ---- can you actually get out
+  //
+  // Absence of a DEX route is not automatically a trap. Some issuers run no AMM
+  // liquidity at all and expect holders to mint and redeem with them directly.
+  // For those, "no Jupiter route" is a fact about the exit model, not a failure.
+  // Only when redemption is closed to the holder does it become a cage.
+  const redemptionOpen =
+    issuer?.redemption.value === "issuer_redemption" ||
+    issuer?.redemption.value === "portable_to_brokerage";
+
   if (depth) {
-    if (!depth.tradable) {
+    if (!depth.tradable && redemptionOpen) {
+      findings.push({
+        severity: "note",
+        message:
+          "No DEX route. This issuer expects you to redeem with them directly rather than sell on the open market, so check you are eligible before buying.",
+        evidence: `Jupiter: ${depth.reason ?? "no route"}`,
+        source: issuer?.redemption.source,
+      });
+    } else if (!depth.tradable) {
       penalty += 5;
       findings.push({
         severity: "critical",
-        message: "No market. Jupiter finds no route at any size, so the only exit is redemption.",
+        message:
+          "No market and no open redemption. There is no demonstrated way to convert this back to cash.",
         evidence: `Jupiter: ${depth.reason ?? "no route"}`,
       });
     } else if (depth.maxExitUsd === null) {
