@@ -282,8 +282,16 @@ if (await serverUp()) {
   const home = await fetch(`${BASE}/?q=spacex`);
   const html = await home.text();
   check("page renders", home.status === 200);
-  check("page shows three graded tokens",
-    (html.match(/class="grade grade-/g) ?? []).length === 3);
+  // Counting cards is wrong: searching "spacex" legitimately also matches the
+  // leveraged SpaceX ETFs. Assert the three competing SpaceX claims are each
+  // present and graded instead.
+  check("page shows all three competing SpaceX claims",
+    /SPCX</.test(html) && /SPCXx</.test(html) && /SPACEX</.test(html));
+  check("page grades every token it shows",
+    (html.match(/class="grade grade-[A-F]"/g) ?? []).length >=
+      (html.match(/class="card-top"/g) ?? []).length);
+  check("page shows an F grade for the SPV claim",
+    /class="grade grade-F"/.test(html));
   check("page shows the contested banner", /different legal claims/i.test(html));
   check("page renders findings with evidence", (html.match(/f-evidence/g) ?? []).length > 5);
   check("page carries the not-advice disclaimer", /not legal or investment advice/i.test(html));

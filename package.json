@@ -17,7 +17,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "stats": "tsx src/scripts/stats.ts"
+    "stats": "tsx src/scripts/stats.ts",
+    "findings": "tsx src/scripts/findings.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
