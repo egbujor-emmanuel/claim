@@ -17,6 +17,8 @@ export interface UniverseStats {
   delegated: number;
   /** Largest number of mints controlled by one permanent-delegate key. */
   largestDelegateReach: number;
+  /** The key with that reach. Derived, so prose can never name the wrong one. */
+  largestDelegateKey: string | null;
   /** Distinct permanent-delegate keys across the whole universe. */
   delegateKeys: number;
   /** Mints where reading the multiplier field naively gives a wrong balance. */
@@ -68,10 +70,13 @@ export function universeStats(): UniverseStats {
   const probes = Object.values(depth.tradable);
   const ladders = Object.values(depth.ladders);
 
+  const ranked = [...byDelegate.entries()].sort((a, b) => b[1] - a[1]);
+
   return {
     tokens: u.tokens.length,
     delegated: states.filter((s) => s.permanentDelegate).length,
-    largestDelegateReach: Math.max(0, ...byDelegate.values()),
+    largestDelegateReach: ranked[0]?.[1] ?? 0,
+    largestDelegateKey: ranked[0]?.[0] ?? null,
     delegateKeys: byDelegate.size,
     multiplierTraps: states.filter((s) => s.multiplierTrap).length,
     // The worst trap shows the smallest fraction of the real balance.

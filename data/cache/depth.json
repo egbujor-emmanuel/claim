@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T15:33:23.408Z",
+ "generatedAt": "2026-09-15T15:34:11.315Z",
  "tradable": {
   "XsensupeZBdHxZtdnLptf1UfWpVyancWcit7qWFYZrJ": {
    "tradable": false,
@@ -11262,6 +11262,210 @@
    ],
    "maxExitUsd": 10000,
    "checkedAt": "2026-09-15T15:33:16.552Z"
+  },
+  "MSTRdWXMeZxdE8osAQy3fA4rvTY5rgummDSMEx6U7Nz": {
+   "mint": "MSTRdWXMeZxdE8osAQy3fA4rvTY5rgummDSMEx6U7Nz",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 132.55567338282077,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 999.734783,
+     "lossPct": 0.026521700000000693,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9991.531219,
+     "lossPct": 0.08468780999999581,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 98982.207879,
+     "lossPct": 1.0177921210000058,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 45206.397839,
+     "lossPct": 95.4793602161,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 100000,
+   "checkedAt": "2026-09-15T15:33:24.574Z"
+  },
+  "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx": {
+   "mint": "HiMSSzzwkZkrXJ4PGVJRdtfLaANeAztjjcgk5Dxe7Lwx",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 28.00179211469534,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 994.557187,
+     "lossPct": 0.5442813000000001,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9503.669514,
+     "lossPct": 4.963304860000008,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 18886.266826,
+     "lossPct": 81.11373317399999,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 200.257834,
+     "lossPct": 99.9799742166,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 10000,
+   "checkedAt": "2026-09-15T15:33:32.320Z"
+  },
+  "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF": {
+   "mint": "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 8.692704213353732,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 995.418843,
+     "lossPct": 0.4581156999999962,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9936.38598,
+     "lossPct": 0.6361402000000089,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 92978.079834,
+     "lossPct": 7.021920165999997,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 85842.573861,
+     "lossPct": 91.4157426139,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 10000,
+   "checkedAt": "2026-09-15T15:33:40.260Z"
+  },
+  "GRNDYDpqwpCm6jVxpbh4xT5AM4r3p391qYsKTHqgaET2": {
+   "mint": "GRNDYDpqwpCm6jVxpbh4xT5AM4r3p391qYsKTHqgaET2",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 15.22046848602,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 996.471276,
+     "lossPct": 0.35287240000000114,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9944.412465,
+     "lossPct": 0.5558753500000058,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 44857.171613,
+     "lossPct": 55.142828386999994,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 39499.239369,
+     "lossPct": 96.05007606310001,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 10000,
+   "checkedAt": "2026-09-15T15:33:48.558Z"
+  },
+  "DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk": {
+   "mint": "DNUTsCvKbKwu2RM72cUuW3TD9YpzArzACcqYQssjPLSk",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 3.1362709738121373,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 994.155627,
+     "lossPct": 0.5844373000000019,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9725.26763,
+     "lossPct": 2.7473236999999973,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 14.353891,
+     "lossPct": 99.98564610899999,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": null,
+     "lossPct": null,
+     "routed": false
+    }
+   ],
+   "maxExitUsd": 10000,
+   "checkedAt": "2026-09-15T15:33:56.227Z"
+  },
+  "HooDYv5RewLRiMLnEVq3VJqdqxhuE6c5eYvqejMC3e9A": {
+   "mint": "HooDYv5RewLRiMLnEVq3VJqdqxhuE6c5eYvqejMC3e9A",
+   "tradable": true,
+   "reason": null,
+   "priceUsd": 112.34692731153802,
+   "rungs": [
+    {
+     "usd": 1000,
+     "receivedUsd": 999.362177,
+     "lossPct": 0.06378230000000258,
+     "routed": true
+    },
+    {
+     "usd": 10000,
+     "receivedUsd": 9986.552255,
+     "lossPct": 0.13447744999999486,
+     "routed": true
+    },
+    {
+     "usd": 100000,
+     "receivedUsd": 97452.198299,
+     "lossPct": 2.547801701000004,
+     "routed": true
+    },
+    {
+     "usd": 1000000,
+     "receivedUsd": 57410.985778,
+     "lossPct": 94.2589014222,
+     "routed": true
+    }
+   ],
+   "maxExitUsd": 100000,
+   "checkedAt": "2026-09-15T15:34:04.571Z"
   }
  }
 }

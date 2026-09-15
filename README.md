@@ -44,6 +44,23 @@ For every token Claim reports:
 ## Findings
 
 <!-- findings:start -->
+Measured across **2,050 tokenized equities** from four issuers — xStocks 837, Backpack Securities 1,138, Ondo 74, PreStocks 1 — covering 1,402 companies. Regenerate any figure below with `npm run findings`.
+
+**586 companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. Of 586 companies represented by more than one token, every single one spans issuers whose tokens are not legally equivalent.
+
+**One key can seize 1,138 of them.** A single permanent delegate, `2cVYpagTt7ZGc3mmTXBa7fAznUtx5DUu6aCq8uVDaf4a`, can move or burn that many tokenized equities out of any wallet on Solana without the holder's consent. Across the whole universe there are only 3 such keys, covering 1,976 of 2,050 tokens.
+
+**74 tokens have no permanent delegate at all** — every Ondo mint. Ondo is the only issuer that cannot take tokens out of a holder's wallet, and that is worth saying as plainly as the risks.
+
+**357 tokens display the wrong balance to naive apps.** They carry a scheduled scaled-UI multiplier that has already taken effect, so software reading the `multiplier` field instead of computing the effective value is wrong. PPLTx shows **10%**, NFLXx shows **10%**, PALLx shows **20%**, SPACEX shows **20%**, CRWDx shows **25%**, APHx shows **50%** of the real position.
+
+**Almost none of them can be sold.** All 2,050 were probed against Jupiter. **96 have a route. 1,954 have none** — no liquidity pool in existence, cross-checked against DexScreener, which returns no pairs for them.
+
+**And a route is not an exit.** Full quote ladders were measured for every routable mint. **38 can absorb a $10,000 sale inside 5% slippage** — out of 2,050.
+
+**Counterfeits are live.** Searching Jupiter for `QQQon` returns nine mints, eight of which fail on-chain verification against Ondo's mint authority, and all of which call themselves "Invesco QQQ (Ondo Tokenized)". One impersonating NVIDIA is a pump.fun mint with a fixed billion supply and no extensions at all.
+
+**And the good news, stated plainly:** every xStocks asset with circulating supply is fully collateralised. None are under-backed.
 <!-- findings:end -->
 
 ## Fairness notes
@@ -73,7 +90,8 @@ An unknown mint returns `404` with an explicit statement that absence is **not**
 npm install
 npm run scan      # build the universe cache: issuer registries + on-chain state
 npm run depth     # exit-depth sweep (rate limited, resumable)
-npm run verify    # 66-check gate across all three phases
+npm run verify    # 78-check gate across all three phases
+npm run findings  # regenerate the README figures from the caches
 npm run find -- spacex
 npm run build && npm start
 ```

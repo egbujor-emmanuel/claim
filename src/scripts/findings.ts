@@ -42,9 +42,9 @@ const n = (x: number) => x.toLocaleString("en-US");
 const md = `${START}
 Measured across **${n(s.tokens)} tokenized equities** from four issuers — xStocks ${n(byIssuer.backed ?? 0)}, Backpack Securities ${n(byIssuer.backpack ?? 0)}, Ondo ${n(byIssuer.ondo ?? 0)}, PreStocks ${n(byIssuer.prestocks ?? 0)} — covering ${n(u.companies.length)} companies. Regenerate any figure below with \`npm run findings\`.
 
-**${n(contested().length)} companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. ${n(multiToken().length)} companies have more than one token.
+**${n(contested().length)} companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. Of ${n(multiToken().length)} companies represented by more than one token, ${contested().length === multiToken().length ? "every single one" : n(contested().length)} spans issuers whose tokens are not legally equivalent.
 
-**One key can seize ${n(s.largestDelegateReach)} of them.** A single permanent delegate, \`${ISSUER_PERMANENT_DELEGATES.backed}\`, can move or burn every xStocks token from any wallet on Solana. Across the whole universe there are only ${n(s.delegateKeys)} such keys.
+**One key can seize ${n(s.largestDelegateReach)} of them.** A single permanent delegate, \`${s.largestDelegateKey ?? "unknown"}\`, can move or burn that many tokenized equities out of any wallet on Solana without the holder's consent. Across the whole universe there are only ${n(s.delegateKeys)} such keys, covering ${n(s.delegated)} of ${n(s.tokens)} tokens.
 
 **${n(noDelegate)} tokens have no permanent delegate at all** — every Ondo mint. Ondo is the only issuer that cannot take tokens out of a holder's wallet, and that is worth saying as plainly as the risks.
 
