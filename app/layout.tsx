@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+// Tailwind utilities first so globals.css keeps the last word on shared
+// selectors. Utilities are opt-in per class; no reset is imported.
+import "./tailwind.css";
 import "./globals.css";
 
 export const metadata: Metadata = {

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { search, loadUniverse } from "@/src/lib/search.js";
+import { search, loadUniverse, contested } from "@/src/lib/search.js";
 import { universeStats } from "@/src/lib/stats.js";
 import { rateCompany } from "@/src/lib/rating/index.js";
 import { analyseMint } from "@/src/lib/live.js";
 import { CompanyBlock, Disclaimer } from "./components";
 import { LiveCard, Freshness } from "./live";
+import { Hero } from "./hero";
 
 /** Base58, the length a Solana address can be. */
 const MINT_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
@@ -18,6 +19,7 @@ export default async function Home({
   const query = (await searchParams).q?.trim() ?? "";
   const universe = loadUniverse();
   const stats = universeStats();
+  const contestedCount = contested().length;
 
   // A raw address is looked up live rather than searched as text. Someone
   // pasting a mint wants to know what it is, and the answer must not depend on
@@ -29,7 +31,14 @@ export default async function Home({
   const featured = query ? [] : search("spacex", 1).map(rateCompany);
 
   return (
-    <main className="wrap">
+    <>
+      {/* The opening frame only on the unsearched page. Someone who has searched
+          wants an answer, not a title sequence. */}
+      {!query ? (
+        <Hero stat={{ tokens: stats.tokens, contested: contestedCount }} />
+      ) : null}
+
+      <main className="wrap">
       <header className="masthead">
         <p className="wordmark">Claim</p>
         <h1 className="thesis">Not everything called a tokenized stock is a stock.</h1>
@@ -124,6 +133,7 @@ export default async function Home({
         signature and never moves anything. Data from issuer APIs, public Solana RPC and
         Jupiter quotes. <Link href="/api-docs">Public API</Link>.
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

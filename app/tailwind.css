@@ -1,0 +1,11 @@
+/*
+ * Tailwind, deliberately without preflight.
+ *
+ * Preflight resets margins, borders, heading sizes and list styles globally.
+ * This app's entire visual language predates Tailwind and lives in globals.css,
+ * so importing the reset would silently restyle every existing page to serve
+ * one component. Utilities only.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);

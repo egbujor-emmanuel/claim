@@ -28,8 +28,11 @@
     "typescript": "^5.7.0"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "next": "^15.5.25",
+    "postcss": "^8.5.28",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3"
   }
 }

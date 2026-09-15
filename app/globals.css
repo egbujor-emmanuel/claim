@@ -416,3 +416,125 @@ footer {
   color: var(--faint);
   border: 1px dashed var(--border);
 }
+
+/* ---------- opening portal ---------- */
+/* Scoped by attribute so the portal's own scoped rules stay authoritative. */
+.hero-front {
+  position: absolute;
+  inset: 0;
+}
+.hero-top {
+  position: absolute;
+  inset: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 56px) auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.hero-mark {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-kicker {
+  font-size: 12px;
+  color: var(--faint);
+  text-align: right;
+}
+.hero-eyebrow {
+  position: absolute;
+  inset: auto 20px calc(100% - var(--gp-word-top, 35%) + 28px);
+  margin: 0;
+  text-align: center;
+  font-size: clamp(13px, 2.4vw, 15px);
+  color: var(--muted);
+  text-wrap: balance;
+}
+.hero-support {
+  position: absolute;
+  inset: calc(var(--gp-word-bottom, 50%) + 26px) 20px auto;
+  margin: 0;
+  text-align: center;
+  font-size: clamp(13px, 2.2vw, 15px);
+  color: var(--faint);
+  text-wrap: balance;
+}
+.hero-scroll {
+  position: absolute;
+  inset: auto 20px 7%;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--faint);
+}
+
+/* Inside the portal: the SpaceX case, on the dark field. */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 4svh, 3rem);
+  width: min(100%, 76rem);
+  margin: auto;
+}
+.hero-copy h2 {
+  max-width: 44rem;
+  margin: 0;
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+.hero-item {
+  border-top: 1px solid rgba(242, 245, 243, 0.22);
+  padding-top: 1rem;
+}
+.hero-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.hero-item p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(242, 245, 243, 0.82);
+}
+.hero-no {
+  display: inline-block;
+  margin-right: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(242, 245, 243, 0.62);
+  transform: translateY(-0.1em);
+}
+.hero-foot {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: rgba(242, 245, 243, 0.82);
+}
+.hero-foot a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.75rem;
+  }
+}
+@media (max-width: 560px) {
+  .hero-kicker {
+    max-width: 12ch;
+  }
+}
