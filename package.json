@@ -19,7 +19,8 @@
     "start": "next start",
     "stats": "tsx src/scripts/stats.ts",
     "findings": "tsx src/scripts/findings.ts",
-    "scan-address": "tsx src/scripts/scanaddr.ts"
+    "scan-address": "tsx src/scripts/scanaddr.ts",
+    "demo-wallets": "tsx src/scripts/demowallets.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

@@ -44,8 +44,19 @@ export interface Holding {
 
 export interface PortfolioScan {
   address: string;
-  /** Tokenized equities found, worst claim first. */
+  /**
+   * Tokenized equities found, worst claim first, capped for rendering.
+   *
+   * Issuer treasuries hold hundreds of positions -- one holds 952 -- and
+   * rendering every card produced an 8MB page that took eleven seconds. A
+   * portfolio view exists to surface what needs attention, not to dump an
+   * inventory, so the list is capped and the remainder is counted instead.
+   */
   holdings: Holding[];
+  /** Positions found in total, before the render cap. */
+  totalHoldings: number;
+  /** How many were left out of `holdings`. */
+  omittedCount: number;
   /** Token accounts that are not indexed tokenized equities. */
   otherTokenCount: number;
   /** Positions carrying at least one critical finding. */
@@ -80,6 +91,12 @@ export const ADDRESS_PATTERN = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
  * wallet can hold legacy SPL tokens too and skipping them would silently
  * under-report.
  */
+/**
+ * Most positions rendered. Everything past this is counted, not drawn.
+ * Worst-first ordering means the cap only ever hides the least urgent rows.
+ */
+export const RENDER_CAP = 40;
+
 export async function scanAddress(address: string): Promise<PortfolioScan> {
   const scannedAt = new Date().toISOString();
   if (!ADDRESS_PATTERN.test(address)) {
@@ -150,21 +167,28 @@ export async function scanAddress(address: string): Promise<PortfolioScan> {
     return b.uiAmount - a.uiAmount;
   });
 
+  // Counted across everything found, not just what is rendered, so the summary
+  // never understates the problem because of a display limit.
+  const criticalCount = holdings.filter((h) =>
+    h.rating.findings.some((f) => f.severity === "critical"),
+  ).length;
+  const switchableCount = holdings.filter((h) => h.switches.length > 0).length;
+
   return {
     address,
-    holdings,
+    holdings: holdings.slice(0, RENDER_CAP),
+    totalHoldings: holdings.length,
+    omittedCount: Math.max(0, holdings.length - RENDER_CAP),
     otherTokenCount,
-    criticalCount: holdings.filter((h) =>
-      h.rating.findings.some((f) => f.severity === "critical"),
-    ).length,
-    switchableCount: holdings.filter((h) => h.switches.length > 0).length,
+    criticalCount,
+    switchableCount,
     scannedAt,
   };
 }
 
 /** One sentence summarising what the scan found, for the top of the page. */
 export function summarise(scan: PortfolioScan): string {
-  const n = scan.holdings.length;
+  const n = scan.totalHoldings;
   if (n === 0) {
     return "No tokenized equities found at this address.";
   }

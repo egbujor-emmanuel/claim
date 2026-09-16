@@ -16,6 +16,14 @@ export function Portfolio({ scan }: { scan: PortfolioScan }) {
         <h2>Holdings</h2>
         <div className="isin mono">{scan.address}</div>
         <p className="portfolio-summary">{summarise(scan)}</p>
+        {scan.omittedCount > 0 ? (
+          <p className="isin">
+            Showing the {scan.holdings.length} positions that most need attention, worst claim
+            first. {scan.omittedCount} further position
+            {scan.omittedCount === 1 ? " is" : "s are"} held and counted in the summary above
+            but not drawn here.
+          </p>
+        ) : null}
         {scan.otherTokenCount > 0 ? (
           <p className="isin">
             {scan.otherTokenCount} other token account

@@ -21,7 +21,7 @@ import { cusipToIsin } from "../lib/ingest/backpack.js";
 import { rateCompany } from "../lib/rating/index.js";
 import { UNIVERSE_PATH } from "../lib/paths.js";
 import { analyseMint, identifyIssuer } from "../lib/live.js";
-import { scanAddress } from "../lib/holdings.js";
+import { scanAddress, summarise } from "../lib/holdings.js";
 import { betterClaims, preflight } from "../lib/switch.js";
 import { probeTradable } from "../lib/market/depth.js";
 
@@ -428,6 +428,20 @@ check("the balance applies the multiplier",
 const strong = await scanAddress(HOLDER_B);
 check("a wallet already holding the best claim is offered no switch",
   strong.holdings.length > 0 && strong.switchableCount === 0);
+
+// A treasury wallet must not produce an eight-megabyte page.
+const huge = await scanAddress("S7vYFFWH6BjJyEsdrPQpqpYTqLTrPRK6KW3VwsJuRaS");
+check("a large portfolio is capped for rendering", huge.holdings.length <= 40,
+  `${huge.holdings.length} rendered of ${huge.totalHoldings}`);
+check("the cap is disclosed, not silent", huge.omittedCount > 0);
+check("counts reflect everything held, not just what is drawn",
+  huge.criticalCount > 0 && huge.totalHoldings > huge.holdings.length);
+check("the summary reports the true total",
+  summarise(huge).startsWith(`${huge.totalHoldings.toLocaleString("en-US")} `) ||
+  summarise(huge).startsWith(`${huge.totalHoldings} `),
+  summarise(huge).slice(0, 60));
+check("the worst claims survive the cap",
+  huge.holdings.every((h, i) => i === 0 || h.rating.grade !== "A"));
 
 check("a malformed address is rejected before any RPC call",
   await scanAddress("not-an-address").then(() => false).catch(() => true));
