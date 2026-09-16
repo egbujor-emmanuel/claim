@@ -681,3 +681,49 @@ footer {
   flex-wrap: wrap;
   gap: 9px;
 }
+
+/* ---------- portal picker clearance (coarse pointers) ---------- */
+/*
+ * The portal places its letter picker at word-bottom + 42px, which lands on top
+ * of the hero's support line at word-bottom + 26px. Both only appear together
+ * on touch devices, where the picker is the only way to choose a letter, so the
+ * picker keeps its job and the stack is re-spaced around it.
+ */
+@media (any-pointer: coarse) {
+  .hero-support {
+    inset: calc(var(--gp-word-bottom, 50%) + 18px) 20px auto;
+    font-size: 13px;
+  }
+  /* Below the support line, with room for its descenders. */
+  :where(section) [data-gp-touch-picker] {
+    top: calc(var(--gp-word-bottom, 50%) + 64px);
+  }
+  /* And the caption below the picker rather than through it. */
+  :where(section) [data-gp-caption] {
+    inset: calc(var(--gp-word-bottom, 50%) + 124px) 20px auto;
+    justify-content: center;
+  }
+  .hero-scroll {
+    bottom: 4%;
+  }
+}
+
+/* Short screens: the word shrinks, so everything tightens with it. */
+@media (any-pointer: coarse) and (max-height: 700px) {
+  .hero-eyebrow {
+    inset: auto 20px calc(100% - var(--gp-word-top, 35%) + 16px);
+    font-size: 12px;
+  }
+  .hero-support {
+    inset: calc(var(--gp-word-bottom, 50%) + 12px) 20px auto;
+  }
+  :where(section) [data-gp-touch-picker] {
+    top: calc(var(--gp-word-bottom, 50%) + 52px);
+  }
+  :where(section) [data-gp-caption] {
+    inset: calc(var(--gp-word-bottom, 50%) + 108px) 20px auto;
+  }
+  .hero-scroll {
+    display: none;
+  }
+}
