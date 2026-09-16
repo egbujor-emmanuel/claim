@@ -100,6 +100,61 @@ export interface MobileWallet {
  * Only wallets with a documented and stable browse link are listed. Guessing a
  * deep-link format produces a dead tap, which is worse than not offering it.
  */
+/**
+ * Wallets Claim knows about, whether or not they are installed.
+ *
+ * A chooser that lists only what is already installed is useless to the person
+ * who has not installed anything yet, and it silently implies Claim supports
+ * one wallet when it supports any. Everything here is offered; detection
+ * decides whether the entry connects or points at an install page.
+ */
+export interface KnownWallet {
+  name: string;
+  installUrl: string;
+}
+
+export const KNOWN_WALLETS: KnownWallet[] = [
+  { name: "Phantom", installUrl: "https://phantom.app/download" },
+  { name: "Solflare", installUrl: "https://solflare.com/download" },
+  { name: "Backpack", installUrl: "https://backpack.app/download" },
+  { name: "Trust", installUrl: "https://trustwallet.com/download" },
+];
+
+export interface WalletChoice {
+  name: string;
+  /** Present when the wallet is installed and can be connected right now. */
+  found: FoundWallet | null;
+  installUrl: string;
+  /** On mobile, the link that opens this page inside the wallet's browser. */
+  mobileHref: string | null;
+}
+
+/**
+ * Everything to show in the chooser: installed wallets first, then the rest.
+ */
+export function walletChoices(): WalletChoice[] {
+  const found = findWallets();
+  const byName = new Map(found.map((f) => [f.name.toLowerCase(), f]));
+  const mobile = new Map(mobileWallets().map((m) => [m.name.toLowerCase(), m.href]));
+
+  const choices: WalletChoice[] = KNOWN_WALLETS.map((k) => ({
+    name: k.name,
+    found: byName.get(k.name.toLowerCase()) ?? null,
+    installUrl: k.installUrl,
+    mobileHref: mobile.get(k.name.toLowerCase()) ?? null,
+  }));
+
+  // A provider we detected but do not have on the known list still deserves a
+  // button: an unrecognised wallet is not an unsupported one.
+  for (const f of found) {
+    if (!choices.some((c) => c.found?.provider === f.provider)) {
+      choices.push({ name: f.name, found: f, installUrl: "", mobileHref: null });
+    }
+  }
+
+  return choices.sort((a, b) => Number(Boolean(b.found)) - Number(Boolean(a.found)));
+}
+
 export function mobileWallets(): MobileWallet[] {
   const url = typeof window !== "undefined" ? window.location.href : "";
   const origin = typeof window !== "undefined" ? window.location.origin : "";

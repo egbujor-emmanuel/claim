@@ -458,6 +458,33 @@ check("tradeoffs are stated, not hidden",
   betterClaims(sx!.tokens.find((t) => t.token.symbol === "tSpaceX")!.token.mint)
     .some((o) => o.tradeoffs.length > 0));
 
+// A position that routes is not a position that sells. SOXLx quotes fine and
+// returns 29 cents on $1,000; offering a switch across that pool would hand a
+// holder a total loss labelled as an upgrade. This is the check that caught it.
+const soxlx = byMint("XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu");
+const soxlOpts = soxlx ? betterClaims("XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu", soxlx) : [];
+check("a routable-but-worthless position is not offered as switchable",
+  soxlOpts.length > 0 && soxlOpts.every((o) => !o.executable),
+  soxlOpts.map((o) => `${o.to.token.symbol} executable=${o.executable}`).join(", "));
+check("a blocked switch explains itself in numbers",
+  soxlOpts.every((o) => o.executable || /%/.test(o.blockedReason ?? "")),
+  soxlOpts[0]?.blockedReason?.slice(0, 80) ?? "");
+
+// Every non-executable option must say why, and every executable one must have
+// measured depth behind it rather than an unchecked assumption.
+{
+  const u2 = loadUniverse();
+  let silent = 0;
+  for (const t of u2.tokens) {
+    const c2 = byMint(t.mint, u2);
+    if (!c2) continue;
+    for (const o of betterClaims(t.mint, c2)) {
+      if (!o.executable && !o.blockedReason) silent++;
+    }
+  }
+  check("no switch is blocked without a stated reason", silent === 0, `${silent} silent`);
+}
+
 const pf = await preflight(spcx);
 check("preflight re-reads the destination live", pf.ok, pf.blockers.join("; ") || "no blockers");
 

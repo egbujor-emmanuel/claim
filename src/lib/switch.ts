@@ -1,6 +1,7 @@
 import { byMint, type ResolvedCompany, type ResolvedToken } from "./search.js";
 import { rateToken } from "./rating/index.js";
 import { fetchMint } from "./onchain/mint.js";
+import { depthFor } from "./rating/index.js";
 import type { Grade } from "./rating/grade.js";
 
 /**
@@ -31,6 +32,17 @@ export interface SwitchOption {
   gains: string[];
   /** Anything they give up. Stated even when it weakens the case. */
   tradeoffs: string[];
+  /**
+   * False when the position cannot be sold on any venue, so the switch cannot
+   * be executed however much better the destination is.
+   *
+   * Offering an action someone cannot take is worse than offering none: it
+   * sends them to a quote that fails with TOKEN_NOT_TRADABLE and leaves them
+   * thinking the tool is broken rather than that the asset is stuck.
+   */
+  executable: boolean;
+  /** Why it cannot be executed, when it cannot. */
+  blockedReason: string | null;
 }
 
 function structureOf(t: ResolvedToken) {
@@ -99,6 +111,88 @@ function describe(from: ResolvedToken, to: ResolvedToken) {
 }
 
 /**
+ * Can this position actually be sold?
+ *
+ * Read from the depth cache rather than guessed. A token with no route has no
+ * buyer at any size, so the only exit is redemption with the issuer -- which is
+ * a different action with different eligibility, and not one Claim can perform.
+ */
+/**
+ * The loss at which a "market" stops being one.
+ *
+ * Not a risk preference. A pool that returns 10c on the dollar is not a venue
+ * a holder can exit through, whatever the router says about routability, and
+ * offering a switch across it would hand someone a 90% loss dressed as an
+ * upgrade.
+ */
+const UNSELLABLE_LOSS_PCT = 50;
+
+/**
+ * Whether the held position can actually be sold to fund a switch.
+ *
+ * Routability is the wrong question, and asking it was the bug. Jupiter reports
+ * SOXLx as tradable and will happily quote it: $1,000 in returns 29 cents. The
+ * route exists, the market does not. So this reads what the ladder actually
+ * measured -- what comes back at each size -- rather than trusting the boolean.
+ *
+ * Three ways a position fails here, in descending severity: no route at all, a
+ * route that returns almost nothing, and a route too thin to clear 5% at any
+ * measured size. All three mean the same thing to a holder, which is that the
+ * switch Claim is about to offer cannot be taken.
+ */
+function canSell(held: ResolvedToken): { executable: boolean; reason: string | null } {
+  const depth = depthFor(held.token.mint);
+  const symbol = held.token.symbol;
+
+  const redemption = held.issuer?.redemption.value;
+  const route =
+    redemption === "portable_to_brokerage"
+      ? "Transferring it out to a brokerage through the issuer is the way out."
+      : redemption === "issuer_redemption"
+        ? "Redeeming it with the issuer is the way out, subject to their eligibility rules and minimum."
+        : "There is no demonstrated way out of this position.";
+
+  if (!depth) return { executable: true, reason: null };
+
+  if (!depth.tradable) {
+    return {
+      executable: false,
+      reason: `${symbol} has no market on any venue Jupiter can reach, so it cannot be sold to fund a switch. ${route}`,
+    };
+  }
+
+  const routed = depth.rungs.filter((r) => r.routed && r.lossPct !== null);
+  const bestLoss = routed.length ? Math.min(...routed.map((r) => r.lossPct as number)) : null;
+
+  if (bestLoss !== null && bestLoss >= UNSELLABLE_LOSS_PCT) {
+    const smallest = routed[routed.length - 1] ?? routed[0];
+    return {
+      executable: false,
+      reason:
+        `${symbol} routes but does not sell. The best price Claim could find returns ` +
+        `${(100 - bestLoss).toFixed(2)}% of what goes in` +
+        (smallest ? ` — a ${fmtUsd(smallest.usd)} sale came back as ${fmtUsd(smallest.receivedUsd ?? 0)}` : "") +
+        `. Switching through that pool would cost more than the claim it buys. ${route}`,
+    };
+  }
+
+  if (depth.maxExitUsd === null && routed.length > 0) {
+    return {
+      executable: false,
+      reason: `${symbol} has a route, but nothing sold inside 5% at any size Claim measured. A switch here would pay the spread rather than gain a claim. ${route}`,
+    };
+  }
+
+  return { executable: true, reason: null };
+}
+
+function fmtUsd(n: number): string {
+  if (n >= 1000) return `$${Math.round(n).toLocaleString("en-US")}`;
+  if (n >= 1) return `$${n.toFixed(2)}`;
+  return `$${n.toFixed(4)}`;
+}
+
+/**
  * Better claims on the same company than the one held.
  *
  * Ordered by claim strength, never by price. That ordering is the entire point:
@@ -113,6 +207,10 @@ export function betterClaims(mint: string, company?: ResolvedCompany | null): Sw
 
   const heldRating = rateToken(held);
   if (!heldRating.grade) return []; // not an equity claim; nothing to compare
+
+  // A switch sells the position. If it cannot be sold, the switch cannot
+  // happen, and that is worth saying rather than discovering at the quote.
+  const sourceExit = canSell(held);
 
   const options: SwitchOption[] = [];
   for (const candidate of resolved.tokens) {
@@ -131,6 +229,8 @@ export function betterClaims(mint: string, company?: ResolvedCompany | null): Sw
       toGrade: rating.grade,
       gains,
       tradeoffs,
+      executable: sourceExit.executable,
+      blockedReason: sourceExit.reason,
     });
   }
 

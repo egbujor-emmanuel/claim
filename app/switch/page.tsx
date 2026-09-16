@@ -107,13 +107,21 @@ export default async function SwitchPage({
         </div>
       ) : null}
 
-      <SwitchClient
+      {option && !option.executable ? (
+        <div className="note-box">
+          <strong>This switch cannot be executed.</strong>
+          <br />
+          {option.blockedReason}
+        </div>
+      ) : (
+        <SwitchClient
         fromMint={from}
         toMint={to}
         fromSymbol={held.token.symbol}
         toSymbol={target.token.symbol}
-        decimals={held.token.decimals ?? 9}
-      />
+          decimals={held.token.decimals ?? 9}
+        />
+      )}
 
       <div className="note-box">
         Claim builds the transaction and hands it to your wallet. It never holds a key, never

@@ -108,7 +108,9 @@ function SwitchPanel({ holding }: { holding: PortfolioScan["holdings"][number] }
   return (
     <div className="switch">
       <div className="switch-head">
-        A stronger claim on the same company is available
+        {best.executable
+          ? "A stronger claim on the same company is available"
+          : "A stronger claim exists, but this position cannot be sold"}
         <span className="switch-grades">
           {best.fromGrade} → {best.toGrade}
         </span>
@@ -132,13 +134,17 @@ function SwitchPanel({ holding }: { holding: PortfolioScan["holdings"][number] }
         ))}
       </ul>
 
-      <form action="/switch" method="get">
-        <input type="hidden" name="from" value={holding.mint} />
-        <input type="hidden" name="to" value={best.to.token.mint} />
-        <button type="submit" className="switch-button">
-          Review this switch
-        </button>
-      </form>
+      {best.executable ? (
+        <form action="/switch" method="get">
+          <input type="hidden" name="from" value={holding.mint} />
+          <input type="hidden" name="to" value={best.to.token.mint} />
+          <button type="submit" className="switch-button">
+            Review this switch
+          </button>
+        </form>
+      ) : (
+        <p className="switch-blocked">{best.blockedReason}</p>
+      )}
     </div>
   );
 }

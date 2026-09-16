@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import {
-  findWallets,
+  walletChoices,
   connectWallet,
   isMobile,
-  mobileWallets,
+  findWallets,
   explainWalletError,
   type FoundWallet,
+  type WalletChoice,
 } from "./wallet";
 
 /**
@@ -50,7 +51,12 @@ export function SwitchClient({
   // Detected once on the client. Wallets inject before hydration, and
   // re-scanning on every render would fight React's rendering model.
   const [detected, setDetected] = useState<FoundWallet[]>([]);
-  useEffect(() => setDetected(findWallets()), []);
+  const [choices, setChoices] = useState<WalletChoice[]>([]);
+  const [choosing, setChoosing] = useState(false);
+  useEffect(() => {
+    setDetected(findWallets());
+    setChoices(walletChoices());
+  }, []);
 
   const connect = async (found: FoundWallet) => {
     setStage("connecting");
@@ -139,54 +145,64 @@ export function SwitchClient({
     <div className="switch-exec">
       {!wallet ? (
         <>
-          {detected.length > 0 ? (
-            <div className="wallet-list">
-              {detected.map((w) => (
-                <button
-                  key={w.where}
-                  type="button"
-                  className="switch-button"
-                  onClick={() => connect(w)}
-                  disabled={stage === "connecting"}
-                >
-                  {stage === "connecting" ? "Connecting…" : `Connect ${w.name}`}
-                </button>
-              ))}
+          {!choosing ? (
+            <>
+              <button
+                type="button"
+                className="switch-button"
+                onClick={() => setChoosing(true)}
+              >
+                Connect wallet
+              </button>
+              <p className="switch-hint">
+                Connecting is read-only and costs nothing. Claim never holds a key and never
+                submits a transaction — your wallet does, only if you approve it.
+              </p>
+            </>
+          ) : (
+            <div className="wallet-picker">
+              <p className="wallet-picker-title">Choose a wallet</p>
+              <div className="wallet-list">
+                {choices.map((c) =>
+                  c.found ? (
+                    <button
+                      key={c.name}
+                      type="button"
+                      className="wallet-option"
+                      onClick={() => connect(c.found!)}
+                      disabled={stage === "connecting"}
+                    >
+                      <span>{c.name}</span>
+                      <span className="wallet-state">
+                        {stage === "connecting" ? "connecting…" : "detected"}
+                      </span>
+                    </button>
+                  ) : isMobile() && c.mobileHref ? (
+                    <a key={c.name} className="wallet-option" href={c.mobileHref}>
+                      <span>{c.name}</span>
+                      <span className="wallet-state">open app</span>
+                    </a>
+                  ) : (
+                    <a
+                      key={c.name}
+                      className="wallet-option wallet-absent"
+                      href={c.installUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <span>{c.name}</span>
+                      <span className="wallet-state">not installed</span>
+                    </a>
+                  ),
+                )}
+              </div>
+              <p className="switch-hint">
+                {isMobile()
+                  ? "On a phone a wallet is only reachable inside its own browser, so these open the app. Everything except signing works without one."
+                  : "Any of these work. Everything except signing works without connecting at all."}
+              </p>
             </div>
-          ) : null}
-
-          <p className="switch-hint">
-            Connecting is read-only and costs nothing. Claim never holds a key and never submits
-            a transaction — your wallet does, only if you approve it.
-          </p>
-
-          {detected.length === 0 ? (
-            isMobile() ? (
-              <p className="switch-hint">
-                Wallets cannot be reached from Safari or Chrome on a phone. Open this page
-                inside a wallet&apos;s own browser:{" "}
-                {mobileWallets().map((w, i) => (
-                  <span key={w.name}>
-                    {i > 0 ? " · " : null}
-                    <a href={w.href}>{w.name}</a>
-                  </span>
-                ))}
-                . Everything except signing works without one.
-              </p>
-            ) : (
-              <p className="switch-hint">
-                No Solana wallet detected in this browser. Phantom, Solflare, Backpack and Trust
-                are all supported. Everything except signing works without one.
-              </p>
-            )
-          ) : null}
-
-          {detected.length > 1 ? (
-            <p className="switch-hint">
-              {detected.length} wallets detected ({detected.map((d) => d.name).join(", ")}). More
-              than one extension can contend for the same connection; if one fails, try another.
-            </p>
-          ) : null}
+          )}
         </>
       ) : (
         <>

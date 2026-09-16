@@ -14,6 +14,31 @@ import { byMint } from "@/src/lib/search.js";
 const MINT = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
 
 /**
+ * Say what a routing failure means, in words.
+ *
+ * Jupiter's codes are precise and useless to a holder. TOKEN_NOT_TRADABLE in
+ * particular is the single most informative thing Claim can report -- it means
+ * the position has no buyer at any size -- and leaking the raw string wastes
+ * that and reads as a broken tool.
+ *
+ * It also reveals when our own depth cache has gone stale: a token recorded as
+ * routable that Jupiter now refuses has lost its market since the last sweep.
+ * The live quote is the authority, not the cache.
+ */
+function explainRouteFailure(code: string, fromSymbol: string): string {
+  if (/TOKEN_NOT_TRADABLE/i.test(code)) {
+    return `${fromSymbol} has no market on any venue Jupiter can reach, so it cannot be sold to fund a switch. That is the finding, not a glitch: the only way out of a position like this is redemption with the issuer, on their terms.`;
+  }
+  if (/NO_ROUTES?_FOUND/i.test(code)) {
+    return `No route exists for that size right now. A smaller amount may route; a position this thin can often only be moved in pieces, if at all.`;
+  }
+  if (/CIRCULAR_ARBITRAGE|SAME/i.test(code)) {
+    return "Those are the same token.";
+  }
+  return `The router could not price this switch (${code}).`;
+}
+
+/**
  * Both mints must reference the same company.
  *
  * Without this the endpoint is a general-purpose swap router, which is not what
@@ -52,7 +77,14 @@ export async function GET(request: Request) {
 
   const quote = await quoteSwitch(from, to, amount);
   if ("error" in quote) {
-    return NextResponse.json({ error: quote.error }, { status: 502 });
+    const fromToken = byMint(from)?.tokens.find((t) => t.token.mint === from);
+    return NextResponse.json(
+      {
+        error: explainRouteFailure(quote.error, fromToken?.token.symbol ?? "This token"),
+        code: quote.error,
+      },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({
@@ -92,7 +124,14 @@ export async function POST(request: Request) {
 
   const quote = await quoteSwitch(from, to, amount);
   if ("error" in quote) {
-    return NextResponse.json({ error: quote.error }, { status: 502 });
+    const fromToken = byMint(from)?.tokens.find((t) => t.token.mint === from);
+    return NextResponse.json(
+      {
+        error: explainRouteFailure(quote.error, fromToken?.token.symbol ?? "This token"),
+        code: quote.error,
+      },
+      { status: 502 },
+    );
   }
 
   const tx = await buildSwitchTransaction(quote, wallet);
