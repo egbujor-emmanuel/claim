@@ -684,44 +684,52 @@ footer {
 
 /* ---------- portal picker clearance (coarse pointers) ---------- */
 /*
- * The portal places its letter picker at word-bottom + 42px, which lands on top
- * of the hero's support line at word-bottom + 26px. Both only appear together
- * on touch devices, where the picker is the only way to choose a letter, so the
- * picker keeps its job and the stack is re-spaced around it.
+ * The portal ships its own scoped styles in a <style> tag rendered inside the
+ * section, so those rules come after this file in document order. Its selector
+ * is `:where(#uid) [data-gp-touch-picker]`, and :where() contributes nothing to
+ * specificity, so that rule weighs exactly as much as a bare attribute
+ * selector. Matching it is not enough: at equal specificity the later rule wins,
+ * which is why the picker kept its own position no matter what was set here.
+ *
+ * Doubling the attribute selector raises this to (0,2,0) and wins cleanly,
+ * without touching the vendored component or resorting to !important.
  */
 @media (any-pointer: coarse) {
   .hero-support {
-    inset: calc(var(--gp-word-bottom, 50%) + 18px) 20px auto;
+    inset: calc(var(--gp-word-bottom, 50%) + 16px) 20px auto;
     font-size: 13px;
   }
-  /* Below the support line, with room for its descenders. */
-  :where(section) [data-gp-touch-picker] {
-    top: calc(var(--gp-word-bottom, 50%) + 64px);
+
+  /* Clear of the support line and its descenders, with room to tap. */
+  [data-gp-touch-picker][data-gp-touch-picker] {
+    top: calc(var(--gp-word-bottom, 50%) + 104px);
   }
-  /* And the caption below the picker rather than through it. */
-  :where(section) [data-gp-caption] {
-    inset: calc(var(--gp-word-bottom, 50%) + 124px) 20px auto;
+
+  /* Caption below the picker, not through it. */
+  [data-gp-caption][data-gp-caption] {
+    inset: calc(var(--gp-word-bottom, 50%) + 168px) 20px auto;
     justify-content: center;
   }
+
   .hero-scroll {
-    bottom: 4%;
+    bottom: 3%;
   }
 }
 
-/* Short screens: the word shrinks, so everything tightens with it. */
-@media (any-pointer: coarse) and (max-height: 700px) {
+/* Short screens: less room, so the optional lines go first. */
+@media (any-pointer: coarse) and (max-height: 760px) {
   .hero-eyebrow {
-    inset: auto 20px calc(100% - var(--gp-word-top, 35%) + 16px);
+    inset: auto 20px calc(100% - var(--gp-word-top, 35%) + 14px);
     font-size: 12px;
   }
   .hero-support {
-    inset: calc(var(--gp-word-bottom, 50%) + 12px) 20px auto;
+    display: none;
   }
-  :where(section) [data-gp-touch-picker] {
-    top: calc(var(--gp-word-bottom, 50%) + 52px);
+  [data-gp-touch-picker][data-gp-touch-picker] {
+    top: calc(var(--gp-word-bottom, 50%) + 28px);
   }
-  :where(section) [data-gp-caption] {
-    inset: calc(var(--gp-word-bottom, 50%) + 108px) 20px auto;
+  [data-gp-caption][data-gp-caption] {
+    inset: calc(var(--gp-word-bottom, 50%) + 92px) 20px auto;
   }
   .hero-scroll {
     display: none;
