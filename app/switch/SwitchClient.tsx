@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  findWallet,
+  findWallets,
+  connectWallet,
   isMobile,
-  phantomDeepLink,
+  mobileWallets,
   explainWalletError,
+  type FoundWallet,
 } from "./wallet";
 
 /**
@@ -45,30 +47,21 @@ export function SwitchClient({
   const [signature, setSignature] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
-  const connect = async () => {
-    const found = findWallet();
+  // Detected once on the client. Wallets inject before hydration, and
+  // re-scanning on every render would fight React's rendering model.
+  const [detected, setDetected] = useState<FoundWallet[]>([]);
+  useEffect(() => setDetected(findWallets()), []);
 
-    if (!found) {
-      // On mobile nothing injects into Safari or Chrome. Saying "no wallet
-      // found" there would be false and would read as a broken product.
-      setMessage(
-        isMobile()
-          ? "Mobile browsers cannot reach a wallet directly. Open this page inside your wallet's own browser, or keep reading — everything except signing works without one."
-          : "No Solana wallet found in this browser. Phantom, Solflare or Backpack will work. Everything except signing works without one.",
-      );
-      setStage("error");
-      return;
-    }
-
+  const connect = async (found: FoundWallet) => {
     setStage("connecting");
     setMessage(null);
     try {
-      const res = await found.provider.connect();
-      setWallet(res.publicKey.toString());
+      const address = await connectWallet(found);
+      setWallet(address);
       setWalletName(found.name);
       setStage("idle");
     } catch (e) {
-      setMessage(explainWalletError(e));
+      setMessage(explainWalletError(e, detected));
       setStage("error");
     }
   };
@@ -106,7 +99,7 @@ export function SwitchClient({
   };
 
   const execute = async () => {
-    const found = findWallet();
+    const found = detected.find((d) => d.name === walletName) ?? detected[0];
     if (!found || !wallet) return;
     const p = found.provider;
     setStage("signing");
@@ -135,7 +128,7 @@ export function SwitchClient({
       setSignature(sent.signature);
       setStage("sent");
     } catch (e) {
-      setMessage(explainWalletError(e));
+      setMessage(explainWalletError(e, detected));
       setStage("error");
     }
   };
@@ -146,18 +139,52 @@ export function SwitchClient({
     <div className="switch-exec">
       {!wallet ? (
         <>
-          <button type="button" className="switch-button" onClick={connect}>
-            {stage === "connecting" ? "Connecting…" : "Connect wallet to switch"}
-          </button>
+          {detected.length > 0 ? (
+            <div className="wallet-list">
+              {detected.map((w) => (
+                <button
+                  key={w.where}
+                  type="button"
+                  className="switch-button"
+                  onClick={() => connect(w)}
+                  disabled={stage === "connecting"}
+                >
+                  {stage === "connecting" ? "Connecting…" : `Connect ${w.name}`}
+                </button>
+              ))}
+            </div>
+          ) : null}
+
           <p className="switch-hint">
             Connecting is read-only and costs nothing. Claim never holds a key and never submits
             a transaction — your wallet does, only if you approve it.
           </p>
-          {isMobile() ? (
+
+          {detected.length === 0 ? (
+            isMobile() ? (
+              <p className="switch-hint">
+                Wallets cannot be reached from Safari or Chrome on a phone. Open this page
+                inside a wallet&apos;s own browser:{" "}
+                {mobileWallets().map((w, i) => (
+                  <span key={w.name}>
+                    {i > 0 ? " · " : null}
+                    <a href={w.href}>{w.name}</a>
+                  </span>
+                ))}
+                . Everything except signing works without one.
+              </p>
+            ) : (
+              <p className="switch-hint">
+                No Solana wallet detected in this browser. Phantom, Solflare, Backpack and Trust
+                are all supported. Everything except signing works without one.
+              </p>
+            )
+          ) : null}
+
+          {detected.length > 1 ? (
             <p className="switch-hint">
-              On a phone? Wallets cannot be reached from Safari or Chrome.{" "}
-              <a href={phantomDeepLink()}>Open this page in Phantom</a> to sign, or carry on
-              reading here — everything except signing works without a wallet.
+              {detected.length} wallets detected ({detected.map((d) => d.name).join(", ")}). More
+              than one extension can contend for the same connection; if one fails, try another.
             </p>
           ) : null}
         </>

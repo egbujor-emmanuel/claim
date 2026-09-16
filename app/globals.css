@@ -674,3 +674,10 @@ footer {
   font-size: 13.5px;
   color: var(--critical);
 }
+
+/* One button per detected wallet. */
+.wallet-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
