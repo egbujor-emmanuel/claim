@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import {
+  findWallet,
+  isMobile,
+  phantomDeepLink,
+  explainWalletError,
+} from "./wallet";
 
 /**
  * The signing handoff.
@@ -15,25 +21,6 @@ import { useState } from "react";
  * their holding is bad would be pushing, and the point is to inform a decision,
  * not to make it for them.
  */
-
-interface SolanaProvider {
-  isPhantom?: boolean;
-  publicKey?: { toString(): string } | null;
-  connect(opts?: { onlyIfTrusted?: boolean }): Promise<{ publicKey: { toString(): string } }>;
-  signAndSendTransaction(tx: unknown): Promise<{ signature: string }>;
-}
-
-declare global {
-  interface Window {
-    solana?: SolanaProvider;
-    solflare?: SolanaProvider;
-  }
-}
-
-function provider(): SolanaProvider | null {
-  if (typeof window === "undefined") return null;
-  return window.solana ?? window.solflare ?? null;
-}
 
 type Stage = "idle" | "connecting" | "quoting" | "ready" | "signing" | "sent" | "error";
 
@@ -52,28 +39,36 @@ export function SwitchClient({
 }) {
   const [stage, setStage] = useState<Stage>("idle");
   const [wallet, setWallet] = useState<string | null>(null);
+  const [walletName, setWalletName] = useState<string>("wallet");
   const [amount, setAmount] = useState("");
   const [quote, setQuote] = useState<{ out: string; impact: number | null } | null>(null);
   const [signature, setSignature] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
   const connect = async () => {
-    const p = provider();
-    if (!p) {
+    const found = findWallet();
+
+    if (!found) {
+      // On mobile nothing injects into Safari or Chrome. Saying "no wallet
+      // found" there would be false and would read as a broken product.
       setMessage(
-        "No Solana wallet found in this browser. Phantom or Solflare will work; you can also read any address without connecting.",
+        isMobile()
+          ? "Mobile browsers cannot reach a wallet directly. Open this page inside your wallet's own browser, or keep reading — everything except signing works without one."
+          : "No Solana wallet found in this browser. Phantom, Solflare or Backpack will work. Everything except signing works without one.",
       );
       setStage("error");
       return;
     }
+
     setStage("connecting");
     setMessage(null);
     try {
-      const res = await p.connect();
+      const res = await found.provider.connect();
       setWallet(res.publicKey.toString());
+      setWalletName(found.name);
       setStage("idle");
-    } catch {
-      setMessage("Connection was declined.");
+    } catch (e) {
+      setMessage(explainWalletError(e));
       setStage("error");
     }
   };
@@ -111,8 +106,9 @@ export function SwitchClient({
   };
 
   const execute = async () => {
-    const p = provider();
-    if (!p || !wallet) return;
+    const found = findWallet();
+    if (!found || !wallet) return;
+    const p = found.provider;
     setStage("signing");
     setMessage(null);
     try {
@@ -139,13 +135,7 @@ export function SwitchClient({
       setSignature(sent.signature);
       setStage("sent");
     } catch (e) {
-      setMessage(
-        e instanceof Error && /User rejected/i.test(e.message)
-          ? "You declined the transaction. Nothing was sent."
-          : e instanceof Error
-            ? e.message
-            : "The wallet did not complete the transaction.",
-      );
+      setMessage(explainWalletError(e));
       setStage("error");
     }
   };
@@ -163,10 +153,19 @@ export function SwitchClient({
             Connecting is read-only and costs nothing. Claim never holds a key and never submits
             a transaction — your wallet does, only if you approve it.
           </p>
+          {isMobile() ? (
+            <p className="switch-hint">
+              On a phone? Wallets cannot be reached from Safari or Chrome.{" "}
+              <a href={phantomDeepLink()}>Open this page in Phantom</a> to sign, or carry on
+              reading here — everything except signing works without a wallet.
+            </p>
+          ) : null}
         </>
       ) : (
         <>
-          <p className="switch-hint mono">connected {wallet.slice(0, 6)}…{wallet.slice(-4)}</p>
+          <p className="switch-hint mono">
+            {walletName} connected · {wallet.slice(0, 6)}…{wallet.slice(-4)}
+          </p>
 
           <label className="switch-amount">
             <span>How much {fromSymbol} to switch</span>
