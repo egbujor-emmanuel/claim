@@ -58,6 +58,27 @@ export interface SourcedFact<T> {
   note?: string;
 }
 
+/**
+ * Structures whose tokens are denominated in the underlying share.
+ *
+ * A custodied entitlement, a tracker certificate and an SPV interest all claim
+ * a per-share relationship, so their prices are comparable to each other and to
+ * the stock. A loan participation is not: Tessera's own metadata calls T-SpaceX
+ * a "Stablecoin Loan Token" giving "economic exposure" and states no share
+ * ratio anywhere. Putting its price beside a per-share price would compare
+ * different units and read as a 4x premium that does not exist.
+ */
+export const SHARE_DENOMINATED: ReadonlySet<ClaimStructure> = new Set([
+  "direct_entitlement",
+  "custodied_entitlement",
+  "securitized_exposure",
+  "spv_interest",
+]);
+
+export function isShareDenominated(structure: ClaimStructure | null | undefined): boolean {
+  return structure ? SHARE_DENOMINATED.has(structure) : false;
+}
+
 export interface Issuer {
   id: string;
   name: string;

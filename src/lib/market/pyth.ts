@@ -1,5 +1,5 @@
 import { PublicKey } from "@solana/web3.js";
-import { RPC_URL } from "../onchain/mint.js";
+import { rpc } from "../onchain/rpc.js";
 
 /**
  * Pyth price feeds, read from chain.
@@ -87,19 +87,6 @@ function parsePriceAccount(data: Buffer): PythPrice | null {
     publishTime: new Date(publishTime * 1000).toISOString(),
     ageSeconds: Math.max(0, Math.round(Date.now() / 1000 - publishTime)),
   };
-}
-
-async function rpc<T>(method: string, params: unknown[]): Promise<T> {
-  const res = await fetch(RPC_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
-  });
-  if (!res.ok) throw new Error(`RPC ${method}: HTTP ${res.status}`);
-  const json = (await res.json()) as { result?: T; error?: { message: string } };
-  if (json.error) throw new Error(`RPC ${method}: ${json.error.message}`);
-  if (json.result === undefined) throw new Error(`RPC ${method}: no result`);
-  return json.result;
 }
 
 interface AccountValue {

@@ -1,4 +1,4 @@
-import { RPC_URL } from "./onchain/mint.js";
+import { rpc } from "./onchain/rpc.js";
 import { byMint, loadUniverse, type ResolvedToken } from "./search.js";
 import { rateToken } from "./rating/index.js";
 import { betterClaims, type SwitchOption } from "./switch.js";
@@ -68,19 +68,6 @@ interface ParsedTokenAccount {
       };
     };
   };
-}
-
-async function rpc<T>(method: string, params: unknown[]): Promise<T> {
-  const res = await fetch(RPC_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
-  });
-  if (!res.ok) throw new Error(`RPC ${method}: HTTP ${res.status}`);
-  const json = (await res.json()) as { result?: T; error?: { message: string } };
-  if (json.error) throw new Error(json.error.message);
-  if (json.result === undefined) throw new Error(`RPC ${method}: no result`);
-  return json.result;
 }
 
 /** Base58, the length a Solana address can be. */

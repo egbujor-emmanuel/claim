@@ -1,9 +1,10 @@
 import type { OnChainState } from "../types.js";
+import { rpc } from "./rpc.js";
 
 const TOKEN_2022 = "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb";
 const TOKEN_LEGACY = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA";
 
-export const RPC_URL = process.env.SOLANA_RPC_URL ?? "https://api.mainnet-beta.solana.com";
+export { RPC_URL } from "./rpc.js";
 
 interface ParsedExtension {
   extension: string;
@@ -16,19 +17,6 @@ function ext(extensions: ParsedExtension[], name: string): Record<string, unknow
 
 function str(v: unknown): string | null {
   return typeof v === "string" && v.length > 0 ? v : null;
-}
-
-async function rpc<T>(method: string, params: unknown[]): Promise<T> {
-  const res = await fetch(RPC_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }),
-  });
-  if (!res.ok) throw new Error(`RPC ${method} failed: HTTP ${res.status}`);
-  const json = (await res.json()) as { result?: T; error?: { message: string } };
-  if (json.error) throw new Error(`RPC ${method} error: ${json.error.message}`);
-  if (json.result === undefined) throw new Error(`RPC ${method} returned no result`);
-  return json.result;
 }
 
 interface AccountValue {
