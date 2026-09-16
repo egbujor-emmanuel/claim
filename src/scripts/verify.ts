@@ -82,12 +82,15 @@ section("PHASE 1: search and grouping");
 const spacex = search("spacex");
 check("search resolves SpaceX", spacex.length > 0);
 const sx = spacex[0];
-check("SpaceX groups all three tokens", sx?.tokens.length === 3,
+check("SpaceX groups all four competing tokens", sx?.tokens.length === 4,
   sx?.tokens.map((t) => t.token.symbol).join(", "));
 check("SpaceX flagged as contested", sx?.contested === true);
 check("grouped by underlying ISIN", sx?.underlyingIsin === "US84615Q1031");
-check("three distinct issuers in the group",
-  new Set(sx?.tokens.map((t) => t.token.issuerId)).size === 3);
+check("four distinct issuers in the group",
+  new Set(sx?.tokens.map((t) => t.token.issuerId)).size === 4);
+check("four materially different claim structures",
+  new Set(sx?.tokens.map((t) => t.issuer?.structure.value)).size === 4,
+  [...new Set(sx?.tokens.map((t) => t.issuer?.structure.value))].join(", "));
 check("byMint resolves to the same company", byMint(SPACEX)?.id === sx?.id);
 check("contested() finds SpaceX", contested().some((c) => c.name === "SpaceX"));
 
@@ -116,6 +119,16 @@ check("SPCXx is securitized exposure",
   bySymbol.get("SPCXx")?.issuer?.structure.value === "securitized_exposure");
 check("SPACEX is an SPV interest",
   bySymbol.get("SPACEX")?.issuer?.structure.value === "spv_interest");
+check("tSpaceX is a loan participation, not equity",
+  bySymbol.get("tSpaceX")?.issuer?.structure.value === "loan_participation");
+check("PreStocks catalogue ingested from their API",
+  u.tokens.filter((t) => t.issuerId === "prestocks").length >= 8,
+  `${u.tokens.filter((t) => t.issuerId === "prestocks").length} tokens`);
+check("Tessera catalogue ingested from their API",
+  u.tokens.filter((t) => t.issuerId === "tessera").length >= 3,
+  `${u.tokens.filter((t) => t.issuerId === "tessera").length} tokens`);
+check("the May 2026 collapse tokens are indexed and graded",
+  ["ANTHROPIC", "OPENAI"].every((sym) => u.tokens.some((t) => t.symbol === sym)));
 check("SPCXx token ISIN differs from the share",
   bySymbol.get("SPCXx")?.token.tokenIsin === "CH1564487366" &&
   bySymbol.get("SPCXx")?.token.underlyingIsin === "US84615Q1031");
@@ -196,8 +209,8 @@ check("CUSIP to ISIN is correct",
   cusipToIsin("037833100") === "US0378331005" &&
   cusipToIsin("88160R101") === "US88160R1014");
 
-check("all four issuers represented",
-  new Set(u.tokens.map((t) => t.issuerId)).size === 4,
+check("all five issuers represented",
+  new Set(u.tokens.map((t) => t.issuerId)).size === 5,
   [...new Set(u.tokens.map((t) => t.issuerId))].join(", "));
 check("hundreds of companies carry competing claims", contested().length >= 100,
   `${contested().length} contested`);
@@ -233,6 +246,12 @@ check("SPACEX rating names single-key control",
   spacexRating?.findings.some((f) => /one key controls/i.test(f.message)) === true);
 check("SPCX rating recognises portability",
   spcxRating?.findings.some((f) => /brokerage/i.test(f.message)) === true);
+check("a loan product is not branded a counterfeit",
+  bySym("tSpaceX")?.authenticity.verdict !== "structurally_impossible",
+  bySym("tSpaceX")?.authenticity.verdict);
+check("the four SpaceX claims grade differently",
+  new Set(["SPACEX", "SPCX", "SPCXx", "tSpaceX"].map((s) => bySym(s)?.grade)).size >= 3,
+  ["SPACEX", "SPCX", "SPCXx", "tSpaceX"].map((s) => `${s}=${bySym(s)?.grade}`).join(" "));
 check("findings are ordered worst-first",
   Object.values(rated.ratings).every((r) => {
     const rank = { critical: 0, warning: 1, note: 2, good: 3 } as const;
@@ -272,7 +291,9 @@ if (await serverUp()) {
   };
   check("API grades SPACEX F", body.grade === "F");
   check("API returns findings", (body.findings?.length ?? 0) > 0, `${body.findings?.length}`);
-  check("API lists competing tokens", (body.company?.alternatives?.length ?? 0) === 2);
+  check("API lists every competing token for the same company",
+    (body.company?.alternatives?.length ?? 0) === 3,
+    `${body.company?.alternatives?.length} alternatives`);
   check("API marks SpaceX contested", body.company?.contested === true);
   check("API exposes the transfer fee", body.onchain?.transferFeeBasisPoints === 50);
   check("API exposes the multiplier trap", body.onchain?.multiplierTrap === true);
@@ -303,8 +324,8 @@ if (await serverUp()) {
   // Counting cards is wrong: searching "spacex" legitimately also matches the
   // leveraged SpaceX ETFs. Assert the three competing SpaceX claims are each
   // present and graded instead.
-  check("page shows all three competing SpaceX claims",
-    /SPCX</.test(html) && /SPCXx</.test(html) && /SPACEX</.test(html));
+  check("page shows all four competing SpaceX claims",
+    /SPCX</.test(html) && /SPCXx</.test(html) && /SPACEX</.test(html) && /tSpaceX</.test(html));
   check("page grades every token it shows",
     (html.match(/class="grade grade-[A-F]"/g) ?? []).length >=
       (html.match(/class="card-top"/g) ?? []).length);

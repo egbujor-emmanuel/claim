@@ -64,6 +64,7 @@ const STRUCTURE_SCORE: Record<string, number> = {
   custodied_entitlement: 1,
   securitized_exposure: 2,
   spv_interest: 4,
+  loan_participation: 4,
   synthetic: 4,
   unbacked: 6,
 };
@@ -76,6 +77,8 @@ const STRUCTURE_TEXT: Record<string, string> = {
     "A certificate against the issuing entity, not the company. If the issuer fails, your claim is against the issuer.",
   spv_interest:
     "An interest in a vehicle that holds the shares. If the company has not consented to the transfer, the claim may not be recognised.",
+  loan_participation:
+    "A loan participation right, not equity. You are a creditor of the issuer's lending arrangement, with no ownership, voting or dividend rights in the company.",
   synthetic: "Price exposure only. No shares change hands at any point.",
   unbacked: "No demonstrable backing.",
 };
@@ -108,7 +111,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
   };
 
   const authenticity = onchain
-    ? checkAuthenticity(onchain, issuer?.id ?? null)
+    ? checkAuthenticity(onchain, issuer?.id ?? null, issuer?.structure.value)
     : { verdict: "plausible" as const, reasons: [], redFlags: ["no on-chain data"] };
 
   // ---- out of scope: a real token, just not a tokenized equity
@@ -155,7 +158,7 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
     const structure = issuer.structure.value;
     charge(STRUCTURE_SCORE[structure] ?? 3, `claim structure: ${structure}`);
     findings.push({
-      severity: structure === "spv_interest" || structure === "unbacked" ? "critical"
+      severity: structure === "spv_interest" || structure === "unbacked" || structure === "loan_participation" ? "critical"
         : structure === "securitized_exposure" ? "warning" : "good",
       message: STRUCTURE_TEXT[structure] ?? structure,
       evidence: `${issuer.name}, ${issuer.legalEntity.value}`,

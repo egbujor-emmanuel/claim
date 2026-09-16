@@ -105,9 +105,24 @@ function hasEquityMachinery(state: OnChainState): { ok: boolean; missing: string
   return { ok: missing.length === 0, missing };
 }
 
+/**
+ * Structures that must carry full equity machinery to be credible.
+ *
+ * A token that claims to wrap custodied shares needs a way to pause on a
+ * regulatory event and a way to express splits and dividends. A loan
+ * participation or a synthetic has neither of those things to express, and
+ * demanding them would brand an honestly-described loan product a counterfeit.
+ */
+const REQUIRES_EQUITY_MACHINERY = new Set([
+  "direct_entitlement",
+  "custodied_entitlement",
+  "securitized_exposure",
+]);
+
 export function checkAuthenticity(
   state: OnChainState,
   claimedIssuerId: string | null,
+  claimedStructure?: string,
 ): AuthenticityResult {
   const reasons: string[] = [];
   const redFlags: string[] = [];
@@ -118,11 +133,18 @@ export function checkAuthenticity(
     );
   }
 
+  // Only judged against the machinery its own stated structure implies.
+  const machineryMatters =
+    claimedStructure === undefined || REQUIRES_EQUITY_MACHINERY.has(claimedStructure);
   const machinery = hasEquityMachinery(state);
-  if (!machinery.ok) {
+  if (machineryMatters && !machinery.ok) {
     for (const m of machinery.missing) redFlags.push(`missing ${m}`);
-  } else {
+  } else if (machinery.ok) {
     reasons.push("carries the full issuance, pause and corporate-action machinery");
+  } else {
+    reasons.push(
+      `does not carry equity machinery, which is consistent with its stated structure (${claimedStructure})`,
+    );
   }
 
   const lower = state.mint.toLowerCase();
@@ -182,8 +204,8 @@ export function checkAuthenticity(
   let verdict: Verdict;
   // Missing machinery only makes something a counterfeit if it claimed to be an
   // equity in the first place. Otherwise it is simply a different kind of token.
-  if (!machinery.ok && !claimsToBeEquity) verdict = "not_an_equity";
-  else if (!machinery.ok) verdict = "structurally_impossible";
+  if (machineryMatters && !machinery.ok && !claimsToBeEquity) verdict = "not_an_equity";
+  else if (machineryMatters && !machinery.ok) verdict = "structurally_impossible";
   else if (authorityVerified) verdict = "canonical";
   else if (redFlags.length > 0) verdict = "plausible";
   else if (markerMatches) verdict = "canonical";

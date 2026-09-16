@@ -11,6 +11,8 @@ import { xstocksAdapter } from "../lib/ingest/xstocks.js";
 import { manualAdapter } from "../lib/ingest/manual.js";
 import { ondoAdapter } from "../lib/ingest/ondo.js";
 import { backpackAdapter } from "../lib/ingest/backpack.js";
+import { prestocksAdapter } from "../lib/ingest/prestocks.js";
+import { tesseraAdapter } from "../lib/ingest/tessera.js";
 import { groupByCompany, contestedCompanies, hasMixedIssuers } from "../lib/ingest/companies.js";
 import { fetchMints, effectiveMultiplier, hasMultiplierTrap } from "../lib/onchain/mint.js";
 import type { TokenRecord } from "../lib/ingest/types.js";
@@ -31,7 +33,8 @@ log("fetching issuer registries...");
 // overwriting good data with nothing.
 const adapters = [
   ["xStocks", xstocksAdapter],
-  ["PreStocks", manualAdapter],
+  ["PreStocks", prestocksAdapter],
+  ["Tessera", tesseraAdapter],
   ["Ondo", ondoAdapter],
   ["Backpack", backpackAdapter],
 ] as const;

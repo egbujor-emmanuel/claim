@@ -4,18 +4,18 @@
 
 **Live: https://claim-puce-kappa.vercel.app** · [Public API](https://claim-puce-kappa.vercel.app/api-docs) · read-only, no wallet, nothing to sign.
 
-Three SpaceX tokens trade on Solana right now. They look interchangeable in a wallet. They are not.
+Four SpaceX tokens trade on Solana right now. They look interchangeable in a wallet. They confer four different legal relationships.
 
-| | SPCX | SPCXx | SPACEX |
-|---|---|---|---|
-| Issuer | Backpack Securities | Backed Assets (JE) Ltd | PreStocks |
-| Structure | Custodied entitlement | Securitized exposure | **SPV interest** |
-| What you own | Real shares, 1:1 in regulated custody | A certificate against a Jersey entity | An interest in a vehicle holding the shares |
-| Exit | Portable to a traditional brokerage | Redeem with the issuer, $1,000 minimum | **Swap by 12 Mar 2027 or it expires worthless** |
-| Transfer fee | none | none | **0.5%, uncapped** |
-| Keys controlling the mint | 2 | 4 | **1** |
-| Balance display | correct | correct | **naive apps show 20% of your real balance** |
-| Claim grade | **B** | **B** | **F** |
+| | SPCX | SPCXx | tSpaceX | SPACEX |
+|---|---|---|---|---|
+| Issuer | Backpack Securities | Backed Assets (JE) Ltd | Tessera | PreStocks |
+| Structure | Custodied entitlement | Securitized exposure | **Loan participation** | **SPV interest** |
+| What you own | Real shares, 1:1 in regulated custody | A certificate against a Jersey entity | **A loan, not equity.** No ownership, voting or dividend rights | An interest in a vehicle holding the shares |
+| Exit | Portable to a traditional brokerage | Redeem with the issuer, $1,000 minimum | Only once the issuer divests. You cannot initiate it | **Swap by 12 Mar 2027 or it expires worthless** |
+| Transfer fee | none | none | **0.2%, uncapped** | **0.5%, uncapped** |
+| Claim grade | **B** | **B** | **C** | **F** |
+
+Tessera says it plainest, in the token's own on-chain metadata: *"This is a loan product, not a security — token holders have no ownership, voting, or dividend rights in OpenAI."*
 
 Every cell is read from live data. Every assertion links to its source.
 
@@ -23,7 +23,7 @@ Every cell is read from live data. Every assertion links to its source.
 
 On 13 May 2026, PreStocks tokens for Anthropic and OpenAI fell **34%** and **39%** in seven days after both companies stated that transfers of their shares into SPVs are void under their transfer restrictions. Anthropic put eight secondary platforms on notice and warned that third parties selling such exposure "may be engaging in fraud or offering investments with no real value."
 
-Same issuer. Same structure. Live on Solana today.
+**Both tokens are still listed and still trading.** Claim indexes them from PreStocks' own API and grades them. The same API also publishes two prices for each token — the issuer's mark and the market price — so you can see that SPACEX marks at $143.98 and trades at $112.00, a 22% discount to its own issuer's valuation that no wallet shows you.
 
 Meanwhile every other tool in this space — aggregators, terminals, "best price" routers — compares tokens on **price, spread and liquidity**, and treats the legal claim as interchangeable. Rank the SpaceX tokens by price and the cheapest option is the one that evaporates in March 2027.
 
@@ -46,19 +46,19 @@ For every token Claim reports:
 ## Findings
 
 <!-- findings:start -->
-Measured across **2,050 tokenized equities** from four issuers — xStocks 837, Backpack Securities 1,138, Ondo 74, PreStocks 1 — covering 1,402 companies. Regenerate any figure below with `npm run findings`.
+Measured across **2,060 tokenized equities** from five issuers — xStocks 837, Backpack Securities 1,138, Ondo 74, PreStocks 8, Tessera 3 — covering 1,409 companies. Regenerate any figure below with `npm run findings`.
 
-**586 companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. Of 586 companies represented by more than one token, every single one spans issuers whose tokens are not legally equivalent.
+**588 companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. Of 588 companies represented by more than one token, every single one spans issuers whose tokens are not legally equivalent.
 
-**One key can seize 1,138 of them.** A single permanent delegate, `2cVYpagTt7ZGc3mmTXBa7fAznUtx5DUu6aCq8uVDaf4a`, can move or burn that many tokenized equities out of any wallet on Solana without the holder's consent. Across the whole universe there are only 3 such keys, covering 1,976 of 2,050 tokens.
+**One key can seize 1,138 of them.** A single permanent delegate, `2cVYpagTt7ZGc3mmTXBa7fAznUtx5DUu6aCq8uVDaf4a`, can move or burn that many tokenized equities out of any wallet on Solana without the holder's consent. Across the whole universe there are only 3 such keys, covering 1,983 of 2,060 tokens.
 
-**74 tokens have no permanent delegate at all** — every Ondo mint. Ondo is the only issuer that cannot take tokens out of a holder's wallet, and that is worth saying as plainly as the risks.
+**77 tokens have no permanent delegate at all** — every Ondo mint. Ondo is the only issuer that cannot take tokens out of a holder's wallet, and that is worth saying as plainly as the risks.
 
-**357 tokens display the wrong balance to naive apps.** They carry a scheduled scaled-UI multiplier that has already taken effect, so software reading the `multiplier` field instead of computing the effective value is wrong. PPLTx shows **10%**, NFLXx shows **10%**, PALLx shows **20%**, SPACEX shows **20%**, CRWDx shows **25%**, APHx shows **50%** of the real position.
+**368 tokens display the wrong balance to naive apps.** They carry a scheduled scaled-UI multiplier that has already taken effect, so software reading the `multiplier` field instead of computing the effective value is wrong. PPLTx shows **10%**, NFLXx shows **10%**, PALLx shows **20%**, SPACEX shows **20%**, CRWDx shows **25%**, APHx shows **50%** of the real position.
 
 **Almost none of them can be sold.** All 2,050 were probed against Jupiter. **96 have a route. 1,954 have none** — no liquidity pool in existence, cross-checked against DexScreener, which returns no pairs for them.
 
-**And a route is not an exit.** Full quote ladders were measured for every routable mint. **38 can absorb a $10,000 sale inside 5% slippage** — out of 2,050.
+**And a route is not an exit.** Full quote ladders were measured for every routable mint. **38 can absorb a $10,000 sale inside 5% slippage** — out of 2,060.
 
 **Counterfeits are live.** Searching Jupiter for `QQQon` returns nine mints, eight of which fail on-chain verification against Ondo's mint authority, and all of which call themselves "Invesco QQQ (Ondo Tokenized)". One impersonating NVIDIA is a pump.fun mint with a fixed billion supply and no extensions at all.
 

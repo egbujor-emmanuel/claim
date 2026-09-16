@@ -50,7 +50,7 @@ export function Hero({ stat }: { stat: { tokens: number; contested: number } }) 
       }
     >
       <div className="hero-copy">
-        <h2>Three SpaceX tokens trade on Solana. They are not the same asset.</h2>
+        <h2>Four SpaceX tokens trade on Solana. They confer four different legal relationships.</h2>
         <div className="hero-grid">
           <div className="hero-item">
             <h3>
@@ -72,11 +72,20 @@ export function Hero({ stat }: { stat: { tokens: number; contested: number } }) 
           </div>
           <div className="hero-item">
             <h3>
+              <span className="hero-no">tSpaceX</span>Tessera
+            </h3>
+            <p>
+              A loan participation right, not equity. In the issuer&apos;s own words, holders
+              have no ownership, voting or dividend rights.
+            </p>
+          </div>
+          <div className="hero-item">
+            <h3>
               <span className="hero-no">SPACEX</span>PreStocks
             </h3>
             <p>
-              An SPV interest that expires worthless on 12 March 2027 if it is not swapped.
-              It has the most holders of the three.
+              An SPV interest that expires worthless on 12 March 2027 if it is not swapped,
+              and taxes every transfer 0.5%.
             </p>
           </div>
         </div>

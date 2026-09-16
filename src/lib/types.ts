@@ -24,6 +24,15 @@ export type ClaimStructure =
   /** You own an interest in a vehicle that holds (or claims to hold) shares.
    *  Void if the company has not consented to the transfer. */
   | "spv_interest"
+  /**
+   * A loan participation right, not equity at all.
+   *
+   * The holder is a creditor in a lending arrangement that references a
+   * company, with no ownership, voting or dividend rights. Repayment depends on
+   * the lender divesting the underlying exposure, so there is no redemption on
+   * demand and no share behind the token to claim.
+   */
+  | "loan_participation"
   /** Perp, forward or CFD. No share transfer occurs at any point. */
   | "synthetic"
   /** No demonstrable backing. */

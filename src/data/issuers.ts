@@ -121,9 +121,9 @@ export const ISSUERS: Record<string, Issuer> = {
     name: "PreStocks",
     legalEntity: {
       value: "PreStocks; special purpose vehicles hold the referenced shares",
-      source:
-        "https://www.coindesk.com/markets/2026/05/13/anthropic-openai-tokens-plunge-nearly-40-as-ai-firms-warn-spv-transfers-are-invalid",
-      verifiedAt: V,
+      source: "https://prestocks.com/api/prestocks",
+      verifiedAt: "2026-09-16",
+      note: "The issuer's own API describes each token as backed 1:1 by SPV exposure that tracks the price of the underlying private company.",
     },
     jurisdiction: {
       value: "Not disclosed on the product page",
@@ -163,6 +163,53 @@ export const ISSUERS: Record<string, Issuer> = {
     },
     mintPrefix: "Pre",
     homepage: "https://prestocks.com",
+  },
+
+  tessera: {
+    id: "tessera",
+    name: "Tessera",
+    legalEntity: {
+      value: "Tessera; the holder is a participant in a lending arrangement, not a shareholder",
+      source: "https://cdn.tesseralab.co/tessera/t-openai.json",
+      verifiedAt: "2026-09-16",
+      note: "Taken from the token's own on-chain metadata document, which is as primary as a source gets.",
+    },
+    jurisdiction: {
+      value: "Not disclosed in the token metadata or the public documentation",
+      source: "https://docs.tessera.pe/",
+      verifiedAt: "2026-09-16",
+    },
+    regulatoryStatus: {
+      value: "Issuer states T-Tokens are a loan product and not a security, while noting regulatory treatment may vary by jurisdiction",
+      source: "https://docs.tessera.pe/",
+      verifiedAt: "2026-09-16",
+    },
+    structure: {
+      value: "loan_participation",
+      source: "https://cdn.tesseralab.co/tessera/t-openai.json",
+      verifiedAt: "2026-09-16",
+      note: "In the issuer's own words: a loan participation right giving economic exposure, and token holders have no ownership, voting or dividend rights in the referenced company.",
+    },
+    redemption: {
+      value: "secondary_only",
+      source: "https://cdn.tesseralab.co/tessera/t-openai.json",
+      verifiedAt: "2026-09-16",
+      note: "Redeemable only following divestment of the underlying exposure, which the holder cannot initiate. Until then the open market is the only exit.",
+    },
+    corporateActions: {
+      value: false,
+      source: "https://cdn.tesseralab.co/tessera/t-openai.json",
+      verifiedAt: "2026-09-16",
+      note: "No dividend rights, and the mint carries no scaled-UI multiplier to express one.",
+    },
+    shareholderRights: {
+      value: false,
+      source: "https://cdn.tesseralab.co/tessera/t-openai.json",
+      verifiedAt: "2026-09-16",
+      note: "Issuer states holders have no ownership, voting or dividend rights.",
+    },
+    homepage: "https://app.tessera.pe/",
+    docs: "https://docs.tessera.pe/",
   },
 
   ondo: {

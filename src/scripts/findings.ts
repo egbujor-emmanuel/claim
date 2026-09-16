@@ -40,7 +40,7 @@ const worstTraps = Object.values(u.onchain)
 const n = (x: number) => x.toLocaleString("en-US");
 
 const md = `${START}
-Measured across **${n(s.tokens)} tokenized equities** from four issuers — xStocks ${n(byIssuer.backed ?? 0)}, Backpack Securities ${n(byIssuer.backpack ?? 0)}, Ondo ${n(byIssuer.ondo ?? 0)}, PreStocks ${n(byIssuer.prestocks ?? 0)} — covering ${n(u.companies.length)} companies. Regenerate any figure below with \`npm run findings\`.
+Measured across **${n(s.tokens)} tokenized equities** from five issuers — xStocks ${n(byIssuer.backed ?? 0)}, Backpack Securities ${n(byIssuer.backpack ?? 0)}, Ondo ${n(byIssuer.ondo ?? 0)}, PreStocks ${n(byIssuer.prestocks ?? 0)}, Tessera ${n(byIssuer.tessera ?? 0)} — covering ${n(u.companies.length)} companies. Regenerate any figure below with \`npm run findings\`.
 
 **${n(contested().length)} companies carry tokens that confer materially different legal claims.** Not different prices for the same thing — different things. Of ${n(multiToken().length)} companies represented by more than one token, ${contested().length === multiToken().length ? "every single one" : n(contested().length)} spans issuers whose tokens are not legally equivalent.
 
