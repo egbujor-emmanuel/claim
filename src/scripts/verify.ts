@@ -21,6 +21,8 @@ import { cusipToIsin } from "../lib/ingest/backpack.js";
 import { rateCompany } from "../lib/rating/index.js";
 import { UNIVERSE_PATH } from "../lib/paths.js";
 import { analyseMint, identifyIssuer } from "../lib/live.js";
+import { scanAddress } from "../lib/holdings.js";
+import { betterClaims, preflight } from "../lib/switch.js";
 import { probeTradable } from "../lib/market/depth.js";
 
 const SPCX = "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb";
@@ -405,6 +407,45 @@ check("cache records which sources failed",
 const ageHours = (Date.now() - Date.parse(u.generatedAt)) / 3_600_000;
 check("universe carries a usable timestamp",
   Number.isFinite(ageHours) && ageHours >= 0, `${ageHours.toFixed(1)}h old`);
+
+// ---------------------------------------------------------------- phase 5
+section("PHASE 5: portfolio and switch");
+
+// Reading a wallet must work on any address, with no connection and no funds.
+const HOLDER_F = "22PthLk8TYnurtbWKRyECFd99cHHbfsbPNHfeMetzfZg"; // holds SPACEX
+const HOLDER_B = "7nVQtYQipN564E9oBi6yZFGox4WL6CR4zsLyYipqgTWu"; // holds SPCX
+
+const weak = await scanAddress(HOLDER_F);
+check("a real wallet scans without a connection", weak.holdings.length > 0,
+  `${weak.holdings.length} holdings`);
+check("holdings carry a grade", weak.holdings.every((h) => h.rating.grade !== undefined));
+check("a weak claim is flagged critical", weak.criticalCount > 0);
+check("a stronger claim is offered", weak.switchableCount > 0,
+  `${weak.switchableCount} switchable`);
+check("the balance applies the multiplier",
+  weak.holdings.some((h) => h.multiplierApplied));
+
+const strong = await scanAddress(HOLDER_B);
+check("a wallet already holding the best claim is offered no switch",
+  strong.holdings.length > 0 && strong.switchableCount === 0);
+
+check("a malformed address is rejected before any RPC call",
+  await scanAddress("not-an-address").then(() => false).catch(() => true));
+
+// Routing must never become a general-purpose swap router.
+const spx = sx!.tokens.find((t) => t.token.symbol === "SPACEX")!.token.mint;
+const spcx = sx!.tokens.find((t) => t.token.symbol === "SPCX")!.token.mint;
+const opts = betterClaims(spx);
+check("switching ranks by claim strength, not price", opts.length > 0,
+  opts.map((o) => `${o.fromGrade}->${o.toGrade} ${o.to.token.symbol}`).join(", "));
+check("every switch states a concrete reason",
+  opts.every((o) => o.gains.length > 0));
+check("tradeoffs are stated, not hidden",
+  betterClaims(sx!.tokens.find((t) => t.token.symbol === "tSpaceX")!.token.mint)
+    .some((o) => o.tradeoffs.length > 0));
+
+const pf = await preflight(spcx);
+check("preflight re-reads the destination live", pf.ok, pf.blockers.join("; ") || "no blockers");
 
 // ---------------------------------------------------------------- summary
 const bar = "=".repeat(56);

@@ -18,7 +18,8 @@
     "build": "next build",
     "start": "next start",
     "stats": "tsx src/scripts/stats.ts",
-    "findings": "tsx src/scripts/findings.ts"
+    "findings": "tsx src/scripts/findings.ts",
+    "scan-address": "tsx src/scripts/scanaddr.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
@@ -28,6 +29,7 @@
     "typescript": "^5.7.0"
   },
   "dependencies": {
+    "@solana/web3.js": "^1.99.0",
     "@tailwindcss/postcss": "^4.3.3",
     "next": "^15.5.25",
     "postcss": "^8.5.28",

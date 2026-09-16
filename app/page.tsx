@@ -5,6 +5,8 @@ import { rateCompany } from "@/src/lib/rating/index.js";
 import { analyseMint } from "@/src/lib/live.js";
 import { CompanyBlock, Disclaimer } from "./components";
 import { LiveCard, Freshness } from "./live";
+import { Portfolio } from "./portfolio";
+import { scanAddress, type PortfolioScan } from "@/src/lib/holdings.js";
 import { Hero } from "./hero";
 
 /** Base58, the length a Solana address can be. */
@@ -24,8 +26,21 @@ export default async function Home({
   // A raw address is looked up live rather than searched as text. Someone
   // pasting a mint wants to know what it is, and the answer must not depend on
   // whether we happened to index it.
+  // One input, two meanings. A base58 string is either a mint or a wallet, and
+  // making the visitor know which in advance would be a strange thing to ask.
+  // Try it as a mint; if no mint account exists there, scan it as a wallet.
   const isAddress = MINT_PATTERN.test(query);
   const live = isAddress ? await analyseMint(query) : null;
+
+  let portfolio: PortfolioScan | null = null;
+  let portfolioError: string | null = null;
+  if (isAddress && live?.error) {
+    try {
+      portfolio = await scanAddress(query);
+    } catch (e) {
+      portfolioError = e instanceof Error ? e.message : "Could not read this address.";
+    }
+  }
 
   const results = query && !isAddress ? search(query, 3).map(rateCompany) : [];
   const featured = query ? [] : search("spacex", 1).map(rateCompany);
@@ -54,8 +69,8 @@ export default async function Home({
             type="search"
             name="q"
             defaultValue={query}
-            placeholder="Search a company, or paste any mint address"
-            aria-label="Search a company or paste a mint address"
+            placeholder="Search a company, or paste a wallet or mint address"
+            aria-label="Search a company, or paste a wallet or mint address"
           />
           <button type="submit">Check</button>
         </form>
@@ -67,13 +82,17 @@ export default async function Home({
         </div>
       </header>
 
-      {/* An address we could not read at all. Say so; do not imply a verdict. */}
-      {live?.error ? (
+      {/* Not a mint, but a readable wallet: show what it holds. */}
+      {portfolio ? <Portfolio scan={portfolio} /> : null}
+
+      {/* Neither a mint nor a readable wallet. Say so; imply no verdict. */}
+      {live?.error && !portfolio ? (
         <div className="note-box">
-          <strong>{live.error}</strong>
+          <strong>{portfolioError ?? live.error}</strong>
           <br />
-          Claim could not find a token mint at <code className="mono">{query}</code>. That is a
-          failure to answer, not a judgement about anything.
+          Claim found neither a token mint nor a readable wallet at{" "}
+          <code className="mono">{query}</code>. That is a failure to answer, not a judgement
+          about anything.
         </div>
       ) : null}
 
