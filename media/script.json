@@ -1,52 +1,46 @@
-[
- {
-  "t": 1.0,
-  "id": "01",
-  "text": "Four SpaceX tokens trade on Solana. They look identical in a wallet."
- },
- {
-  "t": 7.0,
-  "id": "02",
-  "text": "They confer four different legal relationships, and nothing tells you which one you hold."
- },
- {
-  "t": 13.0,
-  "id": "03",
-  "text": "Claim reads every tokenized equity on the chain and grades the claim behind it."
- },
- {
-  "t": 19.5,
-  "id": "04",
-  "text": "Backpack is real shares in regulated custody, portable to a brokerage. Grade A."
- },
- {
-  "t": 26.0,
-  "id": "05",
-  "text": "Backed is a Jersey certificate, with a delegate that can take it from your wallet. Grade C."
- },
- {
-  "t": 33.0,
-  "id": "08",
-  "text": "Buy a company, and Claim picks the token. A hundred and fifty four can be reached by a swap."
- },
- {
-  "t": 40.0,
-  "id": "09",
-  "text": "For eighty three of them, the strongest claim is not the one you can buy. Claim says so before you sign."
- },
- {
-  "t": 50.0,
-  "id": "11",
-  "text": "Claim builds the swap and hands it to your wallet. It never holds a key and never submits."
- },
- {
-  "t": 57.5,
-  "id": "13",
-  "text": "Scan any wallet. Every position graded, worst claim first."
- },
- {
-  "t": 63.5,
-  "id": "12",
-  "text": "The same verdict, free, over a public A P I."
- }
-]
+{
+ "voice": "en-US-AndrewNeural",
+ "rate": "+4%",
+ "scenes": [
+  {"id":"01-open","lines":[
+    "Four SpaceX tokens trade on Solana today.",
+    "In a wallet they look identical. They are not.",
+    "One is a real share. One expires worthless in March twenty twenty seven."]},
+
+  {"id":"02-search","lines":[
+    "Search a company, not a ticker.",
+    "Claim groups every token that references the same security."]},
+
+  {"id":"03-grades","lines":[
+    "Each one is graded on the legal claim behind it, not its price.",
+    "Backpack, grade A: real shares in custody you can move to a brokerage."]},
+
+  {"id":"04-evidence","lines":[
+    "Every finding carries the issuer's own words and a link to them.",
+    "A permanent delegate that can take the token from your wallet. The key is on screen — check it yourself."]},
+
+  {"id":"05-review","lines":[
+    "Where a stronger claim exists and can be reached, Claim offers the move.",
+    "The review page shows what you gain and what you give up, before a wallet opens."]},
+
+  {"id":"06-wallet","lines":[
+    "Connect any wallet. Phantom, Solflare, Backpack or Trust.",
+    "Claim never holds a key and never submits. Your wallet signs, or nothing happens."]},
+
+  {"id":"07-buy","lines":[
+    "You can also just buy a company, and let Claim pick the token.",
+    "A hundred and fifty four are reachable by a swap.",
+    "For eighty three, the strongest claim is not the one on sale."]},
+
+  {"id":"08-compromise","lines":[
+    "So Claim says so, in front of you, before you sign.",
+    "The stronger Apple claim exists. It is not traded. Here is who issues it."]},
+
+  {"id":"09-wallet-scan","lines":[
+    "Paste a wallet and every position in it is graded, worst claim first.",
+    "What you can act on right now sits at the top."]},
+
+  {"id":"10-api","lines":[
+    "And the same verdict, free, over a public A P I."]}
+ ]
+}

@@ -1,107 +1,173 @@
 /**
- * Record the product doing what it does, with nobody narrating over a still.
+ * Record the product being used, one scene per file.
  *
- * The brief: open on the homepage, scroll through the letter, then show every
- * feature. Scrolling is done in small steps rather than jumps because the
- * opening is a pinned scroll sequence -- a jump skips the animation that is the
- * whole point of the first shot.
+ * Two things the first attempt got wrong and this fixes.
  *
- *   node media/record.mjs [baseUrl]
+ * The page is a 940px reading column. Recording it in a 1920px viewport put it
+ * in the middle of half a screen of empty background, which is why it looked
+ * small. The viewport is now sized to the column and rendered at 2x, so the
+ * content fills the frame and the text stays sharp when it scales to 1080p.
+ *
+ * And scenes are separate files. Re-recording one because a scroll landed badly
+ * should not cost the other eight.
+ *
+ *   node media/record.mjs [baseUrl] [onlyScene]
  */
 import { chromium } from "playwright";
-import { mkdirSync } from "node:fs";
+import { mkdirSync, renameSync, readdirSync, rmSync } from "node:fs";
+import { join } from "node:path";
 
 const BASE = process.argv[2] ?? "https://claim-puce-kappa.vercel.app";
-const OUT = "media/raw";
-mkdirSync(OUT, { recursive: true });
+const ONLY = process.argv[3] ?? null;
+const DIR = "media/seg";
+mkdirSync(DIR, { recursive: true });
 
-const W = 1920, H = 1080;
+// Sized to the reading column, not to a monitor.
+const VW = 1280, VH = 720;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Scroll like a person: many small steps, so pinned animations actually play. */
-async function glide(page, toY, steps = 60, pause = 28) {
+/** Scroll at a readable pace. Fast enough not to feel stuck, slow enough to read. */
+async function glide(page, toY, ms = 900) {
   const from = await page.evaluate(() => window.scrollY);
+  const steps = Math.max(12, Math.round(ms / 16));
   for (let i = 1; i <= steps; i++) {
-    const y = from + ((toY - from) * i) / steps;
-    await page.evaluate((v) => window.scrollTo(0, v), y);
-    await sleep(pause);
+    const p = i / steps;
+    const eased = p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2;
+    await page.evaluate((v) => window.scrollTo(0, v), from + (toY - from) * eased);
+    await sleep(16);
   }
 }
 
-const browser = await chromium.launch({ headless: true });
-const context = await browser.newContext({
-  viewport: { width: W, height: H },
-  deviceScaleFactor: 1,
-  recordVideo: { dir: OUT, size: { width: W, height: H } },
-  reducedMotion: "no-preference",
-});
-const page = await context.newPage();
+const scenes = {
+  // The opening. Scrolling through the letter is the argument, so it plays --
+  // but swiftly, because a title sequence that outstays its welcome is the
+  // first thing a judge skips.
+  "01-open": async (page) => {
+    await page.goto(BASE, { waitUntil: "networkidle" });
+    await sleep(1800);
+    await glide(page, VH * 2.3, 2600);
+    await sleep(1600);
+  },
 
-const scene = async (label, fn) => {
-  console.log(`  ${label}`);
-  await fn();
+  // Using it: type a company, press Check.
+  "02-search": async (page) => {
+    await page.goto(BASE, { waitUntil: "networkidle" });
+    await page.evaluate(() => document.querySelector("#top")?.scrollIntoView());
+    await sleep(700);
+    const box = page.locator('input[name="q"]');
+    await box.click();
+    await box.type("spacex", { delay: 110 });
+    await sleep(600);
+    await page.locator('.search button').click();
+    await page.waitForLoadState("networkidle");
+    await sleep(2000);
+  },
+
+  // The verdict: four tokens on one company, four grades.
+  "03-grades": async (page) => {
+    await page.goto(`${BASE}/?q=spacex`, { waitUntil: "networkidle" });
+    await glide(page, 300, 500);
+    await sleep(2200);
+    await glide(page, 900, 900);
+    await sleep(2400);
+  },
+
+  // The evidence behind a grade.
+  "04-evidence": async (page) => {
+    await page.goto(`${BASE}/?q=spacex`, { waitUntil: "networkidle" });
+    await glide(page, 1750, 900);
+    await sleep(2600);
+    await glide(page, 2350, 800);
+    await sleep(2400);
+  },
+
+  // The action: a switch, reviewed.
+  "05-review": async (page) => {
+    await page.goto(`${BASE}/?q=spacex`, { waitUntil: "networkidle" });
+    await glide(page, 560, 600);
+    await sleep(1200);
+    const review = page.locator('.actionable-list a.switch-button').first();
+    await review.click();
+    await page.waitForLoadState("networkidle");
+    await sleep(2400);
+    await glide(page, 700, 800);
+    await sleep(2200);
+  },
+
+  // Connecting: the chooser, not one hardcoded wallet.
+  "06-wallet": async (page) => {
+    await page.goto(`${BASE}/?q=spacex`, { waitUntil: "networkidle" });
+    await glide(page, 620, 600);
+    await sleep(900);
+    await page.locator('button.switch-button', { hasText: "Connect wallet" }).first().click();
+    await sleep(2600);
+  },
+
+  // Buying: Claim picks the token across every reachable company.
+  "07-buy": async (page) => {
+    await page.goto(`${BASE}/buy`, { waitUntil: "networkidle" });
+    await sleep(2200);
+    await glide(page, 620, 900);
+    await sleep(2400);
+    await glide(page, 1500, 1100);
+    await sleep(2200);
+  },
+
+  // The compromise, stated before a wallet opens.
+  "08-compromise": async (page) => {
+    const usdc = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+    const aaplx = "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp";
+    await page.goto(`${BASE}/switch?from=${usdc}&to=${aaplx}`, { waitUntil: "networkidle" });
+    await sleep(1800);
+    await glide(page, 760, 900);
+    await sleep(2800);
+  },
+
+  // A whole wallet, graded.
+  "09-wallet-scan": async (page) => {
+    await page.goto(BASE, { waitUntil: "networkidle" });
+    await page.evaluate(() => document.querySelector("#top")?.scrollIntoView());
+    await sleep(500);
+    const box = page.locator('input[name="q"]');
+    await box.click();
+    await box.type("4PZySiky6z5J5Zb469TeRxNwGVT6cbWsBoeCd6qAScbR", { delay: 22 });
+    await page.locator('.search button').click();
+    await page.waitForLoadState("networkidle");
+    await sleep(2200);
+    await glide(page, 620, 900);
+    await sleep(2400);
+    await glide(page, 1500, 1000);
+    await sleep(2000);
+  },
+
+  // The same verdict, machine readable.
+  "10-api": async (page) => {
+    await page.goto(`${BASE}/api/claim/PreANxuXjsy2pvisWWMNB6YaJNzr7681wJJr2rHsfTh`, { waitUntil: "networkidle" });
+    await sleep(2600);
+  },
 };
 
-// 1. The opening: the word, then scrolling through the letter into the field.
-await scene("open on the homepage", async () => {
-  await page.goto(BASE, { waitUntil: "networkidle" });
-  await sleep(2600);
-});
-
-await scene("scroll through the letter", async () => {
-  const h = await page.evaluate(() => document.body.scrollHeight);
-  await glide(page, Math.min(h * 0.32, H * 2.4), 110, 34);
-  await sleep(2200);
-});
-
-// 2. The claim: four SpaceX tokens, four legal relationships.
-await scene("SpaceX: four tokens, four claims", async () => {
-  await page.goto(`${BASE}/?q=spacex`, { waitUntil: "networkidle" });
-  await sleep(2400);
-  await glide(page, 520, 45, 26);
-  await sleep(2600);
-  await glide(page, 1400, 55, 26);
-  await sleep(2800);
-  await glide(page, 2400, 55, 26);
-  await sleep(2600);
-});
-
-// 3. Buying: Claim picks the token, and says when that is a compromise.
-await scene("buy a company", async () => {
-  await page.goto(`${BASE}/buy`, { waitUntil: "networkidle" });
-  await sleep(2600);
-  await glide(page, 700, 50, 26);
-  await sleep(2400);
-  await glide(page, 1600, 55, 26);
-  await sleep(2400);
-});
-
-// 4. A purchase review, where the compromise is stated before a wallet opens.
-await scene("purchase review", async () => {
-  const usdc = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
-  const aaplx = "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp";
-  await page.goto(`${BASE}/switch?from=${usdc}&to=${aaplx}`, { waitUntil: "networkidle" });
-  await sleep(2600);
-  await glide(page, 900, 50, 26);
-  await sleep(3000);
-});
-
-// 5. A wallet, graded worst first, with what can be acted on at the top.
-await scene("scan a real wallet", async () => {
-  await page.goto(`${BASE}/?q=4PZySiky6z5J5Zb469TeRxNwGVT6cbWsBoeCd6qAScbR`, { waitUntil: "networkidle" });
-  await sleep(3000);
-  await glide(page, 800, 50, 26);
-  await sleep(2600);
-  await glide(page, 1900, 60, 26);
-  await sleep(2600);
-});
-
-// 6. The public API: the same verdict, machine readable.
-await scene("public API", async () => {
-  await page.goto(`${BASE}/api/claim/PreANxuXjsy2pvisWWMNB6YaJNzr7681wJJr2rHsfTh`, { waitUntil: "networkidle" });
-  await sleep(3400);
-});
-
-await context.close();
+const browser = await chromium.launch({ headless: true });
+for (const [name, fn] of Object.entries(scenes)) {
+  if (ONLY && name !== ONLY) continue;
+  const tmp = join(DIR, `_tmp_${name}`);
+  mkdirSync(tmp, { recursive: true });
+  const ctx = await browser.newContext({
+    viewport: { width: VW, height: VH },
+    deviceScaleFactor: 1,
+    // The record size must equal the viewport. Given a larger canvas Playwright
+    // does not scale the page up to fill it -- it draws the page at its native
+    // size in the corner, which is what put the whole product in one quadrant.
+    // Capture at the column's size and let ffmpeg scale the finished frame.
+    recordVideo: { dir: tmp, size: { width: VW, height: VH } },
+  });
+  const page = await ctx.newPage();
+  try { await fn(page); } catch (e) { console.log(`  ${name}: ${e.message}`); }
+  await ctx.close();
+  const f = readdirSync(tmp).find((x) => x.endsWith(".webm"));
+  renameSync(join(tmp, f), join(DIR, `${name}.webm`));
+  rmSync(tmp, { recursive: true, force: true });
+  console.log(`  ${name}`);
+}
 await browser.close();
-console.log("raw video written to", OUT);
+console.log("scenes in", DIR);

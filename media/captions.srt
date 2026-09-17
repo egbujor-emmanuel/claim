@@ -1,39 +1,83 @@
 1
-00:00:01,000 --> 00:00:06,376
-Four SpaceX tokens trade on Solana. They look identical in a wallet.
+00:00:00,450 --> 00:00:03,282
+Four SpaceX tokens trade on Solana today.
 
 2
-00:00:07,000 --> 00:00:12,280
-They confer four different legal relationships, and nothing tells you which one you hold.
+00:00:03,832 --> 00:00:06,592
+In a wallet they look identical. They are not.
 
 3
-00:00:13,000 --> 00:00:17,776
-Claim reads every tokenized equity on the chain and grades the claim behind it.
+00:00:07,142 --> 00:00:11,582
+One is a real share. One expires worthless in March twenty twenty seven.
 
 4
-00:00:19,500 --> 00:00:25,836
-Backpack is real shares in regulated custody, portable to a brokerage. Grade A.
+00:00:22,330 --> 00:00:24,370
+Search a company, not a ticker.
 
 5
-00:00:26,000 --> 00:00:32,120
-Backed is a Jersey certificate, with a delegate that can take it from your wallet. Grade C.
+00:00:24,920 --> 00:00:28,424
+Claim groups every token that references the same security.
 
 6
-00:00:33,000 --> 00:00:39,432
-Buy a company, and Claim picks the token. A hundred and fifty four can be reached by a swap.
+00:00:31,730 --> 00:00:35,546
+Each one is graded on the legal claim behind it, not its price.
 
 7
-00:00:40,000 --> 00:00:46,888
-For eighty three of them, the strongest claim is not the one you can buy. Claim says so before you sign.
+00:00:36,096 --> 00:00:40,920
+Backpack, grade A: real shares in custody you can move to a brokerage.
 
 8
-00:00:50,000 --> 00:00:55,976
-Claim builds the swap and hands it to your wallet. It never holds a key and never submits.
+00:00:43,290 --> 00:00:46,962
+Every finding carries the issuer's own words and a link to them.
 
 9
-00:00:57,500 --> 00:01:02,612
-Scan any wallet. Every position graded, worst claim first.
+00:00:47,512 --> 00:00:53,056
+A permanent delegate that can take the token from your wallet. The key is on screen — check it yourself.
 
 10
-00:01:03,500 --> 00:01:07,628
-The same verdict, free, over a public A P I.
+00:00:57,130 --> 00:01:01,618
+Where a stronger claim exists and can be reached, Claim offers the move.
+
+11
+00:01:02,168 --> 00:01:06,608
+The review page shows what you gain and what you give up, before a wallet opens.
+
+12
+00:01:12,210 --> 00:01:16,914
+Connect any wallet. Phantom, Solflare, Backpack or Trust.
+
+13
+00:01:17,464 --> 00:01:22,384
+Claim never holds a key and never submits. Your wallet signs, or nothing happens.
+
+14
+00:01:23,784 --> 00:01:27,072
+You can also just buy a company, and let Claim pick the token.
+
+15
+00:01:27,622 --> 00:01:30,550
+A hundred and fifty four are reachable by a swap.
+
+16
+00:01:31,100 --> 00:01:35,036
+For eighty three, the strongest claim is not the one on sale.
+
+17
+00:01:37,144 --> 00:01:40,648
+So Claim says so, in front of you, before you sign.
+
+18
+00:01:41,198 --> 00:01:45,758
+The stronger Apple claim exists. It is not traded. Here is who issues it.
+
+19
+00:01:47,264 --> 00:01:51,752
+Paste a wallet and every position in it is graded, worst claim first.
+
+20
+00:01:52,302 --> 00:01:54,582
+What you can act on right now sits at the top.
+
+21
+00:02:06,424 --> 00:02:10,264
+And the same verdict, free, over a public A P I.
