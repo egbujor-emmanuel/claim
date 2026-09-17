@@ -25,7 +25,8 @@
     "audit": "tsx src/scripts/audit.ts",
     "refresh-depth": "tsx src/scripts/destprobe.ts",
     "buy-e2e": "tsx src/scripts/buye2e.ts",
-    "fullcheck": "tsx src/scripts/fullcheck.ts"
+    "fullcheck": "tsx src/scripts/fullcheck.ts",
+    "pyth-map": "tsx src/scripts/pythmap.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

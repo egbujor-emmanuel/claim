@@ -145,6 +145,27 @@ section("a wallet that cannot fund a swap is told before signing");
     (await fetch(`${BASE}/api/balance/nope/${USDC}`)).status === 400);
 }
 
+section("Pyth: is the token priced like the share it tracks");
+{
+  const aaplx = mintOf("AAPLx");
+  const r = await (await fetch(`${BASE}/api/reference/${aaplx}`)).json() as
+    { state?: string; message?: string; underlyingUsd?: number; premiumPct?: number; ageSeconds?: number; feedSymbol?: string };
+  ok("a live equity price comes back from Pyth", r.state === "ok" && typeof r.underlyingUsd === "number",
+    r.state === "ok" ? `${r.feedSymbol} $${r.underlyingUsd?.toFixed(2)}` : (r.state ?? ""));
+  // Pyth's Solana feeds for the tokens themselves run five days stale, so a
+  // stale reference must never be presented as a premium.
+  ok("the equity price used is fresh", r.state !== "ok" || (r.ageSeconds ?? 1e9) < 900,
+    `${r.ageSeconds}s old`);
+  ok("the premium against the underlying is reported",
+    r.state !== "ok" || typeof r.premiumPct === "number",
+    r.state === "ok" ? `${r.premiumPct?.toFixed(2)}%` : "");
+  ok("a mint with no equity feed says so rather than guessing",
+    ["no_feed", "unavailable", "ok"].includes(
+      ((await (await fetch(`${BASE}/api/reference/${mintOf("SPACEX")}`)).json()) as { state?: string }).state ?? ""));
+  ok("a malformed mint is rejected",
+    (await fetch(`${BASE}/api/reference/nope`)).status === 400);
+}
+
 section("the signing screen sets expectations");
 {
   const review = (await page(`/switch?from=${USDC}&to=${mintOf("AAPLx")}`)).body;

@@ -25,10 +25,18 @@ import { rpc } from "../onchain/rpc.js";
  */
 
 /** Pyth's price receiver program on Solana mainnet. */
-const RECEIVER_PROGRAM = new PublicKey("rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ");
+const RECEIVER_PROGRAM = "rec5EKMGg6MxZYaMdyBfgwp4d5rB9T1VQH5pJv5LtFJ";
 
-/** Sponsored feeds live in shard 0. */
-const SHARD = 0;
+/**
+ * Where the feed id sits inside a PriceUpdateV2 account.
+ *
+ * Eight bytes of discriminator, a 32-byte write authority, one byte of
+ * verification level, then the id. Deriving the account address from a seed
+ * was the wrong approach -- the addresses that produced do not exist, while
+ * the accounts plainly do: the program owns 11,424 of them. Asking the chain
+ * which account carries a given feed is both simpler and correct.
+ */
+const FEED_ID_OFFSET = 41;
 
 const FEED_SEARCH = "https://hermes.pyth.network/v2/price_feeds";
 
@@ -42,77 +50,55 @@ export interface PythPrice {
   ageSeconds: number;
 }
 
+function toBase58(hex: string): string {
+  return new PublicKey(Buffer.from(hex.replace(/^0x/, ""), "hex")).toBase58();
+}
+
 /**
- * Derive the price account for a feed.
+ * Read the freshest account carrying each feed.
  *
- * Accounts are PDAs of [shard as u16 LE, feed id] under the receiver program,
- * so no registry lookup is needed to find one.
+ * A feed has many update accounts, posted by different callers at different
+ * times, and most are stale -- the Apple feed had twelve, one of them seven
+ * weeks old. Taking the newest is the difference between a live price and a
+ * number from July.
  */
-export function priceAccountFor(feedIdHex: string): PublicKey {
-  const id = feedIdHex.startsWith("0x") ? feedIdHex.slice(2) : feedIdHex;
-  const shard = Buffer.alloc(2);
-  shard.writeUInt16LE(SHARD, 0);
-  const [pda] = PublicKey.findProgramAddressSync(
-    [shard, Buffer.from(id, "hex")],
-    RECEIVER_PROGRAM,
-  );
-  return pda;
-}
-
-/**
- * PriceUpdateV2 layout:
- *   8 discriminator | 32 write authority | 1 verification level
- *   then PriceFeedMessage: 32 feed id | 8 price i64 | 8 conf u64 | 4 expo i32
- *   | 8 publish time i64 | ...
- */
-function parsePriceAccount(data: Buffer): PythPrice | null {
-  if (data.length < 8 + 32 + 1 + 32 + 8 + 8 + 4 + 8) return null;
-  let o = 8 + 32 + 1;
-  const feedId = data.subarray(o, o + 32).toString("hex");
-  o += 32;
-  const rawPrice = data.readBigInt64LE(o);
-  o += 8;
-  const rawConf = data.readBigUInt64LE(o);
-  o += 8;
-  const exponent = data.readInt32LE(o);
-  o += 4;
-  const publishTime = Number(data.readBigInt64LE(o));
-
-  const scale = Math.pow(10, exponent);
-  return {
-    feedId,
-    price: Number(rawPrice) * scale,
-    confidence: Number(rawConf) * scale,
-    exponent,
-    publishTime: new Date(publishTime * 1000).toISOString(),
-    ageSeconds: Math.max(0, Math.round(Date.now() / 1000 - publishTime)),
-  };
-}
-
-interface AccountValue {
-  data: [string, string];
-}
-
-/** Read several feeds at once. Missing feeds are simply absent from the map. */
 export async function readPrices(feedIds: string[]): Promise<Map<string, PythPrice>> {
   const out = new Map<string, PythPrice>();
-  if (feedIds.length === 0) return out;
+  const now = Date.now();
 
-  const accounts = feedIds.map((id) => priceAccountFor(id).toBase58());
+  for (const feedId of feedIds) {
+    const id = feedId.replace(/^0x/, "");
+    let accounts: { pubkey: string; account: { data: [string, string] } }[];
+    try {
+      accounts = await rpc("getProgramAccounts", [
+        RECEIVER_PROGRAM,
+        {
+          encoding: "base64",
+          filters: [{ memcmp: { offset: FEED_ID_OFFSET, bytes: toBase58(id) } }],
+        },
+      ]);
+    } catch {
+      continue; // a failed read is not a missing price
+    }
 
-  for (let i = 0; i < accounts.length; i += 100) {
-    const batch = accounts.slice(i, i + 100);
-    const result = await rpc<{ value: (AccountValue | null)[] }>("getMultipleAccounts", [
-      batch,
-      { encoding: "base64" },
-    ]);
-    result.value.forEach((account, idx) => {
-      if (!account?.data?.[0]) return;
-      const parsed = parsePriceAccount(Buffer.from(account.data[0], "base64"));
-      const requested = feedIds[i + idx];
-      if (parsed && requested) out.set(requested, parsed);
-    });
-    if (i + 100 < accounts.length) await new Promise((r) => setTimeout(r, 200));
+    let best: PythPrice | null = null;
+    for (const a of accounts) {
+      const b = Buffer.from(a.account.data[0], "base64");
+      if (b.length < FEED_ID_OFFSET + 52) continue;
+      const p = FEED_ID_OFFSET + 32;
+      const exponent = b.readInt32LE(p + 16);
+      const publish = Number(b.readBigInt64LE(p + 20)) * 1000;
+      const parsed: PythPrice = {
+        feedId: id,
+        price: Number(b.readBigInt64LE(p)) * 10 ** exponent,
+        confidence: Number(b.readBigUInt64LE(p + 8)) * 10 ** exponent,
+        exponent,
+        publishTime: new Date(publish).toISOString(),
+        ageSeconds: Math.round((now - publish) / 1000),
+      };
+      if (!best || parsed.ageSeconds < best.ageSeconds) best = parsed;
+    }
+    if (best) out.set(id, best);
   }
 
   return out;

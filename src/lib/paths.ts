@@ -14,3 +14,4 @@ import { join } from "node:path";
 export const CACHE_DIR = join(process.cwd(), "data", "cache");
 export const UNIVERSE_PATH = join(CACHE_DIR, "universe.json");
 export const DEPTH_PATH = join(CACHE_DIR, "depth.json");
+export const PYTH_FEEDS_PATH = join(CACHE_DIR, "pythfeeds.json");

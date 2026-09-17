@@ -1,0 +1,3606 @@
+{
+ "FLNC": {
+  "feedId": "800415fb1fa6bac6bd13888d85843015a9cf35df23769314eb2ccad6b198ac4f",
+  "symbol": "Equity.US.FLNC/USD"
+ },
+ "QUBT": {
+  "feedId": "35df6acc91ade17065f757233443edee7b5046a4cd65748641f48d1c78e031b3",
+  "symbol": "Equity.US.QUBT/USD"
+ },
+ "AI": {
+  "feedId": "afb12c5ccf50495c7a7b04447410d7feb4b3218a663ecbd96aa82e676d3c4f1e",
+  "symbol": "Equity.US.AI/USD"
+ },
+ "MP": {
+  "feedId": "92e03dac647ec6733f61f208a89115ecee4442653736a66008032f4ae588f304",
+  "symbol": "Equity.US.MP/USD"
+ },
+ "DVA": {
+  "feedId": "316c3f180861da3a9c8f0254d961dbebc2055491d469f459170337233de2e0e9",
+  "symbol": "Equity.US.DVA/USD"
+ },
+ "GDDY": {
+  "feedId": "db81d5006b97f915f7f34bd396df8cc84c436e4e76f3849ae6e70ad2585fdf0d",
+  "symbol": "Equity.US.GDDY/USD"
+ },
+ "BXP": {
+  "feedId": "294d4d287de3c867bffe0cfe548f44c9cbdea280906de0ba6074094e6558d87a",
+  "symbol": "Equity.US.BXP/USD"
+ },
+ "DY": {
+  "feedId": "433290e6c638d6fd364131518bf75369eddb24626a252e2d472652cb0720154b",
+  "symbol": "Equity.US.DY/USD"
+ },
+ "FDS": {
+  "feedId": "071301c678e65e5e0530e6f8ff4eb655e23ff0252bb7f4112c89b2496329ab15",
+  "symbol": "Equity.US.FDS/USD"
+ },
+ "TTMI": {
+  "feedId": "f645c9aa24431545d435746258771dde072dd9d63f71f876b9d2c4d0eb573f84",
+  "symbol": "Equity.US.TTMI/USD"
+ },
+ "DPZ": {
+  "feedId": "ac8965f0ed1f9003909d9826d3fe783a45c5021bce71a40341d0ba06140c6431",
+  "symbol": "Equity.US.DPZ/USD"
+ },
+ "HRL": {
+  "feedId": "b0dd9f829e915a1c103427394ff479da7f1de2b0e8fdad3d3b46012c37b05ac9",
+  "symbol": "Equity.US.HRL/USD"
+ },
+ "KTOS": {
+  "feedId": "cfb40f97941f8fdafea7ae631b75316b323297ce4ee04148f31ea7cc7974815d",
+  "symbol": "Equity.US.KTOS/USD"
+ },
+ "HII": {
+  "feedId": "659c675091db659251f2077293bf9e71aef2c978dd729c2be66cec0d41c1d671",
+  "symbol": "Equity.US.HII/USD"
+ },
+ "MGM": {
+  "feedId": "3600d9719b640ae821b323d2aecb55534136f5b4a8711245ac9a8e088ae3ae56",
+  "symbol": "Equity.US.MGM/USD"
+ },
+ "DOCU": {
+  "feedId": "3d310eb22c99f72ed6f1bb5944a0c8d435a623e1c4ccbbb915128cfde728e83f",
+  "symbol": "Equity.US.DOCU/USD"
+ },
+ "WTRG": {
+  "feedId": "c12cdf4c4a26f30ff25791b14cb62e2e8f3ddd4026ddde8221d231b6786a84cb",
+  "symbol": "Equity.US.WTRG/USD"
+ },
+ "AMKR": {
+  "feedId": "f8208ffb5822c912f596ac3df95514222eb1adaa0dd341408b41fed15821c414",
+  "symbol": "Equity.US.AMKR/USD"
+ },
+ "JKHY": {
+  "feedId": "87ea4968e650693b61926526d4b3cb7ee32f4f71217b0e181732ba6e14f9d124",
+  "symbol": "Equity.US.JKHY/USD"
+ },
+ "FIVE": {
+  "feedId": "5a68b463343e82512e5ea36024037971bb44328de682711a671801dc31c22967",
+  "symbol": "Equity.US.FIVE/USD"
+ },
+ "IT": {
+  "feedId": "22eb56a8faa26639943a3f96ab2b0b5fee3fb9c888789da4107d56ffe0471503",
+  "symbol": "Equity.US.IT/USD"
+ },
+ "IVZ": {
+  "feedId": "45b4d37b660364a2bf23a9bdc0ed53b12b84fb85a334b711ba77d6a6533a3bff",
+  "symbol": "Equity.US.IVZ/USD"
+ },
+ "STRL": {
+  "feedId": "8e51b3631c219c252d264e068765dd54bd06e7e5d3120667a5be4a20de82cb49",
+  "symbol": "Equity.US.STRL/USD"
+ },
+ "NWSA": {
+  "feedId": "e3a1aa2fe470ff336c23daa1184f79764a15ac3af2e99ac31ac05942f0befcde",
+  "symbol": "Equity.US.NWSA/USD"
+ },
+ "AUR": {
+  "feedId": "91d942b363c77592a40d4590a96283e9ad95c55ec40a06f57d9a840229786715",
+  "symbol": "Equity.US.AUR/USD"
+ },
+ "NWS": {
+  "feedId": "843ea585a43ae9d0acff8176ab6e5090aaa214c37902404a66082eb5eb4267a9",
+  "symbol": "Equity.US.NWS/USD"
+ },
+ "BAX": {
+  "feedId": "72c3b869b1188eaaacd19da9fac87253d8d4adfa651e5b1b4fd371168445a108",
+  "symbol": "Equity.US.BAX/USD"
+ },
+ "RVTY": {
+  "feedId": "4da5b5fc2f6dfde7d47fac2370940217dd0ce5c37e650f770e6611a974aab96c",
+  "symbol": "Equity.US.RVTY/USD"
+ },
+ "TXRH": {
+  "feedId": "bd022edbd573a52f57b7e930b8b4c51db94407f3b6a99d08abed9c9a79a0a27d",
+  "symbol": "Equity.US.TXRH/USD"
+ },
+ "FN": {
+  "feedId": "2132dbe12a6d7520b29553bafb7c81c178bcc7583112dec25aacfcac99b9049f",
+  "symbol": "Equity.US.FN/USD"
+ },
+ "CCK": {
+  "feedId": "a5a06eeb56f1f0002c2114c95d980f10e007dd0184c8f5683e0fcd6bd8229374",
+  "symbol": "Equity.US.CCK/USD"
+ },
+ "NVR": {
+  "feedId": "b8b6c23723982492c9e893684e2686af4c38eef7f58dc74a030b49a7c07996b7",
+  "symbol": "Equity.US.NVR/USD"
+ },
+ "BEN": {
+  "feedId": "da588e138c2bfac1d3961703edce382c431c77406a68427153b9ac08f5a1b9e4",
+  "symbol": "Equity.US.BEN/USD"
+ },
+ "CDE": {
+  "feedId": "f3b666a93ea3df7ad02b973c4a6a0921875cf3208ebc4909a642ad475849c9ef",
+  "symbol": "Equity.US.CDE/USD"
+ },
+ "IOT": {
+  "feedId": "05b37d23cbccc22f3eb1a678e79ca9e10cf3d087225ebfaad0109491656e8bb7",
+  "symbol": "Equity.US.IOT/USD"
+ },
+ "IONQ": {
+  "feedId": "6af68a227de372e5d19183679911e468e06d85c013f56c376a78a4d942f8f269",
+  "symbol": "Equity.US.IONQ/USD"
+ },
+ "GFS": {
+  "feedId": "8cbec525dd085e025e7a4cb0fa5041a9db203ff0ed5919d9f14e61fff8bfe062",
+  "symbol": "Equity.US.GFS/USD"
+ },
+ "TOST": {
+  "feedId": "d41eeeb414e39be931a2a49df678f11b6b4d5479d4e4dcb5b9b09c0b0a301480",
+  "symbol": "Equity.US.TOST/USD"
+ },
+ "AFRM": {
+  "feedId": "137b11f6e570f46d5cbcf1ebe05ba1bbc677d419ba6eefb5e7f0786c11adae06",
+  "symbol": "Equity.US.AFRM/USD"
+ },
+ "DRAM": {
+  "feedId": "71a19a2d91626d9d184ba85c4a9d21289640013a7dacc113d007847ea1a09ec8",
+  "symbol": "Equity.US.DRAM/USD"
+ },
+ "MVLL": {
+  "feedId": "25d29976104bc89f36ae1e37e564b5ed9f4a9bf32f32d488b16b9ca0bdbe49ef",
+  "symbol": "Equity.US.MVLL/USD"
+ },
+ "MUU": {
+  "feedId": "a4114834f7378835fadccbf9d9c2f1d188ebe6befc67b9b0e52ae81123f48c7c",
+  "symbol": "Equity.US.MUU/USD"
+ },
+ "AXTI": {
+  "feedId": "56b6d6619fbd0b81ae09dbb8ccca77877b78aebf098b2fb95432a926af8e384c",
+  "symbol": "Equity.US.AXTI/USD"
+ },
+ "DJT": {
+  "feedId": "cabf6dfb723b12ac8a67e919379d177903580f8d3ae2fad3897198dc07a5a861",
+  "symbol": "Equity.US.DJT/USD"
+ },
+ "KORU": {
+  "feedId": "c6ecfe57b188368c5dacfafdc4885ee8414d2f6aeb2eaddac30d1c61f1e1f5b7",
+  "symbol": "Equity.US.KORU/USD"
+ },
+ "INTW": {
+  "feedId": "50a5e2e32fc44f04f902be4d78b4188896f7560dd091e473b149c7dbf841c3ea",
+  "symbol": "Equity.US.INTW/USD"
+ },
+ "SOXS": {
+  "feedId": "7cf66aa378a88b0637d1e8dae8ca0d558ba997338af670399e984a995c496200",
+  "symbol": "Equity.US.SOXS/USD"
+ },
+ "SNXX": {
+  "feedId": "c0a283063e97741c59574f5eec33bc955857aefc5765e4b20229940c5be3cdd4",
+  "symbol": "Equity.US.SNXX/USD"
+ },
+ "CRWV": {
+  "feedId": "2a78b78189d6d6eff30a825e4698fd14a0b1ca659bb0079bb7e80521c0e8c75d",
+  "symbol": "Equity.US.CRWV/USD"
+ },
+ "CBRS": {
+  "feedId": "7b6809a00a53228f74622e4909750c0d86a2081032955e02c8e3503b1b93829a",
+  "symbol": "Equity.US.CBRS/USD"
+ },
+ "SHAZ": {
+  "feedId": "a2306f89235d8ffe1b4de0d310c15389bc94d668755a91df02629e846c4c31ee",
+  "symbol": "Equity.US.SHAZ/USD"
+ },
+ "NBIS": {
+  "feedId": "691630d65fbbc8d987717df10453c01907bee8caa60a4aaba4dafca64ea16dc4",
+  "symbol": "Equity.US.NBIS/USD"
+ },
+ "AAOI": {
+  "feedId": "ff68be691d07c6513247fd4e93a6d52b31e0ef7e4899acc43e59cb5c95b3fa76",
+  "symbol": "Equity.US.AAOI/USD"
+ },
+ "ARM": {
+  "feedId": "957bf692b35cc62f222dbf4dc6929130df42fe17c9f03373f44c01f78b05391e",
+  "symbol": "Equity.US.ARM/USD"
+ },
+ "BE": {
+  "feedId": "a955f59cec6006d55ac21ab009c92662f2d9250bc22b86fcce16e7962c129c4f",
+  "symbol": "Equity.US.BE/USD"
+ },
+ "SKHY": {
+  "feedId": "e5725db9661fa7df89131c9d7fd85c30122523a1e864d03986911342a43cd47c",
+  "symbol": "Equity.US.SKHY/USD"
+ },
+ "BKR": {
+  "feedId": "2792f57bf9f228b8e0d12053938e5eb1002f00c4fd76e0f21679b0b5ea576428",
+  "symbol": "Equity.US.BKR/USD"
+ },
+ "BJ": {
+  "feedId": "77f1eaace82a490f8850a81c6e4165e21769f1c0b6dde6327c5068527546d7bd",
+  "symbol": "Equity.US.BJ/USD"
+ },
+ "FDXF": {
+  "feedId": "394f7b65d27e98ed9445327778fdf693f8a4dfcb539dd90287e198bd5062b932",
+  "symbol": "Equity.US.FDXF/USD"
+ },
+ "TLN": {
+  "feedId": "05ff869230bb56bf2df26342880f6a2b9cab2f2eb4c1b59f00ec38e405d65db0",
+  "symbol": "Equity.US.TLN/USD"
+ },
+ "BNY": {
+  "feedId": "388d6ab5c18ec14b9339a718669dc6d5a366c159e21617498c97870d18aeb207",
+  "symbol": "Equity.US.BNY/USD"
+ },
+ "MKC": {
+  "feedId": "f84d53799267676ca75d07bae921233dcc9d856d1b7616a728fdad0a71ed6159",
+  "symbol": "Equity.US.MKC/USD"
+ },
+ "SJM": {
+  "feedId": "9794052f000f3bc2bfa29662035ca0fa65d316ab901e2b4d4238a2bc30637ee6",
+  "symbol": "Equity.US.SJM/USD"
+ },
+ "QSR": {
+  "feedId": "2835749f2a5be8b3dbf9b60af35b5f5bb1f4ffab136ddfc8aa6b96773f26c811",
+  "symbol": "Equity.US.QSR/USD"
+ },
+ "CDW": {
+  "feedId": "3cb1afe7c1f9633ec2245e2ae902d431989d86e67fe69a999ea4736365226049",
+  "symbol": "Equity.US.CDW/USD"
+ },
+ "EG": {
+  "feedId": "1ebf3dd05546ce87c5a2892404717bca81a7b191f893244ad27f6ced751ae38d",
+  "symbol": "Equity.US.EG/USD"
+ },
+ "CLX": {
+  "feedId": "772e16ce4ffa670ed237b51edf04a153137998d06162517f75ad0baa45e118c4",
+  "symbol": "Equity.US.CLX/USD"
+ },
+ "VLTO": {
+  "feedId": "d5d2e23ef78e6c8601b8154c882af2f62b87cc18e38e1c3af04f7301d1b20977",
+  "symbol": "Equity.US.VLTO/USD"
+ },
+ "APA": {
+  "feedId": "bb118ccad2f8d1df2d4f173abacaed772b8443abfcf6eacee1207a5e5d9c105c",
+  "symbol": "Equity.US.APA/USD"
+ },
+ "TW": {
+  "feedId": "af03e147c86ba455ed54923df76d413b146268176fac303920468f961e30b195",
+  "symbol": "Equity.US.TW/USD"
+ },
+ "CHTR": {
+  "feedId": "1585a2b6467e2bf7788d6c58ab4b0f2259610d5997f8aa7b6c160417250c71f8",
+  "symbol": "Equity.US.CHTR/USD"
+ },
+ "TRMB": {
+  "feedId": "9016be1a1eed6240724a40e2629a02c08ef6d87fafc772b856ebdbe3d174e6ba",
+  "symbol": "Equity.US.TRMB/USD"
+ },
+ "HAS": {
+  "feedId": "ab3a0f9d8e8565e58225a4e8bbe6bdf0ae8894aa3a1081aec1cf728fa61d7e4f",
+  "symbol": "Equity.US.HAS/USD"
+ },
+ "PNW": {
+  "feedId": "735a2411c6c532f7f871e5b7370e9e62bac91784a9a620992f5f9de8dcf366b2",
+  "symbol": "Equity.US.PNW/USD"
+ },
+ "GGG": {
+  "feedId": "546d3558fc917ae4265fe195fff4430b3e3b081e817a147ec6a99e3df27c113d",
+  "symbol": "Equity.US.GGG/USD"
+ },
+ "AIT": {
+  "feedId": "0444ad971cd20af326096da92fbcc3460e38d44dbbf54c5a71725767842f762f",
+  "symbol": "Equity.US.AIT/USD"
+ },
+ "CPT": {
+  "feedId": "d71412c0ef13b400c49514108d5236f47c5c30906ac8ae7c65b40bca8a6a984b",
+  "symbol": "Equity.US.CPT/USD"
+ },
+ "TYL": {
+  "feedId": "d78290ea68a7d23aa44291bf9075a7bdeda18f7aabb32b095cdf175ec5cee785",
+  "symbol": "Equity.US.TYL/USD"
+ },
+ "DT": {
+  "feedId": "d64f962c743e331b965269b9b01f88335600f0f005e43595a5acdf02dac548e2",
+  "symbol": "Equity.US.DT/USD"
+ },
+ "ALLY": {
+  "feedId": "0d6c41f292267e021b5bebd48a9b4dd1697e10bb9b9a5b06411c74c570d1135c",
+  "symbol": "Equity.US.ALLY/USD"
+ },
+ "ALGN": {
+  "feedId": "973f5dc5c6c960f20c98c0d14d76c050fdf31b393059ca724fbfd746aa5b44dc",
+  "symbol": "Equity.US.ALGN/USD"
+ },
+ "ZBRA": {
+  "feedId": "be758135d2cea02b8c821e609cdc84d9c5c0e9d82a81b9534d3444b39fbf70bd",
+  "symbol": "Equity.US.ZBRA/USD"
+ },
+ "CG": {
+  "feedId": "c91931c99dbec8229481e54567f72931609411555e93faf59e09c4c1185c580f",
+  "symbol": "Equity.US.CG/USD"
+ },
+ "AVY": {
+  "feedId": "d302d0bf304b2a9a186d58733a2fd9d29a9f4ed7c91b74df44071c614f81363c",
+  "symbol": "Equity.US.AVY/USD"
+ },
+ "NTNX": {
+  "feedId": "32462ff5bcef4c30f6215ba45ebd819e9a18b057994eeeb3c9f14498cff43721",
+  "symbol": "Equity.US.NTNX/USD"
+ },
+ "AIZ": {
+  "feedId": "0807c53eeceb8d3cb15096905d94839971f34cb2cffcda0358c0a8294cfa72ff",
+  "symbol": "Equity.US.AIZ/USD"
+ },
+ "RIVN": {
+  "feedId": "1e59e3164331ce560683eae0c69efe9650ff1bc834225772ddb330aa808f72f0",
+  "symbol": "Equity.US.RIVN/USD"
+ },
+ "PR": {
+  "feedId": "ee8d8be099589b377d1761699c311172d895be6d08e940226da5a4d0262d2fc7",
+  "symbol": "Equity.US.PR/USD"
+ },
+ "PINS": {
+  "feedId": "05b0a4d52786320f28d1389ed8f236c3eca5854376431cfdf7ce37b6326402d2",
+  "symbol": "Equity.US.PINS/USD"
+ },
+ "TRU": {
+  "feedId": "1b44c70514a3e9633da7c856e59d6d8544682b1c7da6ae391a8fb574909ab42b",
+  "symbol": "Equity.US.TRU/USD"
+ },
+ "UDR": {
+  "feedId": "22bc4962a6ab104d6e5f25665cabfca04730bfa959ebfc3def3ba43b19d0ba03",
+  "symbol": "Equity.US.UDR/USD"
+ },
+ "GLPI": {
+  "feedId": "279fb126e8c246e7a01441817e5701d7e9162b9081e81a82d3e375a5f1433354",
+  "symbol": "Equity.US.GLPI/USD"
+ },
+ "ZS": {
+  "feedId": "16164a6568478238fc3102145ad51d973598850073ace86ceda7c89cb7b74598",
+  "symbol": "Equity.US.ZS/USD"
+ },
+ "SWK": {
+  "feedId": "cc7233f28c816dae39aa0bd524029f89e5951bd308523228ecac6891d7a18a7b",
+  "symbol": "Equity.US.SWK/USD"
+ },
+ "DOC": {
+  "feedId": "0adae539549d8495edc5cfc14dfed8974fe440a8c195df187d1a75bb3bb7b441",
+  "symbol": "Equity.US.DOC/USD"
+ },
+ "COO": {
+  "feedId": "ed5a005efa0f84a8acfab450ce4429c3dd57f7cd3284d04eb0c65820e062e85f",
+  "symbol": "Equity.US.COO/USD"
+ },
+ "PTC": {
+  "feedId": "8890509a8bea0d0ec4791ea315042061eac7fbde3a77a91a2b33564d799348f5",
+  "symbol": "Equity.US.PTC/USD"
+ },
+ "JLL": {
+  "feedId": "ce705b51db5f2fe826dfc3db186c1371ffd61a2a06f0529d732de288db04c222",
+  "symbol": "Equity.US.JLL/USD"
+ },
+ "SOLS": {
+  "feedId": "97903ff43fd357bc690d3a4c82d035b6588ed3aabe4d843783af0423f03e0e3b",
+  "symbol": "Equity.US.SOLS/USD"
+ },
+ "LECO": {
+  "feedId": "a08f897997f4223014aea76709b4236f2d89c132e6f45373ed65e029805cd9fc",
+  "symbol": "Equity.US.LECO/USD"
+ },
+ "WRB": {
+  "feedId": "30f0fb9ca84c9dfdbfdbcb57d59e7d4ef6a5c1581acea44577f9a89af396e1b7",
+  "symbol": "Equity.US.WRB/USD"
+ },
+ "BR": {
+  "feedId": "945c4b4ca2c3526335c4b559f7948620d54c80323a56db7b70f5333671fd2416",
+  "symbol": "Equity.US.BR/USD"
+ },
+ "OHI": {
+  "feedId": "eeaf2af62040777467525ee16af7447148e7c1f00654bb48f570be0a4a3afbaa",
+  "symbol": "Equity.US.OHI/USD"
+ },
+ "FNF": {
+  "feedId": "52d68368dbed5b504ced34d3db721e113f01b17b3e713749ee866ddb81df31ed",
+  "symbol": "Equity.US.FNF/USD"
+ },
+ "SUI": {
+  "feedId": "cfe5d0f979c1f6f181068d452ca7efe37e1401cd7a3c219e3f7eab7c8ed64134",
+  "symbol": "Equity.US.SUI/USD"
+ },
+ "WSO": {
+  "feedId": "a55bd574f61202f12e938c36b65360d36f4e5c893b2176f5c5928c27664562e6",
+  "symbol": "Equity.US.WSO/USD"
+ },
+ "ROL": {
+  "feedId": "0991357d942869150d5d10750b3e066855a56b1459b25dca044b59b9a3fbc779",
+  "symbol": "Equity.US.ROL/USD"
+ },
+ "MAA": {
+  "feedId": "8b624894cc6534a0442a22cce2324c3950fc74c848e7f10faf028ae160a762d6",
+  "symbol": "Equity.US.MAA/USD"
+ },
+ "CSGP": {
+  "feedId": "c858b58bd00ea15770243cf7410c5fbcd09b4ff12775d6279464a2508d660932",
+  "symbol": "Equity.US.CSGP/USD"
+ },
+ "THC": {
+  "feedId": "9d92af43235347f173a2da159664df0f88a5959d53aa9f407ed7e91ce935d0c2",
+  "symbol": "Equity.US.THC/USD"
+ },
+ "GL": {
+  "feedId": "d7e307b27dd075c7296b0e75e14a481b3adb588be47ca032403e1d721e3e352c",
+  "symbol": "Equity.US.GL/USD"
+ },
+ "UNM": {
+  "feedId": "9a9a4bdba3051e7906d69b9a70c21550ebba9eb106d1f5821588595ca97dddc2",
+  "symbol": "Equity.US.UNM/USD"
+ },
+ "DECK": {
+  "feedId": "d31cf7d2e7a6a971b74c72815830c642d10a3c4cb170163b30833db9fb1d3d60",
+  "symbol": "Equity.US.DECK/USD"
+ },
+ "NBIX": {
+  "feedId": "5603d723db34e83d86827f522750bffca5b35f137f02d5afda6329b9a37639fd",
+  "symbol": "Equity.US.NBIX/USD"
+ },
+ "REG": {
+  "feedId": "6ae7403d57a08b736dfa40ee8294e6d5108f69280cbd9fe452ed445eb45e08c0",
+  "symbol": "Equity.US.REG/USD"
+ },
+ "LDOS": {
+  "feedId": "df36d39cf7b927c357284441fde4115922d0d6180d4813e525047ea3a3c57f4b",
+  "symbol": "Equity.US.LDOS/USD"
+ },
+ "J": {
+  "feedId": "04ac3a2e7287b5fe9733a415bc7c81d4d4ffdfebc3b7d726b9552623444f8036",
+  "symbol": "Equity.US.J/USD"
+ },
+ "DKS": {
+  "feedId": "0960fc876589d92329305a38fd7165e7fe6f3b7ee88a5b4362135efa1ec7f5e1",
+  "symbol": "Equity.US.DKS/USD"
+ },
+ "PNFP": {
+  "feedId": "473f7d361e5f15bcfefde96849f7e52eebeb12d4f86b79d1db1fd5cda8ee72ff",
+  "symbol": "Equity.US.PNFP/USD"
+ },
+ "PFGC": {
+  "feedId": "92cffb3f8b650ba9eb2c6e92d510bacf626f7161c08cadf4c7e472fe589c5e0f",
+  "symbol": "Equity.US.PFGC/USD"
+ },
+ "EVR": {
+  "feedId": "8906541c889377cf6fcdd063a51508fb97fdf46eafeaca23ac85feec79b65462",
+  "symbol": "Equity.US.EVR/USD"
+ },
+ "ROKU": {
+  "feedId": "b7113dfc953e2884fed9d8eef5154d696b8296bbf7267caf5ad218e49f97ea4e",
+  "symbol": "Equity.US.ROKU/USD"
+ },
+ "LAMR": {
+  "feedId": "e3f07d1ebe4bed7b2e6c12cff292d2850618d58c007700be5ca5d3d18415deae",
+  "symbol": "Equity.US.LAMR/USD"
+ },
+ "BWA": {
+  "feedId": "20e3150670edc7674cf130f844934de184fb497c271499d6c4b9ffad3c41ff0f",
+  "symbol": "Equity.US.BWA/USD"
+ },
+ "BALL": {
+  "feedId": "906e8ef631023ae858c46e558604401c827c69f503795b4603d29f69e57afbef",
+  "symbol": "Equity.US.BALL/USD"
+ },
+ "DKNG": {
+  "feedId": "c0713033a43355d99ca9bb3d77aaba2341efaded3a9518f201331a3f0c1c374c",
+  "symbol": "Equity.US.DKNG/USD"
+ },
+ "RRX": {
+  "feedId": "5bf0c7847f64bed3e7ae092a8d3d0caeb6c14e4c1932dc51c3de0357005b24a6",
+  "symbol": "Equity.US.RRX/USD"
+ },
+ "GEN": {
+  "feedId": "1112194b9abe505c202d243be6f5de5a9c80e40a09082e07f06b6805d04ae54d",
+  "symbol": "Equity.US.GEN/USD"
+ },
+ "RPM": {
+  "feedId": "9fddfd8ebfa4b7e4e65d8fd4c3be30af8d5badad1d9f87b7ef1cee39f0f218f9",
+  "symbol": "Equity.US.RPM/USD"
+ },
+ "CBRE": {
+  "feedId": "c153deece90e57f0c4b2bd1b693deed41e32a8117fd6eb8269a49e71d5080292",
+  "symbol": "Equity.US.CBRE/USD"
+ },
+ "SSNC": {
+  "feedId": "1264a9412304ec8774527efdf978521c3923702e45e66850ee89ff643d5d0b04",
+  "symbol": "Equity.US.SSNC/USD"
+ },
+ "RL": {
+  "feedId": "80f271ae66ee740f4a8f2c2d33575592a6daf7f881133e4d8c0a4df0fc67315a",
+  "symbol": "Equity.US.RL/USD"
+ },
+ "CLH": {
+  "feedId": "f45f254631ba729fb9eee4cd73dd9814f080b7602a4c2ae992196588201a05ef",
+  "symbol": "Equity.US.CLH/USD"
+ },
+ "GPC": {
+  "feedId": "045d3f99bd576f475f195276d699ad1dbeedfcab92f29f1b8159f02bd9ee07d7",
+  "symbol": "Equity.US.GPC/USD"
+ },
+ "XYZ": {
+  "feedId": "6d64b1981512c242162d6ba54f6bda35c59f726f2e075a42994fc9a33c6c2d55",
+  "symbol": "Equity.US.XYZ/USD"
+ },
+ "AA": {
+  "feedId": "303e7652703ce22a29ad53ea4168094892c8c64b1dc4ce1d6854cbccfaeb9cc1",
+  "symbol": "Equity.US.AA/USD"
+ },
+ "TOL": {
+  "feedId": "8b6563adc2cb589407ea03c21c347bc564f899e37fa5ca8fad73b16fef609181",
+  "symbol": "Equity.US.TOL/USD"
+ },
+ "RDDT": {
+  "feedId": "c0ece6b9254797f4384bda1ba3f2c33259f552c7849a86b3029e811be5ea9227",
+  "symbol": "Equity.US.RDDT/USD"
+ },
+ "KMI": {
+  "feedId": "f709b8c2869054ca5c3cef0a3a1a97ff4960aff3f3b4eb611022079b1ff73e50",
+  "symbol": "Equity.US.KMI/USD"
+ },
+ "CVNA": {
+  "feedId": "8cbd009149f28a8f19d01de7f31d85d48c7f2d35a9ae40c03930712d84fbd92a",
+  "symbol": "Equity.US.CVNA/USD"
+ },
+ "SCCO": {
+  "feedId": "a00be224b07426d688475926b6a7a8b007f1420734629b596ae6132c75bc5976",
+  "symbol": "Equity.US.SCCO/USD"
+ },
+ "BBY": {
+  "feedId": "1de9dba93a2de170417a6e113204ec0a7fcb594643a14e590a3d6ba1adef0017",
+  "symbol": "Equity.US.BBY/USD"
+ },
+ "P": {
+  "feedId": "262c60f4eaf8d63eb8e3384d65be38820607e78f4cb6c50275ec3701b7413ccf",
+  "symbol": "Equity.US.P/USD"
+ },
+ "TEAM": {
+  "feedId": "2bb7815db4d6081ddfda9befcacac28c63a3f4349fdd5b35accf47b52f35a746",
+  "symbol": "Equity.US.TEAM/USD"
+ },
+ "LVS": {
+  "feedId": "aa0eed91fe7b824ad9931f8601647bec51870c76f7a5d6ead18c3df9ecb3c553",
+  "symbol": "Equity.US.LVS/USD"
+ },
+ "CSL": {
+  "feedId": "2a894729720ceaef4fe038ee2a83491ae1247916dadc71f0659aabe61f7cd830",
+  "symbol": "Equity.US.CSL/USD"
+ },
+ "NDAQ": {
+  "feedId": "1d4ad1c94a6828b41d3165abd4ee59491a9cc9194e2b8a672fc0aa2ad228ab47",
+  "symbol": "Equity.US.NDAQ/USD"
+ },
+ "MLI": {
+  "feedId": "e1548338663e981fde5c43aa16f21bbde73164994b790aed663fc4190fc6e9db",
+  "symbol": "Equity.US.MLI/USD"
+ },
+ "GNRC": {
+  "feedId": "27514c8e57a0fad5e095546852c0903319b66ab07f7526b5ac1540886d6d944e",
+  "symbol": "Equity.US.GNRC/USD"
+ },
+ "WPC": {
+  "feedId": "fb22e2de71b19330ea93a9e03b38ad3c321ab1951b87c4e55e8dbc795f57c3c5",
+  "symbol": "Equity.US.WPC/USD"
+ },
+ "MAS": {
+  "feedId": "40dc86c2c74546803ea869c71c0aebd332d83ca417e7c60f41b71919f8d8421e",
+  "symbol": "Equity.US.MAS/USD"
+ },
+ "ITT": {
+  "feedId": "609bc314425a9446649f31e9d36ee6af05e5d445a020cc3674046fd28717bee3",
+  "symbol": "Equity.US.ITT/USD"
+ },
+ "OKTA": {
+  "feedId": "aa34b179fb265cb7fcf068188f3f165e153dc34c07c7ed09d7793c756f5cab86",
+  "symbol": "Equity.US.OKTA/USD"
+ },
+ "TSN": {
+  "feedId": "0e83585b37891c7ed22e02b3319c0dc85e1315eccc85deba649c86525c880b36",
+  "symbol": "Equity.US.TSN/USD"
+ },
+ "NLY": {
+  "feedId": "764ee3e7d82087a6b8b32d1f19197af397884b7ec61abd6da14442a867096209",
+  "symbol": "Equity.US.NLY/USD"
+ },
+ "IBKR": {
+  "feedId": "7bc24437f08b048cd40716de5193f1aaaf4679040122d0b185841dc67f46781f",
+  "symbol": "Equity.US.IBKR/USD"
+ },
+ "CF": {
+  "feedId": "e2bad4d409637556216267dbb29fcb27d23e263ae12ab5acbb68b309ba17783d",
+  "symbol": "Equity.US.CF/USD"
+ },
+ "ARES": {
+  "feedId": "edc6fab3e6886d8b0fb6d74d149608988f684463d419773b7c71986a768fe799",
+  "symbol": "Equity.US.ARES/USD"
+ },
+ "EL": {
+  "feedId": "ce8211e981a578b4ba9f2f7eb01c40643dc1d0860f57178d76c9bec95c88462f",
+  "symbol": "Equity.US.EL/USD"
+ },
+ "ONTO": {
+  "feedId": "c4db80e9a68aca4575714c9f5387368239d63965850a359b68b676355a799d7d",
+  "symbol": "Equity.US.ONTO/USD"
+ },
+ "CPNG": {
+  "feedId": "5557d206aa0dd037fc082f03bbd78653f01465d280ea930bc93251f0eb60c707",
+  "symbol": "Equity.US.CPNG/USD"
+ },
+ "GPN": {
+  "feedId": "cb179114c1a25a33def036ff8a3bf7260cd8035b7e3225e84754953f91e7e2f5",
+  "symbol": "Equity.US.GPN/USD"
+ },
+ "DASH": {
+  "feedId": "af9f76555c0147ec660100ff1639eb128e48c4f16b0aec229b736c04e082de23",
+  "symbol": "Equity.US.DASH/USD"
+ },
+ "NDSN": {
+  "feedId": "6727509d8f206c8615b61a01039caa23b45271196e603daebb0366d5e864666f",
+  "symbol": "Equity.US.NDSN/USD"
+ },
+ "FCNCA": {
+  "feedId": "97ef77ead4c77fb95010b1361387272a6813de89cffe615aea7274f10f1bfcc5",
+  "symbol": "Equity.US.FCNCA/USD"
+ },
+ "STZ": {
+  "feedId": "bcbe7f4f918381ad7891595dabea1c1a0b662e48cc533d48f308aa4883a0802d",
+  "symbol": "Equity.US.STZ/USD"
+ },
+ "UPS": {
+  "feedId": "c446b836e3e1bf1610f29c51f9102e1d5ea2db1da64c39fcdc797d99df097bcc",
+  "symbol": "Equity.US.UPS/USD"
+ },
+ "MDB": {
+  "feedId": "91fc07facc1b1ec2e8336dfa66e2b5f0892af06f491c606f67690bf4c55aaee6",
+  "symbol": "Equity.US.MDB/USD"
+ },
+ "CTSH": {
+  "feedId": "440045c78d204a0ec4aba5fdeebcc10a7eb9cd3a3df4a89e3aa917653db8ef04",
+  "symbol": "Equity.US.CTSH/USD"
+ },
+ "ZTS": {
+  "feedId": "c79170bfddf87b4c4ef6f1cefbe92b23eaac21ce29cbffc2bb24cab51dcf10d6",
+  "symbol": "Equity.US.ZTS/USD"
+ },
+ "ABNB": {
+  "feedId": "ccab508da0999d36e1ac429391d67b3ac5abf1900978ea1a56dab6b1b932168e",
+  "symbol": "Equity.US.ABNB/USD"
+ },
+ "INCY": {
+  "feedId": "7815579f89646eef8d679057e84ffa69158e3f5f1bfa5b5cbd9a65e38a4c2a3a",
+  "symbol": "Equity.US.INCY/USD"
+ },
+ "LEN": {
+  "feedId": "8cac856141272010adc7a18017523804afef935e0fb8b80f58cb120133c6ed34",
+  "symbol": "Equity.US.LEN/USD"
+ },
+ "VEEV": {
+  "feedId": "7eb28b4c9d6bb7c73016a43fe792225da33080555e665ce32faee80dc9a197a4",
+  "symbol": "Equity.US.VEEV/USD"
+ },
+ "TXT": {
+  "feedId": "2fc0a41f1d62126539e3b1ca29029e66d991724b2189f63059a5f5682129ab28",
+  "symbol": "Equity.US.TXT/USD"
+ },
+ "WDAY": {
+  "feedId": "a3ae4e6fb2cef300b62c34b4611048dfd64e148faa08e912b31e17f1da61d875",
+  "symbol": "Equity.US.WDAY/USD"
+ },
+ "SBAC": {
+  "feedId": "15d10cdf550966316121a3e07b86eec98be08afa1f3abc634818156d32094b31",
+  "symbol": "Equity.US.SBAC/USD"
+ },
+ "NKE": {
+  "feedId": "67649450b4ca4bfff97cbaf96d2fd9e40f6db148cb65999140154415e4378e14",
+  "symbol": "Equity.US.NKE/USD"
+ },
+ "MAR": {
+  "feedId": "b530350ede7b5d1876f37fe416799e8f15beaca77c82295a3857f02c913df0f2",
+  "symbol": "Equity.US.MAR/USD"
+ },
+ "TSCO": {
+  "feedId": "17739c3c2b2888751a75bada52253281c29b5ec25b39a8aecdbe63e11283e219",
+  "symbol": "Equity.US.TSCO/USD"
+ },
+ "MDLZ": {
+  "feedId": "67af944e59c35746d41b15c061fa2552ea958accfc6169a69f1e05033c507fd2",
+  "symbol": "Equity.US.MDLZ/USD"
+ },
+ "CME": {
+  "feedId": "8773fef6b95d156416c3025d3a7b6f90b4a88b206038dde8000b1acddb714906",
+  "symbol": "Equity.US.CME/USD"
+ },
+ "DDOG": {
+  "feedId": "5c49964b5e5420d84e445a2f5e9e3965cf3a82a275d83f8efc30cdeeaf2d062f",
+  "symbol": "Equity.US.DDOG/USD"
+ },
+ "APH": {
+  "feedId": "d0723436221cd8ca5f2f11c38920271d77950e7ed0cec1a764459b465cb88651",
+  "symbol": "Equity.US.APH/USD"
+ },
+ "FISV": {
+  "feedId": "4ba8ac75eba39c9cc1851bc880d4274262e621df32284ab23064865b7dc5ab44",
+  "symbol": "Equity.US.FISV/USD"
+ },
+ "KEY": {
+  "feedId": "2f7524ff6f342a9ee55328570d30a64eadd3ef6b8673fcb9015ed11845130e43",
+  "symbol": "Equity.US.KEY/USD"
+ },
+ "SYF": {
+  "feedId": "19182efb2c0ed89266ee1db3a1e8d3e46c9af1542232ed168e88bcb38db3b64f",
+  "symbol": "Equity.US.SYF/USD"
+ },
+ "PFG": {
+  "feedId": "f2be31eeb67f9e2bb7228aaab13fd3a7b836cfc3e6832b876d488363c21dd24a",
+  "symbol": "Equity.US.PFG/USD"
+ },
+ "CHD": {
+  "feedId": "29f6892fec85377d66086b3c323e298c2a0bf133551e9a0a91c150b95517aec5",
+  "symbol": "Equity.US.CHD/USD"
+ },
+ "FIS": {
+  "feedId": "50e1734e9f300ebe0af038055c76c1495a3b7a6389edce24eedcb1df9061120d",
+  "symbol": "Equity.US.FIS/USD"
+ },
+ "FTV": {
+  "feedId": "8872d930ce5c58a3a4dab23a34e4bcdb6b0793573723c9a1945bcdd6e097b83c",
+  "symbol": "Equity.US.FTV/USD"
+ },
+ "ALB": {
+  "feedId": "4db91e379e36addcdb1cc75dcb03022bd95d5d95148c41d268348d12cbd27c18",
+  "symbol": "Equity.US.ALB/USD"
+ },
+ "WWD": {
+  "feedId": "82c4e3354c0678b1ba00268963a99b30a403719f67ea63458aa6a97945da5374",
+  "symbol": "Equity.US.WWD/USD"
+ },
+ "DRI": {
+  "feedId": "f2f92d342955b934fa72137c7ed461dfd3e3112a7b962070440190b8184a7ab5",
+  "symbol": "Equity.US.DRI/USD"
+ },
+ "DGX": {
+  "feedId": "eccf190dca034f378b3b3051e70da93e882c08c665befbf01bacd866c1976fef",
+  "symbol": "Equity.US.DGX/USD"
+ },
+ "WST": {
+  "feedId": "8d6c09c254828092b322966daafb6cadb58b697f696d37bdb53379e060b8974e",
+  "symbol": "Equity.US.WST/USD"
+ },
+ "UTHR": {
+  "feedId": "5cd87e4354b4f48380de034a5dd934100368c9ffa7d7db096c113edba2ecbd94",
+  "symbol": "Equity.US.UTHR/USD"
+ },
+ "OMC": {
+  "feedId": "113967e03bb7a347e3669bcb49cf0c6cd27ddc38439c9f009dec0bf9f0edb137",
+  "symbol": "Equity.US.OMC/USD"
+ },
+ "DG": {
+  "feedId": "df48fe2e8442694202366ab9de55554ecc68c9e0cfa385fc692c6905a3887d34",
+  "symbol": "Equity.US.DG/USD"
+ },
+ "TROW": {
+  "feedId": "c58e1fe6b3a7df2a45f72bb291914f509d949951a76be1920b66fff1d1681f46",
+  "symbol": "Equity.US.TROW/USD"
+ },
+ "WCC": {
+  "feedId": "ab550fd8d8635e32090a5ed31d7e4fd182df26e479cfa679ac31e8b9578cad3b",
+  "symbol": "Equity.US.WCC/USD"
+ },
+ "RF": {
+  "feedId": "14f4bd2b349f33dcc150c1874b863be7b1b39b190e508d9fc54a37397b29a1c4",
+  "symbol": "Equity.US.RF/USD"
+ },
+ "ESS": {
+  "feedId": "cac64835d33852ea56d0da42bc2057a1e5baa66360ba368630e0cabc1b9fa2bc",
+  "symbol": "Equity.US.ESS/USD"
+ },
+ "EVRG": {
+  "feedId": "8fa90a86d593ae81e23fe16272b1d572d971d4f7a749e01841b91fec6d24e10e",
+  "symbol": "Equity.US.EVRG/USD"
+ },
+ "L": {
+  "feedId": "dbceeed2f816d22ae5371206fa28c8da7615537eced46373185f4bde8af54d27",
+  "symbol": "Equity.US.L/USD"
+ },
+ "IP": {
+  "feedId": "d7b753e70cea474508a2f0cd0ae5b7ac67662eb648a88afe68f04759464ccc8d",
+  "symbol": "Equity.US.IP/USD"
+ },
+ "EXE": {
+  "feedId": "4133729094ce33b46a9f0ac2341333489282512991d786ce1e10ad270f3d9e31",
+  "symbol": "Equity.US.EXE/USD"
+ },
+ "ZBH": {
+  "feedId": "222e85396bf2545e6591fdfbbb326e5d334781ede02749dcf1b81472e4128807",
+  "symbol": "Equity.US.ZBH/USD"
+ },
+ "BRO": {
+  "feedId": "ccf32dd36514b9028f6d5af01976fcf20e7a5d6a0adb040af5b6c84f1c76c600",
+  "symbol": "Equity.US.BRO/USD"
+ },
+ "JBHT": {
+  "feedId": "27af75b9414384273378f90ccc53bec01dc8adf3662c4f7e6ec0645622af55bb",
+  "symbol": "Equity.US.JBHT/USD"
+ },
+ "EWBC": {
+  "feedId": "90874a0d960f6645924c10b58d7a857a608842f726861683363ef6195fcdf041",
+  "symbol": "Equity.US.EWBC/USD"
+ },
+ "PKG": {
+  "feedId": "84ce9993f3e19e52be7d567c8bf7714407cab2afa0d3a752ac09bc49b0153663",
+  "symbol": "Equity.US.PKG/USD"
+ },
+ "ILMN": {
+  "feedId": "c551fb0a5cd283c228c101cbff99e07405361b814990f88e81befdb766b564c5",
+  "symbol": "Equity.US.ILMN/USD"
+ },
+ "FFIV": {
+  "feedId": "730aa1975c578f652b6f48667a8bc4ab1e499273cb4742198075b5494b47a29e",
+  "symbol": "Equity.US.FFIV/USD"
+ },
+ "INVH": {
+  "feedId": "3238d1e2df1760cacca8510e997cf6d45076a1b066e4e201d18881bf27aaf4ba",
+  "symbol": "Equity.US.INVH/USD"
+ },
+ "MRNA": {
+  "feedId": "4083b0b1471123cf4d3e8edee7890940cafad866f06cadae638c23e555a1f4fc",
+  "symbol": "Equity.US.MRNA/USD"
+ },
+ "HPQ": {
+  "feedId": "d1d6eb75702d0e80582c2d5a2df1849b9c83d7afbe99a2d474317f1f356e5659",
+  "symbol": "Equity.US.HPQ/USD"
+ },
+ "KHC": {
+  "feedId": "4e9e00488e093d440381d5cc21ac74da5d78f13d83665b7d140cbc84760cc95c",
+  "symbol": "Equity.US.KHC/USD"
+ },
+ "IEX": {
+  "feedId": "9e7c3edfc8ebb80bf14d7d9d2ffa589387859b20c401476bbcf69566512c097b",
+  "symbol": "Equity.US.IEX/USD"
+ },
+ "BURL": {
+  "feedId": "a90ed995725cb97c192837bc7d890d54908d65f38c087a03b1126ac482f85393",
+  "symbol": "Equity.US.BURL/USD"
+ },
+ "LSCC": {
+  "feedId": "134837b42e99cde7e5b85cc795dd06a658326098c35bd298274763619b577121",
+  "symbol": "Equity.US.LSCC/USD"
+ },
+ "SNX": {
+  "feedId": "31a7eea1e72a323373f41664f31078f51647cb481ef470ae05718cbd593579db",
+  "symbol": "Equity.US.SNX/USD"
+ },
+ "ZM": {
+  "feedId": "c9a4605e75ebd30b016e1ca23cc95b221c6b81be301ab100d6c4c623232b36e8",
+  "symbol": "Equity.US.ZM/USD"
+ },
+ "VRSK": {
+  "feedId": "15681a80c2f4913251886bc5b5dd9f92aaf47b072e3eef68b5c618036067e06c",
+  "symbol": "Equity.US.VRSK/USD"
+ },
+ "MTD": {
+  "feedId": "3d35ab79cabfe67134efe88b5526ff9340121f4641d3f33728fb6801afdb07f2",
+  "symbol": "Equity.US.MTD/USD"
+ },
+ "ES": {
+  "feedId": "e0b9598e00ab485a49941feceb653d02e7b50f8e0074d5fab1d561add4f8c125",
+  "symbol": "Equity.US.ES/USD"
+ },
+ "CHRW": {
+  "feedId": "f2df0a854dc8f45e9c6f93bb7e4e2720c920b2a5208afba18075a87fb5a6f6ed",
+  "symbol": "Equity.US.CHRW/USD"
+ },
+ "DOW": {
+  "feedId": "f3b50961ff387a3d68217e2715637d0add6013e7ecb83c36ae8062f97c46929e",
+  "symbol": "Equity.US.DOW/USD"
+ },
+ "VRSN": {
+  "feedId": "c7ae3c077945639c2e0ed7199d1e6655f8c76027e07bccea53d9b6f79d8075fd",
+  "symbol": "Equity.US.VRSN/USD"
+ },
+ "EXPD": {
+  "feedId": "6aae0b67e75b4ebd942e31b61020aa08489b33787256e66e63c7f5085eba47e6",
+  "symbol": "Equity.US.EXPD/USD"
+ },
+ "LUV": {
+  "feedId": "f8554a560dd9f59f36aff9ea5536d1c281141907ebc010b2fa94f411f912e30b",
+  "symbol": "Equity.US.LUV/USD"
+ },
+ "AWK": {
+  "feedId": "36f47f658e232e48e4d922d9cdb9d553f71795d05e2655312e11ab853189484c",
+  "symbol": "Equity.US.AWK/USD"
+ },
+ "CPAY": {
+  "feedId": "221834e0bb6002d75833e2aa4dcc4fdd26b8300a40e4546978946c3dff272c29",
+  "symbol": "Equity.US.CPAY/USD"
+ },
+ "CMS": {
+  "feedId": "25be29dc1eae3448537076cf0d14ef2c43dbfd5de043256ead46fa01a19b425b",
+  "symbol": "Equity.US.CMS/USD"
+ },
+ "USFD": {
+  "feedId": "2d485efba1b4fbf1643105dcaf55bcd645e2f89b5bd983705c6519ce71a41cc7",
+  "symbol": "Equity.US.USFD/USD"
+ },
+ "MTZ": {
+  "feedId": "82d6544c7729f245a15798f5abdc407cebf1fd93bfcc811a76b26873a47fe004",
+  "symbol": "Equity.US.MTZ/USD"
+ },
+ "NI": {
+  "feedId": "e526b83aaac81d79736671ff6b948326194290a0c2f34a711df3e34b8afa6000",
+  "symbol": "Equity.US.NI/USD"
+ },
+ "BWXT": {
+  "feedId": "cd4cc4183c507a53e71bee4e905d97e5f97466246af412ffffe6eaef7a5686b2",
+  "symbol": "Equity.US.BWXT/USD"
+ },
+ "MKSI": {
+  "feedId": "43c438c61f1500581a1f05b5932548c9d8b7881e69d49b4b931e89d960af0601",
+  "symbol": "Equity.US.MKSI/USD"
+ },
+ "VTRS": {
+  "feedId": "42431247c835486c45f19e180981765e3e6cca8ff603a34fe7de85368c861639",
+  "symbol": "Equity.US.VTRS/USD"
+ },
+ "INSM": {
+  "feedId": "48a9a69fa2947734f12d1840c51d36fc30be106fc40c624054faec9783463831",
+  "symbol": "Equity.US.INSM/USD"
+ },
+ "HST": {
+  "feedId": "ae35d2d68b05a98d8041dae04fed0a3a6e5a3a1007a5d5d10d62169d208271b8",
+  "symbol": "Equity.US.HST/USD"
+ },
+ "ATI": {
+  "feedId": "39a0b6de5c8fc5cd02bdf12ab1d8396393351672f209d32560a820a72cc17b8b",
+  "symbol": "Equity.US.ATI/USD"
+ },
+ "MKL": {
+  "feedId": "63e210492e75f690f90f6032f6ee7bd0fa5d763e64033d76d324f5760779e48e",
+  "symbol": "Equity.US.MKL/USD"
+ },
+ "LNT": {
+  "feedId": "0cfd0022c6dce91015449034e1189551e6037a51b60b820ddc9a255e9782c3c0",
+  "symbol": "Equity.US.LNT/USD"
+ },
+ "FWONK": {
+  "feedId": "85cd26ce8d989a2e1648eb0463f2482303fe0dcc737d620d19247ae75e6d1189",
+  "symbol": "Equity.US.FWONK/USD"
+ },
+ "WY": {
+  "feedId": "5fbd1cf24b414fee1a0f112d82315f10fd0de1eb6c916831f6f2cfdc7a32a0a6",
+  "symbol": "Equity.US.WY/USD"
+ },
+ "CINF": {
+  "feedId": "2bdf663a6dacfbb4f986adc98d833cbdd206ab64d6f5fb0cd5470e91bb3985a0",
+  "symbol": "Equity.US.CINF/USD"
+ },
+ "KIM": {
+  "feedId": "f3d7864c65d3a6c00bd148c1daf95361de93ee36619180b194f656b053d6e80e",
+  "symbol": "Equity.US.KIM/USD"
+ },
+ "EFX": {
+  "feedId": "efd52d85fdad1aec47798b6955efd22fccd1e88ec942d3dfb3cbddb8ea2a577b",
+  "symbol": "Equity.US.EFX/USD"
+ },
+ "RS": {
+  "feedId": "08717fe56db65c40f6b829d7dfa57c025f6435ada20c298da0b94f668e940b63",
+  "symbol": "Equity.US.RS/USD"
+ },
+ "XYL": {
+  "feedId": "fb22c42b25ae97f3c8cbca53b892684cbd7f48d44da6f8f411e134e5791b30f9",
+  "symbol": "Equity.US.XYL/USD"
+ },
+ "WSM": {
+  "feedId": "1e8a3f5c885a4749a611ea8081185b6c3b614556ec2f5469ff031701c12ff319",
+  "symbol": "Equity.US.WSM/USD"
+ },
+ "SOFI": {
+  "feedId": "72fae0e0683c186f5ce9444afac9909cf5d60b499f4f9569dd75442f19c625c8",
+  "symbol": "Equity.US.SOFI/USD"
+ },
+ "ULTA": {
+  "feedId": "6187f28a5c56dfd380dfa2b718b4062f8c3ae8a0e32f7c11078e76b31269f49c",
+  "symbol": "Equity.US.ULTA/USD"
+ },
+ "TPL": {
+  "feedId": "5b839599042f75b23fab4ced6a448aa6d1c367879e25a77b87f4a9dfa98bf4bd",
+  "symbol": "Equity.US.TPL/USD"
+ },
+ "DLTR": {
+  "feedId": "5d9f295f1afeaa993f9e07600158a1b8566c27e003a929d123f9b6c97164da0e",
+  "symbol": "Equity.US.DLTR/USD"
+ },
+ "XPO": {
+  "feedId": "202820725ea1f2cdda32c4506e910e013bd3ee8489abd9539a5b6653abf63fa6",
+  "symbol": "Equity.US.XPO/USD"
+ },
+ "GIS": {
+  "feedId": "771e3685ccdb5ea732fc6e562b72d9f9217823d7ab4884acb2d085c4ee0bc8a0",
+  "symbol": "Equity.US.GIS/USD"
+ },
+ "AKAM": {
+  "feedId": "acaab0049c5381f27cec309af76efc0d6f375922183d2df23a20768780ee652d",
+  "symbol": "Equity.US.AKAM/USD"
+ },
+ "RGLD": {
+  "feedId": "6cd054335935b02c350ef188dd365e73c744f662da5aa001269366e908f2c807",
+  "symbol": "Equity.US.RGLD/USD"
+ },
+ "CPRT": {
+  "feedId": "9bffd1e8d7b5f6c4890216b89d30393cf7284c540a9e0843c92490b58167302a",
+  "symbol": "Equity.US.CPRT/USD"
+ },
+ "IFF": {
+  "feedId": "970222a3ff77f133b83c49989d8d8fcbad034fcc601f457e4a45cee6bfe5be36",
+  "symbol": "Equity.US.IFF/USD"
+ },
+ "FE": {
+  "feedId": "0c1b5aa4ee8447c6251ddf07225edf15d4e6b9796a59afc349a3a9c4575e2c1f",
+  "symbol": "Equity.US.FE/USD"
+ },
+ "LPLA": {
+  "feedId": "1e71ac82ed3b9f57f46d0d7808724e4fa16a264a0e53e5aca0429f87bba71321",
+  "symbol": "Equity.US.LPLA/USD"
+ },
+ "RJF": {
+  "feedId": "96bccfb1661326a6a9717d248fa743762d65da0798656b24108ea48d4982758f",
+  "symbol": "Equity.US.RJF/USD"
+ },
+ "SNA": {
+  "feedId": "40ee2e8a06ac2de84d6cea61c4519a35755d59c255c545db964c5e2ed840a1e8",
+  "symbol": "Equity.US.SNA/USD"
+ },
+ "HSY": {
+  "feedId": "824852f734257f78f21791d6082fa7d3380da95a16d248d50a6e9706d0a0fbec",
+  "symbol": "Equity.US.HSY/USD"
+ },
+ "ENTG": {
+  "feedId": "e552acc27d7d790ea13d79a37a1da3e9bdf52630f3056a97a15660653f3f50f7",
+  "symbol": "Equity.US.ENTG/USD"
+ },
+ "PPL": {
+  "feedId": "1542f78dd90dfacbc39b00223999d5b6790a2f976d251d11c47b4c06e39eb06c",
+  "symbol": "Equity.US.PPL/USD"
+ },
+ "MTSI": {
+  "feedId": "6d1085fb5e5bd8f830a47d6d2cf38af3ed0415e208a5d8f717b01d1674b89bea",
+  "symbol": "Equity.US.MTSI/USD"
+ },
+ "FTAI": {
+  "feedId": "0c2b5fbdb3879bbd05d13175e61429dc1fa139c4c544e0165acf60bb22b85607",
+  "symbol": "Equity.US.FTAI/USD"
+ },
+ "NRG": {
+  "feedId": "cbb7674d9eebacf3a81a54109dca655d805f04d902bc61b2157e8a2d95b00492",
+  "symbol": "Equity.US.NRG/USD"
+ },
+ "HUBB": {
+  "feedId": "492f2b794efb3721b4243406d73cf68f34097b103ba690d0dbcafddb5a10cb7e",
+  "symbol": "Equity.US.HUBB/USD"
+ },
+ "EIX": {
+  "feedId": "920b1e06e2f2920c682534620a82c7991accd0637b1fb58a5631357ce42a4e29",
+  "symbol": "Equity.US.EIX/USD"
+ },
+ "FICO": {
+  "feedId": "84df202649f46e6362e38abcf5cd6947bc7e4379e8e281f1d02b382355c13aa3",
+  "symbol": "Equity.US.FICO/USD"
+ },
+ "CRS": {
+  "feedId": "cd9cbe5cbbc95d5147b052b6e5a5e95fd3545b420a569baceef6a8554773d195",
+  "symbol": "Equity.US.CRS/USD"
+ },
+ "PPG": {
+  "feedId": "0a2d049aa48d4b77c4db199ae38a10a1e3d5130abd27b5cab7db548409da74d5",
+  "symbol": "Equity.US.PPG/USD"
+ },
+ "FSLR": {
+  "feedId": "787a166618ea8831a100371b51be91328b0171d0ac57265007b30f10e03de4e6",
+  "symbol": "Equity.US.FSLR/USD"
+ },
+ "ATO": {
+  "feedId": "e045f185730daa0a656655aed1317710b047bda0a7e74d74b24f112d37bcde53",
+  "symbol": "Equity.US.ATO/USD"
+ },
+ "LII": {
+  "feedId": "ea444ab0d128898102e59ad785374bb37b93fc1e2ae232591de288474df84d07",
+  "symbol": "Equity.US.LII/USD"
+ },
+ "LYV": {
+  "feedId": "f75c8eea6033c8100271292fa6f77d50347a8cd010959116fa0ac3ba7315e9b8",
+  "symbol": "Equity.US.LYV/USD"
+ },
+ "BSP": {
+  "feedId": "9a2f179e17bde86a48eea62eda885040a315bdaee2ea6c9ac7520eb48f4f9e40",
+  "symbol": "Equity.US.BSP/USD"
+ },
+ "DXCM": {
+  "feedId": "7afba60a06a553edc3339b53c2e46c2700b076b3f9c9067b88b93f0a12213fbf",
+  "symbol": "Equity.US.DXCM/USD"
+ },
+ "EQT": {
+  "feedId": "ad81a87631f8ab7f09897d7001e46e206afa727c419d93f31591a8edefdf37cb",
+  "symbol": "Equity.US.EQT/USD"
+ },
+ "NTRS": {
+  "feedId": "f10492d0a522ca19f17cf8d54267abb2cca8ddb80d4bd528750223e3156a8aef",
+  "symbol": "Equity.US.NTRS/USD"
+ },
+ "A": {
+  "feedId": "95924710b36b19bdf82353dc921cb512a89b8213eecddf362a5212677d72a54c",
+  "symbol": "Equity.US.A/USD"
+ },
+ "MLM": {
+  "feedId": "58dfd9c50639f1a6c7ea8a1a94d07d69989b51a4265801420895c292fd68e7d4",
+  "symbol": "Equity.US.MLM/USD"
+ },
+ "CNP": {
+  "feedId": "bf3a21d6b8dbb4df9e75df58c124be8248239c005d117fdb9e0f0ff434d1dfa8",
+  "symbol": "Equity.US.CNP/USD"
+ },
+ "MSCI": {
+  "feedId": "cb9be05a0205676c4959845ada37452d3b9613d6602addd0ec223bdb33d81c8b",
+  "symbol": "Equity.US.MSCI/USD"
+ },
+ "KVUE": {
+  "feedId": "a31b64345bf1601d1cf1cfdb7a1f628982fab0a4365947b3c4fa2230faea971d",
+  "symbol": "Equity.US.KVUE/USD"
+ },
+ "RVMD": {
+  "feedId": "f4697df8967eb74851423fcae625f9dead9ecc4ed29f923da35952c39c097691",
+  "symbol": "Equity.US.RVMD/USD"
+ },
+ "TDY": {
+  "feedId": "ce974508b0d8eafcb71d4acca8df29adccc8af76844d7fa7f2e10d459d65b8fc",
+  "symbol": "Equity.US.TDY/USD"
+ },
+ "PCG": {
+  "feedId": "026e4a35b33c438e4c75b2bf8f5f8298b26165eff133b1da2b4559985ecab11e",
+  "symbol": "Equity.US.PCG/USD"
+ },
+ "IQV": {
+  "feedId": "eab2a462fdee81002bc99e22cbaceb1b0fcbeceed8fa28a6d2f567880eb24e4d",
+  "symbol": "Equity.US.IQV/USD"
+ },
+ "WEC": {
+  "feedId": "cfcacb3755c77aec69ff8f89f4dfe735ca478ad7290766bd4f7bc04f5af1ab68",
+  "symbol": "Equity.US.WEC/USD"
+ },
+ "PAYX": {
+  "feedId": "31df914d63247bdda62c7c423c497729ef50d89eeab208eb1db42503271713fa",
+  "symbol": "Equity.US.PAYX/USD"
+ },
+ "CASY": {
+  "feedId": "840dae98f316481c4438892b8bc5b5df09ba1e8befe2d529000c70aa2c8c324c",
+  "symbol": "Equity.US.CASY/USD"
+ },
+ "NTRA": {
+  "feedId": "b21a229944b7008c9e0efeb591030198acd5a676e7c84c3a13927af9764456b0",
+  "symbol": "Equity.US.NTRA/USD"
+ },
+ "AEE": {
+  "feedId": "3ba9d201026abdc250a275d59f722abeef1bdcdc7364fedbaecef61c7da788b9",
+  "symbol": "Equity.US.AEE/USD"
+ },
+ "VICI": {
+  "feedId": "952cd0607b5624c28971ade6d2e6a26bbbbfcc857ba1d41b85945a425524f4cc",
+  "symbol": "Equity.US.VICI/USD"
+ },
+ "FANG": {
+  "feedId": "d3d57d3634cff1c062a1b87cc93a92b8dacc6537f9f7d155e81ed48bb9fd75f9",
+  "symbol": "Equity.US.FANG/USD"
+ },
+ "OTIS": {
+  "feedId": "34df4b686b9b9b24d6c2d149e3b6d73df825ae85933c1c74965cc48bb10943f2",
+  "symbol": "Equity.US.OTIS/USD"
+ },
+ "STLD": {
+  "feedId": "3bc436e6c024059b3493e4332b32d0cbdd2b8ecf84544261838137eb1f299525",
+  "symbol": "Equity.US.STLD/USD"
+ },
+ "DOV": {
+  "feedId": "b9a51a477586da4fca62f1c20002b1f72d715733aa242cda5e99ca37beffdf0e",
+  "symbol": "Equity.US.DOV/USD"
+ },
+ "FERG": {
+  "feedId": "0662e765a145ce6d7bfa0251da10c9d2c7125916ecd1e2174f65ffe50c4fa83c",
+  "symbol": "Equity.US.FERG/USD"
+ },
+ "CFG": {
+  "feedId": "c7c24c987c84f7c76bde1a1d50ff04624422d9ac68bd8f039a57a30e24dc524b",
+  "symbol": "Equity.US.CFG/USD"
+ },
+ "RMD": {
+  "feedId": "e9f11baaade6cf979251d4c9e6c30657ed29275952a04b125915e475c31a5e63",
+  "symbol": "Equity.US.RMD/USD"
+ },
+ "Q": {
+  "feedId": "786aad0d9069c3ffd1b80d006d5f586ddec1c2537ff7e96d7fc028218e82bc0a",
+  "symbol": "Equity.US.Q/USD"
+ },
+ "EME": {
+  "feedId": "89306a8e2a15a2a7b80b6c6f9b0a8ca2d3f4e1481e7883dc87566c175af1e315",
+  "symbol": "Equity.US.EME/USD"
+ },
+ "KMB": {
+  "feedId": "894f78037ec2465fbbd50c75abb95a5059d5d9ca5f092e2e6736685885569322",
+  "symbol": "Equity.US.KMB/USD"
+ },
+ "IR": {
+  "feedId": "2abd60bfdf45bf74d29e1d4bcc815f0f1a81093cd51f49040e2856b1115fcd08",
+  "symbol": "Equity.US.IR/USD"
+ },
+ "EXC": {
+  "feedId": "9beecfa17137405edde62ca98241e24c86d217282f8e193ee6c8fc40aae01092",
+  "symbol": "Equity.US.EXC/USD"
+ },
+ "GEHC": {
+  "feedId": "673e1dd093b996eeec37946467e9ad79dc4a613ba8c1c9c06ce2a0ae605051f3",
+  "symbol": "Equity.US.GEHC/USD"
+ },
+ "HIG": {
+  "feedId": "b8a84e7acb92be6f24b60cec80e87b84ec46780774e15d9791fc018b7ad49492",
+  "symbol": "Equity.US.HIG/USD"
+ },
+ "IRM": {
+  "feedId": "dcc697370beafb46fade6467328cd2f268b4b4e41c23b2189e649e21d120d76d",
+  "symbol": "Equity.US.IRM/USD"
+ },
+ "EXR": {
+  "feedId": "0b47051e9531b81dc79bfdaa7f2483d23a7eb2f99b6816c815284a6fdef83346",
+  "symbol": "Equity.US.EXR/USD"
+ },
+ "DTE": {
+  "feedId": "a751259432cd627edc50b32f22010b355486a5743fff310ad8d9946d45c48d4b",
+  "symbol": "Equity.US.DTE/USD"
+ },
+ "OXY": {
+  "feedId": "54ba7b095dfa286f556cd41d4bfefe956ebd4df3d9eec8fe0188d0727f07e344",
+  "symbol": "Equity.US.OXY/USD"
+ },
+ "TTWO": {
+  "feedId": "782a6a261306f01ab2ad004062a2832107360eefdcf8c83223e0ff7ca7ebde8d",
+  "symbol": "Equity.US.TTWO/USD"
+ },
+ "KR": {
+  "feedId": "ff6a38e7adcdaf6d9e02c4c597defcdd328c1e4fe98977c8cc6b27a2673e4f8b",
+  "symbol": "Equity.US.KR/USD"
+ },
+ "NTAP": {
+  "feedId": "5d929fdc829ffa55be5b1fd8b4d140ab555b1c71ec098c3ed5bce70d5911d753",
+  "symbol": "Equity.US.NTAP/USD"
+ },
+ "PRU": {
+  "feedId": "6987f2cab2c2be6cb897220d99dd5665835e6d204f022d4b6d0701d9351b3138",
+  "symbol": "Equity.US.PRU/USD"
+ },
+ "ED": {
+  "feedId": "04fefda6091b212f5445fd4286eacfa417f58c10e42fded88fabb17beb208fea",
+  "symbol": "Equity.US.ED/USD"
+ },
+ "CW": {
+  "feedId": "65f91a39f65476a2bc5cbf915d2325bf22d55d97097e71f483407c0d85f3718d",
+  "symbol": "Equity.US.CW/USD"
+ },
+ "WAT": {
+  "feedId": "7e388b88e025d2b0eb8bcb72118ac8679890aa93e19e8e55e6784483796e4e64",
+  "symbol": "Equity.US.WAT/USD"
+ },
+ "HAL": {
+  "feedId": "8ecca7012d5cd82620c1222acd6296cb4a34fea7dae4bf93bc51ddc471830a53",
+  "symbol": "Equity.US.HAL/USD"
+ },
+ "BIIB": {
+  "feedId": "1fba752348cffe265d87fd24eb641664234a089ff11947ac8d1bcfaa9430c453",
+  "symbol": "Equity.US.BIIB/USD"
+ },
+ "CNC": {
+  "feedId": "46c5fc6eefc5becf2f8dc3656357c21ef585feaf74bc94f0fc58f6f33fae1205",
+  "symbol": "Equity.US.CNC/USD"
+ },
+ "IDXX": {
+  "feedId": "b28cc2e71cd5b1638c7aeefae54ceed579be828e52a56de0431fd428cca67791",
+  "symbol": "Equity.US.IDXX/USD"
+ },
+ "AXON": {
+  "feedId": "9e2f2b1adb8ac673c4a8dd6f4e4bc7d289df5f1527efd593c69ffd866faaba44",
+  "symbol": "Equity.US.AXON/USD"
+ },
+ "CMG": {
+  "feedId": "c1046358a2b78d92a2ad45b9d3c271350ab9335b478df21a390b8924cad91563",
+  "symbol": "Equity.US.CMG/USD"
+ },
+ "HUM": {
+  "feedId": "6469e80c4a4a3bed520e0882051c6f0dbc8d57c217b16662db6cfd3f6288de2c",
+  "symbol": "Equity.US.HUM/USD"
+ },
+ "ROP": {
+  "feedId": "375d3fff7889b3bfdee5cfccdc5d4d3e67eed3b7d9599e29cea59b1baaa0b83a",
+  "symbol": "Equity.US.ROP/USD"
+ },
+ "ADM": {
+  "feedId": "0c4659250a9acd91536227c64e4d8dd65074ec21c3537ca554ea2aaeee00dd95",
+  "symbol": "Equity.US.ADM/USD"
+ },
+ "CCI": {
+  "feedId": "d346bf2b5a30cbcb8092c1eed6afe9e747bb5a6a63ed7c008164cb280c64754c",
+  "symbol": "Equity.US.CCI/USD"
+ },
+ "DHI": {
+  "feedId": "a2c9466d7558768573d83ad57735177d8448098d0a87aca9ca2ae9a9585bbdcc",
+  "symbol": "Equity.US.DHI/USD"
+ },
+ "BDX": {
+  "feedId": "97ee6da593bd5e1e73b1edccc05f901a89b698abcb56d31221e73bb9684a4ede",
+  "symbol": "Equity.US.BDX/USD"
+ },
+ "PSA": {
+  "feedId": "4b0077352f8790088c9e9c76d8490b06b94f75501c0027783ef310e378348d95",
+  "symbol": "Equity.US.PSA/USD"
+ },
+ "VMC": {
+  "feedId": "564701856b900a263842e4d8b12cb312b9e4de0f2fb102c83fa07d1055c6d81b",
+  "symbol": "Equity.US.VMC/USD"
+ },
+ "ALNY": {
+  "feedId": "8c1b15a29aa0f375297f685d8ab1feb7d035a559f77b0e475134551612ece7d4",
+  "symbol": "Equity.US.ALNY/USD"
+ },
+ "AMP": {
+  "feedId": "a63586143073186f23c7f8439ab75b558b9be60f37f395feae47d4329f509ee2",
+  "symbol": "Equity.US.AMP/USD"
+ },
+ "SYY": {
+  "feedId": "da937ffe337d2111782ba3910b7b4191764724c3adc69e3074d5da7e25a7dfb4",
+  "symbol": "Equity.US.SYY/USD"
+ },
+ "MTB": {
+  "feedId": "1525917fe1d100b6af40bb6f40f71059a6a4c52a1849c964ef33a06412bc9f46",
+  "symbol": "Equity.US.MTB/USD"
+ },
+ "AFL": {
+  "feedId": "f8b4d7aa681488438f9e51351567f3977480736923a4b75d326625f36f025836",
+  "symbol": "Equity.US.AFL/USD"
+ },
+ "COR": {
+  "feedId": "ec3594578eb750e3b9393433e983263baa18018db14e1d220c6845bf2fe480a3",
+  "symbol": "Equity.US.COR/USD"
+ },
+ "VTR": {
+  "feedId": "c80a26da95814c361751e40849861cada3bd51641c57e1e89bb629c1cce92f1c",
+  "symbol": "Equity.US.VTR/USD"
+ },
+ "TPR": {
+  "feedId": "86fcbb7f5166af4a0e298643e725f8af62e93b96891d478dd347165e3c7716a2",
+  "symbol": "Equity.US.TPR/USD"
+ },
+ "HBAN": {
+  "feedId": "92594609a3d435e8e880e36f6ac87794edbe9d3ac3df18fbfdab3b5dd33425db",
+  "symbol": "Equity.US.HBAN/USD"
+ },
+ "FAST": {
+  "feedId": "f5d11dd2f66a2cc27fa25caf2c7fd45caa33045e8e3d55dc825ca830c68397b5",
+  "symbol": "Equity.US.FAST/USD"
+ },
+ "XEL": {
+  "feedId": "5522f751cd656ddd88a22959a35dd63fe6dbf82aeba4fc9b8edef367b8c7e208",
+  "symbol": "Equity.US.XEL/USD"
+ },
+ "UAL": {
+  "feedId": "cba6d204bc8c77c733d1f1acc5288d00dc4361046fe4559f2f6fb750321b0afa",
+  "symbol": "Equity.US.UAL/USD"
+ },
+ "ODFL": {
+  "feedId": "4b8faa3f61c5764a6662179f8aa41c0cb36cb84d796be6d953944ecae87fdc94",
+  "symbol": "Equity.US.ODFL/USD"
+ },
+ "ETR": {
+  "feedId": "dd3baa1ebafa53b0a8b1e208f2e8df9dfed597f8b93d0fead0e84d8f4a0336d9",
+  "symbol": "Equity.US.ETR/USD"
+ },
+ "ON": {
+  "feedId": "35f08f92f05ab4fd2117f8d857238f5eb25213fefe95e7ba042babea512a0a5b",
+  "symbol": "Equity.US.ON/USD"
+ },
+ "YUM": {
+  "feedId": "39763876ae1b3c2402f6d1e2f40d33fb4493ddd97d9edc42e64bd61f718b0eb7",
+  "symbol": "Equity.US.YUM/USD"
+ },
+ "PEG": {
+  "feedId": "b0d68bb7055327a5ec773094129a00f6794ae064b9286a1b55eb2b975bc17dc0",
+  "symbol": "Equity.US.PEG/USD"
+ },
+ "CTVA": {
+  "feedId": "5fcafa59eadb26d764ed8de3d1ce071a4a9337dddf093ee8a7bace713aed7f22",
+  "symbol": "Equity.US.CTVA/USD"
+ },
+ "MCHP": {
+  "feedId": "1f1a9da5ed94f81694aaf250155adc7c6cde842e4a3ee6e6b4cb6fc23c85667b",
+  "symbol": "Equity.US.MCHP/USD"
+ },
+ "JBL": {
+  "feedId": "d8226a5920c7fbfe9bf9b159ab25855fb07c66b28c0941c1d36b247e382add95",
+  "symbol": "Equity.US.JBL/USD"
+ },
+ "WAB": {
+  "feedId": "6168b785e90c735e2c546abe61198534877802f639f829dcba65ecb332d2a097",
+  "symbol": "Equity.US.WAB/USD"
+ },
+ "OKE": {
+  "feedId": "878b4560531e95bf028235e52d0e7116a022d3529326adc99c2d3a20994eb733",
+  "symbol": "Equity.US.OKE/USD"
+ },
+ "STT": {
+  "feedId": "a72ff152372a1a9b75e40c7da828be1e53129bfb0338436afab007bad29aa42c",
+  "symbol": "Equity.US.STT/USD"
+ },
+ "KDP": {
+  "feedId": "7b4b63935159e95489a446817966b95798bf92730d5a2439a9b164022c55671b",
+  "symbol": "Equity.US.KDP/USD"
+ },
+ "AIG": {
+  "feedId": "9140533c3a5bd8c00b087c2d6e3b396f2767910484e61349a643f2e32a69f753",
+  "symbol": "Equity.US.AIG/USD"
+ },
+ "RSG": {
+  "feedId": "e3f0d3e53a6f645cd1d7e2927708a17d8bfb12b00c61b99d441f9ad590d2d8fe",
+  "symbol": "Equity.US.RSG/USD"
+ },
+ "MET": {
+  "feedId": "a1603db75317c40a21301cc11d58ffd69bea273f3473bfed479b4325300fc721",
+  "symbol": "Equity.US.MET/USD"
+ },
+ "EW": {
+  "feedId": "54a39d1072d96389f124055a1da65d20f3b130719a2b615009ef30afecc7146a",
+  "symbol": "Equity.US.EW/USD"
+ },
+ "CARR": {
+  "feedId": "98057002daf66705e7542c2934f246bed459c2deeacc465f2f2b137649faa5be",
+  "symbol": "Equity.US.CARR/USD"
+ },
+ "CAH": {
+  "feedId": "970e53ff78966bd9cbd5c4fba2254484b2e7b5e117403b635b0ca482d7346ff0",
+  "symbol": "Equity.US.CAH/USD"
+ },
+ "DAL": {
+  "feedId": "8af4d43c43e35e6849f686e831f8201d3e868e921ac22de97d6acebde95d2829",
+  "symbol": "Equity.US.DAL/USD"
+ },
+ "ADSK": {
+  "feedId": "3d3b04f0e32bd28246e6fd6d0e863e621827a6da9e979e7a7df5516aa28e9591",
+  "symbol": "Equity.US.ADSK/USD"
+ },
+ "ALAB": {
+  "feedId": "a2c896238e03d8126369b445ed0157a9cfaccf095510a68b9100beb8885c0e47",
+  "symbol": "Equity.US.ALAB/USD"
+ },
+ "AZO": {
+  "feedId": "3b9f8ee08c4dedaf70133256945518df1f037449c9d81cc678907694bdad3f0f",
+  "symbol": "Equity.US.AZO/USD"
+ },
+ "AME": {
+  "feedId": "79adceba85771f08b71af57b027e0cf98a040738bca2a70ed3f89736a718f77c",
+  "symbol": "Equity.US.AME/USD"
+ },
+ "FITB": {
+  "feedId": "46a08c0ec7e78c610b835e7e6268f1f6aea10788890b2d72057f7a62a646ab2d",
+  "symbol": "Equity.US.FITB/USD"
+ },
+ "TRGP": {
+  "feedId": "e3fdb99fc6ce4b1b118b16abafb68242e7feef6e8e75f2ad435072ab83b5c3f7",
+  "symbol": "Equity.US.TRGP/USD"
+ },
+ "DVN": {
+  "feedId": "ba9e386c7cff73f68e17ee14f3f8a190afa842621527ec5f542968c516759df4",
+  "symbol": "Equity.US.DVN/USD"
+ },
+ "AJG": {
+  "feedId": "e26394da01c493bf0606d33395ad72c97a9d0e0cd68b31ace8832c6451a1f5ff",
+  "symbol": "Equity.US.AJG/USD"
+ },
+ "ROK": {
+  "feedId": "c531c5d85ae89ad23e0f455be0a9170e2924a4b6922d62d5b1e076023f7b7235",
+  "symbol": "Equity.US.ROK/USD"
+ },
+ "O": {
+  "feedId": "d2f530f73cad1b04094adbc1ef8d4525f67f2c812bae70af63e8027a9787d75c",
+  "symbol": "Equity.US.O/USD"
+ },
+ "REGN": {
+  "feedId": "2a45d16204f3588259fddf5a81a1129efab873571a4cef38641e16bfeac364ef",
+  "symbol": "Equity.US.REGN/USD"
+ },
+ "CIEN": {
+  "feedId": "a1227a13d6b81354acdff9ae22a1878ee0dcdc2668e0a3f8c15700ddf5d50fbb",
+  "symbol": "Equity.US.CIEN/USD"
+ },
+ "D": {
+  "feedId": "a4102a6d0a6a6e5bf66fa3599411d688f8b253d38db982a266c5eec6ba042c8a",
+  "symbol": "Equity.US.D/USD"
+ },
+ "MCO": {
+  "feedId": "81ec776dd73898187779458dcd0c282a91322c7bd5fcb38b565f1b94bd8adff0",
+  "symbol": "Equity.US.MCO/USD"
+ },
+ "SRE": {
+  "feedId": "2b6b8daa571caf41933359e3fa3e1497db49fa39bb0964f02e4fee4e3035b22a",
+  "symbol": "Equity.US.SRE/USD"
+ },
+ "TRV": {
+  "feedId": "d45392f678a1287b8412ed2aaa326def204a5c234df7cb5552d756c332283d81",
+  "symbol": "Equity.US.TRV/USD"
+ },
+ "EOG": {
+  "feedId": "8a6a338e7cd256a83e4f27d7cf7ebe4983cae694a00762ef25c6c7da5607124e",
+  "symbol": "Equity.US.EOG/USD"
+ },
+ "LHX": {
+  "feedId": "87039ec0fdfba15a4cfc68d257f509182baa1281bf9e79cbb6eca09dbe694e7a",
+  "symbol": "Equity.US.LHX/USD"
+ },
+ "SPG": {
+  "feedId": "e5b009001bb93e2c5405c6c1f24a2ea178f378997cfd2e3fa8103bcc8df66985",
+  "symbol": "Equity.US.SPG/USD"
+ },
+ "GWW": {
+  "feedId": "bf20e149c45ec15b78eb4a61d0bbae625acc0dadacf9c3b76c3bb8de9346d3ec",
+  "symbol": "Equity.US.GWW/USD"
+ },
+ "SHW": {
+  "feedId": "5418e711244ca3c599e0f6a2b3b217833e81f110ae53afadd4a0809808c7baae",
+  "symbol": "Equity.US.SHW/USD"
+ },
+ "MPWR": {
+  "feedId": "e51d5a490b7ff684e72104f092096d33ad8f6d0bbc617fbe893e23358f8e1c72",
+  "symbol": "Equity.US.MPWR/USD"
+ },
+ "MPC": {
+  "feedId": "f324ae399346b21a3f40e9a07984750dfde9a9d7b40999fb1c6d98a4243f5eed",
+  "symbol": "Equity.US.MPC/USD"
+ },
+ "APO": {
+  "feedId": "40176a5dd12a53bb1f31e848c9363863dd6f8e755f35ef56d2182fc7f1d03853",
+  "symbol": "Equity.US.APO/USD"
+ },
+ "FIX": {
+  "feedId": "cfa4ed85a85dd41326d017f21e8452af69c42790975c0c0c0132cf195fc45a6c",
+  "symbol": "Equity.US.FIX/USD"
+ },
+ "F": {
+  "feedId": "6c267962d46cec4a5baf6105de67ef08e1306f75973ce6eb8db8527f06e28f33",
+  "symbol": "Equity.US.F/USD"
+ },
+ "KKR": {
+  "feedId": "aef0db13545e411bfc9d17e7eba913b0a5376c6af415a33240b546f773b25105",
+  "symbol": "Equity.US.KKR/USD"
+ },
+ "NOC": {
+  "feedId": "5f848f61c44e1c9b21ddac0fcac5536344e80ad21df3271c2f069f57229fab81",
+  "symbol": "Equity.US.NOC/USD"
+ },
+ "APD": {
+  "feedId": "3a4d69933f6e8e251a730e1d04ae7fdd53a2b20a1d111bbccf263209375646a0",
+  "symbol": "Equity.US.APD/USD"
+ },
+ "DLR": {
+  "feedId": "5af7f961ea231d5f4bd19dc99d1fd43f6de67ab57b73779f9ebe65a6a4ab64d5",
+  "symbol": "Equity.US.DLR/USD"
+ },
+ "TFC": {
+  "feedId": "d39e81603a92c5b911f9a46432c50de459c6ab6d854e53b00ad65354e14728d7",
+  "symbol": "Equity.US.TFC/USD"
+ },
+ "CTAS": {
+  "feedId": "3aac822069ed803b272ade5510441f32b97501963cad9598ae61238bd8843aa5",
+  "symbol": "Equity.US.CTAS/USD"
+ },
+ "KEYS": {
+  "feedId": "0a89d9c67435e8563fbf1bd1d3da9578fd07edfc2af55e92acf532cc9951a90a",
+  "symbol": "Equity.US.KEYS/USD"
+ },
+ "NUE": {
+  "feedId": "7e535de06269b98ea0dfd8b238b80254a41be0092acf72c4464b269cd500716e",
+  "symbol": "Equity.US.NUE/USD"
+ },
+ "COHR": {
+  "feedId": "fae9f16801d1249999bf7a9e6e57ae7b512f88cce663251da2dee9fadddfc31a",
+  "symbol": "Equity.US.COHR/USD"
+ },
+ "ALL": {
+  "feedId": "e99bb427a3e84a107c6e3108cd81608bfb1c54bba024374cae15da93da756c02",
+  "symbol": "Equity.US.ALL/USD"
+ },
+ "PCAR": {
+  "feedId": "6262b2695c0ea3371d0a0a3fb3c34ff12fdbf7a61046ec94db3665d47bbaf829",
+  "symbol": "Equity.US.PCAR/USD"
+ },
+ "HCA": {
+  "feedId": "dc85ae0ea74bb56972b162f1c9c48727015b774c25fd0e3c150cc18ce28bf2e5",
+  "symbol": "Equity.US.HCA/USD"
+ },
+ "AEP": {
+  "feedId": "ef333b80d26fb3630c870da74de7a52b4c5f40ead3cfd841a9d0fa6bb4186b5b",
+  "symbol": "Equity.US.AEP/USD"
+ },
+ "MSI": {
+  "feedId": "cc7851b525bd7f0d8ce00e409d59d6cd5ecdfbc5a2df1aaee3c4948426976100",
+  "symbol": "Equity.US.MSI/USD"
+ },
+ "ECL": {
+  "feedId": "60bd1ddb5b55fc99af50cba723ceeecc68067a8e23cc2df420df5b36873744e2",
+  "symbol": "Equity.US.ECL/USD"
+ },
+ "CL": {
+  "feedId": "89b83912f0fe0c5091de834750cac3de2ff16b74b6a99bab7cbae25dd6585f4c",
+  "symbol": "Equity.US.CL/USD"
+ },
+ "NSC": {
+  "feedId": "337129e71cdd78ee403dcde32b49632c088baa665aac6302dce0f4d3d1339196",
+  "symbol": "Equity.US.NSC/USD"
+ },
+ "TDG": {
+  "feedId": "d381a4fd877aab599ca1270f5a099d8583ee60159b66c6b6b1ad3018ae89c8fe",
+  "symbol": "Equity.US.TDG/USD"
+ },
+ "URI": {
+  "feedId": "111dca3c1265a35337c6b2ed06245c5b504c255f92c5ba0c03a67d8913d3e83f",
+  "symbol": "Equity.US.URI/USD"
+ },
+ "HPE": {
+  "feedId": "069b87074893c37fd250990df7409d7e19cd649bea8e28904a0fd49915f4e53a",
+  "symbol": "Equity.US.HPE/USD"
+ },
+ "BSX": {
+  "feedId": "d699ec7e73369362480f83d2a6f6ec778fa2947a45f1e94309cf893689d35262",
+  "symbol": "Equity.US.BSX/USD"
+ },
+ "VLO": {
+  "feedId": "216f728010a42b2b21bbd9c5971ea682d3424c88b1449b405ba6cbf7b7ebcab5",
+  "symbol": "Equity.US.VLO/USD"
+ },
+ "FDX": {
+  "feedId": "1d36f0faa0688b4250f12560718e9989138e20a3a8a77c0b4144792e363a6cb0",
+  "symbol": "Equity.US.FDX/USD"
+ },
+ "INTU": {
+  "feedId": "43ef64ff6af44e0648f0328ee56e88fee57943b0aa077c24ef175bb9ecd37133",
+  "symbol": "Equity.US.INTU/USD"
+ },
+ "HLT": {
+  "feedId": "02e83f2c834b9f2e495066b17da13c7caa5551a8378c6dff7f217166d9194588",
+  "symbol": "Equity.US.HLT/USD"
+ },
+ "ORLY": {
+  "feedId": "d06528b28300de3b1a83a3acb383096ecad3e25c320f6d4a6a2745b70f7b1462",
+  "symbol": "Equity.US.ORLY/USD"
+ },
+ "ITW": {
+  "feedId": "2b610a0d95397c20582741b53d61d5e79bab7bebbd5793546e90662f8f6ce0b9",
+  "symbol": "Equity.US.ITW/USD"
+ },
+ "ROST": {
+  "feedId": "093d0ce5cbf3150e271db36706a0cf42b9dd7e62b1bc70fef09c0e2ee80434d5",
+  "symbol": "Equity.US.ROST/USD"
+ },
+ "PSX": {
+  "feedId": "16b28b05e3491528ff9ece996c65075c3d2af3027131b11da425c6930b1e5932",
+  "symbol": "Equity.US.PSX/USD"
+ },
+ "ICE": {
+  "feedId": "b2e33e4daa44d9b0c0783ededd335520a0f7eeed7608ff60c93c7c2294b2d813",
+  "symbol": "Equity.US.ICE/USD"
+ },
+ "CI": {
+  "feedId": "50792163ea9ceb6e4142a4ae35845e4ca4c559b89bbf6cb3d426f79534717401",
+  "symbol": "Equity.US.CI/USD"
+ },
+ "GM": {
+  "feedId": "df8109bbec79e2b24ce326c3be5ca0036a88ed20800ec0aa54ccc2bc7811bd3b",
+  "symbol": "Equity.US.GM/USD"
+ },
+ "SNOW": {
+  "feedId": "14291d2651ecf1f9105729bdc59553c1ce73fb3d6c931dd98a9d2adddc37e00f",
+  "symbol": "Equity.US.SNOW/USD"
+ },
+ "WM": {
+  "feedId": "7f78c101ca799a5b63f5e5c1e56a43b3a361233900160c172e2ec2980e91b4eb",
+  "symbol": "Equity.US.WM/USD"
+ },
+ "EMR": {
+  "feedId": "e1c0e5aaf1842d3efb806d14a7cd21160d4b7c0f96746e0fa1227ae961bf3929",
+  "symbol": "Equity.US.EMR/USD"
+ },
+ "ELV": {
+  "feedId": "5fc195aa6556b6b2ce09bd3308c6b872bf9b85682d54ec92ed910172b319a9f0",
+  "symbol": "Equity.US.ELV/USD"
+ },
+ "MMM": {
+  "feedId": "fd05a384ba19863cbdfc6575bed584f041ef50554bab3ab482eabe4ea58d9f81",
+  "symbol": "Equity.US.MMM/USD"
+ },
+ "CSX": {
+  "feedId": "74f3621e920f9a9d78595ed957c9090007d19e82f7c0edbe89a392bafec62c64",
+  "symbol": "Equity.US.CSX/USD"
+ },
+ "SNPS": {
+  "feedId": "af00c68cb77107c1f4e8ff5c7e8a28892931fd2790ff9ca54969625d27b66e63",
+  "symbol": "Equity.US.SNPS/USD"
+ },
+ "AMT": {
+  "feedId": "8a80397a6e962b6e260d620e3c68d08ab94bdc82fd27d2c506d41b8a52280364",
+  "symbol": "Equity.US.AMT/USD"
+ },
+ "FTNT": {
+  "feedId": "7c09a3b332c3efc8c9a90da4ab26bb9eca53e1f147a0960cf458980d1aba97ef",
+  "symbol": "Equity.US.FTNT/USD"
+ },
+ "BX": {
+  "feedId": "9b25e42163e85658664651dac0915b2e0474fe6f5e19541e48ba2356f11a9f32",
+  "symbol": "Equity.US.BX/USD"
+ },
+ "ADP": {
+  "feedId": "147e4b877552f9832b87f04038b21da4a3054fd2ae654bed4cb92548bb33f4b4",
+  "symbol": "Equity.US.ADP/USD"
+ },
+ "PNC": {
+  "feedId": "424c3c551dcb2c25f9a9de69ebb83586ccd6dd2a79fd2c62650803b1acac3105",
+  "symbol": "Equity.US.PNC/USD"
+ },
+ "MRSH": {
+  "feedId": "34ddb500764d81234b278361d67657792187f9d0bc3e7ce05f07196a47983f40",
+  "symbol": "Equity.US.MRSH/USD"
+ },
+ "WMB": {
+  "feedId": "6921035babdc51587962f9a1350a2c2ca5840b64bbf9057ab75a20cc663b32c3",
+  "symbol": "Equity.US.WMB/USD"
+ },
+ "CMI": {
+  "feedId": "069463ea9b6c8741e39498539365f385d4fdf0acea213d1efdb6ddc30101d0dd",
+  "symbol": "Equity.US.CMI/USD"
+ },
+ "FCX": {
+  "feedId": "2b5735ead9b057b3fb96a422740ab26bdfcb1f2b5d4cd9d052f45311ef0f2952",
+  "symbol": "Equity.US.FCX/USD"
+ },
+ "SO": {
+  "feedId": "650293cd51d63cac28ecb03823af05d8192dad724156af6ed4a90b1708057bf2",
+  "symbol": "Equity.US.SO/USD"
+ },
+ "MCK": {
+  "feedId": "374c080d60c3d055199df45e3c54accd5f04f190f61cd050dae28dd2519871a6",
+  "symbol": "Equity.US.MCK/USD"
+ },
+ "CDNS": {
+  "feedId": "a2168b2c613dcd4b8c0f50e255b61a1c5dfdf750eddaf09bade719b9ceb573a0",
+  "symbol": "Equity.US.CDNS/USD"
+ },
+ "USB": {
+  "feedId": "3490a2ca9b5db045ea37d86c2d5dd69f893417fb3b9937b4bcd61d17f0bf0c20",
+  "symbol": "Equity.US.USB/USD"
+ },
+ "GD": {
+  "feedId": "894e9c429f83fe4f35fda679568348418bafe5a0a68e1cccc8e51a137e879ce9",
+  "symbol": "Equity.US.GD/USD"
+ },
+ "SYK": {
+  "feedId": "1e2fea8c5028e09489fbcb31014e9e7833e08eea78922eaa69d96cf1b37206c2",
+  "symbol": "Equity.US.SYK/USD"
+ },
+ "EQIX": {
+  "feedId": "66eb6cfa3a28e8e7cad538a55872ac0e41a2741ca66a29c1dc5540f2b1fb6fb6",
+  "symbol": "Equity.US.EQIX/USD"
+ },
+ "NOW": {
+  "feedId": "69d2eebcc3c62889f1c0105ff347f296eb435cba8d2e4705a486fd47a8fe1a1b",
+  "symbol": "Equity.US.NOW/USD"
+ },
+ "HWM": {
+  "feedId": "b8f2bb034ab00c83a9a4e4bc4f8254c139631f56f11deb6f99f00c34ce032478",
+  "symbol": "Equity.US.HWM/USD"
+ },
+ "DUK": {
+  "feedId": "914c7f24178681e916139175ca651271ea14c340c4ba5e0c7787162020a9e79b",
+  "symbol": "Equity.US.DUK/USD"
+ },
+ "LMT": {
+  "feedId": "880d96a272d5ccbb3cd6f6aacb881a996cb4976b3f252b58c595cd2a418b6ea9",
+  "symbol": "Equity.US.LMT/USD"
+ },
+ "VRTX": {
+  "feedId": "ac9de86ae3dcff03514bde733f5793f1446b2cd31f1539a1c449acc3e76cacc1",
+  "symbol": "Equity.US.VRTX/USD"
+ },
+ "NEM": {
+  "feedId": "29caf4d900d3080e56306ac41a9856735b89cb4df6813dd7b83e9eb96c04700d",
+  "symbol": "Equity.US.NEM/USD"
+ },
+ "SBUX": {
+  "feedId": "86cd9abb315081b136afc72829058cf3aaf1100d4650acb2edb6a8e39f03ef75",
+  "symbol": "Equity.US.SBUX/USD"
+ },
+ "COF": {
+  "feedId": "857c3a552953250d5b19db7341f3deaed12ff623f2db451e30581c266b23ab58",
+  "symbol": "Equity.US.COF/USD"
+ },
+ "COP": {
+  "feedId": "d54d8d4e3774ea53660e660ecd03aa9daa31eed9b7e67d1a2aed3095b3e6720d",
+  "symbol": "Equity.US.COP/USD"
+ },
+ "BMY": {
+  "feedId": "01d1d77d2d98cb38f163ecb6c1c0e3b8d60bbd5aa23c915b282f0228ac7d9967",
+  "symbol": "Equity.US.BMY/USD"
+ },
+ "PH": {
+  "feedId": "9c86a3b6d84699fcc4c0f2e76f34d4b70c6c8230803cb35ae89278de9c6932a9",
+  "symbol": "Equity.US.PH/USD"
+ },
+ "DE": {
+  "feedId": "c2d23f236142a519929b147c4dbe8720475724918c8b8473db0283f8cf044184",
+  "symbol": "Equity.US.DE/USD"
+ },
+ "MO": {
+  "feedId": "ad17639d5c5f937b0069f09a455c613c5b6feb8cf0ffb725de3942af96c0434b",
+  "symbol": "Equity.US.MO/USD"
+ },
+ "CVS": {
+  "feedId": "016eb8866d4455bcce669bc745835fd1f00be9c9205602abb3a2b3cc31e993ff",
+  "symbol": "Equity.US.CVS/USD"
+ },
+ "WELL": {
+  "feedId": "b80f709aba6c306d3c61b6b9f9dc652d61d8a9a458580f7d4b5195b4f4a674c5",
+  "symbol": "Equity.US.WELL/USD"
+ },
+ "PGR": {
+  "feedId": "1ab9bd7ed68a12736e9feb89044e6ab23b1abfa7b66e06f85653752ec0a890e1",
+  "symbol": "Equity.US.PGR/USD"
+ },
+ "PLD": {
+  "feedId": "627b06aefb92e6b71c4a92f867c7df2718f73c25de2da7b3be1089cc1fe0e9b8",
+  "symbol": "Equity.US.PLD/USD"
+ },
+ "LOW": {
+  "feedId": "ab31ec9dbcacacfb26e5ea6c249d69f5ae8b9c691aac6ccc5919b6107efa1c3a",
+  "symbol": "Equity.US.LOW/USD"
+ },
+ "TJX": {
+  "feedId": "1e0192ac474db72a6937c45460929dcef6efebf4d4b493685d020d1bc3b265a2",
+  "symbol": "Equity.US.TJX/USD"
+ },
+ "DIS": {
+  "feedId": "703e36203020ae6761e6298975764e266fb869210db9b35dd4e4225fa68217d0",
+  "symbol": "Equity.US.DIS/USD"
+ },
+ "GLW": {
+  "feedId": "6ef62b860055ef6819af274064e5aa597aa9d0963ce3109c51d996264844776e",
+  "symbol": "Equity.US.GLW/USD"
+ },
+ "UNP": {
+  "feedId": "b095647f688415d4102a858e1b25c1af15750f0e516a0d561cb35ebe30deb183",
+  "symbol": "Equity.US.UNP/USD"
+ },
+ "SCHW": {
+  "feedId": "d437b2f1470d5f007f18a5565eaab1ed182d97204d80b7dd3dac29839f61c9e6",
+  "symbol": "Equity.US.SCHW/USD"
+ },
+ "ISRG": {
+  "feedId": "ad4dc1db82c47e0822afef9d9eca7bf693cdad20dd61fcd5aa1b6895b1b90190",
+  "symbol": "Equity.US.ISRG/USD"
+ },
+ "GILD": {
+  "feedId": "29148f7de5819fe7467e99f5f0b22e8fb124d958d8f668c3c17e607d7ed1eb09",
+  "symbol": "Equity.US.GILD/USD"
+ },
+ "BA": {
+  "feedId": "8419416ba640c8bbbcf2d464561ed7dd860db1e38e51cec9baf1e34c4be839ae",
+  "symbol": "Equity.US.BA/USD"
+ },
+ "NEE": {
+  "feedId": "b058f7874b57f820aa7ff6034a8515add8095b5831e83fc8d02c1dccd4ac099c",
+  "symbol": "Equity.US.NEE/USD"
+ },
+ "AMGN": {
+  "feedId": "10946973bfcc936b423d52ee2c5a538d96427626fe6d1a7dae14b1c401d1e794",
+  "symbol": "Equity.US.AMGN/USD"
+ },
+ "VZ": {
+  "feedId": "6672325a220c0ee1166add709d5ba2e51c185888360c01edc76293257ef68b58",
+  "symbol": "Equity.US.VZ/USD"
+ },
+ "QCOM": {
+  "feedId": "54350ebf587c3f14857efcfec50e5c4f6e10220770c2266e9fe85bd5e42e4022",
+  "symbol": "Equity.US.QCOM/USD"
+ },
+ "RTX": {
+  "feedId": "97c483cc4172de7ac1a3cc0814f442e4747e64008723f2705d6e9fdff3ba4d3d",
+  "symbol": "Equity.US.RTX/USD"
+ },
+ "MS": {
+  "feedId": "97b55381ff94c6c0a22f3e0c8cdc2186a3561bf3dfe3cfaebf4786c9318b770f",
+  "symbol": "Equity.US.MS/USD"
+ },
+ "C": {
+  "feedId": "e7e7aac1ac0524cd3666fae4ecafae5e1fee880c11f3a7b4b7ea61bd6e434a63",
+  "symbol": "Equity.US.C/USD"
+ },
+ "TXN": {
+  "feedId": "c5b94c7ece9c3ac984e1439a8fac86270d0f988bbbcc838b456e2d7311754bdc",
+  "symbol": "Equity.US.TXN/USD"
+ },
+ "WDC": {
+  "feedId": "37a782cf9bb6061d4cca34a419fb1ae5a8edf71ae8843206ea88b4ba696d4706",
+  "symbol": "Equity.US.WDC/USD"
+ },
+ "GE": {
+  "feedId": "e1d3115c6e7ac649faca875b3102f1000ab5e06b03f6903e0d699f0f5315ba86",
+  "symbol": "Equity.US.GE/USD"
+ },
+ "ADI": {
+  "feedId": "a388977cbd7b063e456a31267919d86395af058a7558e892dde3c6b38c6240bb",
+  "symbol": "Equity.US.ADI/USD"
+ },
+ "WFC": {
+  "feedId": "67ac585d05128c7b6a88660be04acd18b2bddd6308e98b71b9f3ba0f0e781296",
+  "symbol": "Equity.US.WFC/USD"
+ },
+ "CAT": {
+  "feedId": "ad04597ba688c350a97265fcb60585d6a80ebd37e147b817c94f101a32e58b4c",
+  "symbol": "Equity.US.CAT/USD"
+ },
+ "BOT": {
+  "feedId": "0aa20f6c96a0f30e7c78e4c4f45a0db36ee9126b1ae34851a2c37720e075a500",
+  "symbol": "Equity.US.BOT/USD"
+ },
+ "SPCX": {
+  "feedId": "8a593d6edde7a3095213c88116d8840d01e93c2ddeb800bc891772eb8b93bb94",
+  "symbol": "Equity.US.SPCX/USD"
+ },
+ "MDLN": {
+  "feedId": "289673297719d8fa31d959e4151c9a0c5c92fce8e4c195351f6339217f0eb4b1",
+  "symbol": "Equity.US.MDLN/USD"
+ },
+ "EWY": {
+  "feedId": "7be2b3f9f9d02b1ffcf61fc26ad5cc6aff4dd02044f9abc22ee57f37b3b5d2e5",
+  "symbol": "Equity.US.EWY/USD"
+ },
+ "SATA": {
+  "feedId": "b89885277fd07887353cb63d641afe432a5231256f844b3b993f8fe1764fdfca",
+  "symbol": "Equity.US.SATA/USD"
+ },
+ "SOXX": {
+  "feedId": "3c3973e95c24fab3808a8fd9f25fb06ee92422fea20d814c1a850b307cbf31b9",
+  "symbol": "Equity.US.SOXX/USD"
+ },
+ "EWG": {
+  "feedId": "f48942b892fcb708b680b9c0b3911d12c9025b047296f5f24e217f659cacd143",
+  "symbol": "Equity.US.EWG/USD"
+ },
+ "BITX": {
+  "feedId": "6acec4867e7c4b0610d0422ff34cdd368552e846ea9df4fc2bbb4681126f724f",
+  "symbol": "Equity.US.BITX/USD"
+ },
+ "VOO": {
+  "feedId": "236b30dd09a9c00dfeec156c7b1efd646c0f01825a1758e3e4a0679e3bdff179",
+  "symbol": "Equity.US.VOO/USD"
+ },
+ "NLR": {
+  "feedId": "7c95b744797b88e94ddfc81e1f6833c18c78b9e086285b7bc778b4ef840f372e",
+  "symbol": "Equity.US.NLR/USD"
+ },
+ "GDX": {
+  "feedId": "be25a3ca6904edff6de0a1c3ad5a9eaf12a87bced4d1c7823d7afe16160001f6",
+  "symbol": "Equity.US.GDX/USD"
+ },
+ "JAAA": {
+  "feedId": "01ce9758cabc32e7344032cc921433cdf194a31c2e4b11e42d6fc3217cc94871",
+  "symbol": "Equity.US.JAAA/USD"
+ },
+ "JPST": {
+  "feedId": "52734824218d0361974ca000862f511aefdb51d608b762f16d59e372754b8909",
+  "symbol": "Equity.US.JPST/USD"
+ },
+ "SOXL": {
+  "feedId": "53008e9cb71db278f91d7ee0011434af626548018b5f9d4c11000c387eac46fb",
+  "symbol": "Equity.US.SOXL/USD"
+ },
+ "RCAT": {
+  "feedId": "bd4cb54e777668772c77d2824b44262580ed6efa000f612405a13b3c515584bb",
+  "symbol": "Equity.US.RCAT/USD"
+ },
+ "ONDS": {
+  "feedId": "2373578c1c42c6a46f39e1cd7c5e37204b9394027415333891d2cb85ca842041",
+  "symbol": "Equity.US.ONDS/USD"
+ },
+ "IREN": {
+  "feedId": "ba20f6d5532c07da494da803db2523719d339226e69ade6436e7d2f1047138a5",
+  "symbol": "Equity.US.IREN/USD"
+ },
+ "HIMS": {
+  "feedId": "2132cbc333161e94b91da745ed73b1450410fdc870f2235bf628c28da358b652",
+  "symbol": "Equity.US.HIMS/USD"
+ },
+ "NET": {
+  "feedId": "d3a9e76862950b2f21a7037fd64df913794b14d0e2938a9d383b0b7387ca0081",
+  "symbol": "Equity.US.NET/USD"
+ },
+ "LNG": {
+  "feedId": "f27e75730773262e85a7f11c835664478755098b815c0b03856c4be6e3332ad6",
+  "symbol": "Equity.US.LNG/USD"
+ },
+ "XOP": {
+  "feedId": "c706cce81639eed699bf23a427ea8742ac6e7cc775b2a8a8e70cba8a49393e42",
+  "symbol": "Equity.US.XOP/USD"
+ },
+ "VGK": {
+  "feedId": "0648195b6826d833f3c4eb261c81223a90ceb3a26e86e9b18f6e11f0212cad18",
+  "symbol": "Equity.US.VGK/USD"
+ },
+ "ITA": {
+  "feedId": "79f7f0b79a6b7fdc0d7d9e8b6337fd709b8eea9dc6f57b6174c84816cae88bfd",
+  "symbol": "Equity.US.ITA/USD"
+ },
+ "VXUS": {
+  "feedId": "48a13d42218646bba8cc114cd394a283b11c0e07dd14a885efd5caec640c5289",
+  "symbol": "Equity.US.VXUS/USD"
+ },
+ "SGOV": {
+  "feedId": "8d6a29bb5ed522931d711bb12c4bbf92af986936e52af582032913b5ffcbf4d5",
+  "symbol": "Equity.US.SGOV/USD"
+ },
+ "VUG": {
+  "feedId": "8c64b089d95170429ba39ec229a0a6fc36b267e09c3210fbb9d9eb2d4c203bc5",
+  "symbol": "Equity.US.VUG/USD"
+ },
+ "SMH": {
+  "feedId": "2487b620e66468404ba251bfaa6b8382774010cbb5d504ac48ec263e0b1934aa",
+  "symbol": "Equity.US.SMH/USD"
+ },
+ "URA": {
+  "feedId": "c22a2dd9ebde1ca2658926fc2579e9e4086c14cb63c789337c86295f09e68de5",
+  "symbol": "Equity.US.URA/USD"
+ },
+ "XLE": {
+  "feedId": "8bf649e08e5a86129c57990556c8eec30e296069b524f4639549282bc5c07bb4",
+  "symbol": "Equity.US.XLE/USD"
+ },
+ "SNDK": {
+  "feedId": "c86a1f20cd7d5d07932baea30bcd8e479b775c4f51f82526bf1de6dc79fa3f76",
+  "symbol": "Equity.US.SNDK/USD"
+ },
+ "LITE": {
+  "feedId": "fd7141d35093fb93e84d82507cc6a97775fe263bd8ecd8b7e2b940a6ae487979",
+  "symbol": "Equity.US.LITE/USD"
+ },
+ "SMR": {
+  "feedId": "69155365daba71df19c2c0416467b64581052cfa75f44b77f352a92698b81639",
+  "symbol": "Equity.US.SMR/USD"
+ },
+ "APLD": {
+  "feedId": "7fc1e64946aff450748e8f60644d052ae787e5708dc48c6c73c546ee94218cc3",
+  "symbol": "Equity.US.APLD/USD"
+ },
+ "PWR": {
+  "feedId": "a189b9eee6d023e3b79a726804aeb748d54e52cf6ebcebe0f7d5c8dae4988357",
+  "symbol": "Equity.US.PWR/USD"
+ },
+ "TER": {
+  "feedId": "58ab181e7512766728d2cc3581839bbb913e6cd24457ba422cbe2a33df64416e",
+  "symbol": "Equity.US.TER/USD"
+ },
+ "ETN": {
+  "feedId": "b1cf984febc32fbd98f0c5d31fed29d050d56a272406bae9de64dd94ba7e5e1e",
+  "symbol": "Equity.US.ETN/USD"
+ },
+ "KLAC": {
+  "feedId": "9c27675f282bfe54b5d0a7b187b29b09184d32d4462de7e3060629c7b8895aad",
+  "symbol": "Equity.US.KLAC/USD"
+ },
+ "GEV": {
+  "feedId": "57e28b0f0ab18923f5c987629c0c714b9b46c87e729ed95ed6e23e466e8d1e0c",
+  "symbol": "Equity.US.GEV/USD"
+ },
+ "CEG": {
+  "feedId": "a541bc5c4b69961442e45e9198c7cce151ff9c2a1003f620c6d4a9785c77a4d9",
+  "symbol": "Equity.US.CEG/USD"
+ },
+ "SMCI": {
+  "feedId": "8f34132a42f8bb7a47568d77a910f97174a30719e16904e9f2915d5b2c6c2d52",
+  "symbol": "Equity.US.SMCI/USD"
+ },
+ "DELL": {
+  "feedId": "a2950270a22ce39a22cb3488ba91e60474cd93c6d01da2ecc5a97c1dd40f4995",
+  "symbol": "Equity.US.DELL/USD"
+ },
+ "VRT": {
+  "feedId": "84dad6b760396a7904d04a3d83039a3fc18f10819fd97d023ac5535997d70108",
+  "symbol": "Equity.US.VRT/USD"
+ },
+ "AMAT": {
+  "feedId": "b9bc74cc1243b706efacf664ed206d08ab1dda79e8b87752c7c44b3bdf1b9e08",
+  "symbol": "Equity.US.AMAT/USD"
+ },
+ "LRCX": {
+  "feedId": "01a67883f58bd0f0e9cf8f52f21d7cf78c144d7e7ae32ce9256420834b33fb75",
+  "symbol": "Equity.US.LRCX/USD"
+ },
+ "ANET": {
+  "feedId": "31cc7558642dc348a3e2894146a998031438de8ccc56b7af2171bcd5e5d83eda",
+  "symbol": "Equity.US.ANET/USD"
+ },
+ "USAR": {
+  "feedId": "1bf5216f1a4ec4beb87e22110dbca2a62825bb1216d24a17e913164e4f8ec602",
+  "symbol": "Equity.US.USAR/USD"
+ },
+ "UUUU": {
+  "feedId": "1d27fb8230f11104a8bd4ed3ae44d0d61559261512c6508863d7af2c3f2059af",
+  "symbol": "Equity.US.UUUU/USD"
+ },
+ "PPLT": {
+  "feedId": "782410278b6c8aa2d437812281526012808404aa14c243f73fb9939eeb88d430",
+  "symbol": "Equity.US.PPLT/USD"
+ },
+ "PALL": {
+  "feedId": "feeb371f721e75853604c47104967f0ab3fa92b988837013f5004f749a8a0599",
+  "symbol": "Equity.US.PALL/USD"
+ },
+ "COPX": {
+  "feedId": "8bbaca50510ba7108093fd89100523a01d4eee8087de21c9ca807292933e5479",
+  "symbol": "Equity.US.COPX/USD"
+ },
+ "BTGO": {
+  "feedId": "6540ed0004047d446b252bc49bff9e23e667c5c7d0437ad0db8e120e7b19c311",
+  "symbol": "Equity.US.BTGO/USD"
+ },
+ "SLV": {
+  "feedId": "6fc08c9963d266069cbd9780d98383dabf2668322a5bef0b9491e11d67e5d7e7",
+  "symbol": "Equity.US.SLV/USD"
+ },
+ "STRK": {
+  "feedId": "cdea273301806de445b481e91a8dbe292ba23fcff8f7dec2053311555a0656c3",
+  "symbol": "Equity.US.STRK/USD"
+ },
+ "STRC": {
+  "feedId": "27c7bbc9755d847f7fc63620c2edcc6a91d2c0c67a28c7999907b59c505b3c17",
+  "symbol": "Equity.US.STRC/USD"
+ },
+ "VT": {
+  "feedId": "b167b163565d841b1477cb942bf3b2d28214f3eedf343de7536d6e5b6250d45b",
+  "symbol": "Equity.US.VT/USD"
+ },
+ "SCHF": {
+  "feedId": "601671d8a16a9f456d9a16d0bf203dd80d5076cc95ddca29cb5c7f8024dbeba6",
+  "symbol": "Equity.US.SCHF/USD"
+ },
+ "IEMG": {
+  "feedId": "96b1207c795f31283f5e44c527a1db18cacfb68de745a0de326611b0b5af3fc3",
+  "symbol": "Equity.US.IEMG/USD"
+ },
+ "IJR": {
+  "feedId": "ca0bac9d1826b4a222320f58d47ed66bdc95722124578ed50803674ccd99a775",
+  "symbol": "Equity.US.IJR/USD"
+ },
+ "IWM": {
+  "feedId": "eff690a187797aa225723345d4612abec0bf0cec1ae62347c0e7b1905d730879",
+  "symbol": "Equity.US.IWM/USD"
+ },
+ "TMUS": {
+  "feedId": "0b231ca4307d25e4600067bfb06f576474bcabd74fb50eeaa0906ac1b457f365",
+  "symbol": "Equity.US.TMUS/USD"
+ },
+ "BTBT": {
+  "feedId": "ff62267568a8f48ec7b1805eb989a8c96da713b335caf20275def485da7984c9",
+  "symbol": "Equity.US.BTBT/USD"
+ },
+ "HUT": {
+  "feedId": "fb88ad7526f97f7ca6f43aaa7d3b620f412968db2cbcfac1e906362def8456f3",
+  "symbol": "Equity.US.HUT/USD"
+ },
+ "CORZ": {
+  "feedId": "214fc87a8f0f5adc797fc1f7927e1040650366e8f943e20caf13ad0d6e806956",
+  "symbol": "Equity.US.CORZ/USD"
+ },
+ "RKLB": {
+  "feedId": "40589e289317e4fbd997b1a267606e20a1cc7c3e4689f9e5a5992957917816c8",
+  "symbol": "Equity.US.RKLB/USD"
+ },
+ "PL": {
+  "feedId": "562e632de00dd4ad4a70b024afc3e2a220c1b05116d58cf96089825303f94762",
+  "symbol": "Equity.US.PL/USD"
+ },
+ "SPCE": {
+  "feedId": "fce02687a8a49f19f78f7f97bd686c779135221429206bbd8735d5ad4c782130",
+  "symbol": "Equity.US.SPCE/USD"
+ },
+ "WBD": {
+  "feedId": "0cb5822ffa7443a58afb6f9d483a9c1a9a1f89737b4b851523ab2bf86d049755",
+  "symbol": "Equity.US.WBD/USD"
+ },
+ "MU": {
+  "feedId": "152244dc24665ca7dd3f257b8f442dc449b6346f48235b7b229268cb770dda2d",
+  "symbol": "Equity.US.MU/USD"
+ },
+ "RBLX": {
+  "feedId": "d62134a195739141d0649991f11fe0f9cd9eb83fd890bc3ba41dfdd18c1a49f4",
+  "symbol": "Equity.US.RBLX/USD"
+ },
+ "PANW": {
+  "feedId": "3b00df0661ccb3109d11ff301c1aa4e88b8d647cb477b089ba225149e6e1b7bb",
+  "symbol": "Equity.US.PANW/USD"
+ },
+ "LULU": {
+  "feedId": "13a19eb6a936a8c7020fe675687979b44e991efbfb4d3d2ca91425ce57b9e6f8",
+  "symbol": "Equity.US.LULU/USD"
+ },
+ "ASML": {
+  "feedId": "1a6e324589a0e355919fb1c0389edc3fdf4c46034626bd82aad4e47714cfa94f",
+  "symbol": "Equity.US.ASML/USD"
+ },
+ "AMD": {
+  "feedId": "3622e381dbca2efd1859253763b1adc63f7f9abb8e76da1aa8e638a57ccde93e",
+  "symbol": "Equity.US.AMD/USD"
+ },
+ "TSM": {
+  "feedId": "e722560a66e4ab00522ef20a38fa2ba5d1b41f1c5404723ed895d202a7af7cc4",
+  "symbol": "Equity.US.TSM/USD"
+ },
+ "WEN": {
+  "feedId": "c6101ee4f14af5581a3995438bf0e80a574dd28fd497685988b526ae9ba34749",
+  "symbol": "Equity.US.WEN/USD"
+ },
+ "ASTS": {
+  "feedId": "17f979e1f6b7c429e4b9ecee96633dbecdc5378566ddfd3d220b0ef8d874e4bd",
+  "symbol": "Equity.US.ASTS/USD"
+ },
+ "PYPL": {
+  "feedId": "773c3b11f6be58e8151966a9f5832696d8cd08884ccc43ac8965a7ebea911533",
+  "symbol": "Equity.US.PYPL/USD"
+ },
+ "CLSK": {
+  "feedId": "79e935bc10c55f2c36a08df1564afc5b33425c8dc80829dd954c67e63ed3374a",
+  "symbol": "Equity.US.CLSK/USD"
+ },
+ "SBET": {
+  "feedId": "6b5bedda9e9d6354c5b93659cba6747d21b527437022da6e5f32e3b53e485a04",
+  "symbol": "Equity.US.SBET/USD"
+ },
+ "UBER": {
+  "feedId": "c04665f62a0eabf427a834bb5da5f27773ef7422e462d40c7468ef3e4d39d8f1",
+  "symbol": "Equity.US.UBER/USD"
+ },
+ "ADBE": {
+  "feedId": "df82dc88ea742bb42bdb845e5fc3ca4eef2354c67357d338221e8a696891b4ca",
+  "symbol": "Equity.US.ADBE/USD"
+ },
+ "WULF": {
+  "feedId": "7717b73c7f19ffb1e6e5da542836fa3464559ec971df475455471433a005e2a6",
+  "symbol": "Equity.US.WULF/USD"
+ },
+ "RIOT": {
+  "feedId": "46417522a59b245c5af35c33c13426d991b36514c4c85aaefe1cf787e7daad90",
+  "symbol": "Equity.US.RIOT/USD"
+ },
+ "MARA": {
+  "feedId": "0fc2ad77a9ab75bcbc3ebd7a9ff60facd08c517309e2d684baa979c910a0e43e",
+  "symbol": "Equity.US.MARA/USD"
+ },
+ "OKLO": {
+  "feedId": "0d283a095e94dff4d4e607614ed686eb53e548238fb3af231148c276ecefe83e",
+  "symbol": "Equity.US.OKLO/USD"
+ },
+ "GLXY": {
+  "feedId": "67e031d1723e5c89e4a826d80b2f3b41a91b05ef6122d523b8829a02e0f563aa",
+  "symbol": "Equity.US.GLXY/USD"
+ },
+ "BMNR": {
+  "feedId": "54e2e127c93950de5a710100fd1cd387aba1ec8920850efdb05da5fee57d2e32",
+  "symbol": "Equity.US.BMNR/USD"
+ },
+ "MSTR": {
+  "feedId": "e1e80251e5f5184f2195008382538e847fafc36f751896889dd3d1b1f6111f09",
+  "symbol": "Equity.US.MSTR/USD"
+ },
+ "OPEN": {
+  "feedId": "b4ef19d348a726dad5a655bcac5fe6e09c83af142bf1006b45d0f9ca4d5a46b5",
+  "symbol": "Equity.US.OPEN/USD"
+ },
+ "CRCL": {
+  "feedId": "92b8527aabe59ea2b12230f7b532769b133ffb118dfbd48ff676f14b273f1365",
+  "symbol": "Equity.US.CRCL/USD"
+ },
+ "TQQQ": {
+  "feedId": "5aa9f82dc2e0f5f8271fd163e980010101517da59f4b72b71c7056a5950b2f9d",
+  "symbol": "Equity.US.TQQQ/USD"
+ },
+ "GLD": {
+  "feedId": "e190f467043db04548200354889dfe0d9d314c08b8d4e62fabf4d5a3140fecca",
+  "symbol": "Equity.US.GLD/USD"
+ },
+ "VTI": {
+  "feedId": "26c67e91769aeba33a09469c705a1863794014dac416e4270661f489309ae862",
+  "symbol": "Equity.US.VTI/USD"
+ },
+ "QQQ": {
+  "feedId": "9695e2b96ea7b3859da9ed25b7a46a920a776e2fdae19a7bcfdf2b219230452d",
+  "symbol": "Equity.US.QQQ/USD"
+ },
+ "SPY": {
+  "feedId": "19e09bb805456ada3979a7d1cbb4b6d63babc3a0f8e8a9509f68afa5c4c11cd5",
+  "symbol": "Equity.US.SPY/USD"
+ },
+ "COIN": {
+  "feedId": "fee33f2a978bf32dd6b662b65ba8083c6773b494f8401194ec1870c640860245",
+  "symbol": "Equity.US.COIN/USD"
+ },
+ "GME": {
+  "feedId": "6f9cd89ef1b7fd39f667101a91ad578b6c6ace4579d5f7f285a4b06aa4504be6",
+  "symbol": "Equity.US.GME/USD"
+ },
+ "GS": {
+  "feedId": "9c68c0c6999765cf6e27adf75ed551b34403126d3b0d5b686a2addb147ed4554",
+  "symbol": "Equity.US.GS/USD"
+ },
+ "CRWD": {
+  "feedId": "baed936d3c6c2e34104e92c6b015b97ce96adc5ab4f04230c1270e1162e7a270",
+  "symbol": "Equity.US.CRWD/USD"
+ },
+ "HOOD": {
+  "feedId": "306736a4035846ba15a3496eed57225b64cc19230a50d14f3ed20fd7219b7849",
+  "symbol": "Equity.US.HOOD/USD"
+ },
+ "MRVL": {
+  "feedId": "7aef4e90557add5289266340ccd1e1aa7a225f1220206b07aaf98e53101ce116",
+  "symbol": "Equity.US.MRVL/USD"
+ },
+ "APP": {
+  "feedId": "54f128939505878cf4412abc5a533255ce07e85833849170deb67deff0533aa7",
+  "symbol": "Equity.US.APP/USD"
+ },
+ "PLTR": {
+  "feedId": "11a70634863ddffb71f2b11f2cff29f73f3db8f6d0b78c49f2b5f4ad36e885f0",
+  "symbol": "Equity.US.PLTR/USD"
+ },
+ "ACN": {
+  "feedId": "68848984b74a7766ad23cdccd8e78e9ef339dcfb86b7e96990f27447c20967ed",
+  "symbol": "Equity.US.ACN/USD"
+ },
+ "INTC": {
+  "feedId": "c1751e085ee292b8b3b9dd122a135614485a201c35dfc653553f0e28c1baf3ff",
+  "symbol": "Equity.US.INTC/USD"
+ },
+ "PM": {
+  "feedId": "a32f875eb39e23f087ea0db141b00857630c2c5011bfbe53a2a4d186f37cb583",
+  "symbol": "Equity.US.PM/USD"
+ },
+ "HON": {
+  "feedId": "107918baaaafb79cd9df1c8369e44ac21136d95f3ca33f2373b78f24ba1e3e6a",
+  "symbol": "Equity.US.HON/USD"
+ },
+ "MDT": {
+  "feedId": "1d762c633d4166a8d061518e187047afda1868cc524990262d8144e39dbb815f",
+  "symbol": "Equity.US.MDT/USD"
+ },
+ "CMCSA": {
+  "feedId": "1bd6720eea4df323c076c9bbc1e98e8f5fe4bd16584e56468c5fb6b1a6072725",
+  "symbol": "Equity.US.CMCSA/USD"
+ },
+ "IBM": {
+  "feedId": "cfd44471407f4da89d469242546bb56f5c626d5bef9bd8b9327783065b43c3ef",
+  "symbol": "Equity.US.IBM/USD"
+ },
+ "DHR": {
+  "feedId": "725ae6c67201359f9601d6ee8228c821f0abc93fef5cc509acfcee3f7bc2a388",
+  "symbol": "Equity.US.DHR/USD"
+ },
+ "MCD": {
+  "feedId": "d3178156b7c0f6ce10d6da7d347952a672467b51708baaf1a57ffe1fb005824a",
+  "symbol": "Equity.US.MCD/USD"
+ },
+ "NFLX": {
+  "feedId": "8376cfd7ca8bcdf372ced05307b24dced1f15b1afafdeff715664598f15a3dd2",
+  "symbol": "Equity.US.NFLX/USD"
+ },
+ "ABT": {
+  "feedId": "4aac40f432e039ab06236eb9bd3c58347f953d8f05b29aaac295b99cc47ee429",
+  "symbol": "Equity.US.ABT/USD"
+ },
+ "BAC": {
+  "feedId": "21debc1718a4b76ff74dadf801c261d76c46afaafb74d9645b65e00b80f5ee3e",
+  "symbol": "Equity.US.BAC/USD"
+ },
+ "TMO": {
+  "feedId": "244fdf268ed7ecfad2cf84529c46d0fcef7a643428ff4ef8b16e8dbb63e0f2d9",
+  "symbol": "Equity.US.TMO/USD"
+ },
+ "AZN": {
+  "feedId": "7fb3b27d9039f8ca0a435fe0fdf724a3a5a2309ab62ad07ca775e5ab2100c1be",
+  "symbol": "Equity.US.AZN/USD"
+ },
+ "CRM": {
+  "feedId": "feff234600320f4d6bb5a01d02570a9725c1e424977f2b823f7231e6857bdae8",
+  "symbol": "Equity.US.CRM/USD"
+ },
+ "LIN": {
+  "feedId": "9146c5c900d9aea9579819cf50d1ae18b54dea58eea3c9a198102e4e458e652b",
+  "symbol": "Equity.US.LIN/USD"
+ },
+ "ORCL": {
+  "feedId": "e47ff732eaeb6b4163902bdee61572659ddf326511917b1423bae93fcdf3153c",
+  "symbol": "Equity.US.ORCL/USD"
+ },
+ "NVO": {
+  "feedId": "8dde322496e031d942b9eee8ca769d618cd2e69b18196644369379f5a1e7c23d",
+  "symbol": "Equity.US.NVO/USD"
+ },
+ "CSCO": {
+  "feedId": "3f4b77dd904e849f70e1e812b7811de57202b49bc47c56391275c0f45f2ec481",
+  "symbol": "Equity.US.CSCO/USD"
+ },
+ "WMT": {
+  "feedId": "327ae981719058e6fb44e132fb4adbf1bd5978b43db0661bfdaefd9bea0c82dc",
+  "symbol": "Equity.US.WMT/USD"
+ },
+ "KO": {
+  "feedId": "9aa471dccea36b90703325225ac76189baf7e0cc286b8843de1de4f31f9caa7d",
+  "symbol": "Equity.US.KO/USD"
+ },
+ "PEP": {
+  "feedId": "be230eddb16aad5ad273a85e581e74eb615ebf67d378f885768d9b047df0c843",
+  "symbol": "Equity.US.PEP/USD"
+ },
+ "ABBV": {
+  "feedId": "019ae7cb58ee716ebdd1288b057373d60224fc98a9a43ee373c6b0df1f3ffdf5",
+  "symbol": "Equity.US.ABBV/USD"
+ },
+ "MRK": {
+  "feedId": "c81114e16ec3cbcdf20197ac974aed5a254b941773971260ce09e7caebd6af46",
+  "symbol": "Equity.US.MRK/USD"
+ },
+ "PFE": {
+  "feedId": "0704ad7547b3dfee329266ee53276349d48e4587cb08264a2818288f356efd1d",
+  "symbol": "Equity.US.PFE/USD"
+ },
+ "CVX": {
+  "feedId": "f464e36fd4ef2f1c3dc30801a9ab470dcdaaa0af14dd3cf6ae17a7fca9e051c5",
+  "symbol": "Equity.US.CVX/USD"
+ },
+ "HD": {
+  "feedId": "b3a83dbe70b62241b0f916212e097465a1b31085fa30da3342dd35468ca17ca5",
+  "symbol": "Equity.US.HD/USD"
+ },
+ "PG": {
+  "feedId": "ad2fda41998f4e7be99a2a7b27273bd16f183d9adfc014a4f5e5d3d6cd519bf4",
+  "symbol": "Equity.US.PG/USD"
+ },
+ "MA": {
+  "feedId": "639db3fe6951d2465bd722768242e68eb0285f279cb4fa97f677ee8f80f1f1c0",
+  "symbol": "Equity.US.MA/USD"
+ },
+ "LLY": {
+  "feedId": "70dcf5fd56553d0023693e4b590336a8c9bcfd0d98dd9f093b1f697820d98325",
+  "symbol": "Equity.US.LLY/USD"
+ },
+ "V": {
+  "feedId": "c719eb7bab9b2bc060167f1d1680eb34a29c490919072513b545b9785b73ee90",
+  "symbol": "Equity.US.V/USD"
+ },
+ "JPM": {
+  "feedId": "7f4f157e57bfcccd934c566df536f34933e74338fe241a5425ce561acdab164e",
+  "symbol": "Equity.US.JPM/USD"
+ },
+ "JNJ": {
+  "feedId": "12848738d5db3aef52f51d78d98fc8b8b8450ffb19fb3aeeb67d38f8c147ff63",
+  "symbol": "Equity.US.JNJ/USD"
+ },
+ "XOM": {
+  "feedId": "4a1a12070192e8db9a89ac235bb032342a390dde39389b4ee1ba8e41e7eae5d8",
+  "symbol": "Equity.US.XOM/USD"
+ },
+ "UNH": {
+  "feedId": "05380f8817eb1316c0b35ac19c3caa92c9aa9ea6be1555986c46dce97fed6afd",
+  "symbol": "Equity.US.UNH/USD"
+ },
+ "TSLA": {
+  "feedId": "16dad506d7db8da01c87581c87ca897a012a153557d4d578c3b9c9e1bc0632f1",
+  "symbol": "Equity.US.TSLA/USD"
+ },
+ "AVGO": {
+  "feedId": "d0c9aef79b28308b256db7742a0a9b08aaa5009db67a52ea7fa30ed6853f243b",
+  "symbol": "Equity.US.AVGO/USD"
+ },
+ "GOOGL": {
+  "feedId": "5a48c03e9b9cb337801073ed9d166817473697efff0d138874e0f6a33d6d5aa6",
+  "symbol": "Equity.US.GOOGL/USD"
+ },
+ "META": {
+  "feedId": "78a3e3b8e676a8f73c439f5d749737034b139bbbe899ba5775216fba596607fe",
+  "symbol": "Equity.US.META/USD"
+ },
+ "AMZN": {
+  "feedId": "b5d0e0fa58a1f8b81498ae670ce93c872d14434b72c364885d4fa1b257cbb07a",
+  "symbol": "Equity.US.AMZN/USD"
+ },
+ "MSFT": {
+  "feedId": "d0ca23c1cc005e004ccf1db5bf76aeb6a49218f43dac3d4b275e92de12ded4d1",
+  "symbol": "Equity.US.MSFT/USD"
+ },
+ "NVDA": {
+  "feedId": "b1073854ed24cbc755dc527418f52b7d271f6cc967bbf8d8129112b18860a593",
+  "symbol": "Equity.US.NVDA/USD"
+ },
+ "AAPL": {
+  "feedId": "49f6b65cb1de6b10eaf75e7c03ca029c306d0357e91b5311b175084a5ad55688",
+  "symbol": "Equity.US.AAPL/USD"
+ },
+ "TLT": {
+  "feedId": "9f383d612ac09c7e6ffda24deca1502fce72e0ba58ff473fea411d9727401cc1",
+  "symbol": "Equity.US.TLT/USD"
+ },
+ "AXP": {
+  "feedId": "9ff7b9a93df40f6d7edc8184173c50f4ae72152c6142f001e8202a26f951d710",
+  "symbol": "Equity.US.AXP/USD"
+ },
+ "BLK": {
+  "feedId": "68d038affb5895f357d7b3527a6d3cd6a54edd0fe754a1248fb3462e47828b08",
+  "symbol": "Equity.US.BLK/USD"
+ },
+ "SHOP": {
+  "feedId": "c9034e8c405ba92888887bc76962b619d0f8e8bf3e12aba972af0cf64e814d5d",
+  "symbol": "Equity.US.SHOP/USD"
+ },
+ "T": {
+  "feedId": "63e9f918ab91507c3574cca011da4dccda30cf54d46124d03b70279142ff81f3",
+  "symbol": "Equity.US.T/USD"
+ },
+ "DGRO": {
+  "feedId": "1519a1216a7556cda9e89554706127a1f39c36d96d5471889bbeaf2f78eaf5bd",
+  "symbol": "Equity.US.DGRO/USD"
+ },
+ "AMCR": {
+  "feedId": "ca8c4a0ace217ae153dbdcaf27d9f5e29a8ddfe4385979c4b364db9588a65cd0",
+  "symbol": "Equity.US.AMCR/USD"
+ },
+ "BIDU": {
+  "feedId": "9bdee8cb689424d01f6eaf7217adfcff65b51a30774a77fff8006c21c7059350",
+  "symbol": "Equity.US.BIDU/USD"
+ },
+ "EFV": {
+  "feedId": "21fff87cf866f73c13887a254ec2395e178967fcc8c6a5a6471c26392119c82d",
+  "symbol": "Equity.US.EFV/USD"
+ },
+ "BIL": {
+  "feedId": "6050efb3d94369697e5cdebf4b7a14f0f503bf8cd880e24ef85f9fbc0a68feb2",
+  "symbol": "Equity.US.BIL/USD"
+ },
+ "EWH": {
+  "feedId": "5c7e5c28ac515e94b0e4c3addeddd10b997d5e389cc6ded138510fe2987f94ec",
+  "symbol": "Equity.US.EWH/USD"
+ },
+ "TSLL": {
+  "feedId": "a773b1d62be85f3e67304462dfd7c7afad5f1d84a75b7ff2166d977ca7990358",
+  "symbol": "Equity.US.TSLL/USD"
+ },
+ "FUTU": {
+  "feedId": "e6d51d83a2d18919bf5c57604bf3bf581d65efe34d232ba1d0ef33eca03c983f",
+  "symbol": "Equity.US.FUTU/USD"
+ },
+ "APTV": {
+  "feedId": "169b68eb05ce4bac2eac0a70b7eafd1abf78bd5d8c6f769e1668bf011308e4e8",
+  "symbol": "Equity.US.APTV/USD"
+ },
+ "SEDG": {
+  "feedId": "8adefab8e9d47055c1487bf2f962ee15ce29c5e3542044047147956621c43cf7",
+  "symbol": "Equity.US.SEDG/USD"
+ },
+ "URTH": {
+  "feedId": "1bf8ff9fafb834c10731e4cfec4e8042ee3b5b573f01a50bc766436ea5c28c4c",
+  "symbol": "Equity.US.URTH/USD"
+ },
+ "STM": {
+  "feedId": "46a20d321a432ff821d19bc459c7c6170efef48cb8244dff075d63c90e551481",
+  "symbol": "Equity.US.STM/USD"
+ },
+ "FORM": {
+  "feedId": "0e7569b870edec883f44b54ba4a63cb50bece2704a215448cadad7913ce5e1d6",
+  "symbol": "Equity.US.FORM/USD"
+ },
+ "SQQQ": {
+  "feedId": "f207c5d325e44579b12965394d9a4dd988567de635a494694bfb0b46c20a06ec",
+  "symbol": "Equity.US.SQQQ/USD"
+ },
+ "VWO": {
+  "feedId": "2f91d775954c0c828d4563448d253cf09df218b620825242775d878d1d5956c7",
+  "symbol": "Equity.US.VWO/USD"
+ },
+ "NU": {
+  "feedId": "94cf523ff21fe219b826598951fcb6f2f2224f8e61394f81f52a5929baefe76d",
+  "symbol": "Equity.US.NU/USD"
+ },
+ "IGV": {
+  "feedId": "43b0e3663be6fe9e5f098eb3b2826f053d182682944717cb0f8c57b04db90867",
+  "symbol": "Equity.US.IGV/USD"
+ },
+ "TIP": {
+  "feedId": "8acba411efb415896ba97afbb6995385ab25e7056422f239c9e513f1acfc9aca",
+  "symbol": "Equity.US.TIP/USD"
+ },
+ "IBIT": {
+  "feedId": "9db6bc1e6e9e5e60f6884e1cd8e4399cca9d0454c6e7234ad79680cf139748f5",
+  "symbol": "Equity.US.IBIT/USD"
+ },
+ "BNO": {
+  "feedId": "3488e477571c3c8aa861d02044a96a71fd81299cf0d915aa019af96335498874",
+  "symbol": "Equity.US.BNO/USD"
+ },
+ "MOH": {
+  "feedId": "f9754453fb83c7fdbae0d515438ca2a5cc6458bdb191a4df649bfbbe9c2ff29c",
+  "symbol": "Equity.US.MOH/USD"
+ },
+ "AG": {
+  "feedId": "7f50344390e79dc231fc08c3789b2e332bdd344751bc18842ac53f953f44d7f2",
+  "symbol": "Equity.US.AG/USD"
+ },
+ "IWN": {
+  "feedId": "a8b8aec1b1b1e492b14570d24fe63fcd98aec1a648570c4543afa286eca4dc3e",
+  "symbol": "Equity.US.IWN/USD"
+ },
+ "OSCR": {
+  "feedId": "4af609fcabd2fc48ac3c17232d00dc6ecf8e6ca7f6561976826174c19240f0cc",
+  "symbol": "Equity.US.OSCR/USD"
+ },
+ "PATH": {
+  "feedId": "a6cc135b4522cf23690b4788399d1cba1f1554d388aac06911cb3b5083fdd658",
+  "symbol": "Equity.US.PATH/USD"
+ },
+ "RMBS": {
+  "feedId": "97100fdc597c8a56b5ed629c0b66dc4409c5839778e5c494c3a1d58081364f7b",
+  "symbol": "Equity.US.RMBS/USD"
+ },
+ "AAL": {
+  "feedId": "d5399c95ddc3219ab8b03bd51ca81560bc92a648950bf964eef67bfd9783654a",
+  "symbol": "Equity.US.AAL/USD"
+ },
+ "FCEL": {
+  "feedId": "06f2079da8284ccb8810c0af9ca66fb608fcbcb90288754e42a0101dc5d34f9b",
+  "symbol": "Equity.US.FCEL/USD"
+ },
+ "IJH": {
+  "feedId": "ab4b0a2fad7f23125a7a94eec46204fcf1ba69bb81d32778db0ba3e66df6772a",
+  "symbol": "Equity.US.IJH/USD"
+ },
+ "VXX": {
+  "feedId": "ae2603642690e2eab388e4c91edbf4eb248012b878a177d0b2c9ec8c7d891487",
+  "symbol": "Equity.US.VXX/USD"
+ },
+ "FIG": {
+  "feedId": "e6af4d828b88cd3b40cb34686e61157d3fa37c1aa20ca2b99453aae62619b351",
+  "symbol": "Equity.US.FIG/USD"
+ },
+ "BSV": {
+  "feedId": "c9ae586dc9d73ff6353f20c2c2a2c9efacf697e0abd30d7e8042e3c789054ebf",
+  "symbol": "Equity.US.BSV/USD"
+ },
+ "QQQM": {
+  "feedId": "433b196b3b026f46f76b5e901c84c575a7280dcba0f4272edefe0529b599ad64",
+  "symbol": "Equity.US.QQQM/USD"
+ },
+ "VB": {
+  "feedId": "8923035238b1b11706cf29526dd50a384a9ee86d31733cee7ac22bdd5994d9d0",
+  "symbol": "Equity.US.VB/USD"
+ },
+ "QBTS": {
+  "feedId": "517ad3e4bd0c7851b9526172474625575529328c330d558df03a336d5ec6c082",
+  "symbol": "Equity.US.QBTS/USD"
+ },
+ "ENB": {
+  "feedId": "5ede535f959e6184f24815c1d7819ab8bf79d850afbd73151bc994e1935de686",
+  "symbol": "Equity.US.ENB/USD"
+ },
+ "SCHB": {
+  "feedId": "cd45d98122b6f79cbb55cb68472b937e362072efa2698b9a7e7f93f0d78262a1",
+  "symbol": "Equity.US.SCHB/USD"
+ },
+ "VONG": {
+  "feedId": "727de92cc0313c873c2171e26c4148de1763e65bed81739061ec861d788cce51",
+  "symbol": "Equity.US.VONG/USD"
+ },
+ "CELH": {
+  "feedId": "56954c7f2b1af2edc80212cb56924cfb0f5e076bba6bd0aeb8a78a67cb2b82ef",
+  "symbol": "Equity.US.CELH/USD"
+ },
+ "PDD": {
+  "feedId": "ae69f62081eb15ae4f077397871a1cf29cacf75e7b1db740aed9074c1efd3fa4",
+  "symbol": "Equity.US.PDD/USD"
+ },
+ "PODD": {
+  "feedId": "365e9f0db7d3ece432d6882cd1b8f0b6211888f87094a7ec68946099efd684cb",
+  "symbol": "Equity.US.PODD/USD"
+ },
+ "BNDX": {
+  "feedId": "80642d572babc523158d2bfad90f32ef236cd43150b44790c8aa88865007c07b",
+  "symbol": "Equity.US.BNDX/USD"
+ },
+ "BITO": {
+  "feedId": "0385a9a517fef663d48e1f032512b35f4cc0c7819e95860c8968271fe0c3ce7b",
+  "symbol": "Equity.US.BITO/USD"
+ },
+ "IWR": {
+  "feedId": "216f5e294659837328cfe78f262ab628b83e1f436941b5e43500b48869e4e28e",
+  "symbol": "Equity.US.IWR/USD"
+ },
+ "GDXJ": {
+  "feedId": "7f07da3d8355f59f3a465e9e6e0f458cfbd1ec8708135375eacc454560793e63",
+  "symbol": "Equity.US.GDXJ/USD"
+ },
+ "TGT": {
+  "feedId": "13537ceb2df5af0b8cdf8032561b0a71430b51297375bbfdc6ed209df1da0d65",
+  "symbol": "Equity.US.TGT/USD"
+ },
+ "POWL": {
+  "feedId": "dd3857f9265d3be5cecd44d80aca8e1e9c55a9127c971eb6ceac5e80a8ff8fea",
+  "symbol": "Equity.US.POWL/USD"
+ },
+ "EBAY": {
+  "feedId": "6264a259e2cc90dfd3207f5831949eced2da6bf53965834c9160e4ceb9240947",
+  "symbol": "Equity.US.EBAY/USD"
+ },
+ "ACWX": {
+  "feedId": "6523cd92a03486fdba3ebe70fa414b166ac27bb702979d8515773e722040a0b6",
+  "symbol": "Equity.US.ACWX/USD"
+ },
+ "VCSH": {
+  "feedId": "bc1c102bd52c76bf5d17b60b249983fcf44dcfef227eb25d578fae74e93f926b",
+  "symbol": "Equity.US.VCSH/USD"
+ },
+ "POET": {
+  "feedId": "d44395eb9a32dd0203793e12ccd0da18fde61bc7710b6ca6f33d56f307d14cdb",
+  "symbol": "Equity.US.POET/USD"
+ },
+ "DYNF": {
+  "feedId": "14aed40d5a17de04d65a0a54e956f6bce322122e621d8278300331ab02deb6e7",
+  "symbol": "Equity.US.DYNF/USD"
+ },
+ "FLY": {
+  "feedId": "a840894f11d120c1f72d37cb612dff446284b59c374cc27fbdb91d2e1415a84a",
+  "symbol": "Equity.US.FLY/USD"
+ },
+ "ITOT": {
+  "feedId": "de7279ce7d805c43c4893239b77aa07525df93c9f8ede0bd8b3d87609dd80415",
+  "symbol": "Equity.US.ITOT/USD"
+ },
+ "SSPC": {
+  "feedId": "779eb105c501278db47ffc2aa8af831ee16b9e7f18c50371eccb585fa598feff",
+  "symbol": "Equity.US.SSPC/USD"
+ },
+ "NVMI": {
+  "feedId": "3e707ff33b5d0e1491423de340a4d15151d9a94f260eab441a88481dd3fcc4a4",
+  "symbol": "Equity.US.NVMI/USD"
+ },
+ "RGTI": {
+  "feedId": "20aead6dcd4da8321806ce377107952863632fb25f43ec03c36ffd575ac7e708",
+  "symbol": "Equity.US.RGTI/USD"
+ },
+ "BG": {
+  "feedId": "e39d2f3aa68f677f9782542e6142dc43bd7a9cd002c8af87aecad19758a76874",
+  "symbol": "Equity.US.BG/USD"
+ },
+ "RCL": {
+  "feedId": "d6782c6281afd154d34ebeb4a162352884dd1889ef09a430c10f98ee361019a3",
+  "symbol": "Equity.US.RCL/USD"
+ },
+ "VNQ": {
+  "feedId": "1feb5bc35d3a601d1e39c4d1dd65de285a04f5e7923fdaba1d87359d8c14a9ae",
+  "symbol": "Equity.US.VNQ/USD"
+ },
+ "TRI": {
+  "feedId": "04c2c83f4ebcc56d66c87352f8535554ac6f541f24a77580d09b7d4eda456f9b",
+  "symbol": "Equity.US.TRI/USD"
+ },
+ "IYW": {
+  "feedId": "b4279985dec1ff91bc9bd6d8b44ed96da6f0446cfca6bc613d23296182f4fdcf",
+  "symbol": "Equity.US.IYW/USD"
+ },
+ "PAYC": {
+  "feedId": "2145839221f46430e99f5be8f32942291f56e248c142c42efcd978f35ddfdbb3",
+  "symbol": "Equity.US.PAYC/USD"
+ },
+ "SPGI": {
+  "feedId": "e7268062e142570f97cfba327f14e3153d1d4d8f6a4f84e59b72940ee87ecdb9",
+  "symbol": "Equity.US.SPGI/USD"
+ },
+ "XLV": {
+  "feedId": "0bf68c2bd425e68b471239b29de7968667b210774aa252b9813f8d8edf5b62d9",
+  "symbol": "Equity.US.XLV/USD"
+ },
+ "MBB": {
+  "feedId": "200171a4fb486c9f441fae51a19a4103ca70cc66d97f081ce032e137801b3830",
+  "symbol": "Equity.US.MBB/USD"
+ },
+ "UFO": {
+  "feedId": "acd810ab7cc7a23f690a3bc3a641c424f22c6ab42544fdac43aa947f4a895a03",
+  "symbol": "Equity.US.UFO/USD"
+ },
+ "TEL": {
+  "feedId": "5cbf183213af0c63f896b908770e684cb0dfb6634e42bd6e8ea7b273eb61a342",
+  "symbol": "Equity.US.TEL/USD"
+ },
+ "VV": {
+  "feedId": "64dae9f2193f0f679a5b7304d6e6211676b17d79ec282d0ca1771ef62d2ac14d",
+  "symbol": "Equity.US.VV/USD"
+ },
+ "BBAI": {
+  "feedId": "d66fd5fb5d53b65340d1772cf658d451eb9dd8f528f6433743cd87f51f43638c",
+  "symbol": "Equity.US.BBAI/USD"
+ },
+ "DIA": {
+  "feedId": "57cff3a9a4d4c87b595a2d1bd1bac0240400a84677366d632ab838bbbe56f763",
+  "symbol": "Equity.US.DIA/USD"
+ },
+ "IEFA": {
+  "feedId": "3e959410e8daa7941a4d2179332a3ab1d38e78dd8d83134996e65a3f4352f828",
+  "symbol": "Equity.US.IEFA/USD"
+ },
+ "USO": {
+  "feedId": "d00bd77d97dc5769de77f96d0e1a79cbf1364e14d0dbf046e221bce2e89710dd",
+  "symbol": "Equity.US.USO/USD"
+ },
+ "CCL": {
+  "feedId": "2e92206274d7a8d2fe094d7ef448724608bdb231b3096ceac004fc44e12975db",
+  "symbol": "Equity.US.CCL/USD"
+ },
+ "BULL": {
+  "feedId": "9a709d2252404752a2da6669f077b183ff3fe498e00fd2566f0cbc25f6020bc5",
+  "symbol": "Equity.US.BULL/USD"
+ },
+ "GPRO": {
+  "feedId": "b1c775cfcb8140daacc57f79a63fb1b30b69a1dac14d29d03b713bb88711a928",
+  "symbol": "Equity.US.GPRO/USD"
+ },
+ "FOXA": {
+  "feedId": "31b0d22a8ef589d5cd9541d598d95ccc4b7a15fc427fa710e9214bfb3a8bf57b",
+  "symbol": "Equity.US.FOXA/USD"
+ },
+ "EMXC": {
+  "feedId": "c57e2259f8a83562b76826ce6aafa54309995b0121dd8be6050352170815dedc",
+  "symbol": "Equity.US.EMXC/USD"
+ },
+ "IWD": {
+  "feedId": "a156d1ca2a4b99c27d8402ec0dd4cad5568d12d3e37764254ab10cc55a8d870c",
+  "symbol": "Equity.US.IWD/USD"
+ },
+ "NOK": {
+  "feedId": "ff1717bc1de364c8473f9c1928dad930a9ecc952d91f26133a7f94eb03166316",
+  "symbol": "Equity.US.NOK/USD"
+ },
+ "FTI": {
+  "feedId": "3e491b8ca12a98bb0b35a00ff83ee47d8d10781637efe06d3762324d0ac458ab",
+  "symbol": "Equity.US.FTI/USD"
+ },
+ "SW": {
+  "feedId": "c7ba1f80f10774038310eb30adc31c69103f9e3030262ef4e0a6ce9d6c44488f",
+  "symbol": "Equity.US.SW/USD"
+ },
+ "VSH": {
+  "feedId": "1062b0f61c3bbf6bdb79120e6a8826d36c1f3f8b0bc1990804e53770d38c3ca2",
+  "symbol": "Equity.US.VSH/USD"
+ },
+ "COST": {
+  "feedId": "163f6a6406d65305e8e27965b9081ac79b0cf9529f0fcdc14fe37e65e3b6b5cb",
+  "symbol": "Equity.US.COST/USD"
+ },
+ "IWF": {
+  "feedId": "efc46125a2063f8662815a3c5d78f20aa0c4e6dde0862364a6f5d2f47d862ac1",
+  "symbol": "Equity.US.IWF/USD"
+ },
+ "SCHD": {
+  "feedId": "47157bf302bcc58e21f552687e7b04f0c84a3ad1b8090ba1babefdb297a4b7d1",
+  "symbol": "Equity.US.SCHD/USD"
+ },
+ "SWKS": {
+  "feedId": "431349b17e1ee2605695615baffd31e44290477089c02536bb2926dfa36850b8",
+  "symbol": "Equity.US.SWKS/USD"
+ },
+ "UVXY": {
+  "feedId": "7d9c04b949c64bef946910c9cdf4390737731fca2c5356aa5fe36844bab1cb16",
+  "symbol": "Equity.US.UVXY/USD"
+ },
+ "SPOT": {
+  "feedId": "547ef6a2ea7db9baf50788876d3c062facaecfc896d898f37ba12efd0a13383a",
+  "symbol": "Equity.US.SPOT/USD"
+ },
+ "FWDI": {
+  "feedId": "a41c677511649aaf529a1e5c30294849749e7b218c23bbcdaba602f9246e0c50",
+  "symbol": "Equity.US.FWDI/USD"
+ },
+ "OUST": {
+  "feedId": "33e337a21f74f02e0a5aa4a6ca8bcac777456865d1a27cc3e0495bd25d8d1b07",
+  "symbol": "Equity.US.OUST/USD"
+ },
+ "GOOG": {
+  "feedId": "e65ff435be42630439c96396653a342829e877e2aafaeaf1a10d0ee5fd2cf3f2",
+  "symbol": "Equity.US.GOOG/USD"
+ },
+ "CLF": {
+  "feedId": "8f3a268ae8d3f99160d889c0ad05c5ccf926a67aa86ce530e76e82454e8b31c7",
+  "symbol": "Equity.US.CLF/USD"
+ },
+ "SONY": {
+  "feedId": "b4e9d5fc0e0dbf10b138cbbdcb0c211dd6a56676bcf16d09760be7967bd204f9",
+  "symbol": "Equity.US.SONY/USD"
+ },
+ "VIG": {
+  "feedId": "70e046461c0ceb770c63a7fc15ac1fc54944dd3a10007bc23e43461858c3df89",
+  "symbol": "Equity.US.VIG/USD"
+ },
+ "JAZZ": {
+  "feedId": "de709cb4f011fdab0973b46cb05d62687c52a802f53740c55946d694e89948e5",
+  "symbol": "Equity.US.JAZZ/USD"
+ },
+ "QUAL": {
+  "feedId": "74fbfe71e79f767d749c991af7415894fb2f543495729d9bd184f00493862343",
+  "symbol": "Equity.US.QUAL/USD"
+ },
+ "JEPQ": {
+  "feedId": "32f8189b4ee26ea708553cf99a70163e6877c6681e5ba61673fdee89a671daff",
+  "symbol": "Equity.US.JEPQ/USD"
+ },
+ "WTW": {
+  "feedId": "fdc34922e57ee32f16296243d400188a789c48e863904957a47c569ba578fa0c",
+  "symbol": "Equity.US.WTW/USD"
+ },
+ "VO": {
+  "feedId": "19295d28e0021523cd14ed26afa1e23e1c99fa531b7a71dc3aace5287c012ac7",
+  "symbol": "Equity.US.VO/USD"
+ },
+ "KSS": {
+  "feedId": "199de6a3182e636305a268156c9e0fb58b845a1a9c40a2673f6262d621bd5ada",
+  "symbol": "Equity.US.KSS/USD"
+ },
+ "AES": {
+  "feedId": "c336f7bf37b7379ebaa84a51e5002560dfe0d341c516c05c50a80fc836e2ac32",
+  "symbol": "Equity.US.AES/USD"
+ },
+ "NVT": {
+  "feedId": "20bae488aba426a5825ce76b2be9706787ffcdd685d5e1b1778acb0d3db1664f",
+  "symbol": "Equity.US.NVT/USD"
+ },
+ "IWB": {
+  "feedId": "1154bf293d452777db2e1b96649df3375d068bb0bce604c8c10b02472bd158f4",
+  "symbol": "Equity.US.IWB/USD"
+ },
+ "EWT": {
+  "feedId": "525d459fca8a752d343d564db6f6de6e121f9823575615fb4a1f39d195637a6d",
+  "symbol": "Equity.US.EWT/USD"
+ },
+ "OIH": {
+  "feedId": "64c24c75ad871df257440cafa78fbd8aaad18ac41ac04fc3f50a90d346855473",
+  "symbol": "Equity.US.OIH/USD"
+ },
+ "CAG": {
+  "feedId": "246401ffdc5ec97b405e871267c73e6e744d1cdcd96b1fe8526da993111c580e",
+  "symbol": "Equity.US.CAG/USD"
+ },
+ "XBI": {
+  "feedId": "d99fb1c964d9a2a731d34357e3abd4911c52470da6895b8c53c35fcf2ca77b23",
+  "symbol": "Equity.US.XBI/USD"
+ },
+ "PBR": {
+  "feedId": "146f8290eb9b56e6e19338902f7b975e7f9e50f9fe40b35a127c6ee7992f5102",
+  "symbol": "Equity.US.PBR/USD"
+ },
+ "TKO": {
+  "feedId": "6b4b77a7d5582a28d508e5dc6774384551767ae333cdeffb24af61277725e9b1",
+  "symbol": "Equity.US.TKO/USD"
+ },
+ "RIO": {
+  "feedId": "55e9d82de00129d0fb368bc89d1ee59146b80a8772f8a972febac3f65ed3151f",
+  "symbol": "Equity.US.RIO/USD"
+ },
+ "GOVT": {
+  "feedId": "e0f87bbde799f33615b83a601b66415e850788000cd7286a3e7295f23c1bb353",
+  "symbol": "Equity.US.GOVT/USD"
+ },
+ "KEEL": {
+  "feedId": "bbea8136728ebb190eb529248350944c0e15dde357963a9ee32bab84ab754b7f",
+  "symbol": "Equity.US.KEEL/USD"
+ },
+ "TSEM": {
+  "feedId": "cf3f93bef4432759b7e0224e33604df001963c8660a64551dbd90fd38c3a6a9c",
+  "symbol": "Equity.US.TSEM/USD"
+ },
+ "AEM": {
+  "feedId": "b8c2409078c3ff289b21835cd62cdc24233f430395397004874aff6265e8baa4",
+  "symbol": "Equity.US.AEM/USD"
+ },
+ "VGIT": {
+  "feedId": "8f0e642a4f4c7163ad0b2a665d388c8c89bc792c5da0e395a4c310327a6795e3",
+  "symbol": "Equity.US.VGIT/USD"
+ },
+ "EWJ": {
+  "feedId": "73560d1ee6daf7f322314d58dd8d0eed720fffcab390c1c1d54b5088d92497a2",
+  "symbol": "Equity.US.EWJ/USD"
+ },
+ "PLUG": {
+  "feedId": "8f2af61cd4f049bce70d454e7a23c78760c68fff9d547d6144d9ae95a76a8913",
+  "symbol": "Equity.US.PLUG/USD"
+ },
+ "SLS": {
+  "feedId": "a101cb5e22cc9b5e18f384fbcaa1776b640036458ef7f4229a7005796a52f5dc",
+  "symbol": "Equity.US.SLS/USD"
+ },
+ "CCEP": {
+  "feedId": "fd06662626076e1bd5c6cac35a92d1466f4d11b243e6c28fbc4a96c456275d93",
+  "symbol": "Equity.US.CCEP/USD"
+ },
+ "EWZ": {
+  "feedId": "2b196f0db8ac6805b970154cf4b69365e496830a6d17c17f46f3c682dad47b33",
+  "symbol": "Equity.US.EWZ/USD"
+ },
+ "AVAV": {
+  "feedId": "a86055b68b5bc660f10d21532af5d5402200013f3f3596b1ce9be84632277010",
+  "symbol": "Equity.US.AVAV/USD"
+ },
+ "IVV": {
+  "feedId": "5967c196ca33171a0b2d140ddc6334b998dd71c2ddd85ba7920c35fd6ed20fe9",
+  "symbol": "Equity.US.IVV/USD"
+ },
+ "IVE": {
+  "feedId": "032a22cf23ae07db0f787cdd9f69b7f41110c0cf3f29923edccbe0d567f99cbb",
+  "symbol": "Equity.US.IVE/USD"
+ },
+ "JEPI": {
+  "feedId": "bb3ba10444c2f231868444856a0c6bd97b92fc868f5272fb1ad5b90c2c40d800",
+  "symbol": "Equity.US.JEPI/USD"
+ },
+ "CIFR": {
+  "feedId": "55a91bd14858a0039cb21d56ac87bd796fb257a78786d3a81d64e8dff2373af3",
+  "symbol": "Equity.US.CIFR/USD"
+ },
+ "INOD": {
+  "feedId": "a8fe5f1e9d6c295e134f3314065c0110be9137d31e8f5959552a1694b0050910",
+  "symbol": "Equity.US.INOD/USD"
+ },
+ "RDW": {
+  "feedId": "24799168878b008a944098996a0bfbe6cb980fcd93fd28bf5e24511850be8d10",
+  "symbol": "Equity.US.RDW/USD"
+ },
+ "CB": {
+  "feedId": "ff65ec3cf0931c4c489baecd95da35d3db5aa0278150d0d09a3fdc25970fc690",
+  "symbol": "Equity.US.CB/USD"
+ },
+ "SH": {
+  "feedId": "cea38e1fad0f4f2a2e5e8cc9d3a88613826f9340efadf9464eb3353a8cce3a7a",
+  "symbol": "Equity.US.SH/USD"
+ },
+ "CCJ": {
+  "feedId": "8c92b96bf7ec66766d7400f91eee36370df38ec751ec48933396760f8c73cc78",
+  "symbol": "Equity.US.CCJ/USD"
+ },
+ "MELI": {
+  "feedId": "5c149158ad0cca240ab13e45d93f43d7eb747a25acf5a9313b5b03c0aa87251b",
+  "symbol": "Equity.US.MELI/USD"
+ },
+ "PRIM": {
+  "feedId": "df2a490455eb1f5ae07ea6a58c16218648d5c4b9c29e1a18ad6942fb48f3d946",
+  "symbol": "Equity.US.PRIM/USD"
+ },
+ "NCLH": {
+  "feedId": "a57ad8d2031a938779bcda698f28eebfac20c3d0b9b88a7e8452a84b34fa6be2",
+  "symbol": "Equity.US.NCLH/USD"
+ },
+ "LUNR": {
+  "feedId": "d5385d0f9a7b6268a357094c841bec5834b02265cb3ac439e53963a55defb38f",
+  "symbol": "Equity.US.LUNR/USD"
+ },
+ "SHY": {
+  "feedId": "a48b0216da455c8f33edc75d5c82290f63180a41646df873b393450bb3218c0c",
+  "symbol": "Equity.US.SHY/USD"
+ },
+ "UMC": {
+  "feedId": "63d83a9822f1098d7ff7eddc94a156b4e45d6fb43cbcbd1030dd0262ad0fea3d",
+  "symbol": "Equity.US.UMC/USD"
+ },
+ "CPB": {
+  "feedId": "9b826f23dd771b0b4dfdcb76ff40db3b51c86e06fc2b62c1d4e5d69cf2942669",
+  "symbol": "Equity.US.CPB/USD"
+ },
+ "EPAM": {
+  "feedId": "71964eba24eb7fb3b8be60d8c2a4809f1eb6574cba978cab0795b65ba6f32646",
+  "symbol": "Equity.US.EPAM/USD"
+ },
+ "NTES": {
+  "feedId": "664fc65e3f9ffb458e7144959ed8d5c86e923eb7ca283efeadb79bd6c1e4b9ce",
+  "symbol": "Equity.US.NTES/USD"
+ },
+ "IVW": {
+  "feedId": "1b79d5b75253c291cc72d40cc874f468d07c1e6c149ee298a00d8075cb10c2c0",
+  "symbol": "Equity.US.IVW/USD"
+ },
+ "EFA": {
+  "feedId": "3b7ef6c95ceedbffbb66bff3d6135a200c5d0a0466b0c90812510ceaedebaf04",
+  "symbol": "Equity.US.EFA/USD"
+ },
+ "CZR": {
+  "feedId": "806724043f1c85300d24b61da4e03ea9840c059d2cb8ea248f005e6314d27052",
+  "symbol": "Equity.US.CZR/USD"
+ },
+ "SHLD": {
+  "feedId": "6b971ce35cfc0f144200bf5aa184863af1522312fad078fc6d5b7743501eae51",
+  "symbol": "Equity.US.SHLD/USD"
+ },
+ "MUB": {
+  "feedId": "dac5c8793675731b9467af853b644280b5bc5119421d5a271dcbd69aabb77983",
+  "symbol": "Equity.US.MUB/USD"
+ },
+ "CRDO": {
+  "feedId": "70223a069575a95493bd4a473c47554ac8b333af557e2264eb0d0236e2838fc2",
+  "symbol": "Equity.US.CRDO/USD"
+ },
+ "ETHA": {
+  "feedId": "188bdefa94c2f8b3878ebcd98f65551dbc2091f250ae6780719184821b1a0e1c",
+  "symbol": "Equity.US.ETHA/USD"
+ },
+ "NXT": {
+  "feedId": "23b3b7d1da822f55f5cc531abf64941904e99c7ddc2b991104c16d5e3ae57b20",
+  "symbol": "Equity.US.NXT/USD"
+ },
+ "MNST": {
+  "feedId": "579e60cbba314226de0f602f770113aa007bf1786ee37b923800028dc203d1e5",
+  "symbol": "Equity.US.MNST/USD"
+ },
+ "VST": {
+  "feedId": "665d46c8142ca4486ebcdcfc0bbb913dee5255e0be63b6f971933620a7f69045",
+  "symbol": "Equity.US.VST/USD"
+ },
+ "IEF": {
+  "feedId": "034626d18bc711c55c71e27319f8851f483bc08a7f97be2dee9ea8f7ccd59248",
+  "symbol": "Equity.US.IEF/USD"
+ },
+ "BAI": {
+  "feedId": "d0805a15ab9b061a858417e37281424fade678dd7a68d9d36ea18a55889652d7",
+  "symbol": "Equity.US.BAI/USD"
+ },
+ "PAVE": {
+  "feedId": "4c2e4cf5dc8426f6e54d0de8020d2a7e9b6754b7089bd71a75cf6b3da46e747e",
+  "symbol": "Equity.US.PAVE/USD"
+ },
+ "BOTZ": {
+  "feedId": "38e8dd9b74943ce63b08b4b3f897f128ece558ea61cd7e00c9c77a6d64cd8265",
+  "symbol": "Equity.US.BOTZ/USD"
+ },
+ "INDA": {
+  "feedId": "207d13ab09f413c8855f5c14b7650a2235f37c60eb6274b8a3eb80c2b85fb81c",
+  "symbol": "Equity.US.INDA/USD"
+ },
+ "VEU": {
+  "feedId": "845910208473d9a712bf420ec34dbfd21752794633e45765373e29fb925d854b",
+  "symbol": "Equity.US.VEU/USD"
+ },
+ "NVD": {
+  "feedId": "8c38f23204d5512edec10372e9cc9da8d27d15bc49c90794106e3c853541bf98",
+  "symbol": "Equity.US.NVD/USD"
+ },
+ "SCHG": {
+  "feedId": "d822a0f4895f73990a04bec51fffdb477d5eff4b14cd2c5ddcb24ee72befc966",
+  "symbol": "Equity.US.SCHG/USD"
+ },
+ "SPCH": {
+  "feedId": "c0d6a4977d0a64cc1e3e4e03f9505147a569fb0c0aff1ee6eca59df5d99a867f",
+  "symbol": "Equity.US.SPCH/USD"
+ },
+ "PURR": {
+  "feedId": "b95c77565b8fcf080abfaee5fbd966e6732d9bb05ed7e839222c6352066929d8",
+  "symbol": "Equity.US.PURR/USD"
+ },
+ "CBOE": {
+  "feedId": "566241bb0d53283a8a1765b759341490dbf69e7fa7653c4b5f86aabf37567595",
+  "symbol": "Equity.US.CBOE/USD"
+ },
+ "SPYM": {
+  "feedId": "2e5723d0391f26ff4004f8d276a7286cc52ad8ceb98c62ba64e10b0309ede63b",
+  "symbol": "Equity.US.SPYM/USD"
+ },
+ "AEHR": {
+  "feedId": "aa27f6a84dd364fd2956e350b12f4d698b57793f9a1d7ab5e8b575b3cfa50d8d",
+  "symbol": "Equity.US.AEHR/USD"
+ },
+ "STE": {
+  "feedId": "c8688938e7493b4849467d88d1cac1518f13d9cee69742982120439acdf2c83a",
+  "symbol": "Equity.US.STE/USD"
+ },
+ "JCI": {
+  "feedId": "f6207ac0b3f712a3021a91f87ff0f03279e5df5126f4e9657f3e4cb3e18ab0f0",
+  "symbol": "Equity.US.JCI/USD"
+ },
+ "HYG": {
+  "feedId": "2077043ee3b67b9a70949c8396c110f6cf43de8e6d9e6efdcbd557a152cf2c6e",
+  "symbol": "Equity.US.HYG/USD"
+ },
+ "IXUS": {
+  "feedId": "65d24596a828114c481bf8632dc1a182b545337dc696538857a54933c2576e8a",
+  "symbol": "Equity.US.IXUS/USD"
+ },
+ "EXPE": {
+  "feedId": "1aed988d2a3349d64e8a34c0d71535e01d17bf6b80c4d99138288af251822552",
+  "symbol": "Equity.US.EXPE/USD"
+ },
+ "NIO": {
+  "feedId": "c8916a12ca17ed0883e37a10c8962370fbd2878a35bb70f6902a0f52be73338c",
+  "symbol": "Equity.US.NIO/USD"
+ },
+ "SCHX": {
+  "feedId": "0abe02fc6a8e3e580236a2fa684297d2f1d3633d87b37ccd4782ab703581f8b3",
+  "symbol": "Equity.US.SCHX/USD"
+ },
+ "AMBA": {
+  "feedId": "ed3e547781dd2eda1de4f2b25330775e1193bd743335effb8ed793989991431f",
+  "symbol": "Equity.US.AMBA/USD"
+ },
+ "MCHI": {
+  "feedId": "33e3853fe3382522aec843bcc3e795bc62ef9d48a47fe2ea7e777926a7ac70f7",
+  "symbol": "Equity.US.MCHI/USD"
+ },
+ "GRMN": {
+  "feedId": "14226b55af532f2fdea5928cff806c6073f67da5b9333672f709e7cf1e5ee7c6",
+  "symbol": "Equity.US.GRMN/USD"
+ },
+ "KRE": {
+  "feedId": "22e1659c12192de5eb81db0c9bffb6646df2bcc05c9c04dbc0726bc491b7ac88",
+  "symbol": "Equity.US.KRE/USD"
+ },
+ "BLDR": {
+  "feedId": "7840cb9a07395e891dd3fe4d5dc9e5e32166c16b4081a05a65f7464c1d779f13",
+  "symbol": "Equity.US.BLDR/USD"
+ },
+ "FXI": {
+  "feedId": "978c107498c949190c0b9bb1ad408eb643b7317ad43539ff43897cab967d7fd3",
+  "symbol": "Equity.US.FXI/USD"
+ },
+ "ENPH": {
+  "feedId": "5ec583659f690a921cd7a5be9dd2730d67b2541528ca5b1ff99df3e5d44bbedb",
+  "symbol": "Equity.US.ENPH/USD"
+ },
+ "SOUN": {
+  "feedId": "88232bfe2ca44449224f24fc862d4b4fed9144e53f6cf9f0a939f88b82b4f8cd",
+  "symbol": "Equity.US.SOUN/USD"
+ },
+ "STX": {
+  "feedId": "0b7fc35cea4acfa65e49a718292e0b31b453072e3af39afbfd2925da5c3ab65d",
+  "symbol": "Equity.US.STX/USD"
+ },
+ "PHM": {
+  "feedId": "a8bf7d55b95d25528cfe20141ade2952147a135208ca590fcc2ccf756d9b5119",
+  "symbol": "Equity.US.PHM/USD"
+ },
+ "JD": {
+  "feedId": "4c45e26d5253283ab4736b4f4ba9d0e6517679f8425ef07722dacc4b6da90750",
+  "symbol": "Equity.US.JD/USD"
+ },
+ "PENG": {
+  "feedId": "e35e3fa2164c7b0ef15d904c231939e799ee683437ca0aa362133bafaf540ae6",
+  "symbol": "Equity.US.PENG/USD"
+ },
+ "SAP": {
+  "feedId": "0ee2e3f1c7689e1abf957009f747228a30b47678c8e5844cb033cbcf790fa20b",
+  "symbol": "Equity.US.SAP/USD"
+ },
+ "BHP": {
+  "feedId": "191d7aac7f589ecdf86e05e349c58873eebe0c6b0101615af3a22b366a51d87d",
+  "symbol": "Equity.US.BHP/USD"
+ },
+ "SPMO": {
+  "feedId": "7be83e82c0c8cbdb804eedccb48e815a77237413445ef36be647eba39ec82d52",
+  "symbol": "Equity.US.SPMO/USD"
+ },
+ "DFAC": {
+  "feedId": "3f2248ef2d37b8f3cad014b64fb1d7506254feaed383220219e73406bd458b6b",
+  "symbol": "Equity.US.DFAC/USD"
+ },
+ "BTDR": {
+  "feedId": "eda74e4c405a1f8d8d1c6004a197c20e620f5580e855ec66cf167f8d5f5ec7a3",
+  "symbol": "Equity.US.BTDR/USD"
+ },
+ "NVDL": {
+  "feedId": "9d11836b6b6feb5c2c455d3e332b91411f247e9e002b671ec35440774ddc5277",
+  "symbol": "Equity.US.NVDL/USD"
+ },
+ "IUSB": {
+  "feedId": "9e530d43756213889ebee4ac3aa0b96f6c7d5f4771e8fb777b76eb5905543d5c",
+  "symbol": "Equity.US.IUSB/USD"
+ },
+ "SNAP": {
+  "feedId": "a23dd397c4f7a2187d00c1973e58ff6e8a681658b1105d1bd42a8fccbbd068f7",
+  "symbol": "Equity.US.SNAP/USD"
+ },
+ "IAU": {
+  "feedId": "f703fbded84f7da4bd9ff4661b5d1ffefa8a9c90b7fa12f247edc8251efac914",
+  "symbol": "Equity.US.IAU/USD"
+ },
+ "BND": {
+  "feedId": "ed8fb53acc8e6fada0885e9fca7b8bd15727ef6913fe10141d5cc51f73f6fc81",
+  "symbol": "Equity.US.BND/USD"
+ },
+ "BABA": {
+  "feedId": "72bc23b1d0afb1f8edef20b7fb60982298993161bc0fd749587d6f60cd1ee9a3",
+  "symbol": "Equity.US.BABA/USD"
+ },
+ "BKNG": {
+  "feedId": "e90b679a7e4ca0d591abb634959d38a535c2036c6b121c520a82cff111ff7d12",
+  "symbol": "Equity.US.BKNG/USD"
+ },
+ "VTV": {
+  "feedId": "1105e1af4587e6555349533492904782f6a4d0dc6b828938e98e1715b6b32315",
+  "symbol": "Equity.US.VTV/USD"
+ },
+ "SLB": {
+  "feedId": "8042b087e06b64b7a40056782d48c8add189943d8354c56726e655f46e65320f",
+  "symbol": "Equity.US.SLB/USD"
+ },
+ "TEM": {
+  "feedId": "79c4582b9dd2d5f9a32c54654f3db995353a0e57a8094bacb8fb55a7190ca9a3",
+  "symbol": "Equity.US.TEM/USD"
+ },
+ "FLUT": {
+  "feedId": "28b4e628c91cbfe3e02bef0ffc4b0d2a0ee22f9f4d8f7c0fd2bb4763b1df36e3",
+  "symbol": "Equity.US.FLUT/USD"
+ },
+ "ARKK": {
+  "feedId": "b2fe0af6c828efefda3ffda664f919825a535aa28a0f19fc238945c7aff540b1",
+  "symbol": "Equity.US.ARKK/USD"
+ },
+ "QNT": {
+  "feedId": "348c83cb74c894850277f7061f8db5714b087846614789fb9bd6a02603abaa9a",
+  "symbol": "Equity.US.QNT/USD"
+ },
+ "ARGX": {
+  "feedId": "deebc59150df9dd9e7cdcf913d39fa900c1b521fdd1f657f880358ff3fbfd0d6",
+  "symbol": "Equity.US.ARGX/USD"
+ },
+ "BNKK": {
+  "feedId": "40e8ff325448543e5f3b4ddb97d754522357f4c56fc662f15a1568415f4b3000",
+  "symbol": "Equity.US.BNKK/USD"
+ },
+ "ACGL": {
+  "feedId": "01ccca2a0ba40cfa1e9ea3c81c5ebae0169e32c42603ed9c112e58769d187474",
+  "symbol": "Equity.US.ACGL/USD"
+ },
+ "VBR": {
+  "feedId": "050f926c4a78049bbad8b8f87487f469a1ebbeb3264317e7380ae87939d0b344",
+  "symbol": "Equity.US.VBR/USD"
+ },
+ "USFR": {
+  "feedId": "98b3bc80a9e8ea755e29ef29575c3de9d5ae8213450c66e8f0759d5a7c0d8aad",
+  "symbol": "Equity.US.USFR/USD"
+ },
+ "AIQ": {
+  "feedId": "0e55d7b951e87860cf6188aea1626dc8dafb0d37ab716f815677bd5188d3a5b7",
+  "symbol": "Equity.US.AIQ/USD"
+ },
+ "VEA": {
+  "feedId": "11e972f7dcdb6158ae9812d60e37a227a27d3f3aab5982f35d3208b9cd3748c5",
+  "symbol": "Equity.US.VEA/USD"
+ },
+ "MINT": {
+  "feedId": "58f4ee3a0fc4de834a2e96274a696d0f3d8ec45fc76131a6a49fcd18d3ca9812",
+  "symbol": "Equity.US.MINT/USD"
+ },
+ "SPYG": {
+  "feedId": "39d6113025efb65b116726281dc70b917fd43391e26a5e06c76b9e9e606b5da9",
+  "symbol": "Equity.US.SPYG/USD"
+ },
+ "AGG": {
+  "feedId": "66e2456d8f7fae8b1421538b10c868b89a6e23b727f290ac062cc6809c96ea9a",
+  "symbol": "Equity.US.AGG/USD"
+ },
+ "VALE": {
+  "feedId": "89dd5fb5c30324f3cb11920e3e5ca7de7732abf3889f93bf3757f9509715a89f",
+  "symbol": "Equity.US.VALE/USD"
+ },
+ "URNM": {
+  "feedId": "62be4863d61681d4b4393cde876fd92696c7c01c2792abcd06c0f3716b06f4bd",
+  "symbol": "Equity.US.URNM/USD"
+ },
+ "INFQ": {
+  "feedId": "4c2c1ce2790e81344d5bba316845299b44e93305a4b163b8a3ca7e1bef0830dc",
+  "symbol": "Equity.US.INFQ/USD"
+ },
+ "NXPI": {
+  "feedId": "3d739102be847ba442365931b384aeba9b48eda30c25553d30b5ec697da29c41",
+  "symbol": "Equity.US.NXPI/USD"
+ },
+ "NVTS": {
+  "feedId": "f695dfcfeb1e71dc0c2e1eef64df6076236a55ab45c46c444ef13e558b6f48d7",
+  "symbol": "Equity.US.NVTS/USD"
+ },
+ "PSQ": {
+  "feedId": "52d75219bbd61a396f93a964b830fc1362f3208701dd4fb80b501b603312bc8c",
+  "symbol": "Equity.US.PSQ/USD"
+ },
+ "SPDW": {
+  "feedId": "12e4e2cd0563c32e153dc2e4b843c4f8389c187297a2b1e25651c20c0491e07d",
+  "symbol": "Equity.US.SPDW/USD"
+ },
+ "XLK": {
+  "feedId": "343e151bf5a9055e075f84ec102186c5902ec4fd11db83cd4d8d8de5af756343",
+  "symbol": "Equity.US.XLK/USD"
+ },
+ "AON": {
+  "feedId": "7b1525d880bf2d40d273c738036f3806bf9b0aef6688e16b246d7e37ec2923ed",
+  "symbol": "Equity.US.AON/USD"
+ },
+ "VTEB": {
+  "feedId": "07dbe1fb1d79d1902f57f5a3fa3f4c01824c8789bba45f85eabd850cc8940972",
+  "symbol": "Equity.US.VTEB/USD"
+ },
+ "LPTH": {
+  "feedId": "b87e0ca977ca87d774ed3e22a3bb47d2123d152222efaa5a0aafb703728c71f6",
+  "symbol": "Equity.US.LPTH/USD"
+ },
+ "ACHR": {
+  "feedId": "641c99f709570911f4ce41237b56092ae86b792e7dcce15317fb3175e81f8eb9",
+  "symbol": "Equity.US.ACHR/USD"
+ },
+ "XLF": {
+  "feedId": "06b884220ac5ac16fedfb03f84ec62b6e311241bc0af40ebfe4aedf462c18825",
+  "symbol": "Equity.US.XLF/USD"
+ },
+ "TT": {
+  "feedId": "0c9385e9109703f9cef4872dc1d6abaa7a630c1b524757141f79d42159768307",
+  "symbol": "Equity.US.TT/USD"
+ },
+ "VGT": {
+  "feedId": "2cc2801a33b56932e19e5b20b22dcaa72baddbc7ea7c3589edbae7579a9af697",
+  "symbol": "Equity.US.VGT/USD"
+ },
+ "VICR": {
+  "feedId": "872c1525e06d841dab75d710af2b34feebb5a3547466ff712a655b52fcbe5d3c",
+  "symbol": "Equity.US.VICR/USD"
+ },
+ "AGX": {
+  "feedId": "705e9703a25421214ca18afc79db2b4bd7af74b1a0925a405d868a8ac99724b4",
+  "symbol": "Equity.US.AGX/USD"
+ },
+ "FPS": {
+  "feedId": "a98d4a82473c0a85d2416c185df4845ef8b1e7ed8606717ad1c4485c7a1b2840",
+  "symbol": "Equity.US.FPS/USD"
+ },
+ "FLEX": {
+  "feedId": "68799c6196bad6e233c747cfa4a92897a88375268b406a81ca47df277e839d50",
+  "symbol": "Equity.US.FLEX/USD"
+ },
+ "RPRX": {
+  "feedId": "6e13e9ddac63e865961396f716a1384cb553a92777add53ac190caaaeba507f0",
+  "symbol": "Equity.US.RPRX/USD"
+ },
+ "SHV": {
+  "feedId": "765f416f2d676848b5016428bc9295fda3e71d5e97b16df75179a378cef040ec",
+  "symbol": "Equity.US.SHV/USD"
+ },
+ "SIMO": {
+  "feedId": "54c51d3e772f079c37c8bb030878da5e1d55eb2c67be7e36435b03beda542c3f",
+  "symbol": "Equity.US.SIMO/USD"
+ },
+ "BB": {
+  "feedId": "638b83fde383839d7e4287c84fe1049f38045f543eabdf2fa23ee440bcae4838",
+  "symbol": "Equity.US.BB/USD"
+ },
+ "DD": {
+  "feedId": "9f740601dfd8fc74556b8b90e807240f7dff3c3bb91c44f131a8306361220c7e",
+  "symbol": "Equity.US.DD/USD"
+ },
+ "WOLF": {
+  "feedId": "f23c1137cf7d21fb6b6387e155536f25feea7a81ae4345407c2629ee397aa490",
+  "symbol": "Equity.US.WOLF/USD"
+ },
+ "CLS": {
+  "feedId": "5b1adfefbe3f69cf8c5dc02d521a9f49eb5887d19f4bf1f4170959428d9d6a21",
+  "symbol": "Equity.US.CLS/USD"
+ },
+ "CPER": {
+  "feedId": "34b7613ec0b7388fc491162ef6d2b211ef311ea90d35863a7f03017d259c3cd4",
+  "symbol": "Equity.US.CPER/USD"
+ },
+ "LQD": {
+  "feedId": "e4ff71a60c3d5d5d37c1bba559c2e92745c1501ebd81a97d150cf7cd5119aa9c",
+  "symbol": "Equity.US.LQD/USD"
+ },
+ "AMC": {
+  "feedId": "5b1703d7eb9dc8662a61556a2ca2f9861747c3fc803e01ba5a8ce35cb50a13a1",
+  "symbol": "Equity.US.AMC/USD"
+ },
+ "LYB": {
+  "feedId": "9b02cd30bda06e851c8a18bddd0bda152856de8b5c429f0f16232b6678d26afc",
+  "symbol": "Equity.US.LYB/USD"
+ },
+ "SPYV": {
+  "feedId": "da3768a335fe3d4e6a3a540300229909deec4ba07bab6f05d945b9dec67b6856",
+  "symbol": "Equity.US.SPYV/USD"
+ },
+ "ACWI": {
+  "feedId": "554cb36177230cf2d9a6761698d1558c1ecbb545336fc50a23b3aec3f9caa7ff",
+  "symbol": "Equity.US.ACWI/USD"
+ },
+ "GRND": {
+  "feedId": "ca320d73da49ed89083480db02fbe5cd352d8bd98c9c7310336c82c32f9dbbd6",
+  "symbol": "Equity.US.GRND/USD"
+ },
+ "YINN": {
+  "feedId": "a8ec3b03abe6bf25c7a551001199fc54b3f7f4a534626696af2de6338ac09008",
+  "symbol": "Equity.US.YINN/USD"
+ },
+ "KWEB": {
+  "feedId": "8a11c9ba1c8a59571188ff14ca1cc096520eae277de4ff8bc5a6b58939efb096",
+  "symbol": "Equity.US.KWEB/USD"
+ },
+ "NVDX": {
+  "feedId": "5aaf8192e79d5989eee903b7d7b62d47776d649f9184baf5499561d6a099f7ea",
+  "symbol": "Equity.US.NVDX/USD"
+ },
+ "MOS": {
+  "feedId": "1521ce20ce13ff348ed80f54bc37127d2755caf524b9ad65e8ce881f85ed5054",
+  "symbol": "Equity.US.MOS/USD"
+ },
+ "IDEV": {
+  "feedId": "4603f18fea8ad79a51d8f8fa66f244049cb91ce8f598f4c6ff10b6b640f72a2a",
+  "symbol": "Equity.US.IDEV/USD"
+ },
+ "VCIT": {
+  "feedId": "ef2a78123eb57856322c1f087bdd06c70cdda22707e934037a5ee4a67376b881",
+  "symbol": "Equity.US.VCIT/USD"
+ },
+ "MXL": {
+  "feedId": "bff80b6f6e2e1ec46691a50f83d61aba1b8fa4ce59567a80ae6a0ec7e1769d55",
+  "symbol": "Equity.US.MXL/USD"
+ },
+ "VYM": {
+  "feedId": "d03592924a9c69d12bea32e1015da2b7458a086e4ada217b724785f5789de6cb",
+  "symbol": "Equity.US.VYM/USD"
+ },
+ "RSP": {
+  "feedId": "a62d605821e58128b42cd0d711319400c4e7a3a19400a3ee5a06222e0a3b9269",
+  "symbol": "Equity.US.RSP/USD"
+ },
+ "ARKG": {
+  "feedId": "2acb17e433f5d7b90a66c4e3cbcfa37795bead4f7616fb80ff40bcd9b20f2fac",
+  "symbol": "Equity.US.ARKG/USD"
+ },
+ "TZA": {
+  "feedId": "648bde03fe791ddbdb40f3c9143d5b6f6a436ba6bea5511c553fbec4848154d9",
+  "symbol": "Equity.US.TZA/USD"
+ },
+ "BYND": {
+  "feedId": "a4bd17109f2fbee701b0901eda1a67ceca3cdddefa509a5a3bebdde4bd458991",
+  "symbol": "Equity.US.BYND/USD"
+ },
+ "TSLQ": {
+  "feedId": "508439d4bbfac7632f640c74c6b7ace7f42c699393a588cb3bb236cfed001723",
+  "symbol": "Equity.US.TSLQ/USD"
+ },
+ "GTLB": {
+  "feedId": "f8d023d26b597738c7d97b5fa0e9141334766e76fb9e4374c1610a4b2978ab35",
+  "symbol": "Equity.US.GTLB/USD"
+ },
+ "EEM": {
+  "feedId": "d407e68cec58205be82a6140a668dc42f8d9079bcf3be4aa4b41f41f7b983035",
+  "symbol": "Equity.US.EEM/USD"
+ },
+ "TTD": {
+  "feedId": "0ad2003fcf837c63f83ce1238efaadce0976ef93d4b3b0befbbf5e196945c385",
+  "symbol": "Equity.US.TTD/USD"
+ }
+}

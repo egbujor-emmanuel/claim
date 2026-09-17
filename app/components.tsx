@@ -2,6 +2,7 @@ import type { ClaimRating, Finding } from "@/src/lib/rating/grade.js";
 import type { RatedCompany } from "@/src/lib/rating/index.js";
 import type { ResolvedToken } from "@/src/lib/search.js";
 import { Scoring } from "./live";
+import { Reference } from "./Reference";
 import { betterClaims, type SwitchOption } from "@/src/lib/switch.js";
 import { buyTarget } from "@/src/lib/buy.js";
 import { WalletBar } from "./switch/WalletBar";
@@ -62,7 +63,10 @@ export function TokenCard({
         {rating.findings.map((f, i) => (
           <FindingRow key={i} f={f} />
         ))}
-      </ul>
+            {/* Live, so it sits with the findings rather than above them: how far
+          the token is from the share it tracks is a finding like any other. */}
+      <Reference mint={resolved.token.mint} />
+</ul>
 
       <Scoring rating={rating} />
     </article>

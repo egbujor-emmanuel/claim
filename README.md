@@ -97,6 +97,24 @@ Alphabet -> GOOGLx (C) [compromise] $1.00 -> 288,229 raw  SIMULATION: OK
 SpaceX   -> SPCX (A)                $1.00 ->   6,513 raw  SIMULATION: OK
 ```
 
+## Is it priced like the thing it tracks
+
+A token can have impeccable structure and still be mispriced, and a wallet cannot show you that: it knows the token's price and nothing about the share it claims to represent.
+
+Pyth publishes the real equity price on Solana, seconds old. Claim reads it from chain and sets it against the token's own price from a live route:
+
+```
+AAPLx   trading 1.7% below Apple        Equity.US.AAPL/USD  $336.83  (17s old)
+NVDAx   trading 2.4% below NVIDIA
+MSFTx   trading 2.0% above Microsoft
+```
+
+901 equity feeds are mapped, one per underlying, cached because the mapping never changes. The prices are not cached — a premium computed an hour ago is answering a different question.
+
+Two things this does **not** do, on purpose. Pyth's Solana feeds for the tokenized versions themselves (`Crypto.AAPLX/USD`, and the `.RR` redemption-ratio feeds) are currently five days and eight weeks stale, so the token side comes from a live Jupiter quote instead — both halves current rather than a fresh number against an old one. And an equity price older than fifteen minutes is refused rather than shown, because a market that is closed publishes nothing new and the gap would be the clock rather than a premium.
+
+The price never moves the grade. The grade is about what you legally own; the premium is a separate fact, reported next to it.
+
 ## Findings
 
 <!-- findings:start -->
