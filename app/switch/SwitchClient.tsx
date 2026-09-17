@@ -25,7 +25,34 @@ import {
  * not to make it for them.
  */
 
-type Stage = "idle" | "connecting" | "quoting" | "ready" | "signing" | "sent" | "error";
+type Stage =
+  | "idle" | "connecting" | "quoting" | "ready"
+  | "signing" | "confirming" | "sent" | "failed" | "error";
+
+/**
+ * Ask the chain what happened, until it answers.
+ *
+ * Polls rather than assuming: a transaction is usually visible within a few
+ * seconds, and a timeout is reported as "unknown" rather than as either
+ * outcome, because not knowing is not the same as failing.
+ */
+async function confirm(
+  signature: string,
+): Promise<{ state: "confirmed" | "failed" | "unknown"; error: string }> {
+  const deadline = Date.now() + 45_000;
+  while (Date.now() < deadline) {
+    try {
+      const res = await fetch(`/api/tx/${signature}`, { cache: "no-store" });
+      const body = (await res.json()) as { state?: string; error?: string };
+      if (body.state === "confirmed") return { state: "confirmed", error: "" };
+      if (body.state === "failed") return { state: "failed", error: body.error ?? "The chain rejected it." };
+    } catch {
+      // A failed read is not a failed transaction; keep asking.
+    }
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+  return { state: "unknown", error: "" };
+}
 
 export function SwitchClient({
   fromMint,
@@ -132,7 +159,24 @@ export function SwitchClient({
       );
       const sent = await p.signAndSendTransaction(tx);
       setSignature(sent.signature);
-      setStage("sent");
+
+      // A signature is a receipt for submission, not for success. A swap with
+      // nothing to fund it fails on chain and still returns one, so announcing
+      // "sent" here would tell a holder their position moved when it did not.
+      setStage("confirming");
+      const outcome = await confirm(sent.signature);
+      if (outcome.state === "confirmed") {
+        setStage("sent");
+      } else if (outcome.state === "failed") {
+        setMessage(outcome.error);
+        setStage("failed");
+      } else {
+        setMessage(
+          "Claim could not read the outcome from the chain within 45 seconds. The signature " +
+            "below is real — check it on Solscan for what actually happened.",
+        );
+        setStage("failed");
+      }
     } catch (e) {
       setMessage(explainWalletError(e, detected));
       setStage("error");
@@ -143,6 +187,19 @@ export function SwitchClient({
 
   return (
     <div className="switch-exec">
+      {/*
+        Rendered before the wallet is connected, not after. A warning screen is
+        only reassuring if it was predicted; arriving at it unannounced is what
+        makes a new tool look unsafe. It also has to be in the server-rendered
+        page so it is there for anyone reading before they click anything.
+      */}
+      <p className="switch-hint">
+        Your wallet will warn that it does not recognise this site. That warning is about the
+        domain, not the transaction — Claim is new and unlisted. What you are signing is three
+        instructions: a compute budget, the token account for {toSymbol} if you do not have one,
+        and a Jupiter swap. It grants no approval that outlives it and no permission over anything
+        else you hold. Check it in the wallet before you approve.
+      </p>
       {!wallet ? (
         <>
           {!choosing ? (
@@ -226,6 +283,8 @@ export function SwitchClient({
             {stage === "quoting" ? "Getting a quote…" : "Get a quote"}
           </button>
 
+
+
           {quote && outUi !== null ? (
             <div className="switch-quote">
               You would receive approximately <strong>{outUi.toLocaleString("en-US", { maximumFractionDigits: 4 })} {toSymbol}</strong>
@@ -234,29 +293,42 @@ export function SwitchClient({
                 type="button"
                 className="switch-button"
                 onClick={execute}
-                disabled={stage === "signing"}
+                disabled={stage === "signing" || stage === "confirming"}
               >
-                {stage === "signing" ? "Waiting for your wallet…" : `Switch to ${toSymbol}`}
+                {stage === "signing"
+                  ? "Waiting for your wallet…"
+                  : stage === "confirming"
+                    ? "Confirming on chain…"
+                    : `Switch to ${toSymbol}`}
               </button>
             </div>
           ) : null}
         </>
       )}
 
+      {stage === "confirming" ? (
+        <p className="switch-hint">Submitted. Waiting for the chain to confirm it…</p>
+      ) : null}
+
       {stage === "sent" && signature ? (
         <p className="switch-sent">
-          Sent.{" "}
-          <a
-            href={`https://solscan.io/tx/${signature}`}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          Confirmed on chain.{" "}
+          <a href={`https://solscan.io/tx/${signature}`} target="_blank" rel="noreferrer noopener">
             View on Solscan
           </a>
         </p>
       ) : null}
 
-      {message ? <p className="switch-error">{message}</p> : null}
+      {stage === "failed" && signature ? (
+        <p className="switch-error">
+          <strong>It did not go through.</strong> {message}{" "}
+          <a href={`https://solscan.io/tx/${signature}`} target="_blank" rel="noreferrer noopener">
+            View on Solscan
+          </a>
+        </p>
+      ) : null}
+
+      {message && stage !== "failed" ? <p className="switch-error">{message}</p> : null}
     </div>
   );
 }

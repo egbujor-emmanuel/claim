@@ -120,6 +120,29 @@ await simulate("USDC→AAPLx (C)", USDC, mintOf("AAPLx"), "1000000", HOLDER);
 await simulate("USDC→GOOGLx (C)", USDC, mintOf("GOOGLx"), "1000000", HOLDER);
 await simulate("USDC→TSLAx", USDC, mintOf("TSLAx"), "1000000", HOLDER);
 
+section("transaction outcome is read from chain, never assumed");
+{
+  const good = "3CncqX4Z3J9xwt5LGG4qeKXPQnk7ZXKy1uYif3FBywSHaQjPYBxAfxihCBXgkfgvtvUscLHQtqkexUgG3RepLX4Z";
+  const bad = "28BYFeavLvBtw4diGupfC3eja4fziNu14TGCo5GKXX2aPttf5F21e1g9gy48SLUVZGRLKPKPapjNLrjnmvCVXMp2";
+  const g = await (await fetch(`${BASE}/api/tx/${good}`)).json() as { state?: string };
+  ok("a confirmed transaction reports confirmed", g.state === "confirmed", g.state ?? "");
+  const b = await (await fetch(`${BASE}/api/tx/${bad}`)).json() as { state?: string; error?: string };
+  ok("a failed transaction reports failed", b.state === "failed", b.state ?? "");
+  ok("the failure is explained in words", /slippage|insufficient|expired|rejected/i.test(b.error ?? ""),
+    (b.error ?? "").slice(0, 60));
+  ok("a malformed signature is rejected",
+    (await fetch(`${BASE}/api/tx/notasignature`)).status === 400);
+}
+
+section("the signing screen sets expectations");
+{
+  const review = (await page(`/switch?from=${USDC}&to=${mintOf("AAPLx")}`)).body;
+  ok("the page warns that wallets flag an unknown domain",
+    /does not recognise this site/.test(review));
+  ok("the page says what the transaction contains",
+    /three\s+instructions/i.test(review));
+}
+
 section("review pages");
 for (const [label, q] of [
   ["switch review", `/switch?from=${mintOf("SPACEX")}&to=${mintOf("SPCX")}`],
