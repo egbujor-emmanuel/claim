@@ -1,46 +1,46 @@
 {
  "voice": "en-US-AndrewNeural",
- "rate": "+4%",
+ "rate": "+3%",
  "scenes": [
-  {"id":"01-open","lines":[
-    "Four SpaceX tokens trade on Solana today.",
-    "In a wallet they look identical. They are not.",
+  {"id":"01-open","tag":"the problem","lines":[
+    "Four SpaceX tokens trade on Solana.",
+    "Your wallet shows you the same thing for all four.",
     "One is a real share. One expires worthless in March twenty twenty seven."]},
 
-  {"id":"02-search","lines":[
-    "Search a company, not a ticker.",
-    "Claim groups every token that references the same security."]},
+  {"id":"02-search","tag":"search a company","lines":[
+    "Type a company instead of a ticker.",
+    "Claim pulls together every token that points at the same shares."]},
 
-  {"id":"03-grades","lines":[
-    "Each one is graded on the legal claim behind it, not its price.",
-    "Backpack, grade A: real shares in custody you can move to a brokerage."]},
+  {"id":"03-grades","tag":"the grade","lines":[
+    "Each one gets a grade, based on what you legally own.",
+    "Backpack is an A. Real shares, and you can move them to a brokerage."]},
 
-  {"id":"04-evidence","lines":[
-    "Every finding carries the issuer's own words and a link to them.",
-    "A permanent delegate that can take the token from your wallet. The key is on screen — check it yourself."]},
+  {"id":"04-evidence","tag":"the evidence","lines":[
+    "Every line comes from the issuer's own words, with a link.",
+    "This key can take the token out of your wallet. It is on screen. Go and check it."]},
 
-  {"id":"05-review","lines":[
-    "Where a stronger claim exists and can be reached, Claim offers the move.",
-    "The review page shows what you gain and what you give up, before a wallet opens."]},
+  {"id":"05-review","tag":"switch","lines":[
+    "If you hold the weak one and a better one exists, Claim shows you the move.",
+    "What you gain, what you give up, before any wallet opens."]},
 
-  {"id":"06-wallet","lines":[
-    "Connect any wallet. Phantom, Solflare, Backpack or Trust.",
-    "Claim never holds a key and never submits. Your wallet signs, or nothing happens."]},
+  {"id":"06-wallet","tag":"connect","lines":[
+    "Phantom, Solflare, Backpack, Trust.",
+    "Claim never holds your keys. Your wallet signs, or nothing happens."]},
 
-  {"id":"07-buy","lines":[
-    "You can also just buy a company, and let Claim pick the token.",
-    "A hundred and fifty four are reachable by a swap.",
-    "For eighty three, the strongest claim is not the one on sale."]},
+  {"id":"07-buy","tag":"buy","lines":[
+    "You can also just buy a company and let Claim pick the token.",
+    "A hundred and fifty four are reachable.",
+    "For eighty three of them, the best one is not the one on sale."]},
 
-  {"id":"08-compromise","lines":[
-    "So Claim says so, in front of you, before you sign.",
-    "The stronger Apple claim exists. It is not traded. Here is who issues it."]},
+  {"id":"08-compromise","tag":"the compromise","lines":[
+    "So it tells you that, to your face, before you sign.",
+    "The better Apple token exists. You cannot swap into it. Here is who sells it."]},
 
-  {"id":"09-wallet-scan","lines":[
-    "Paste a wallet and every position in it is graded, worst claim first.",
-    "What you can act on right now sits at the top."]},
+  {"id":"09-wallet-scan","tag":"your wallet","lines":[
+    "Paste a wallet. Everything in it gets graded, worst first.",
+    "What you can do something about sits at the top."]},
 
-  {"id":"10-api","lines":[
-    "And the same verdict, free, over a public A P I."]}
+  {"id":"10-api","tag":"api","lines":[
+    "Same answers, free, over an open A P I."]}
  ]
 }

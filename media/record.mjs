@@ -27,15 +27,20 @@ const VW = 1280, VH = 720;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** Scroll at a readable pace. Fast enough not to feel stuck, slow enough to read. */
+/**
+ * Scroll the way the browser does it, not the way a script does.
+ *
+ * Stepping the scroll position from node is a CDP round trip per frame, and at
+ * sixty a second the page visibly stutters -- that is the lag, and it was in
+ * the recorder rather than in the site. Handing the browser a single smooth
+ * scroll lets it animate natively at its own refresh rate.
+ */
 async function glide(page, toY, ms = 900) {
-  const from = await page.evaluate(() => window.scrollY);
-  const steps = Math.max(12, Math.round(ms / 16));
-  for (let i = 1; i <= steps; i++) {
-    const p = i / steps;
-    const eased = p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2;
-    await page.evaluate((v) => window.scrollTo(0, v), from + (toY - from) * eased);
-    await sleep(16);
-  }
+  await page.evaluate(
+    ([y]) => window.scrollTo({ top: y, behavior: "smooth" }),
+    [toY],
+  );
+  await sleep(ms + 120);
 }
 
 const scenes = {
@@ -154,6 +159,10 @@ for (const [name, fn] of Object.entries(scenes)) {
   mkdirSync(tmp, { recursive: true });
   const ctx = await browser.newContext({
     viewport: { width: VW, height: VH },
+    colorScheme: "dark",
+    // The first paint of a navigation is the browser's own white canvas. It is
+    // unavoidable while recording starts with the context, so every scene is
+    // given a lead-in that the build trims off.
     deviceScaleFactor: 1,
     // The record size must equal the viewport. Given a larger canvas Playwright
     // does not scale the page up to fill it -- it draws the page at its native
@@ -162,6 +171,9 @@ for (const [name, fn] of Object.entries(scenes)) {
     recordVideo: { dir: tmp, size: { width: VW, height: VH } },
   });
   const page = await ctx.newPage();
+  await page.goto("about:blank");
+  await page.evaluate(() => { document.documentElement.style.background = "#16130E"; });
+  await sleep(1200);
   try { await fn(page); } catch (e) { console.log(`  ${name}: ${e.message}`); }
   await ctx.close();
   const f = readdirSync(tmp).find((x) => x.endsWith(".webm"));
