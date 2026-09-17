@@ -22,7 +22,7 @@ import {
  * It reads nothing and signs nothing. Claim never holds a key; connecting only
  * lets the wallet be the one that signs later, on the review page.
  */
-export function WalletBar() {
+export function WalletBar({ hasReviews = false }: { hasReviews?: boolean }) {
   const [detected, setDetected] = useState<FoundWallet[]>([]);
   const [choices, setChoices] = useState<WalletChoice[]>([]);
   const [choosing, setChoosing] = useState(false);
@@ -51,10 +51,23 @@ export function WalletBar() {
   };
 
   if (wallet) {
+    // Connecting has to lead somewhere. Telling a holder to "open a review
+    // above" on a page where every move is blocked points at nothing, and on
+    // any page the more useful next step is to read what they actually hold.
     return (
-      <p className="switch-hint mono">
-        {name} connected · {wallet.slice(0, 6)}…{wallet.slice(-4)} — open a review above to switch.
-      </p>
+      <div className="wallet-connected">
+        <p className="switch-hint mono">
+          {name} connected · {wallet.slice(0, 6)}…{wallet.slice(-4)}
+        </p>
+        <a className="switch-button" href={`/?q=${wallet}`}>
+          Grade everything in this wallet
+        </a>
+        {hasReviews ? (
+          <p className="switch-hint">
+            Or open a review above to switch one position.
+          </p>
+        ) : null}
+      </div>
     );
   }
 

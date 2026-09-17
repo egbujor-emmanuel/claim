@@ -913,3 +913,15 @@ footer {
   margin-bottom: 10px;
   font-weight: 600;
 }
+
+.wallet-connected {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+}
+.wallet-connected .switch-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}

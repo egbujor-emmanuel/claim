@@ -159,7 +159,7 @@ function CompanyActions({ company }: { company: RatedCompany }) {
             These are the routes that exist today. If you hold the token on the left, the review
             page quotes your own size before anything is signed.
           </p>
-          <WalletBar />
+          <WalletBar hasReviews />
         </>
       ) : null}
 

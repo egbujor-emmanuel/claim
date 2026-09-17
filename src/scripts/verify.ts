@@ -320,6 +320,26 @@ if (await serverUp()) {
       singlePage.includes("One representation of"));
     check("every company page can connect a wallet",
       singlePage.includes("Connect wallet"));
+    // Connecting has to lead somewhere. The connected state used to tell a
+    // holder to "open a review above" on pages where every move was blocked
+    // and no review existed. That state only exists after a wallet replies, so
+    // it is checked in the shipped client bundle rather than in the markup.
+    const { readdirSync, readFileSync: readSync } = await import("node:fs");
+    const { fileURLToPath } = await import("node:url");
+    const { join } = await import("node:path");
+    let connectedCopyShipped = false;
+    try {
+      const root = fileURLToPath(new URL("../../.next/static/chunks/", import.meta.url));
+      const walk = (d: string): string[] =>
+        readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+          e.isDirectory() ? walk(join(d, e.name)) : [join(d, e.name)],
+        );
+      connectedCopyShipped = walk(root).some(
+        (f) => f.endsWith(".js") && readSync(f, "utf8").includes("Grade everything in this wallet"),
+      );
+    } catch { /* no build on disk: reported as a failure below */ }
+    check("connecting leads to grading the wallet, not a dead instruction",
+      connectedCopyShipped);
 
     // The opening is a pinned scroll sequence: scrolling back up replays it in
     // reverse, which is not a way to navigate.

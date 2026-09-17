@@ -156,7 +156,7 @@ function Actionable({ scan }: { scan: PortfolioScan }) {
               </li>
             ))}
           </ul>
-          <WalletBar />
+          <WalletBar hasReviews />
         </>
       ) : null}
 
