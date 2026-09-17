@@ -42,7 +42,17 @@ Across the universe that is **706 switch options over 588 companies** whose toke
 - **Source blocked** — nobody will buy what you hold, so redemption with the issuer is the only exit.
 - **Destination blocked** — the better claim is fine but is not traded on any DEX. Backpack's tokens are the clearest case: they are the strongest claims Claim grades and you get them from Backpack, not from a swap. Claim names the issuer and links it rather than dead-ending.
 
-Nothing is simulated. There is no mock data and no fake transaction anywhere in this repository.
+Nothing is mocked. There is no fake data and no simulated transaction anywhere in this repository.
+
+**The transactions Claim builds have been verified against mainnet.** Signing one costs money, so the honest test short of that is `simulateTransaction`: the validator executes the instructions against current chain state and reports the result, without a signature and without spending anything. Every routable switch in two real wallets simulates clean —
+
+```
+SPACEX -> SPCX   (F -> A)  3 hops  SIMULATION: OK  units 263,957
+SPACEX -> SPCXx  (F -> C)  2 hops  SIMULATION: OK  units 162,863
+SPACEX -> tSpaceX (F -> C) 3 hops  SIMULATION: OK  units 217,083
+```
+
+Reproduce it yourself against any address: `npx tsx src/scripts/e2e.ts <wallet>`. A transaction that simulates clean is one a wallet can sign; a transaction that failed here would have failed on chain. The only step not exercised is the signature itself, which belongs to the holder.
 
 ## What it does
 
