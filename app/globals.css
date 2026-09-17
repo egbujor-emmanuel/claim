@@ -1011,16 +1011,45 @@ footer {
   margin: 0;
   margin-right: auto;
 }
+/*
+ * Green, and the same green the portal opens into, so the one colour that is
+ * not the page palette means the same thing everywhere: this is a way through.
+ * It comes from --good, so it inverts with the theme instead of being a hex
+ * that only works on a dark sheet.
+ */
 .sitenav a {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 13.5px;
+  font-weight: 700;
   letter-spacing: 0.01em;
   text-decoration: none;
-  border-bottom: 1px solid var(--border);
+  color: var(--good);
+  border-bottom: 1px solid transparent;
   padding-bottom: 2px;
 }
 .sitenav a:hover {
-  border-bottom-color: var(--text);
+  border-bottom-color: var(--good);
+}
+
+/*
+ * Buying is the one thing on this site a visitor is least likely to guess
+ * exists, and it was unfindable for a full release. It gets the weight.
+ */
+.sitenav a.nav-buy {
+  background: var(--good);
+  color: var(--surface);
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 16px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+}
+:root[data-theme="light"] .sitenav a.nav-buy {
+  color: #ffffff;
+}
+.sitenav a.nav-buy:hover {
+  filter: brightness(1.08);
 }
 
 .buy-line {

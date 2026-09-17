@@ -61,7 +61,7 @@ export default async function Home({
             stumbled onto may as well not have shipped. */}
         <nav className="sitenav">
           <span className="wordmark">Claim</span>
-          <Link href="/buy">Buy a company</Link>
+          <Link href="/buy" className="nav-buy">Buy a company</Link>
           <Link href="/api-docs">API</Link>
         </nav>
         <h1 className="thesis">Not everything called a tokenized stock is a stock.</h1>

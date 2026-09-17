@@ -360,6 +360,10 @@ if (await serverUp()) {
     const homePage = await (await fetch(`${BASE}/`)).text();
     check("the site links to the buy page from its navigation",
       /href="\/buy"/.test(homePage));
+    // Buying is the thing a visitor is least likely to guess exists, and it was
+    // unfindable for a whole release. It carries the emphasis in the nav.
+    check("the buy link is the emphasised one in the navigation",
+      /class="nav-buy"/.test(homePage));
     check("a company page offers to buy that company",
       / with USDC/.test(spacexPage) && /href="\/buy"/.test(spacexPage));
 
