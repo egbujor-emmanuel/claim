@@ -54,6 +54,8 @@ SPACEX -> tSpaceX (F -> C) 3 hops  SIMULATION: OK  units 217,083
 
 Reproduce it yourself against any address: `npx tsx src/scripts/e2e.ts <wallet>`. A transaction that simulates clean is one a wallet can sign; a transaction that failed here would have failed on chain. The only step not exercised is the signature itself, which belongs to the holder.
 
+`npm run fullcheck` drives the deployed site the way a judge would — every page, every endpoint, every guard — and builds seven real transactions across both the switch and buy paths, each executed by a validator against mainnet. **48 checks, 0 failures**, alongside the 150-check gate and a whole-universe audit of all 2,060 tokens.
+
 ## What it does
 
 **Search a company, not a ticker.** Tickers are the problem — `SPCX`, `SPCXx` and `SPACEX` all reference the same SpaceX shares. Searching the company forces the comparison.
@@ -147,6 +149,8 @@ npm run depth     # exit-depth sweep (rate limited, resumable)
 npm run verify    # 141-check gate across five phases, end to end
 npm run audit     # whole-universe integrity sweep: every token rated and graded
 npm run e2e       # build real switch transactions and simulate them on mainnet
+npm run buy-e2e   # the same for purchases
+npm run fullcheck # drive the deployed site end to end: 48 checks, 7 mainnet simulations
 npm run findings  # regenerate the README figures from the caches
 npm run find -- spacex
 npm run build && npm start
