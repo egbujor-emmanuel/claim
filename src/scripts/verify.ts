@@ -311,11 +311,15 @@ if (await serverUp()) {
     check("a company page links each move to its review",
       /href="\/switch\?from=/.test(spacexPage));
 
-    // A company whose tokens all grade alike has nothing to offer, and an empty
-    // panel reads as breakage rather than as the finding it is.
-    const nvidiaPage = await (await fetch(`${BASE}/?q=nvidia`)).text();
-    check("a company with no better claim says so rather than showing nothing",
-      nvidiaPage.includes("No stronger claim to move to"));
+    // A company Claim knows one token for has nothing to switch to, and an
+    // empty panel there reads as breakage rather than as the fact it is. The
+    // wallet still belongs on the page: knowing what you hold comes before
+    // knowing whether it can be swapped.
+    const singlePage = await (await fetch(`${BASE}/?q=bit+digital`)).text();
+    check("a single-representation company says so rather than showing nothing",
+      singlePage.includes("One representation of"));
+    check("every company page can connect a wallet",
+      singlePage.includes("Connect wallet"));
 
     // The opening is a pinned scroll sequence: scrolling back up replays it in
     // reverse, which is not a way to navigate.

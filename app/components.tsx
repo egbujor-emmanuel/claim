@@ -98,7 +98,19 @@ function CompanyActions({ company }: { company: RatedCompany }) {
   // here already grades the same, which is a finding about the company and
   // worth one line rather than an empty page.
   if (moves.length === 0) {
-    if (company.tokens.length < 2) return null;
+    if (company.tokens.length < 2) {
+      return (
+        <div className="actionable">
+          <div className="actionable-head">One representation of {company.name} on Solana</div>
+          <p className="actionable-note">
+            Claim indexes a single token for this company, so there is nothing to switch to. The
+            grade below still says what the claim is worth, and connecting lets Claim read what
+            you hold.
+          </p>
+          <WalletBar />
+        </div>
+      );
+    }
     return (
       <div className="actionable">
         <div className="actionable-head">No stronger claim to move to</div>
@@ -107,6 +119,7 @@ function CompanyActions({ company }: { company: RatedCompany }) {
           between them would not improve the claim. The differences below are still real —
           different issuers, different counterparties — they just do not rank one above another.
         </p>
+        <WalletBar />
       </div>
     );
   }
@@ -156,6 +169,11 @@ function CompanyActions({ company }: { company: RatedCompany }) {
           routed on a DEX — those destinations are issued directly rather than traded.
         </p>
       ) : null}
+
+      {/* Connecting belongs on every company page, not only where a route
+          happens to exist today. A holder arriving at a company wants to know
+          what they hold before they care whether it can be swapped. */}
+      {live.length === 0 ? <WalletBar /> : null}
     </div>
   );
 }

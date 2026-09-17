@@ -59,10 +59,25 @@ export interface ClaimRating {
   };
 }
 
+/*
+ * What the structure itself costs you, before anything the mint does.
+ *
+ * The gap between a custodied entitlement and a securitized exposure used to be
+ * one point, which put Backpack and Backed in the same band for 546 of the 588
+ * companies that hold more than one token. Our own findings said they were
+ * different -- "real shares in regulated custody, portable to a traditional
+ * brokerage" against "a certificate against the issuing entity; if the issuer
+ * fails, your claim is against the issuer" -- and then the grade said they were
+ * the same. The evidence was right and the arithmetic was wrong.
+ *
+ * They differ on three material axes, not one: whether you own anything,
+ * whether you can take it to a brokerage, and who you are exposed to if the
+ * issuer fails. Three points is the smallest honest gap.
+ */
 const STRUCTURE_SCORE: Record<string, number> = {
   direct_entitlement: 0,
-  custodied_entitlement: 1,
-  securitized_exposure: 2,
+  custodied_entitlement: 0,
+  securitized_exposure: 3,
   spv_interest: 4,
   loan_participation: 4,
   synthetic: 4,
@@ -107,7 +122,10 @@ export function gradeClaim({ token, issuer, onchain, depth }: RatingInput): Clai
 
   const charge = (points: number, because: string) => {
     penalty += points;
-    reasons.push({ points, because });
+    // A structure that costs nothing is not a charge against the token, and
+    // listing it as "+0" reads as though something were held against it. The
+    // strongest structures score zero by design, so this is the common case.
+    if (points > 0) reasons.push({ points, because });
   };
 
   const authenticity = onchain
