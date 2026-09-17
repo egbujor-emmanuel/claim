@@ -99,6 +99,9 @@ export function Hero({ stat }: { stat: { tokens: number; contested: number } }) 
           Claim reads all {stat.tokens.toLocaleString()} of them from the chain and says which
           is which. <Link href="/?q=spacex">Start with SpaceX</Link>.
         </p>
+        <p className="hero-foot">
+          <a href="#top">↑ Back to the top</a>
+        </p>
       </div>
     </GlyphPortal>
   );

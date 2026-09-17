@@ -300,6 +300,33 @@ if (await serverUp()) {
     check("the actionable switches are linked from the top of the scan",
       /href="\/switch\?from=/.test(scan));
 
+    // Searching a company is how most people arrive, and that page used to
+    // diagnose four legal claims on SpaceX and offer nothing to do about any
+    // of them. It carries the same action the wallet scan does.
+    const spacexPage = await (await fetch(`${BASE}/?q=spacex`)).text();
+    check("a company page offers the moves between its tokens",
+      /moves? to a stronger claim/.test(spacexPage));
+    check("a company page can connect a wallet",
+      spacexPage.includes("Connect wallet"));
+    check("a company page links each move to its review",
+      /href="\/switch\?from=/.test(spacexPage));
+
+    // A company whose tokens all grade alike has nothing to offer, and an empty
+    // panel reads as breakage rather than as the finding it is.
+    const nvidiaPage = await (await fetch(`${BASE}/?q=nvidia`)).text();
+    check("a company with no better claim says so rather than showing nothing",
+      nvidiaPage.includes("No stronger claim to move to"));
+
+    // The opening is a pinned scroll sequence: scrolling back up replays it in
+    // reverse, which is not a way to navigate.
+    check("there is a way back to the top that works without javascript",
+      spacexPage.includes("Back to the top") && spacexPage.includes('id="top"'));
+    // The footer claimed the product was read-only, which stopped being true
+    // the moment it could build a transaction, and undersold what it does.
+    check("the footer describes what Claim actually does",
+      !/Read-only: Claim never asks for a signature/.test(spacexPage) &&
+        /never holds a key/.test(spacexPage));
+
     // The portal's field is green on purpose: it is the one surface that is not
     // the page palette, and the letter opening into somewhere else is the whole
     // gesture. This pins it so a later palette sweep does not quietly flatten it

@@ -6,6 +6,7 @@ import { analyseMint } from "@/src/lib/live.js";
 import { CompanyBlock, Disclaimer } from "./components";
 import { LiveCard, Freshness } from "./live";
 import { Portfolio } from "./portfolio";
+import { TopButton } from "./TopButton";
 import { scanAddress, type PortfolioScan } from "@/src/lib/holdings.js";
 import { Hero } from "./hero";
 
@@ -53,7 +54,7 @@ export default async function Home({
         <Hero stat={{ tokens: stats.tokens, contested: contestedCount }} />
       ) : null}
 
-      <main className="wrap">
+      <main className="wrap" id="top">
       <header className="masthead">
         <p className="wordmark">Claim</p>
         <h1 className="thesis">Not everything called a tokenized stock is a stock.</h1>
@@ -148,10 +149,15 @@ export default async function Home({
       <Freshness generatedAt={universe.generatedAt} />
 
       <footer>
-        Built for the Solana Foundation Stocklana hackathon. Read-only: Claim never asks for a
-        signature and never moves anything. Data from issuer APIs, public Solana RPC and
-        Jupiter quotes. <Link href="/api-docs">Public API</Link>.
+        <p>
+          <a href="#top" className="back-to-top">↑ Back to the top</a>
+        </p>
+        Built for the Solana Foundation Stocklana hackathon. Claim reads the chain, grades what
+        it finds, and can build the switch — but it never holds a key, never funds anything and
+        never submits on your behalf. Your wallet signs, or nothing happens. Data from issuer
+        APIs, public Solana RPC and Jupiter quotes. <Link href="/api-docs">Public API</Link>.
       </footer>
+      <TopButton />
       </main>
     </>
   );

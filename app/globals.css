@@ -880,3 +880,36 @@ footer {
   padding-top: 14px;
   margin-top: 4px;
 }
+
+/*
+ * The way back.
+ *
+ * Fixed rather than in a header, because the opening is a pinned scroll
+ * sequence and a bar over it would sit on the title. It appears past the first
+ * screen, which is exactly when there stops being anything else to press.
+ */
+.to-top {
+  position: fixed;
+  right: clamp(14px, 3vw, 28px);
+  bottom: clamp(14px, 3vw, 28px);
+  z-index: 40;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font: 600 12px/1 var(--sans);
+  letter-spacing: 0.04em;
+  padding: 11px 14px;
+  min-height: 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.28);
+}
+.to-top:hover {
+  border-color: var(--muted);
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
