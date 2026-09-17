@@ -68,6 +68,10 @@ For every token Claim reports:
 - **Counterfeit detection** — whether the mint is structurally capable of being what it claims
 - **Balance correctness** — whether reading the scaled-UI multiplier naively shows the wrong number
 
+And then the part that is not a report:
+
+- **The move.** Where a stronger claim on the same company exists and can be reached, Claim builds the swap and hands it to the wallet — quoted at the holder's own size, with the destination mint re-read from chain in the moment before the transaction is built. Where it cannot be reached, Claim says which side of the trade is impossible and, if the destination is issued rather than traded, names the issuer that does sell it.
+
 ## Findings
 
 <!-- findings:start -->
@@ -117,7 +121,9 @@ Any mint works, indexed or not. A mint outside the indexed universe is read live
 npm install
 npm run scan      # build the universe cache: issuer registries + on-chain state
 npm run depth     # exit-depth sweep (rate limited, resumable)
-npm run verify    # 78-check gate across all three phases
+npm run verify    # 141-check gate across five phases, end to end
+npm run audit     # whole-universe integrity sweep: every token rated and graded
+npm run e2e       # build real switch transactions and simulate them on mainnet
 npm run findings  # regenerate the README figures from the caches
 npm run find -- spacex
 npm run build && npm start

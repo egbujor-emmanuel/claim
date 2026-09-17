@@ -20,7 +20,10 @@
     "stats": "tsx src/scripts/stats.ts",
     "findings": "tsx src/scripts/findings.ts",
     "scan-address": "tsx src/scripts/scanaddr.ts",
-    "demo-wallets": "tsx src/scripts/demowallets.ts"
+    "demo-wallets": "tsx src/scripts/demowallets.ts",
+    "e2e": "tsx src/scripts/e2e.ts",
+    "audit": "tsx src/scripts/audit.ts",
+    "refresh-depth": "tsx src/scripts/destprobe.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
