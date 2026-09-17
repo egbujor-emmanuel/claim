@@ -134,6 +134,17 @@ section("transaction outcome is read from chain, never assumed");
     (await fetch(`${BASE}/api/tx/notasignature`)).status === 400);
 }
 
+section("a wallet that cannot fund a swap is told before signing");
+{
+  const funded = await (await fetch(`${BASE}/api/balance/4PZySiky6z5J5Zb469TeRxNwGVT6cbWsBoeCd6qAScbR/${USDC}`)).json() as
+    { uiAmount?: number; canPayFee?: boolean; error?: string };
+  ok("balance reads a real holding", typeof funded.uiAmount === "number",
+    `${funded.uiAmount} USDC, canPayFee=${funded.canPayFee}`);
+  ok("balance reports fee capacity", typeof funded.canPayFee === "boolean");
+  ok("balance rejects a malformed address",
+    (await fetch(`${BASE}/api/balance/nope/${USDC}`)).status === 400);
+}
+
 section("the signing screen sets expectations");
 {
   const review = (await page(`/switch?from=${USDC}&to=${mintOf("AAPLx")}`)).body;
