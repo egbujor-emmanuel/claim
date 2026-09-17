@@ -119,6 +119,7 @@ export default function GlyphPortal({
     const glyph = section.querySelector<SVGTextElement>("[data-gp-glyph]")!;
     const marks = section.querySelector<SVGGElement>("[data-gp-marks]")!;
     const choices = section.querySelector<HTMLElement>("[data-gp-choices]")!;
+    const content = section.querySelector<HTMLElement>("[data-gp-content]")!;
     const buttons = Array.from(choices.querySelectorAll<HTMLButtonElement>("button"));
     const picker = section.querySelector<HTMLSelectElement>("[data-gp-select]")!;
     const root = scrollParent(section);
@@ -235,6 +236,17 @@ export default function GlyphPortal({
       section.style.setProperty("--gp-reveal", String(isStatic ? 1 : smooth(0.78, 0.9, p)));
       section.style.setProperty("--gp-field-scale", String(1 + .16 * smooth(0, .82, p)));
       section.style.setProperty("--gp-caption-hit", p < 0.08 ? "auto" : "none");
+      // Following the enter link is a fragment navigation, which focuses the
+      // content container. The :focus-within rules above exist so a keyboard
+      // reader who tabs in can actually read the panel -- but nothing releases
+      // that focus on the way back out, so the field stayed unclipped and
+      // full-bleed while the front copy stayed hidden, whatever the scroll
+      // position said. Drop the container's own focus once the camera has
+      // pulled back; focus on a real control inside is left alone, because
+      // that one belongs to the reader rather than to the jump.
+      if (p < 0.72 && document.activeElement === content) {
+        content.blur();
+      }
       section.dataset.gpEntered = String(p >= 0.9);
       section.dataset.gpProgress = p.toFixed(5);
       if (p !== lastProgress) { lastProgress = p; progressRef.current?.(p); }

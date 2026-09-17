@@ -1,4 +1,33 @@
+/*
+ * Claim reads dark by default.
+ *
+ * Not a style preference. The palette is keyed to the gradient behind the page
+ * (#16130E through #9C8D63), and a near-white sheet under a warm dark field
+ * looked like two products stapled together. Anyone who wants the paper version
+ * can set data-theme="light"; the tokens below are the only thing either theme
+ * changes, so every component follows without knowing which is active.
+ */
 :root {
+  --bg: #16130E;
+  --surface: #1e1a14;
+  --border: #332c22;
+  --text: #f0ebe1;
+  --muted: #a49b8a;
+  --faint: #756c5e;
+  --accent: #f0ebe1;
+
+  --critical: #e8836a;
+  --critical-bg: #2c1d17;
+  --warning: #d9a441;
+  --warning-bg: #2b2313;
+  --good: #7cc796;
+  --good-bg: #17251c;
+
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+}
+
+:root[data-theme="light"] {
   --bg: #fbfaf8;
   --surface: #ffffff;
   --border: #e4e0d8;
@@ -13,53 +42,42 @@
   --warning-bg: #fdf6e7;
   --good: #2c6340;
   --good-bg: #eef6f0;
-
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #131211;
-    --surface: #1b1a18;
-    --border: #2e2c28;
-    --text: #ece8e1;
-    --muted: #9a938a;
-    --faint: #6d6760;
-    --accent: #ece8e1;
-
-    --critical: #e8836a;
-    --critical-bg: #2a1a16;
-    --warning: #d9a441;
-    --warning-bg: #29211290;
-    --good: #6dbd8a;
-    --good-bg: #16241b;
-  }
+/*
+ * The gradient sits behind everything, fixed, and never scrolls.
+ *
+ * Content surfaces stay opaque on top of it; only the page gutter shows it, so
+ * the reading column keeps its contrast while the page stops being a white box.
+ */
+.page-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
 }
-
-:root[data-theme="dark"] {
-  --bg: #131211;
-  --surface: #1b1a18;
-  --border: #2e2c28;
-  --text: #ece8e1;
-  --muted: #9a938a;
-  --faint: #6d6760;
-  --accent: #ece8e1;
-
-  --critical: #e8836a;
-  --critical-bg: #2a1a16;
-  --warning: #d9a441;
-  --warning-bg: #292112;
-  --good: #6dbd8a;
-  --good-bg: #16241b;
+:root[data-theme="light"] .page-field {
+  display: none;
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
+/*
+ * The background lives on <html>, not <body>.
+ *
+ * A background on body paints over a z-index:-1 child of body, which would
+ * hide the gradient entirely. Putting the base colour on html leaves body
+ * transparent, so the fixed field shows through and the base colour is still
+ * there underneath if the gradient ever fails to paint.
+ */
+html {
   background: var(--bg);
+}
+
+body {
+  background: transparent;
   color: var(--text);
   font-family: var(--sans);
   font-size: 15px;

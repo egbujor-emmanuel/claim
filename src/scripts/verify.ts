@@ -278,6 +278,30 @@ async function serverUp(): Promise<boolean> {
 if (await serverUp()) {
   section("PHASE 3: web app and public API");
 
+  // The landing page's chrome. A holder reported the portal turning the whole
+  // page green on the way back out, which was the component's own hardcoded
+  // fallback field showing through because no background was passed. These
+  // checks exist so that cannot return unnoticed.
+  {
+    const home = await (await fetch(`${BASE}/`)).text();
+    check("the page gradient is mounted behind the content",
+      home.includes('class="page-field"'));
+    // The component's own green lives in a :where() declaration that carries no
+    // specificity, so its presence in the stylesheet is harmless. What matters
+    // is that the green *element* never renders and the field variable the
+    // section actually applies is Claim's.
+    check("the portal renders Claim's field, not the component's green fallback",
+      !home.includes("data-gp-default-field"),
+      home.includes("data-gp-default-field") ? "green fallback element rendered" : "");
+    check("the portal's field colour is Claim's own",
+      /--gp-field:\s*#16130E/i.test(home),
+      (home.match(/--gp-field:[^;"]*/g) ?? []).join(" | "));
+    const grains = [...home.matchAll(/id="grain-([a-zA-Z0-9]+)"/g)].map((m) => m[1]);
+    check("every grain filter id on the page is unique",
+      grains.length === new Set(grains).size,
+      grains.join(", "));
+  }
+
   const api = await fetch(`${BASE}/api/claim/${SPACEX}`);
   check("GET /api/claim/{mint} returns 200", api.status === 200);
   check("API sets CORS header", api.headers.get("access-control-allow-origin") === "*");
