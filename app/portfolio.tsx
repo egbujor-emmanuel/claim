@@ -1,6 +1,7 @@
 import type { PortfolioScan } from "@/src/lib/holdings.js";
 import { summarise } from "@/src/lib/holdings.js";
 import { Scoring } from "./live";
+import { WalletBar } from "./switch/WalletBar";
 
 /**
  * A wallet's positions, worst claim first.
@@ -32,6 +33,8 @@ export function Portfolio({ scan }: { scan: PortfolioScan }) {
           </p>
         ) : null}
       </header>
+
+      <Actionable scan={scan} />
 
       {scan.holdings.length === 0 ? (
         <div className="note-box">
@@ -98,6 +101,73 @@ export function Portfolio({ scan }: { scan: PortfolioScan }) {
         </article>
       ))}
     </section>
+  );
+}
+
+/**
+ * What you can actually do, before the diagnosis.
+ *
+ * Holdings are ordered worst-claim-first, which is right for reading and wrong
+ * for acting: in a real wallet the worst positions are the illiquid ones whose
+ * switches cannot be routed, so every card at the top is a dead end and the few
+ * live switches sit hundreds of lines below the fold. A holder scrolling that
+ * page sees no button anywhere and concludes the product does not work.
+ *
+ * So the actionable switches are lifted to the top, and the wallet connects
+ * from here rather than only from a review page reached through a button that
+ * most cards do not have.
+ */
+function Actionable({ scan }: { scan: PortfolioScan }) {
+  const live = scan.holdings.flatMap((h) =>
+    h.switches.filter((s) => s.executable).map((s) => ({ holding: h, option: s })),
+  );
+  const blocked = scan.holdings.reduce(
+    (n, h) => n + h.switches.filter((s) => !s.executable).length,
+    0,
+  );
+
+  if (live.length === 0 && blocked === 0) return null;
+
+  return (
+    <div className="actionable">
+      <div className="actionable-head">
+        {live.length > 0
+          ? `${live.length} switch${live.length === 1 ? "" : "es"} you can make right now`
+          : "No switch here can be routed on-chain today"}
+      </div>
+
+      {live.length > 0 ? (
+        <>
+          <ul className="actionable-list">
+            {live.map(({ holding, option }) => (
+              <li key={`${holding.mint}-${option.to.token.mint}`}>
+                <span className="actionable-pair">
+                  <strong>{holding.symbol}</strong> → <strong>{option.to.token.symbol}</strong>
+                  <span className="actionable-grades">
+                    {option.fromGrade} → {option.toGrade}
+                  </span>
+                </span>
+                <a
+                  className="switch-button"
+                  href={`/switch?from=${holding.mint}&to=${option.to.token.mint}`}
+                >
+                  Review
+                </a>
+              </li>
+            ))}
+          </ul>
+          <WalletBar />
+        </>
+      ) : null}
+
+      {blocked > 0 ? (
+        <p className="actionable-note">
+          {blocked} further switch{blocked === 1 ? "" : "es"} would improve{" "}
+          {blocked === 1 ? "a claim" : "these claims"} but cannot be routed on a DEX — those
+          destinations are issued directly rather than traded. Each card below says where.
+        </p>
+      ) : null}
+    </div>
   );
 }
 

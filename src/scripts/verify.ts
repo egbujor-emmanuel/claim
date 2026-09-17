@@ -286,6 +286,20 @@ if (await serverUp()) {
     const home = await (await fetch(`${BASE}/`)).text();
     check("the page gradient is mounted behind the content",
       home.includes('class="page-field"'));
+    // A holder whose top positions are all unroutable used to reach the bottom
+    // of the page having seen no button at all: connecting lived only on the
+    // review page, behind a per-card button those cards do not have.
+    const scan = await (await fetch(`${BASE}/?q=2Cq2RNFFxxPXL7teNQAji1beA2vFbBDYW5BGPBFvoN9m`)).text();
+    check("a scan offers somewhere to connect a wallet",
+      scan.includes("Connect wallet"));
+    const panelAt = scan.indexOf("actionable");
+    const cardAt = scan.indexOf('class="card"');
+    check("what you can act on comes before the diagnosis",
+      panelAt >= 0 && panelAt < cardAt,
+      `panel ${panelAt}, first card ${cardAt}`);
+    check("the actionable switches are linked from the top of the scan",
+      /href="\/switch\?from=/.test(scan));
+
     // The portal's field is green on purpose: it is the one surface that is not
     // the page palette, and the letter opening into somewhere else is the whole
     // gesture. This pins it so a later palette sweep does not quietly flatten it

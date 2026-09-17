@@ -815,3 +815,68 @@ footer {
   font-size: 13.5px;
   color: var(--warning);
 }
+
+/*
+ * The actions panel at the top of a scan.
+ *
+ * Holdings read worst-first, which puts the illiquid dead ends above the fold
+ * and the live switches out of sight. This is the one block on the page that
+ * answers "what can I do", so it sits before the diagnosis and carries the
+ * connect step with it.
+ */
+.actionable {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 10px;
+  padding: clamp(16px, 3vw, 22px);
+  margin: 0 0 28px;
+}
+.actionable-head {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 14px;
+}
+.actionable-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.actionable-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.actionable-pair {
+  font-size: 14px;
+}
+.actionable-grades {
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 10px;
+}
+.actionable-list .switch-button {
+  margin: 0;
+  flex: 0 0 auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.actionable-note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.wallet-bar {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: 4px;
+}
