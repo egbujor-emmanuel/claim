@@ -3,6 +3,7 @@ import type { RatedCompany } from "@/src/lib/rating/index.js";
 import type { ResolvedToken } from "@/src/lib/search.js";
 import { Scoring } from "./live";
 import { betterClaims, type SwitchOption } from "@/src/lib/switch.js";
+import { buyTarget } from "@/src/lib/buy.js";
 import { WalletBar } from "./switch/WalletBar";
 
 function isUrl(s: string) {
@@ -85,6 +86,48 @@ const GRADE_ORDER = ["F", "D", "C", "B", "A"];
  */
 const USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
 
+/**
+ * Buying this company, from the page someone is already reading about it.
+ *
+ * Switching assumes you already hold the weak side. Most people arriving at a
+ * company page hold nothing yet, and the thing they want is to acquire it --
+ * without having to know that the mint with a pool is often not the strongest
+ * claim on the name.
+ */
+function BuyLine({ company }: { company: RatedCompany }) {
+  const plan = buyTarget(company);
+  if (!plan?.reachable) {
+    return (
+      <p className="actionable-note">
+        No token on {company.name} can be bought with a swap today. Every representation Claim
+        indexes for it is issued directly rather than traded.
+      </p>
+    );
+  }
+  const sym = plan.reachable.token.token.symbol;
+  return (
+    <div className="buy-line">
+      <p className="actionable-note">
+        {plan.compromised ? (
+          <>
+            Buying {company.name} with a swap gets you <strong>{sym}</strong> ({plan.reachable.grade}).{" "}
+            {plan.strongest.token.token.symbol} ({plan.strongest.grade}) is the stronger claim and
+            is not traded on any DEX.
+          </>
+        ) : (
+          <>
+            <strong>{sym}</strong> ({plan.reachable.grade}) is both the strongest claim on{" "}
+            {company.name} and the one you can buy.
+          </>
+        )}
+      </p>
+      <a className="switch-button" href={`/switch?from=${USDC_MINT}&to=${plan.reachable.token.token.mint}`}>
+        Buy {company.name} with USDC
+      </a>
+    </div>
+  );
+}
+
 function CompanyActions({ company }: { company: RatedCompany }) {
   const moves: { from: ResolvedToken; option: SwitchOption }[] = [];
   const seen = new Set<string>();
@@ -103,12 +146,12 @@ function CompanyActions({ company }: { company: RatedCompany }) {
     if (company.tokens.length < 2) {
       return (
         <div className="actionable">
-          <div className="actionable-head">One representation of {company.name} on Solana</div>
+          <div className="actionable-head">Buy or hold {company.name}</div>
           <p className="actionable-note">
             Claim indexes a single token for this company, so there is nothing to switch to. The
-            grade below still says what the claim is worth, and connecting lets Claim read what
-            you hold.
+            grade below still says what the claim is worth.
           </p>
+          <BuyLine company={company} />
           <WalletBar />
         </div>
       );
@@ -121,6 +164,7 @@ function CompanyActions({ company }: { company: RatedCompany }) {
           between them would not improve the claim. The differences below are still real —
           different issuers, different counterparties — they just do not rank one above another.
         </p>
+        <BuyLine company={company} />
         <WalletBar />
       </div>
     );
@@ -171,6 +215,8 @@ function CompanyActions({ company }: { company: RatedCompany }) {
           routed on a DEX — those destinations are issued directly rather than traded.
         </p>
       ) : null}
+
+      <BuyLine company={company} />
 
       {/* Connecting belongs on every company page, not only where a route
           happens to exist today. A holder arriving at a company wants to know

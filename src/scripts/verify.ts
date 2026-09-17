@@ -317,7 +317,7 @@ if (await serverUp()) {
     // knowing whether it can be swapped.
     const singlePage = await (await fetch(`${BASE}/?q=bit+digital`)).text();
     check("a single-representation company says so rather than showing nothing",
-      singlePage.includes("One representation of"));
+      singlePage.includes("nothing to switch to") && / with USDC/.test(singlePage));
     check("every company page can connect a wallet",
       singlePage.includes("Connect wallet"));
     // Connecting has to lead somewhere. The connected state used to tell a
@@ -355,6 +355,14 @@ if (await serverUp()) {
     // and has to pick a mint, with no venue telling them the mints differ. For
     // most companies the token with a pool is not the strongest claim.
     const USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+    // A feature nobody can find has not shipped. /buy was live and returning
+    // 154 companies while nothing on the site linked to it.
+    const homePage = await (await fetch(`${BASE}/`)).text();
+    check("the site links to the buy page from its navigation",
+      /href="\/buy"/.test(homePage));
+    check("a company page offers to buy that company",
+      / with USDC/.test(spacexPage) && /href="\/buy"/.test(spacexPage));
+
     const buyPage = await (await fetch(`${BASE}/buy`)).text();
     check("the buy list covers every company a swap can reach",
       /companies can be reached by a swap/.test(buyPage));

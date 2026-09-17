@@ -56,7 +56,14 @@ export default async function Home({
 
       <main className="wrap" id="top">
       <header className="masthead">
-        <p className="wordmark">Claim</p>
+        {/* The site had no navigation at all: every route beyond search was
+            reachable only from a card or a footer line, so features nobody
+            stumbled onto may as well not have shipped. */}
+        <nav className="sitenav">
+          <span className="wordmark">Claim</span>
+          <Link href="/buy">Buy a company</Link>
+          <Link href="/api-docs">API</Link>
+        </nav>
         <h1 className="thesis">Not everything called a tokenized stock is a stock.</h1>
         <p className="standfirst">
           The same company can have several tokens on Solana, and they do not confer the same

@@ -993,3 +993,47 @@ footer {
   .buy-note { grid-area: note; }
   .buy-row .switch-button { grid-area: cta; justify-self: start; }
 }
+
+/*
+ * Site navigation.
+ *
+ * There wasn't any. Every route past search was reachable only from a card or
+ * a footer line, so /buy shipped and could not be found.
+ */
+.sitenav {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.sitenav .wordmark {
+  margin: 0;
+  margin-right: auto;
+}
+.sitenav a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+.sitenav a:hover {
+  border-bottom-color: var(--text);
+}
+
+.buy-line {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: 12px;
+}
+.buy-line .switch-button {
+  margin: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
