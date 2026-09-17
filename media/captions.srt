@@ -1,0 +1,39 @@
+1
+00:00:01,000 --> 00:00:06,376
+Four SpaceX tokens trade on Solana. They look identical in a wallet.
+
+2
+00:00:07,000 --> 00:00:12,280
+They confer four different legal relationships, and nothing tells you which one you hold.
+
+3
+00:00:13,000 --> 00:00:17,776
+Claim reads every tokenized equity on the chain and grades the claim behind it.
+
+4
+00:00:19,500 --> 00:00:25,836
+Backpack is real shares in regulated custody, portable to a brokerage. Grade A.
+
+5
+00:00:26,000 --> 00:00:32,120
+Backed is a Jersey certificate, with a delegate that can take it from your wallet. Grade C.
+
+6
+00:00:33,000 --> 00:00:39,432
+Buy a company, and Claim picks the token. A hundred and fifty four can be reached by a swap.
+
+7
+00:00:40,000 --> 00:00:46,888
+For eighty three of them, the strongest claim is not the one you can buy. Claim says so before you sign.
+
+8
+00:00:50,000 --> 00:00:55,976
+Claim builds the swap and hands it to your wallet. It never holds a key and never submits.
+
+9
+00:00:57,500 --> 00:01:02,612
+Scan any wallet. Every position graded, worst claim first.
+
+10
+00:01:03,500 --> 00:01:07,628
+The same verdict, free, over a public A P I.
