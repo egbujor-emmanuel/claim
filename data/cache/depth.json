@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-15T15:34:11.315Z",
+ "generatedAt": "2026-09-17T04:58:03.339Z",
  "tradable": {
   "XsensupeZBdHxZtdnLptf1UfWpVyancWcit7qWFYZrJ": {
    "tradable": false,
@@ -5055,7 +5055,7 @@
   },
   "SGdhbWCK8UsE8DV3caknkQ7Lskkk5XmEsxVssHautPZ": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "NFYmuVLhKXU1HUnfFLbiQRzSSLZFwAFCaw4PBEDpRP2": {
    "tradable": false,
@@ -5859,7 +5859,7 @@
   },
   "VUGVKcKRfkEENKUc4ULEBngt1Dan4jrbPvC42KC8hFH": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "CB2EefdQw6CgK9urPB8etEBy6y5NoV6ZuB23MKA2Z39q": {
    "tradable": false,
@@ -6095,7 +6095,7 @@
   },
   "AAPLEDt8RpzPgXyhvFzkMBofvFSQw9gpeMCoUdPdLnB8": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SDzrWu1sNiXVjunEnkyvGng1BUWcUctCbG1852nRAFF": {
    "tradable": false,
@@ -8143,7 +8143,7 @@
   },
   "Gwh9fPsX1qWATXy63vNaJnAFfwebWQtZaVmPko6ondo": {
    "tradable": false,
-   "reason": "TOKEN_NOT_TRADABLE"
+   "reason": "NO_ROUTES_FOUND"
   },
   "GZ8v4NdSG7CTRZqHMgNsTPRULeVi8CpdWd9wZY8ondo": {
    "tradable": false,
@@ -8200,6 +8200,18 @@
   "jCCU4GwukjNxAXJowG2S4KCrr5g6YyUB61WHYvGondo": {
    "tradable": false,
    "reason": "TOKEN_NOT_TRADABLE"
+  },
+  "PreLWGkkeqG1s4HEfFZSy9moCrJ7btsHuUtfcCeoRua": {
+   "tradable": true,
+   "reason": null
+  },
+  "PreweJYECqtQwBtpxHL171nL2K6umo692gTm7Q3rpgF": {
+   "tradable": true,
+   "reason": null
+  },
+  "TSPXcLV76s6V2zDiZQ18kBfcbnjaE2ZzNT3ga2Pd99v": {
+   "tradable": true,
+   "reason": null
   }
  },
  "ladders": {

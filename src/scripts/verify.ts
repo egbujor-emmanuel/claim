@@ -286,15 +286,12 @@ if (await serverUp()) {
     const home = await (await fetch(`${BASE}/`)).text();
     check("the page gradient is mounted behind the content",
       home.includes('class="page-field"'));
-    // The component's own green lives in a :where() declaration that carries no
-    // specificity, so its presence in the stylesheet is harmless. What matters
-    // is that the green *element* never renders and the field variable the
-    // section actually applies is Claim's.
-    check("the portal renders Claim's field, not the component's green fallback",
-      !home.includes("data-gp-default-field"),
-      home.includes("data-gp-default-field") ? "green fallback element rendered" : "");
-    check("the portal's field colour is Claim's own",
-      /--gp-field:\s*#16130E/i.test(home),
+    // The portal's field is green on purpose: it is the one surface that is not
+    // the page palette, and the letter opening into somewhere else is the whole
+    // gesture. This pins it so a later palette sweep does not quietly flatten it
+    // into the background.
+    check("the portal's field stays green",
+      /--gp-field:\s*#0c1a14/i.test(home),
       (home.match(/--gp-field:[^;"]*/g) ?? []).join(" | "));
     const grains = [...home.matchAll(/id="grain-([a-zA-Z0-9]+)"/g)].map((m) => m[1]);
     check("every grain filter id on the page is unique",
@@ -482,32 +479,45 @@ check("tradeoffs are stated, not hidden",
   betterClaims(sx!.tokens.find((t) => t.token.symbol === "tSpaceX")!.token.mint)
     .some((o) => o.tradeoffs.length > 0));
 
-// A position that routes is not a position that sells. SOXLx quotes fine and
-// returns 29 cents on $1,000; offering a switch across that pool would hand a
-// holder a total loss labelled as an upgrade. This is the check that caught it.
-const soxlx = byMint("XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu");
-const soxlOpts = soxlx ? betterClaims("XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu", soxlx) : [];
-check("a routable-but-worthless position is not offered as switchable",
+// The reported failure: a holder was offered SOXLx -> SOXL and hit
+// TOKEN_NOT_TRADABLE at the quote. The dead token was SOXL, the *destination*,
+// which the depth cache already knew was unroutable -- nothing asked it.
+// preflight() read the destination's on-chain state and a mint can be healthy
+// on every one of those checks while having no market at all.
+const SOXL = "SoXLRsBe4uEwGPqqXsyaWJe8ecTpf5YMYtFgxwRU88n";
+const SOXLX = "XsdZDkoMdUb6iKDAKKappuM7C1Q2HmTqC8jNujbfmCu";
+const soxlxCo = byMint(SOXLX);
+const soxlOpts = soxlxCo ? betterClaims(SOXLX, soxlxCo) : [];
+check("a switch into a token with no market is not offered",
   soxlOpts.length > 0 && soxlOpts.every((o) => !o.executable),
   soxlOpts.map((o) => `${o.to.token.symbol} executable=${o.executable}`).join(", "));
-check("a blocked switch explains itself in numbers",
-  soxlOpts.every((o) => o.executable || /%/.test(o.blockedReason ?? "")),
-  soxlOpts[0]?.blockedReason?.slice(0, 80) ?? "");
+check("the block names the destination, not the position",
+  soxlOpts.every((o) => o.executable || /SOXL has no market/.test(o.blockedReason ?? "")),
+  soxlOpts[0]?.blockedReason?.slice(0, 70) ?? "");
 
-// Every non-executable option must say why, and every executable one must have
-// measured depth behind it rather than an unchecked assumption.
+const deadPf = await preflight(SOXL);
+check("preflight refuses a destination with no market",
+  !deadPf.ok && deadPf.blockers.some((b) => /no market/.test(b)),
+  deadPf.blockers.join(" | "));
+
+// Thin depth is evidence, not a veto. The ladder's smallest rung is $1,000 and
+// most holders are far below it, so measuring a dust position against it once
+// blocked every switch in a real wallet -- including ones that quote fine.
 {
   const u2 = loadUniverse();
-  let silent = 0;
+  let silent = 0, exec = 0;
   for (const t of u2.tokens) {
     const c2 = byMint(t.mint, u2);
     if (!c2) continue;
     for (const o of betterClaims(t.mint, c2)) {
       if (!o.executable && !o.blockedReason) silent++;
+      if (o.executable) exec++;
     }
   }
   check("no switch is blocked without a stated reason", silent === 0, `${silent} silent`);
+  check("thin depth does not veto a switch outright", exec > 0, `${exec} executable`);
 }
+
 
 const pf = await preflight(spcx);
 check("preflight re-reads the destination live", pf.ok, pf.blockers.join("; ") || "no blockers");

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import GlyphPortal from "@/components/ui/glyph-portal";
-import { GradientBackground } from "@/components/ui/background-rowds-shop-v1";
 
 /**
  * The opening frame.
@@ -14,11 +13,10 @@ import { GradientBackground } from "@/components/ui/background-rowds-shop-v1";
  *    never waits on a network request and never shifts as a face swaps in. The
  *    component freezes whichever face is available at mount for exactly that
  *    reason, and a hero that stalls is worse than a hero in a system face.
- *  - Palette is taken from the app's own tokens, and the field is the same
- *    gradient that sits behind the rest of the site. The component's own
- *    fallback is a hardcoded green that ignores --gp-field, so passing an
- *    explicit background is the only way to stop the portal opening into a
- *    demo's palette instead of into Claim.
+ *  - The field stays green. It is the one place on the site that is not the
+ *    paper palette, and that is the point: the letter opens into somewhere
+ *    else. The page behind it is dark, the portal is green, and the contrast
+ *    between them is deliberate.
  *  - Rendered only on the unsearched landing page. Someone who has searched is
  *    looking for an answer and should not have to scroll past a title sequence
  *    to reach it.
@@ -35,10 +33,9 @@ export function Hero({ stat }: { stat: { tokens: number; contested: number } }) 
       style={{
         "--gp-paper": "var(--bg)",
         "--gp-ink": "var(--text)",
-        "--gp-field": "#16130E",
-        "--gp-foreground": "#f0ebe1",
+        "--gp-field": "#0c1a14",
+        "--gp-foreground": "#f2f5f3",
       }}
-      background={<GradientBackground instanceId="portal" />}
       front={
         <div className="hero-front">
           <div className="hero-top">

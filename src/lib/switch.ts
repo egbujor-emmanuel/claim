@@ -33,8 +33,8 @@ export interface SwitchOption {
   /** Anything they give up. Stated even when it weakens the case. */
   tradeoffs: string[];
   /**
-   * False when the position cannot be sold on any venue, so the switch cannot
-   * be executed however much better the destination is.
+   * False when the trade cannot happen at all, however much better the
+   * destination is.
    *
    * Offering an action someone cannot take is worse than offering none: it
    * sends them to a quote that fails with TOKEN_NOT_TRADABLE and leaves them
@@ -43,6 +43,15 @@ export interface SwitchOption {
   executable: boolean;
   /** Why it cannot be executed, when it cannot. */
   blockedReason: string | null;
+  /**
+   * Which side of the trade is impossible.
+   *
+   * They are different facts and a holder acts on them differently. "source"
+   * means nobody will buy what they hold, and redemption is the only exit.
+   * "destination" means the better claim is fine but cannot be reached by
+   * trading -- they would have to acquire it some other way.
+   */
+  blockedSide: "source" | "destination" | null;
 }
 
 function structureOf(t: ResolvedToken) {
@@ -118,31 +127,31 @@ function describe(from: ResolvedToken, to: ResolvedToken) {
  * a different action with different eligibility, and not one Claim can perform.
  */
 /**
- * The loss at which a "market" stops being one.
- *
- * Not a risk preference. A pool that returns 10c on the dollar is not a venue
- * a holder can exit through, whatever the router says about routability, and
- * offering a switch across it would hand someone a 90% loss dressed as an
- * upgrade.
- */
-const UNSELLABLE_LOSS_PCT = 50;
-
-/**
  * Whether the held position can actually be sold to fund a switch.
  *
- * Routability is the wrong question, and asking it was the bug. Jupiter reports
- * SOXLx as tradable and will happily quote it: $1,000 in returns 29 cents. The
- * route exists, the market does not. So this reads what the ladder actually
- * measured -- what comes back at each size -- rather than trusting the boolean.
+ * Only one fact here is size-independent: whether a market exists at all. If
+ * Jupiter has no route at any size, nobody can sell, and offering a switch is
+ * a dead end -- that is worth blocking on.
  *
- * Three ways a position fails here, in descending severity: no route at all, a
- * route that returns almost nothing, and a route too thin to clear 5% at any
- * measured size. All three mean the same thing to a holder, which is that the
- * switch Claim is about to offer cannot be taken.
+ * Everything else the depth ladder knows is about *large* exits. Its smallest
+ * rung is $1,000, and most holders are nowhere near it: the wallet that
+ * surfaced this bug holds 0.0002 SMHx, worth cents. Judging that position by
+ * what a $1,000 sale returns is the wrong question, and answering it blocked
+ * every switch in the wallet -- including ones that would have quoted fine.
+ *
+ * So thin depth is reported, not enforced. It rides along as a tradeoff the
+ * holder can read, and the live quote decides, because the quote is the only
+ * thing that actually knows their size. When it refuses, it now says why in
+ * words rather than returning a router code.
  */
-function canSell(held: ResolvedToken): { executable: boolean; reason: string | null } {
+function canSell(held: ResolvedToken): {
+  executable: boolean;
+  reason: string | null;
+  warning: string | null;
+} {
   const depth = depthFor(held.token.mint);
   const symbol = held.token.symbol;
+  if (!depth) return { executable: true, reason: null, warning: null };
 
   const redemption = held.issuer?.redemption.value;
   const route =
@@ -152,37 +161,69 @@ function canSell(held: ResolvedToken): { executable: boolean; reason: string | n
         ? "Redeeming it with the issuer is the way out, subject to their eligibility rules and minimum."
         : "There is no demonstrated way out of this position.";
 
-  if (!depth) return { executable: true, reason: null };
-
-  if (!depth.tradable) {
+  const routed = depth.rungs.filter((r) => r.routed);
+  const noMarket = !depth.tradable || (depth.rungs.length > 0 && routed.length === 0);
+  if (noMarket) {
     return {
       executable: false,
       reason: `${symbol} has no market on any venue Jupiter can reach, so it cannot be sold to fund a switch. ${route}`,
+      warning: null,
     };
   }
 
-  const routed = depth.rungs.filter((r) => r.routed && r.lossPct !== null);
-  const bestLoss = routed.length ? Math.min(...routed.map((r) => r.lossPct as number)) : null;
+  // Thin, but not empty. Say what was measured and at what size, so the number
+  // is attached to the trade it describes rather than floating free.
+  const priced = routed.filter((r) => r.lossPct !== null);
+  const best = priced.length
+    ? priced.reduce((a, b) => ((a.lossPct as number) <= (b.lossPct as number) ? a : b))
+    : null;
 
-  if (bestLoss !== null && bestLoss >= UNSELLABLE_LOSS_PCT) {
-    const smallest = routed[routed.length - 1] ?? routed[0];
+  if (best && (best.lossPct as number) >= 50) {
+    return {
+      executable: true,
+      reason: null,
+      warning:
+        `Thin market: a ${fmtUsd(best.usd)} sale of ${symbol} came back as ` +
+        `${fmtUsd(best.receivedUsd ?? 0)}. A smaller position may still quote well — ` +
+        `the quote below is the real answer for your size.`,
+    };
+  }
+
+  if (depth.maxExitUsd === null) {
+    return {
+      executable: true,
+      reason: null,
+      warning:
+        `Nothing sold inside 5% at any size Claim measured, the smallest being ` +
+        `${fmtUsd(depth.rungs[0]?.usd ?? 1000)}. Below that the quote is the only guide.`,
+    };
+  }
+
+  return { executable: true, reason: null, warning: null };
+}
+
+/**
+ * Whether the destination can be bought at all.
+ *
+ * This is the check that was missing, and the one the reported failure was
+ * actually about. A holder was offered SOXLx -> SOXL and hit TOKEN_NOT_TRADABLE
+ * at the quote; the dead token was SOXL, the destination, which the depth cache
+ * had already recorded as unroutable. Nothing asked it. preflight() reads the
+ * destination mint's on-chain state -- whether it exists, is paused, has an
+ * authority -- and a mint can be perfectly healthy on all three while having no
+ * market whatsoever. Being issuable is not the same as being buyable.
+ */
+function canBuy(target: ResolvedToken): { executable: boolean; reason: string | null } {
+  const depth = depthFor(target.token.mint);
+  if (depth && !depth.tradable) {
     return {
       executable: false,
       reason:
-        `${symbol} routes but does not sell. The best price Claim could find returns ` +
-        `${(100 - bestLoss).toFixed(2)}% of what goes in` +
-        (smallest ? ` — a ${fmtUsd(smallest.usd)} sale came back as ${fmtUsd(smallest.receivedUsd ?? 0)}` : "") +
-        `. Switching through that pool would cost more than the claim it buys. ${route}`,
+        `${target.token.symbol} has no market on any venue Jupiter can reach, so there is ` +
+        `no way to buy into it. The claim behind it may well be the stronger one — it simply ` +
+        `cannot be reached by trading today.`,
     };
   }
-
-  if (depth.maxExitUsd === null && routed.length > 0) {
-    return {
-      executable: false,
-      reason: `${symbol} has a route, but nothing sold inside 5% at any size Claim measured. A switch here would pay the spread rather than gain a claim. ${route}`,
-    };
-  }
-
   return { executable: true, reason: null };
 }
 
@@ -208,8 +249,10 @@ export function betterClaims(mint: string, company?: ResolvedCompany | null): Sw
   const heldRating = rateToken(held);
   if (!heldRating.grade) return []; // not an equity claim; nothing to compare
 
-  // A switch sells the position. If it cannot be sold, the switch cannot
-  // happen, and that is worth saying rather than discovering at the quote.
+  // A switch sells the position. If no market exists at all, the switch cannot
+  // happen and that is worth saying rather than discovering at the quote. Thin
+  // depth is reported alongside the tradeoffs instead, because the ladder
+  // measures large exits and most holders are far below its smallest rung.
   const sourceExit = canSell(held);
 
   const options: SwitchOption[] = [];
@@ -221,6 +264,18 @@ export function betterClaims(mint: string, company?: ResolvedCompany | null): Sw
 
     const { gains, tradeoffs } = describe(held, candidate);
     if (gains.length === 0) continue; // a better letter with nothing concrete behind it is not a reason
+    if (sourceExit.warning) tradeoffs.push(sourceExit.warning);
+
+    // Either side can make the trade impossible, and they fail for different
+    // reasons: the source has no buyer, the destination has no seller.
+    const entry = canBuy(candidate);
+    const executable = sourceExit.executable && entry.executable;
+    const blockedReason = sourceExit.reason ?? entry.reason;
+    const blockedSide = !sourceExit.executable
+      ? ("source" as const)
+      : !entry.executable
+        ? ("destination" as const)
+        : null;
 
     options.push({
       from: held,
@@ -229,8 +284,9 @@ export function betterClaims(mint: string, company?: ResolvedCompany | null): Sw
       toGrade: rating.grade,
       gains,
       tradeoffs,
-      executable: sourceExit.executable,
-      blockedReason: sourceExit.reason,
+      executable,
+      blockedReason,
+      blockedSide,
     });
   }
 
@@ -278,6 +334,16 @@ export async function preflight(destinationMint: string): Promise<PreflightResul
   }
   if (!state.mintAuthority) {
     blockers.push("The destination has no mint authority, so it cannot be issued or redeemed.");
+  }
+
+  // A mint can be healthy on every check above and still have no market. Those
+  // are different questions -- issuable is not buyable -- and answering only
+  // the first is how a holder reached a quote for a token nobody trades.
+  const market = depthFor(destinationMint);
+  if (market && !market.tradable) {
+    blockers.push(
+      "The destination has no market on any venue Jupiter can reach, so there is no route into it.",
+    );
   }
 
   return { ok: blockers.length === 0, blockers, checkedAt };
