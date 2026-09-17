@@ -216,12 +216,20 @@ function canSell(held: ResolvedToken): {
 function canBuy(target: ResolvedToken): { executable: boolean; reason: string | null } {
   const depth = depthFor(target.token.mint);
   if (depth && !depth.tradable) {
+    // Not on a DEX is not the same as unobtainable, and saying so as though it
+    // were leaves a holder at a dead end. Backpack's tokens are the clearest
+    // case: they are the strongest claim Claim grades and they are simply not
+    // traded on-chain -- you get them from Backpack. Name the venue.
+    const issuer = target.issuer;
+    const where = issuer
+      ? `${issuer.name} issues it directly (${issuer.homepage}).`
+      : "It is obtained from its issuer rather than on an exchange.";
     return {
       executable: false,
       reason:
-        `${target.token.symbol} has no market on any venue Jupiter can reach, so there is ` +
-        `no way to buy into it. The claim behind it may well be the stronger one — it simply ` +
-        `cannot be reached by trading today.`,
+        `${target.token.symbol} is not traded on any DEX, so Claim cannot route this switch ` +
+        `on-chain. ${where} The claim behind it is still the stronger one — it is reached ` +
+        `through the issuer, not through a swap.`,
     };
   }
   return { executable: true, reason: null };

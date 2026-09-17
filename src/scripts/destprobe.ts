@@ -33,9 +33,13 @@ let changed = 0;
 for (const [mint, sym] of dests) {
   const r = await probeTradable(mint);
   const before = cache.tradable[mint]?.tradable;
-  cache.tradable[mint] = r;
-  if (!r.tradable) delete cache.ladders[mint];
-  if (before !== r.tradable) { changed++; console.log(`${sym.padEnd(10)} ${before} -> ${r.tradable} ${r.reason ?? ""}`); }
+  if (r.tradable === null) {
+    console.log(`${sym.padEnd(10)} unreachable (${r.reason}) — left as ${before}`);
+  } else {
+    cache.tradable[mint] = { tradable: r.tradable, reason: r.reason };
+    if (!r.tradable) delete cache.ladders[mint];
+    if (before !== r.tradable) { changed++; console.log(`${sym.padEnd(10)} ${before} -> ${r.tradable} ${r.reason ?? ""}`); }
+  }
   await new Promise(r => setTimeout(r, THROTTLE_MS));
 }
 cache.generatedAt = new Date().toISOString();

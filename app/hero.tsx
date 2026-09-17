@@ -13,6 +13,10 @@ import GlyphPortal from "@/components/ui/glyph-portal";
  *    never waits on a network request and never shifts as a face swaps in. The
  *    component freezes whichever face is available at mount for exactly that
  *    reason, and a hero that stalls is worse than a hero in a system face.
+ *  - The opening sheet is white and its own colour, not the page's. The rest
+ *    of the site is dark; this one screen is paper, the letter is cut out of
+ *    it, and the green shows through the cut. Tying it to --bg made it dark
+ *    along with everything else and lost that contrast.
  *  - The field stays green. It is the one place on the site that is not the
  *    paper palette, and that is the point: the letter opens into somewhere
  *    else. The page behind it is dark, the portal is green, and the contrast
@@ -31,8 +35,8 @@ export function Hero({ stat }: { stat: { tokens: number; contested: number } }) 
       fontWeight={900}
       enterLabel="See the evidence"
       style={{
-        "--gp-paper": "var(--bg)",
-        "--gp-ink": "var(--text)",
+        "--gp-paper": "#ffffff",
+        "--gp-ink": "#12100d",
         "--gp-field": "#0c1a14",
         "--gp-foreground": "#f2f5f3",
       }}

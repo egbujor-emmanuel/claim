@@ -33,7 +33,8 @@ let flipped = 0;
 for (const mint of sources) {
   const before = cache.tradable[mint]?.tradable;
   const result = await probeTradable(mint);
-  cache.tradable[mint] = result;
+  if (result.tradable === null) { await sleep(THROTTLE_MS); continue; }
+  cache.tradable[mint] = { tradable: result.tradable, reason: result.reason };
   const sym = u.tokens.find((t) => t.mint === mint)?.symbol ?? mint.slice(0, 6);
   if (before !== result.tradable) {
     flipped++;

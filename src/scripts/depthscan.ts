@@ -45,8 +45,13 @@ for (const token of targets) {
   }
 
   const result = await probeTradable(token.mint);
-  cache.tradable[token.mint] = result;
-  if (result.tradable) tradableCount++;
+  // A non-answer is not a verdict. Leaving the mint unrecorded means the next
+  // run asks again, which is right; writing false would make a rate limit
+  // permanent.
+  if (result.tradable !== null) {
+    cache.tradable[token.mint] = { tradable: result.tradable, reason: result.reason };
+    if (result.tradable) tradableCount++;
+  }
   done++;
 
   if (done % 25 === 0) {

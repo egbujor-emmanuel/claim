@@ -449,15 +449,25 @@ footer {
   justify-content: space-between;
   gap: 20px;
 }
+/*
+ * The opening sheet is white and sets its own colours.
+ *
+ * It cannot inherit the page tokens: the rest of the site is dark, and this one
+ * screen is paper. Weights are heavier than body copy because this is the first
+ * thing anyone reads, at a distance, often on a phone in daylight -- --muted
+ * and --faint are calibrated for a reading column, not for a title card.
+ */
 .hero-mark {
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  font-weight: 700;
+  color: #12100d;
 }
 .hero-kicker {
   font-size: 12px;
-  color: var(--faint);
+  font-weight: 600;
+  color: #4a443b;
   text-align: right;
 }
 .hero-eyebrow {
@@ -465,8 +475,10 @@ footer {
   inset: auto 20px calc(100% - var(--gp-word-top, 35%) + 28px);
   margin: 0;
   text-align: center;
-  font-size: clamp(13px, 2.4vw, 15px);
-  color: var(--muted);
+  font-size: clamp(14px, 2.6vw, 17px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #12100d;
   text-wrap: balance;
 }
 .hero-support {
@@ -475,16 +487,19 @@ footer {
   margin: 0;
   text-align: center;
   font-size: clamp(13px, 2.2vw, 15px);
-  color: var(--faint);
+  font-weight: 600;
+  line-height: 1.45;
+  color: #3d372f;
   text-wrap: balance;
 }
 .hero-scroll {
   position: absolute;
   inset: auto 20px 7%;
   text-align: center;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: var(--faint);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #57503f;
 }
 
 /* Inside the portal: the SpaceX case, on the dark field. */

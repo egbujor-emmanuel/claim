@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-17T04:58:03.339Z",
+ "generatedAt": "2026-09-17T05:29:45.225Z",
  "tradable": {
   "XsensupeZBdHxZtdnLptf1UfWpVyancWcit7qWFYZrJ": {
    "tradable": false,
@@ -2983,323 +2983,323 @@
   },
   "XsKSh3QDynp6oms9yHjZXbZo3pKzUBoqUFKPHS2g9Bh": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XsMJtFbb8BwzQtck3oRXyAfs7SAPRuTXnSEDNd7BAVz": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "Xsgrm4D6VBTfDx5bs7GNdjtmWDgZ8V79r3YpsYwf5py": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsZUSqxAXKJkEimvD4CoVvEb4WUC92TFgj5zRtBxFeL": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsQLZycSZ7QnBBdBXQaTbQdiUcbRqjNJgyBGAMzhHav": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xss5RAku5EH6UViFdvW7ss9xQjwQLsrs2opPMhb3k43": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsQ6NfzzLH8nspjrB9X8R2K64Zz7Tnxqu12juDiMPMW": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XshuHQ6o6SVpUNawvnnTMxsZ4tacZsNgVCLorv7TkFq": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsXcJ6GZ9kVnjqGsjBnktRcuwMBmvKWh8S93RefZ1rF": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsafvsGtzFqqHgTnA3aPC83EAMkacU5mcGtcSayhpVV": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs4uNhvBDAcp2mz3g9XR5q3vzLgmF1ANWxJgWk2d5u3": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XsR4LAtaBgTKTRUhiijY1ba13nx4bepeEcag2Pr4dZ1": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XshWQWYVp5ff8CrAEsGmLVKD47nBWi3Ygn5v8wXK27G": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsn3H7ACEpSF2ULxeiD6kW4jRZXpurh8ZPttyfoS56W": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsEoih2x6nZuUjFwzGoba6MFmtzCkzW2c4YAm6baQbq": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsAsZLF4MmsvS1sDxRMrUz7REjHfwbC9UAMXSRBqgEB": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsDZMGEU8zadWFCkTtPBoPWYcUX3JHVmghnwf2Mve2q": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsuwUbQSzCJN2wZabD1Gxf1MER2Ypa7hMzVMYB2WawJ": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs31mE5EiqjSHEaiX9QDKCN6NvSGCqpJ6f1FNq2wri5": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsguBZPkM9BDmxspmWe29EmrYZBv21ENcC27Pqh7grB": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsJb1p4Ks6VFggq68JyMz7S3kdRfkqh4wA6EMyxi4DD": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs3c2aZenyRQwXjki5MDxJEJ2km27ef2rWQMFWx7QKJ": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XscE4GUcsYhcyZu5ATiGUMmhxYa1D5fwbpJw4K6K4dp": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XsrBCwaH8c46xiqXBChzobgufRKxQxAWUWbndgBNzFn": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsP7xzNPvEHS1m6qfanPUGjNmdnmsLKEoNAnHjdxxyZ": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsqBC5tcVQLYt8wqGCHRnAUUecbRYXoJCReD6w7QEKp": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsGtpmjhmC8kyjVSWL4VicGu36ceq9u55PTgF8bhGv6": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs2yquAgsHByNzx68WJC55WHjHBvG9JsMB7CWjTLyPy": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsueG8BtpquVJX9LVLLEGuViXUungE6WmK5YZ3p3bd1": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsaQTCgebC2KPbf27KUhdv5JFvHhQ4GDAPURwrEhAzb": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsjQP3iMAaQ3kQScQKthQpx9ALRbjKAjQtHg6TFomoc": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsv9hRk1z5ystj9MhnA7Lq4vjSsLwzL2nxrwmwtD3re": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsssYEQjzxBCFgvYFFNuhJFBeHNdLWYeUSP8F45cDr9": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs8S1uUs1zvS2p7iwtsG3b6fkhpvmwz4GYU3gWAmWHZ": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsoCS1TfEyfFhfvj8EtZ528L3CaKBDBRqRapnBbDF2W": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsf9mBktVB9BSU5kf4nHxPq5hCBJ2j2ui3ecFGxPRGc": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsgaUyp4jd1fNBCxgtTKkW64xnnhQcvgaxzsbAq5ZD1": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs7xXqkcK7K8urEqGg52SECi79dRp2cEKKuYjUePYDw": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsvNBAYkrDRNhA7wPHQfX3ZUXZyZLdnCQDfHZ56bzpg": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsuxRGDzbLjnJ72v74b7p9VY6N66uYgTCyfwwRjVCJA": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsPdAVBi8Zc1xvv53k4JcMrQaEDTgkGqKYeh7AYgPHV": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs5UJzmCRQ8DWZjskExdSQDnbE6iLkRu2jjrRAB1JSU": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XshPgPdXFRWB8tP1j82rebb2Q9rPgGX37RuqzohmArM": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsba6tUnSjDae2VcopDB6FGGDaxRrewFCDa5hKn5vT3": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsRbLZthfABAPAfumWNEJhPyiKDW6TvDVeAeW7oKqA2": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsDgw22qRLTv5Uwuzn6T63cW69exG41T6gwQhEK22u2": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsvKCaNsxg2GN8jjUmq71qukMJr7Q1c5R2Mk9P8kcS8": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XspwhyYPdWVM8XBHZnpS9hgyag9MKjLRyE3tVfmCbSr": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xseo8tgCZfkHxWS9xbFYeKFyMSbWEvZGFV1Gh53GtCV": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsqE9cRRpzxcGKDXj1BJ7Xmg4GRhZoyY1KpmGSxAWT2": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsEH7wWfJJu2ZT3UCFeVfALnVA6CP5ur7Ee11KmzVpL": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsHtf5RpxsQ7jeJ9ivNewouZKJHbPxhPoEy6yYvULr7": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XswsQk4duEQmCbGzfqUUWYmi7pV7xpJ9eEmLHXCaEQP": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs8drBWy3Sd5QY3aifG9kt9KFs2K3PGZmx7jWrsrk57": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs3ZFkPYT2BN7qBMqf1j1bfTeTm1rFzEFSsQ1z3wAKU": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsczbcQ3zfcgAEt9qHQES8pxKAVG5rujPSHQEXi4kaN": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsSr8anD1hkvNMu8XQiVcmiaTP7XGvYu7Q58LdmtE8Z": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsjFwUPiLofddX5cWFHW35GCbXcSu1BCUGfxoQAQjeL": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsfAzPzYrYjd4Dpa9BU3cusBsvWfVB9gBcyGC87S57n": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsr3pdLQyXvDJBFgpR5nexCEZwXvigb8wbPYp4YoNFf": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs151QeqTCiuKtinzfRATnUESM2xTU6V9Wy8Vy538ci": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsaBXg8dU5cPM6ehmVctMkVqoiRG2ZjMo1cyBJ3AykQ": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xsv99frTRUeornyvCfvhnDesQDWuvns1M852Pez91vF": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XswbinNKyPmzTa5CskMbCPvMW6G5CMnZXZEeQSSQoie": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsnQnU7AdbRZYe2akqqpibDdXjkieGFfSkbkjX1Sd1X": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsAtbqkAP1HJxy7hFDeq7ok6yM43DQ9mQ1Rh861X8rw": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XsNNMt7WTNA2sV3jrb1NNfNgapxRF5i4i6GcnTRRHts": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XszjVtyhowGjSC5odCqBpW1CtXXwXjYokymrk7fGKD3": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "XsYdjDjNUygZ7yGKfQaB6TxLh2gC6RRjzLtLAGJrhzV": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsApJFV9MAktqnAc6jqzsHVujxkGm9xcSUffaBoYLKC": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "NO_ROUTES_FOUND"
   },
   "Xsnuv4omNoHozR6EEW5mXkw8Nrny5rB3jVfLqi6gKMH": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsqgsbXwWogGJsNcVZ3TyVouy2MbTkfCFhCGGGcQZ2p": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsMAqkcKsUewDrzVkait4e5u4y8REgtyS7jWgCpLV2C": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsGVi5eo1Dh2zUpic4qACcjuWGjNv8GCt3dm5XcX6Dn": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsaHND8sHyfMfsWPj6kSdd5VwvCayZvjYgKmmcNL5qh": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XszvaiXGPwvk2nwb3o9C1CX4K6zH8sez11E6uyup6fe": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "Xs6B6zawENwAbWVi7w92rjazLuAr5Az59qgWKcNb45x": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB": {
-   "tradable": false,
-   "reason": "fetch failed"
+   "tradable": true,
+   "reason": null
   },
   "XsgSaSvNSqLTtFuyWPBhK9196Xb9Bbdyjj4fH3cPJGo": {
    "tradable": true,
@@ -4071,19 +4071,19 @@
   },
   "Sv3JpDxYv7sXa5AAQ1dbjcCCWzaJ66Xc5DbvgpQLtc5": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "QQQvDYxG7g11Rr4rnaJqDddmP9ocH74YhE3mDaG37R9": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "APDPC3BLF6426ZE7ZjnFHocpXNXPoKNwNXUaLDpNQgft": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FFNG4PzPhX2W6ijJD4Ub59YnNugrczWtMwbE9dw3r4JJ": {
    "tradable": false,
-   "reason": "fetch failed"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SNXXj12GyPcrki1uMTwcCu3KMbELrJ8oy1VeLgsbmQd": {
    "tradable": false,
@@ -4819,19 +4819,19 @@
   },
   "CDEjPBp1YUjVHC7RtyzRHxWHDYtc6NEa44R3yrsdyv3f": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ArtdmBVPa6Rte8RGZ6EK8kAQbpkR4FjuYppNpRg1VG8e": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "NTUZKdCwAHYV2z2Eofe9mooiXZu6R481gWP1d3NSWvd": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "S6CuKP89TzYjWBs5Pocdxxi9Ei2DCd6obFELX6mGbLW": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "PJKijUUh4PHkz8J9vKRguQ1W4HgFprt9kMcui2aLVe3": {
    "tradable": false,
@@ -4959,31 +4959,31 @@
   },
   "SPYVAxTLm7S6eqAipv5tPPw3c5EkaqAkdiNsdak3gB7": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "LmYGrbq7E5NWGKwPv2h2acCPNVfdHsDQwNNCaamMVDq": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BBfn1tWQDLunkT8e1zHfVBL8GrMF9aT7fsoFj5L3Wn4": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "METAaH6MMZZgy2CTEJq3QdNi7AFVTV3NxHFBfFgLEDd": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "AERVNzrCbS1o5qFS3um1LiPMXxGqAZX1ptuZkRimpCEb": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "EvJP4ZPpb358ySr73F1mWnZxH1L9mSo6iwe8f364htu9": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SPcu3qgqvbdV3x1CCM8kYp1gnSVTsrqyAYUAndhQwGw": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TTWofwAge91oFhZs7kpQdyrVRkmevgM88xijGvQFbKo": {
    "tradable": true,
@@ -5015,43 +5015,43 @@
   },
   "CLRPQExpTETeEJBXGzpfME3TXoXkHDuyKZGCk7HgqwrB": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ASTCuYHBSiNUgSKCRzEdgGdai71ozYBkfAfu5KrpinHX": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BhX9jbh4ML9AygSUG3jdt2xmtgBLoxavq9BnSoabJqd6": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "CCEPyt1rvFVpENzc7vc3wFUZ9Yu4Rj5NWFLSUwdToDD9": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FEpGJc3uZEjigVExpXJhp8gJtptJWev8TVtds83ECLAg": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "LNG9hfuAFWjhaxK2AH4Vu6a6hWB3xRT9EX9VnLZqTCo": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TLNHN6sY71Mhcp5EKakmqnrbn9DWrJxeVhAhyqNfkZP": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "DFL4vbeeRPtkYSwYYNWe2Rag8aZhU6X8LX4eZXcS46C7": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "MSFUGuDJftdnKC8rZHvkVJSn2zWzZrqwysSek2RPwb8": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SSNCrVqnf1iQywT8MJ6M6p4CRSYASReFzdsM3z6eFq3": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SGdhbWCK8UsE8DV3caknkQ7Lskkk5XmEsxVssHautPZ": {
    "tradable": false,
@@ -5459,19 +5459,19 @@
   },
   "LSCCSRrD84hs9VAMGPSACFWcwsWFfDcQXT8PMRZ7Jnr": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ARKXyUTr93QqgBHEDXg99N5JiL9tiZWeArkBLfAQWSGm": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "HALnQe1xqutKZHAW3ra4YY73qm5ZvhYRHz6me2KeCmpy": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "WNghy8hSYCQSvNvo7wLRc6Ytzohr9yPMJdZ1xhkroK5": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "UNH43aWWHQYq8G516u8hMVrH7KgrQ92Mk4vvm6yTfeV": {
    "tradable": false,
@@ -5779,19 +5779,19 @@
   },
   "XLV6eybK3rkmUr7s7bsP3nBHDWe6UFaz9eJLGyTLW6r": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BApXiQBWBGtfkKZdgr85PHLJK4t3ve1yc1Zpd1MSqoBq": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "MLMoT9ESJSEykb5ghTq8sXhYCrTf5xJVjXSahCbVCQQ": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "CLX8ncxsK83wkcAAeNyKYVYD75bphg3xUT7XEPqA88Wn": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "UBERfYx74rcUzBgr4pFaqgTBaS2AmejqQBX7oQupSFH": {
    "tradable": false,
@@ -5835,27 +5835,27 @@
   },
   "PoPnAxZCp4gQ9ojt7QEi383sNKBLi5zAoaX6PUAQwNp": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ARWR5eX18w997S3i1XFVwMGr5CdMGzCUSvHXxaPkx4qX": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "WWDcb6zgGWgonLNUayouH5CD7CU3AayFRyBGkRsbKbL": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "Cn5mbEwoZSajR5SD2S1MXMrKyB79ZqFVDXqAdzpCMhRU": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "QCtnKv4x6GPQhCUQuS1UxC4hP181LCDRBF73188MjLG": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FTAFK7qD7CKFoE75L53gYF4yR8L4oFgqJZg2PRb89UWN": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "VUGVKcKRfkEENKUc4ULEBngt1Dan4jrbPvC42KC8hFH": {
    "tradable": false,
@@ -5863,19 +5863,19 @@
   },
   "CB2EefdQw6CgK9urPB8etEBy6y5NoV6ZuB23MKA2Z39q": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BUGkHHak5asTPZprqFbfH96sbWZQmLY142GvQnqRWfz7": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "VECnXRUPqS4Kym9G2Xr2tstDaUKpMMky3CJoNG1mMnv": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BCSpugPKcYnPzoipje3RWrviCuikmNhhbsBxTJRbeWaH": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BdJkAo8jPvGYwkqY1vdXRb5aBsopgjCJrDNX3ZdS26d7": {
    "tradable": false,
@@ -5907,15 +5907,15 @@
   },
   "FCELR9hbxGUDK8Kb6FshYryENK6ACWgMJ67w6kbWKfyR": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "APTVytxeS4mbvmRv5L8Ht58itCK7k6eg5bUSGwDLbps9": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FTVNmN4ySYc8zbFoxaKEdQzPxj1eJ7WXxRKgXoUBeot4": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "XLC1GTgPtH75R2gk3csxiPDRqVPRLoagPM1miTpxFPR": {
    "tradable": false,
@@ -5935,67 +5935,67 @@
   },
   "CTAS1ycJqwCdEBvyrvRZgoF5n9Wfkbf1efG26GM5shgL": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "UCG2NQEMycHKKVUDC7yvZLxXze1q3x1QyNSqmgbiJf9": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "VEUwCeFrek3pGtvC63wap9UrWWrvZN25koLe1ayJrPW": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TXGHXKr2cA1J6fhrEka6UmgLekYSj9Pka9gnoeG9eEW": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SLV6P4x3wPdstF1eDtBzGAXXHrEGjkcJVqvVxssqSKb": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "JCLwicU6hXyhWPReVS4hA73pM2qS4rJ1NXnoEXgRGsEi": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "DfEtcVhiUZm5J3GySZjsZkkTMj79HdR18jxGiF7DvMP": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BRXLjsGEomj2fVt9GnwngzHCGuUWAx2QvPnY5GBtLuRg": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SYREvu1FpdKQ795WEf5PDSaHx5CVNaQPed6HEUs2piq": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SAoPkNsdgkbwFE6ZPXujXDgawk6BRrCHcJwspMCA25x": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FSLYejdoy1yZaa3MAqy6tGFt8YVt1puoVYgGUg5NuYaQ": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "CAR5W1mspo5qPmeWFL6LVyne9gs2whsutKN8PLxbz8BF": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "FLNC3gqX5ptQyGbrUbzRPRGmqZRqKU5AGBC4KokJmAqT": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "DUuD1sWHH7vyoMCjMbJ3oUXm7jNZqHMdDYmapUePBAEo": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ARKK3arq3wuS6LEzKeAAG5rKbDrS9VdFee3HdPCrYd5p": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BBAgDkQni23XgQPU9HjXsCpiNjoP8SsvUUVQGobf5GzW": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "GMYvHj6jGLaTjxRtBTMZuNoptNRFcoLkPCREd4xL5UFy": {
    "tradable": false,
@@ -6083,15 +6083,15 @@
   },
   "EXRZT5fPEauzHK1CzdhfH1ctt8A8o2BEjCDYWRaDxYCo": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "URiLXsXhv5yJaovZfavb4U6ammERcYYcaJQ1V4GwaBw": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TSLAqBbv4CNCnzWFeB7LmydAyEiNMJtve7DYKLpdK4S": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "AAPLEDt8RpzPgXyhvFzkMBofvFSQw9gpeMCoUdPdLnB8": {
    "tradable": false,
@@ -6111,15 +6111,15 @@
   },
   "SAnqAzptC3eyEniPkdHkD1xJtqwpT36hX6U9KKR734X": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "DECKrPBqLyJCaTYvHLNZFoLni12TBL47Bf6nszPWe87v": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "SEkBSt6Azm8h1x2asXcQKdn56LQQGKrqcwx1q84yfzW": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "DJTu7vi8norVzdVAffgvb39VP7wjKeTsgaMBJrzfxvoF": {
    "tradable": true,
@@ -6139,31 +6139,31 @@
   },
   "EWUtBFqTVfkqfpEQ4Zf4AhK1PBS41PQibsttUTjZ6vxu": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TSDD7jk7n4m1kUjfGnwPgF8p2VtmFqxM2kmvqN9oA3Q": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "GSBtQKGEV6yHQUJsxRiSyVf7EiBr66pHs7i7TJ6qmNpk": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "BArimz1PcKZr8PcPh3tcZ2dg4S7FJLk3cw6R5F8GsHKg": {
-   "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "tradable": true,
+   "reason": null
   },
   "CHYMS8ZqM3dvsRZAupVt4MQNbZGgACYYT5DavTiqHUGK": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "CRCL4kkDNmBCRjfrKJGqSnx7UsboEnjFpTTEvs5KmNmi": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TRGPEyX4uVDNAMFC3vG1uJS3th8yPSEnk7bRH6wLxNP": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ENBKJu2XNp3NmTa8URsyTkc5d9KzDBHnvzisMH2DphHd": {
    "tradable": false,
@@ -6191,19 +6191,19 @@
   },
   "DXXw8Hm6jTgGbq6XgKqFRn1gaAEn9m3XdPMLSSU7ygrh": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "KEYSLDDAM4jv6SQtBnix7f89UQFMdCMULhw5uxtxkRq": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "MGMuubtUEirmkhfEQdmGUh4pr7HuUdMWcZXFtpPbVJD": {
-   "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "tradable": true,
+   "reason": null
   },
   "CPRT2qaNF73w5pn18KeF9GaZy8B7rLLQoxhMCfmtahyn": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "EWY4owSJYMpwN33qGDu5gGxpkQkpMJu8ZUsQJaNZG5dv": {
    "tradable": false,
@@ -6235,15 +6235,15 @@
   },
   "SHELQHKZZTAcKg78kbrnddLYrVKDMy8Erwkksd5m6nY": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "TWL6zHbKcAXsNVd4rywYBNzBTSUMbZZ2neB5MJNTD7C": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "AEo2DfHxKynPsqVcpY2zr5o9K9vceKBTrYLY6ooD2Cfb": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "KkAjEZDUyr8DY7tyWt4bcZDgGa53m9R2zdEh18P7Jb3": {
    "tradable": false,
@@ -6263,15 +6263,15 @@
   },
   "WSD8pYcFCMjFGkw2uPZj3RMLJWoPoeuhww7u575eJg5": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "EQNRPaHxvukYzyMNMXoCh5VyHTWodKXYLLNAjoCJ666o": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "ALBdfxcfnNNWzsWVKSHTR2MA4NEzD44rTbqnBUci8S7F": {
    "tradable": false,
-   "reason": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+   "reason": "TOKEN_NOT_TRADABLE"
   },
   "PAYC4HtreRrC35ofEhs178SkggGAduBqWJVJajBQSY3": {
    "tradable": false,

@@ -492,8 +492,13 @@ check("a switch into a token with no market is not offered",
   soxlOpts.length > 0 && soxlOpts.every((o) => !o.executable),
   soxlOpts.map((o) => `${o.to.token.symbol} executable=${o.executable}`).join(", "));
 check("the block names the destination, not the position",
-  soxlOpts.every((o) => o.executable || /SOXL has no market/.test(o.blockedReason ?? "")),
+  soxlOpts.every((o) => o.executable || /^SOXL is not traded on any DEX/.test(o.blockedReason ?? "")),
   soxlOpts[0]?.blockedReason?.slice(0, 70) ?? "");
+// A block that only says no is a dead end. Backpack's tokens are the strongest
+// claims Claim grades and simply are not on a DEX; the holder needs the venue.
+check("a destination block points at the issuer that does sell it",
+  soxlOpts.every((o) => o.executable || /https?:\/\//.test(o.blockedReason ?? "")),
+  soxlOpts[0]?.blockedReason?.slice(-60) ?? "");
 
 const deadPf = await preflight(SOXL);
 check("preflight refuses a destination with no market",

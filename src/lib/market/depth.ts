@@ -46,16 +46,45 @@ interface QuoteResponse {
   errorCode?: string;
 }
 
-async function quote(inputMint: string, outputMint: string, amount: string): Promise<QuoteResponse> {
+/**
+ * Ask Jupiter for a quote, and say which kind of "no" came back.
+ *
+ * `unreachable` means the question never got answered: the socket failed, the
+ * rate limiter said no, the gateway was down. That is not evidence about the
+ * market and must never be recorded as one. Conflating it with a real
+ * TOKEN_NOT_TRADABLE is how tokens with deep, obvious liquidity -- TSLAx, SPYx,
+ * NFLXx -- ended up cached as having no DEX route at all, on the strength of
+ * "fetch failed".
+ *
+ * Retries first, because most of these are transient and a second ask usually
+ * gets a real answer.
+ */
+async function quote(
+  inputMint: string,
+  outputMint: string,
+  amount: string,
+  attempts = 3,
+): Promise<QuoteResponse & { unreachable?: boolean }> {
   const url = `${QUOTE}?inputMint=${inputMint}&outputMint=${outputMint}&amount=${amount}&slippageBps=5000`;
-  try {
-    const res = await fetch(url);
-    const body = (await res.json()) as QuoteResponse;
-    if (!res.ok) return { error: body.error ?? `HTTP ${res.status}`, errorCode: body.errorCode };
-    return body;
-  } catch (e) {
-    return { error: e instanceof Error ? e.message : "fetch failed" };
+  let last = "";
+  for (let i = 0; i < attempts; i++) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+      // 429 and 5xx are the venue refusing to answer, not an answer.
+      if (res.status === 429 || res.status >= 500) {
+        last = `HTTP ${res.status}`;
+        await new Promise((r) => setTimeout(r, 1500 * (i + 1)));
+        continue;
+      }
+      const body = (await res.json()) as QuoteResponse;
+      if (!res.ok) return { error: body.error ?? `HTTP ${res.status}`, errorCode: body.errorCode };
+      return body;
+    } catch (e) {
+      last = e instanceof Error ? e.message : "fetch failed";
+      await new Promise((r) => setTimeout(r, 1500 * (i + 1)));
+    }
   }
+  return { error: last || "unreachable", unreachable: true };
 }
 
 /**
@@ -122,13 +151,17 @@ export async function measureDepth(mint: string, decimals: number): Promise<Dept
 }
 
 /** Cheap tradability probe: one call, no ladder. Used for universe-wide sweeps. */
-export async function probeTradable(mint: string): Promise<{ tradable: boolean; reason: string | null }> {
+export async function probeTradable(
+  mint: string,
+): Promise<{ tradable: boolean | null; reason: string | null }> {
   // The quote asset is trivially tradable; asking Jupiter to swap it for itself
   // would report the opposite.
   if (mint === USDC) return { tradable: true, reason: null };
 
   const probe = await quote(USDC, mint, "1000000");
   if (probe.outAmount && Number(probe.outAmount) > 0) return { tradable: true, reason: null };
+  // Jupiter never answered. Saying "no market" here would be inventing a fact.
+  if (probe.unreachable) return { tradable: null, reason: probe.error ?? "unreachable" };
   return { tradable: false, reason: probe.errorCode ?? probe.error ?? "no route" };
 }
 

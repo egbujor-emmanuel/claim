@@ -57,6 +57,8 @@ for (const t of u.tokens) {
     if (o.executable && o.blockedSide) problems.push(`${t.symbol}: executable yet names a blocked side`);
     if (o.blockedSide === "destination" && !(o.blockedReason ?? "").startsWith(o.to.token.symbol))
       problems.push(`${t.symbol}: destination block does not name the destination`);
+    if (o.blockedSide === "destination" && !/https?:\/\//.test(o.blockedReason ?? ""))
+      problems.push(`${t.symbol}: destination block offers no route to the issuer`);
     if (o.blockedSide === "source" && !(o.blockedReason ?? "").startsWith(t.symbol))
       problems.push(`${t.symbol}: source block does not name the source`);
     if (o.gains.length === 0) problems.push(`${t.symbol}: switch offered with no gain`);

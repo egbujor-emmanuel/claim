@@ -111,7 +111,7 @@ function SwitchPanel({ holding }: { holding: PortfolioScan["holdings"][number] }
         {best.executable
           ? "A stronger claim on the same company is available"
           : best.blockedSide === "destination"
-            ? "A stronger claim exists, but it cannot be bought"
+            ? "A stronger claim exists, reached through its issuer"
             : "A stronger claim exists, but this position cannot be sold"}
         <span className="switch-grades">
           {best.fromGrade} → {best.toGrade}
