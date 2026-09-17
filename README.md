@@ -72,6 +72,29 @@ And then the part that is not a report:
 
 - **The move.** Where a stronger claim on the same company exists and can be reached, Claim builds the swap and hands it to the wallet — quoted at the holder's own size, with the destination mint re-read from chain in the moment before the transaction is built. Where it cannot be reached, Claim says which side of the trade is impossible and, if the destination is issued rather than traded, names the issuer that does sell it.
 
+## Buy a company, not a ticker
+
+Switching answers "what I hold is weak, what else is there". Buying is the question before it: someone wants exposure to Apple and has to choose a mint, with nothing on any venue telling them the mints confer different things.
+
+**154 companies can be reached by a swap on Solana. For 83 of them the strongest claim is not the one you can buy.**
+
+```
+Apple     strongest AAPL  (A)  not tradable   reachable AAPLx  (C)
+Alphabet  strongest GOOGL (A)  not tradable   reachable GOOGLx (C)
+Amazon    strongest AMZN  (A)  not tradable   reachable AMZNx  (C)
+SpaceX    strongest SPCX  (A)  tradable       reachable SPCX   (A)
+```
+
+Buy Apple on any router today and you get a Jersey certificate carrying a seizure delegate, while the real shares sit on a venue the router cannot see. Claim picks the destination instead of the buyer, and states the compromise on the review page before a wallet opens — including that going to the issuer directly is the better option if the claim matters more than the convenience.
+
+Claim will not route a purchase into anything other than the strongest claim it can reach for that company. The API checks the destination against its own choice rather than trusting the mint it was handed; without that this endpoint is a swap router wearing Claim's name. `npm run buy-e2e` builds real purchases and simulates them on mainnet:
+
+```
+Apple    -> AAPLx (C) [compromise]  $1.00 -> 298,134 raw  SIMULATION: OK
+Alphabet -> GOOGLx (C) [compromise] $1.00 -> 288,229 raw  SIMULATION: OK
+SpaceX   -> SPCX (A)                $1.00 ->   6,513 raw  SIMULATION: OK
+```
+
 ## Findings
 
 <!-- findings:start -->

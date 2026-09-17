@@ -925,3 +925,71 @@ footer {
   align-items: center;
   margin: 0;
 }
+
+/*
+ * The buy list.
+ *
+ * A row has to carry four things at once: which company, which token Claim
+ * would actually route into, what that claim grades, and whether it is a
+ * compromise. The compromise is the point, so it gets its own colour rather
+ * than being a footnote.
+ */
+.buy-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.buy-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.4fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.buy-row.compromised {
+  border-left: 3px solid var(--warning);
+}
+.buy-id {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.buy-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.buy-sym {
+  font-size: 12px;
+  color: var(--muted);
+}
+.buy-row .grade {
+  width: 34px;
+  height: 34px;
+  font-size: 15px;
+}
+.buy-note {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.buy-row .switch-button {
+  margin: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .buy-row {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "grade id" "note note" "cta cta";
+  }
+  .buy-row .grade { grid-area: grade; }
+  .buy-id { grid-area: id; }
+  .buy-note { grid-area: note; }
+  .buy-row .switch-button { grid-area: cta; justify-self: start; }
+}

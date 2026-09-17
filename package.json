@@ -23,7 +23,8 @@
     "demo-wallets": "tsx src/scripts/demowallets.ts",
     "e2e": "tsx src/scripts/e2e.ts",
     "audit": "tsx src/scripts/audit.ts",
-    "refresh-depth": "tsx src/scripts/destprobe.ts"
+    "refresh-depth": "tsx src/scripts/destprobe.ts",
+    "buy-e2e": "tsx src/scripts/buye2e.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

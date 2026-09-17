@@ -83,6 +83,8 @@ const GRADE_ORDER = ["F", "D", "C", "B", "A"];
  * conditionally -- if you hold this, you can move to that -- and the review
  * page is where the holder's own balance and quote come in.
  */
+const USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+
 function CompanyActions({ company }: { company: RatedCompany }) {
   const moves: { from: ResolvedToken; option: SwitchOption }[] = [];
   const seen = new Set<string>();

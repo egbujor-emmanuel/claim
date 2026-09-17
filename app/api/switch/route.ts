@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { quoteSwitch, buildSwitchTransaction, preflight } from "@/src/lib/switch.js";
 import { byMint } from "@/src/lib/search.js";
+import { sanctionedDestination } from "@/src/lib/buy.js";
 
 /**
  * Quote and build a switch between two claims on the same company.
@@ -51,6 +52,37 @@ function sameCompany(from: string, to: string): boolean {
   return Boolean(a && b && a.id === b.id);
 }
 
+/**
+ * Whether Claim is willing to route this pair.
+ *
+ * Two shapes are allowed and nothing else. A switch stays within one company:
+ * the holder has a weak claim on a security and is moving to a better one on
+ * the same security. A purchase crosses companies, but only into the mint Claim
+ * itself nominates as the best reachable claim for that company.
+ *
+ * The second check is the important one. Without it this endpoint is a general
+ * swap router wearing Claim's name, and a crafted request could route someone
+ * into the worst token on the list -- the precise outcome the product exists to
+ * prevent. Claim chooses the destination; the caller does not get to.
+ */
+function routable(from: string, to: string): { ok: true } | { ok: false; why: string } {
+  if (sameCompany(from, to)) return { ok: true };
+
+  const destination = byMint(to);
+  if (!destination) {
+    return { ok: false, why: "Claim does not index the destination token." };
+  }
+  if (sanctionedDestination(destination.id) !== to) {
+    return {
+      ok: false,
+      why:
+        `Claim routes purchases only into the strongest claim it can reach for a company. ` +
+        `That is not this mint for ${destination.name}.`,
+    };
+  }
+  return { ok: true };
+}
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const from = url.searchParams.get("from") ?? "";
@@ -60,11 +92,9 @@ export async function GET(request: Request) {
   if (!MINT.test(from) || !MINT.test(to) || !/^\d+$/.test(amount)) {
     return NextResponse.json({ error: "invalid_request" }, { status: 400 });
   }
-  if (!sameCompany(from, to)) {
-    return NextResponse.json(
-      { error: "not_the_same_company", message: "Claim only routes between claims on one company." },
-      { status: 400 },
-    );
+  const allowed = routable(from, to);
+  if (!allowed.ok) {
+    return NextResponse.json({ error: "destination_not_sanctioned", message: allowed.why }, { status: 400 });
   }
 
   const check = await preflight(to);
@@ -108,8 +138,9 @@ export async function POST(request: Request) {
   if (!MINT.test(from) || !MINT.test(to) || !/^\d+$/.test(amount) || !MINT.test(wallet)) {
     return NextResponse.json({ error: "invalid_request" }, { status: 400 });
   }
-  if (!sameCompany(from, to)) {
-    return NextResponse.json({ error: "not_the_same_company" }, { status: 400 });
+  const allowed = routable(from, to);
+  if (!allowed.ok) {
+    return NextResponse.json({ error: "destination_not_sanctioned", message: allowed.why }, { status: 400 });
   }
 
   // Re-checked at build time, not just at quote time. The gap between a quote

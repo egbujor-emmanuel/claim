@@ -351,6 +351,48 @@ if (await serverUp()) {
       !/Read-only: Claim never asks for a signature/.test(spacexPage) &&
         /never holds a key/.test(spacexPage));
 
+    // Buying is the question that comes before switching: someone wants Apple
+    // and has to pick a mint, with no venue telling them the mints differ. For
+    // most companies the token with a pool is not the strongest claim.
+    const USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+    const buyPage = await (await fetch(`${BASE}/buy`)).text();
+    check("the buy list covers every company a swap can reach",
+      /companies can be reached by a swap/.test(buyPage));
+    check("the buy list names the compromise where there is one",
+      /cannot be bought with a swap/.test(buyPage));
+
+    const { buyableCompanies: buyables } = await import("../lib/buy.js");
+    const all = buyables();
+    check("a purchase destination exists for many companies, not one",
+      all.length > 100, `${all.length} companies`);
+    check("more than half of them are a compromise, and Claim says so",
+      all.filter((t) => t.compromised).length > 0,
+      `${all.filter((t) => t.compromised).length} of ${all.length}`);
+
+    const apple = all.find((t) => t.company.name.startsWith("Apple"));
+    if (apple?.reachable) {
+      const good = await fetch(
+        `${BASE}/api/switch?from=${USDC_MINT}&to=${apple.reachable.token.token.mint}&amount=1000000`,
+      );
+      check("a sanctioned purchase quotes", good.status === 200, `HTTP ${good.status}`);
+
+      // Claim chooses the destination; the caller does not. Without this the
+      // endpoint is a swap router that would sell someone the worst claim on
+      // the list under Claim's own name.
+      const weaker = apple.company.tokens.find(
+        (t) => t.token.mint !== apple.reachable!.token.token.mint && t.token.symbol.endsWith("on"),
+      );
+      if (weaker) {
+        const bad = await fetch(
+          `${BASE}/api/switch?from=${USDC_MINT}&to=${weaker.token.mint}&amount=1000000`,
+        );
+        const body = (await bad.json()) as { error?: string };
+        check("a purchase into a weaker claim is refused",
+          bad.status === 400 && body.error === "destination_not_sanctioned",
+          `HTTP ${bad.status} ${body.error}`);
+      }
+    }
+
     // The portal's field is green on purpose: it is the one surface that is not
     // the page palette, and the letter opening into somewhere else is the whole
     // gesture. This pins it so a later palette sweep does not quietly flatten it
