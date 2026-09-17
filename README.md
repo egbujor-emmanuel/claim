@@ -2,7 +2,9 @@
 
 **Not everything called a tokenized stock is a stock.**
 
-**Live: https://claim-puce-kappa.vercel.app** · [Public API](https://claim-puce-kappa.vercel.app/api-docs) · read-only, no wallet, nothing to sign.
+**Live: https://claim-puce-kappa.vercel.app** · [Public API](https://claim-puce-kappa.vercel.app/api-docs)
+
+Claim reads the chain, grades what it finds, and then builds the trade that acts on the grade. It never holds a key, never funds anything and never submits on your behalf — your wallet signs, or nothing happens.
 
 Four SpaceX tokens trade on Solana right now. They look interchangeable in a wallet. They confer four different legal relationships.
 
@@ -13,7 +15,7 @@ Four SpaceX tokens trade on Solana right now. They look interchangeable in a wal
 | What you own | Real shares, 1:1 in regulated custody | A certificate against a Jersey entity | **A loan, not equity.** No ownership, voting or dividend rights | An interest in a vehicle holding the shares |
 | Exit | Portable to a traditional brokerage | Redeem with the issuer, $1,000 minimum | Only once the issuer divests. You cannot initiate it | **Swap by 12 Mar 2027 or it expires worthless** |
 | Transfer fee | none | none | **0.2%, uncapped** | **0.5%, uncapped** |
-| Claim grade | **B** | **B** | **C** | **F** |
+| Claim grade | **A** | **C** | **C** | **F** |
 
 Tessera says it plainest, in the token's own on-chain metadata: *"This is a loan product, not a security — token holders have no ownership, voting, or dividend rights in OpenAI."*
 
@@ -27,7 +29,20 @@ On 13 May 2026, PreStocks tokens for Anthropic and OpenAI fell **34%** and **39%
 
 Meanwhile every other tool in this space — aggregators, terminals, "best price" routers — compares tokens on **price, spread and liquidity**, and treats the legal claim as interchangeable. Rank the SpaceX tokens by price and the cheapest option is the one that evaporates in March 2027.
 
-Claim is the missing dimension.
+Claim is the missing dimension — and it does not stop at the diagnosis.
+
+## It is not a read-only report
+
+Every other entry in this space stops at telling you. Claim offers the move.
+
+Where a stronger claim on the same company exists **and can be reached**, Claim builds the swap transaction and hands it to your wallet. Real Jupiter route, real price impact, quoted at your own size. The destination mint is re-read from the chain immediately before the transaction is built, so a token paused between the quote and the signature cannot be switched into.
+
+Across the universe that is **706 switch options over 588 companies** whose tokens are not legally equivalent. Eleven are routable on a DEX today; the rest are blocked, and Claim says which side is impossible and why:
+
+- **Source blocked** — nobody will buy what you hold, so redemption with the issuer is the only exit.
+- **Destination blocked** — the better claim is fine but is not traded on any DEX. Backpack's tokens are the clearest case: they are the strongest claims Claim grades and you get them from Backpack, not from a swap. Claim names the issuer and links it rather than dead-ending.
+
+Nothing is simulated. There is no mock data and no fake transaction anywhere in this repository.
 
 ## What it does
 
@@ -56,7 +71,7 @@ Measured across **2,060 tokenized equities** from five issuers — xStocks 837, 
 
 **368 tokens display the wrong balance to naive apps.** They carry a scheduled scaled-UI multiplier that has already taken effect, so software reading the `multiplier` field instead of computing the effective value is wrong. PPLTx shows **10%**, NFLXx shows **10%**, PALLx shows **20%**, SPACEX shows **20%**, CRWDx shows **25%**, APHx shows **50%** of the real position.
 
-**Almost none of them can be sold.** All 2,050 were probed against Jupiter. **96 have a route. 1,954 have none** — no liquidity pool in existence, cross-checked against DexScreener, which returns no pairs for them.
+**Almost none of them can be sold.** All 2,053 were probed against Jupiter. **173 have a route. 1,880 have none** — no liquidity pool in existence, cross-checked against DexScreener, which returns no pairs for them. A request that fails is never recorded as an answer: a dropped socket or a rate limit leaves the mint unmeasured and asked again, because "we could not reach the router" is not a finding about the market.
 
 **And a route is not an exit.** Full quote ladders were measured for every routable mint. **38 can absorb a $10,000 sale inside 5% slippage** — out of 2,060.
 
@@ -102,7 +117,7 @@ Optional `SOLANA_RPC_URL` for a dedicated RPC. Nothing else is needed — every 
 
 ## Design commitments
 
-**Read-only.** Claim never requests a signature, never submits a transaction, never holds keys. There is nothing to approve.
+**Claim never holds a key.** It builds the switch transaction and hands it to your wallet unsigned. It never signs, never submits, never funds anything and never takes custody of a token. Everything except the final signature works without connecting at all, and the signature is your wallet's to give or refuse.
 
 **No mocks.** No synthetic data, no paper trading, no devnet stand-ins. Every number comes from a live source with a visible timestamp.
 
