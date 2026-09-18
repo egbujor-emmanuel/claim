@@ -1,26 +1,33 @@
 # Demo video
 
-`claim-demo.mp4` — 1080p, 71 seconds, narrated with burned-in captions.
+`claim-demo.mp4` — 1080p, 30fps, 2:45, voiceover, no captions.
 
-Recorded against the live deployment, not a mock. Every screen in it is the
-product responding to a real address, a real company and a live Jupiter quote.
+Recorded against the live deployment. Every screen is the product answering a
+real address, a real company and a live Jupiter quote.
 
-## What it shows
+## How it is built
 
-| | |
-|---|---|
-| 0:00 | The opening: scroll through the letter into the SpaceX case |
-| 0:19 | SpaceX — four tokens, four legal relationships, five routable moves |
-| 0:33 | Buy a company: 154 reachable, 83 where the strongest claim is not the one you can buy |
-| 0:50 | A wallet scanned: every position graded, worst claim first, actionable switches on top |
-| 1:03 | The public API |
+The voice is generated first, so the line lengths are known before anything is
+recorded. The recorder then drives a **single continuous browser session**,
+running each action while its line is spoken, and writes down the offset each
+line actually began at. The mixdown places the audio at those offsets.
 
-## Rebuilding it
+One session matters. Recording scene by scene gives every scene its own empty
+opening frame and abrupt ending, and stitching them together shows every seam —
+that is where the black gaps came from.
 
 ```bash
-node media/record.mjs [baseUrl]   # capture the walkthrough
+python media/tts.py        # or regenerate lines in media/vo/
+node   media/record.mjs    # one pass -> media/final/raw.webm + media/offsets.json
+python media/mixdown.py    # -> media/claim-demo.mp4
 ```
 
-Narration lines live in `media/script.json`, one file per line in `media/vo/`.
-A line is re-synthesised only when its text changes, so fixing one sentence
-does not mean recording the video again.
+Narration lives in `media/script.json`. Changing one line means re-synthesising
+that line only; the recorder re-times itself around it.
+
+## What it covers
+
+The opening and what Claim is · scrolling into the four SpaceX claims · search ·
+the grades · the evidence and its sources · the live Pyth comparison · a switch
+reviewed · connecting a wallet · buying a company · the compromise stated before
+signing · a whole wallet scanned · the public API.

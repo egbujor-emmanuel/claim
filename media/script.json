@@ -1,46 +1,29 @@
 {
  "voice": "en-US-AndrewNeural",
- "rate": "+3%",
- "scenes": [
-  {"id":"01-open","tag":"the problem","lines":[
-    "Four SpaceX tokens trade on Solana.",
-    "Your wallet shows you the same thing for all four.",
-    "One is a real share. One expires worthless in March twenty twenty seven."]},
-
-  {"id":"02-search","tag":"search a company","lines":[
-    "Type a company instead of a ticker.",
-    "Claim pulls together every token that points at the same shares."]},
-
-  {"id":"03-grades","tag":"the grade","lines":[
-    "Each one gets a grade, based on what you legally own.",
-    "Backpack is an A. Real shares, and you can move them to a brokerage."]},
-
-  {"id":"04-evidence","tag":"the evidence","lines":[
-    "Every line comes from the issuer's own words, with a link.",
-    "This key can take the token out of your wallet. It is on screen. Go and check it."]},
-
-  {"id":"05-review","tag":"switch","lines":[
-    "If you hold the weak one and a better one exists, Claim shows you the move.",
-    "What you gain, what you give up, before any wallet opens."]},
-
-  {"id":"06-wallet","tag":"connect","lines":[
-    "Phantom, Solflare, Backpack, Trust.",
-    "Claim never holds your keys. Your wallet signs, or nothing happens."]},
-
-  {"id":"07-buy","tag":"buy","lines":[
-    "You can also just buy a company and let Claim pick the token.",
-    "A hundred and fifty four are reachable.",
-    "For eighty three of them, the best one is not the one on sale."]},
-
-  {"id":"08-compromise","tag":"the compromise","lines":[
-    "So it tells you that, to your face, before you sign.",
-    "The better Apple token exists. You cannot swap into it. Here is who sells it."]},
-
-  {"id":"09-wallet-scan","tag":"your wallet","lines":[
-    "Paste a wallet. Everything in it gets graded, worst first.",
-    "What you can do something about sits at the top."]},
-
-  {"id":"10-api","tag":"api","lines":[
-    "Same answers, free, over an open A P I."]}
+ "rate": "+4%",
+ "lines": [
+  {"id":"00","act":"hold",        "text":"Hi — this is Claim."},
+  {"id":"01","act":"hold",        "text":"Claim reads every tokenized stock on Solana and tells you what you're actually holding. Not the price — the claim behind it. Whether it's a real share, or a certificate, or a loan, or something with an expiry date on it."},
+  {"id":"02","act":"hold",        "text":"And where you're holding the weak one, it'll move you into a better one. We built it for Stocklana."},
+  {"id":"03","act":"enter",       "text":"Here's the problem. Four SpaceX tokens trade on Solana, and your wallet shows you the same thing for all four."},
+  {"id":"04","act":"portal",      "text":"One is a real share, held at a broker, and you can move it out to a normal brokerage account. One is a certificate from a company in Jersey — if they go under, you're a creditor, not a shareholder."},
+  {"id":"05","act":"portal2",     "text":"One is a loan. The issuer says so themselves, in the token's own data. And one expires worthless in March 2027 if you don't get out of it first. Nothing out there tells you which one you've got."},
+  {"id":"06","act":"search",      "text":"So you type in a company — not a ticker — and Claim pulls together every token that points at the same shares."},
+  {"id":"07","act":"grades",      "text":"Then it grades each one, on what you actually, legally own. Backpack is an A. Real shares, and you can take them with you."},
+  {"id":"08","act":"grades2",     "text":"The Jersey certificate is a C. PreStocks is an F — that's the one with the expiry date."},
+  {"id":"09","act":"evidence",    "text":"Every line underneath is the issuer's own words, with a link to where they said it."},
+  {"id":"10","act":"evidence2",   "text":"This key here can take the token out of your wallet, without asking you. It's on screen. Go and check it yourself — it's public."},
+  {"id":"11","act":"reference",   "text":"We also read the real share price from Pyth, live, and put it next to what the token's actually trading for."},
+  {"id":"12","act":"moves",       "text":"Now — if you're holding the weak one and a better one exists, Claim shows you the move."},
+  {"id":"13","act":"review",      "text":"What you gain, what you give up, before anything touches a wallet."},
+  {"id":"14","act":"wallet",      "text":"Connect whichever wallet you use. Claim reads what you're actually holding first, so it won't hand you a transaction that can't go through."},
+  {"id":"15","act":"walletHold",  "text":"It never touches your keys. Your wallet signs, or nothing happens."},
+  {"id":"16","act":"buy",         "text":"You can also skip all that and just buy a company, and let Claim pick the token for you."},
+  {"id":"17","act":"buyScroll",   "text":"A hundred and fifty-four you can reach with a swap. And for eighty-three of them, the best one isn't the one on sale."},
+  {"id":"18","act":"compromise",  "text":"Buy Apple anywhere today and you get the Jersey certificate. The real shares are on a venue the router can't even see. So it tells you that, to your face, before you sign."},
+  {"id":"19","act":"scanType",    "text":"And you can paste in any wallet."},
+  {"id":"20","act":"scanShow",    "text":"Everything in it gets graded, worst first, with whatever you can actually do something about sitting right at the top."},
+  {"id":"21","act":"api",         "text":"Same answers, free, over an open API."},
+  {"id":"22","act":"apiHold",     "text":"Two thousand and sixty tokens. Five hundred and eighty-eight companies where the tokens aren't the same thing. That's Claim — it tells you which one you're holding."}
  ]
 }

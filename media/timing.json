@@ -1,0 +1,117 @@
+[
+ {
+  "id": "00",
+  "act": "hold",
+  "dur": 1.872
+ },
+ {
+  "id": "01",
+  "act": "hold",
+  "dur": 12.456
+ },
+ {
+  "id": "02",
+  "act": "hold",
+  "dur": 5.304
+ },
+ {
+  "id": "03",
+  "act": "enter",
+  "dur": 6.408
+ },
+ {
+  "id": "04",
+  "act": "portal",
+  "dur": 11.04
+ },
+ {
+  "id": "05",
+  "act": "portal2",
+  "dur": 11.376
+ },
+ {
+  "id": "06",
+  "act": "search",
+  "dur": 6.048
+ },
+ {
+  "id": "07",
+  "act": "grades",
+  "dur": 7.536
+ },
+ {
+  "id": "08",
+  "act": "grades2",
+  "dur": 6.12
+ },
+ {
+  "id": "09",
+  "act": "evidence",
+  "dur": 4.704
+ },
+ {
+  "id": "10",
+  "act": "evidence2",
+  "dur": 6.864
+ },
+ {
+  "id": "11",
+  "act": "reference",
+  "dur": 6.6
+ },
+ {
+  "id": "12",
+  "act": "moves",
+  "dur": 5.064
+ },
+ {
+  "id": "13",
+  "act": "review",
+  "dur": 3.936
+ },
+ {
+  "id": "14",
+  "act": "wallet",
+  "dur": 7.056
+ },
+ {
+  "id": "15",
+  "act": "walletHold",
+  "dur": 3.984
+ },
+ {
+  "id": "16",
+  "act": "buy",
+  "dur": 4.512
+ },
+ {
+  "id": "17",
+  "act": "buyScroll",
+  "dur": 6.336
+ },
+ {
+  "id": "18",
+  "act": "compromise",
+  "dur": 9.672
+ },
+ {
+  "id": "19",
+  "act": "scanType",
+  "dur": 1.872
+ },
+ {
+  "id": "20",
+  "act": "scanShow",
+  "dur": 6.216
+ },
+ {
+  "id": "21",
+  "act": "api",
+  "dur": 3.24
+ },
+ {
+  "id": "22",
+  "act": "apiHold",
+  "dur": 8.448
+ }
+]

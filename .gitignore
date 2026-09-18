@@ -8,3 +8,14 @@ tsconfig.tsbuildinfo
 server.log
 
 .vercel
+
+# Demo video artefacts.
+#
+# The finished file goes to the submission form, not into git history: five
+# versions of it had already accumulated to ~89MB of blobs and the push began
+# timing out. What belongs here is what rebuilds it -- the script, the voice
+# lines, the recorder and the mixdown.
+media/final/
+media/claim-demo.mp4
+media/voice.wav
+media/chk/
