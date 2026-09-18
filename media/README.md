@@ -1,6 +1,10 @@
 # Demo video
 
-`claim-demo.mp4` — 1080p, 30fps, 2:45, voiceover, no captions.
+1080p, 30fps, 2:45, voiceover, no captions.
+
+**The finished file is not in this repository.** Five versions of it had reached
+about 89MB of blobs and pushes began timing out, so it lives on the submission
+instead. What is here is everything that rebuilds it.
 
 Recorded against the live deployment. Every screen is the product answering a
 real address, a real company and a live Jupiter quote.
